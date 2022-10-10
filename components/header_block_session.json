@@ -1,0 +1,190 @@
+{
+    "Name": "headerBlock",
+    "BlockType": "dock",
+    "Orientation": "Horizontal",
+    "Background" : "#2d2c28",
+    "Padding" : "45,10,45,10",
+    "MarginBottom" : 1,
+    "Items": [
+        //headerLeft
+        {
+            "Name": "headerLeftPart",
+            "BlockType": "stack",
+            "Orientation": "Vertical",
+            "Spacing": 12,
+            "HorizontalAlignment": "Left",
+            "Items": [
+
+                //league name
+                {
+                    "BlockType" : "stack",
+                    "VerticalAlignment" : "Center",
+                    "Items" :
+                    [
+                        {                            
+                            "BlockType": "text",
+                            "Source": "{Season.LeagueInfo.LeagueName}",                            
+                            "FontName": "{FontNameWide}",
+                            "FontSize": 20
+                        },
+                        {                            
+                            "BlockType": "text",
+                            "Source": " · {Season.Name}",
+                            "VerticalAlignment" : "Center",
+                            "FontName": "{FontNameWide}",
+                            "FontSize": 16,
+                            "Foreground" : "{ForegroundDarker}"
+                        }
+                    ]
+                },                
+
+                //session
+                {
+                    "Name": "headerSessionLine",
+                    "BlockType": "stack",
+                    "VerticalAlignment": "Center",
+                    "Spacing": 8,
+                    "Items": [
+                        {
+                            "Name": "CountryFlag",
+                            "BlockType": "image",
+                            "VerticalAlignment": "Center",
+                            "Height": 48,
+                            "Source": "{Session.Track.Nation.LogoPath}"
+                        },
+
+                        {
+                            "Name": "CountryName",
+                            "BlockType": "text",
+                            "MarginLeft": 12,
+                            "VerticalAlignment": "Center",
+                            "Source": "{Session.Track.CountryName}",
+                            "FontName": "{FontNameWide}",
+                            "FontSize": 28
+                        },
+
+                        {
+                            "Name": "LocationName",
+                            "BlockType": "text",
+                            //"MarginLeft": 12,
+                            //"MarginTop": 2,
+                            "VerticalAlignment": "Center",
+                            "Source": "  ·  {Session.Track.CircuitName}",
+                            "FontName": "{FontNameWide}",                            
+                            "FontSize": 18,
+                            "Foreground" : "{ForegroundDarker}"
+                        }
+                    ]
+                }
+            ]
+        },
+
+        //headerRight
+        {
+            "Name": "headerRightPart",
+            "BlockType": "stack",
+            "MarginLeft" : 56,
+            "Orientation": "Vertical",
+            "HorizontalAlignment": "Right",
+            "Items": [
+                {
+                    "BlockType": "stack",
+                    "Items": [
+                        {
+                            "BlockType": "stack",
+                            "Orientation": "Vertical",
+                            "Spacing": 8,
+                            "Items": [
+                                {
+                                    "BlockType": "text",
+                                    "HorizontalAlignment": "Right",
+                                    "Source": "[Round] {Event.Position} [of] {Season.SeasonOverallNumberEvents}",
+                                    "FontName": "{FontNameWide}",
+                                    "FontSize": 18,
+                                    "Foreground": "{ForegroundDarker}"
+                                },
+
+                                {
+                                    "BlockType": "stack",
+                                    "HorizontalAlignment": "Right",
+                                    "Items": [
+                                        {
+                                            "BlockType": "text",
+                                            "Source": "[{Session.SessionType}]",
+                                            "FontName": "{FontNameWide}",
+                                            "FontSize": 18
+                                        },
+                                        //race duration
+                                        {
+                                            "BlockType": "text",                                            
+                                            "RenderIf": false,
+                                            "Source": " • {Session.TotalLaps} [laps]",
+                                            "FontName": "{FontNameWide}",
+                                            "FontSize": 18,
+                                            "Triggers" : 
+                                            [
+                                                {
+                                                    "Condition" : "{Session.IsLiveData}",
+                                                    "ConditionAnd" : "{Session.SessionType, Converter=StringEquals, Parameter=Race}",
+                                                    "Property" : "RenderIf",
+                                                    "Value" : true
+                                                }
+                                            ]
+                                        },
+                                        //qual, practice duration
+                                        {
+                                            "BlockType": "text",                                                                                  
+                                            "RenderIf": false,
+                                            "Source": " • {Session.SessionDurationMinutes} [min].",
+                                            "FontName": "{FontNameWide}",
+                                            "FontSize": 18,
+                                            "Triggers" : 
+                                            [
+                                                {
+                                                    "Condition" : "{Session.IsLiveData}",
+                                                    "ConditionAnd" : "{Session.SessionType, Converter=StringNotEquals, Parameter=Race}",
+                                                    "Property" : "RenderIf",
+                                                    "Value" : true
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+
+                                {
+                                    "BlockType": "stack",
+                                    "RenderIf": "{Session.IsLiveData}",
+                                    "HorizontalAlignment": "Right",
+                                    "Spacing": 4,
+                                    "Items": [
+                                        {
+                                            "BlockType": "image",
+                                            "Height": 32,
+                                            "VerticalAlignment": "Center",
+                                            "Source": "weather_{Session.WeatherType}.png"
+                                        },
+                                        {
+                                            "BlockType": "text",
+                                            "VerticalAlignment": "Center",
+                                            "Source": "{Session.AirTemperatureString}",
+                                            "FontName": "{FontNameWide}",
+                                            "FontSize": 15
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+
+                        {
+                            "Name": "leagueLogo",
+                            "BlockType": "image",
+                            "Height": 82,
+                            "MarginLeft": 36,
+                            "Source": "{Season.LeagueInfo.LeagueLogo}"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

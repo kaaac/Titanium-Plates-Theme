@@ -1,0 +1,56 @@
+{
+    "BlockType": "dock",
+    "PaddingLeft": 12,
+    "PaddingRight": 4,    
+    "BackgroundImage": "images/Team.png",
+    "Height" : 73,
+    "Width" : 512,
+    "Items": [
+        //left part
+        {
+            "BlockType": "stack",                    
+            "HorizontalAlignment": "Right",
+            "VerticalAlignment": "Center",
+            "Items": [
+
+
+                //name
+                {
+                    "BlockType": "text",
+                    "MaxWidth": 600,                    
+                    "Source": "{Item.Team.Name}",
+                    //"HorizontalAlignment": "Right",
+                    "VerticalAlignment": "Center",
+                    "FontName": "{FontNameDefault}",
+                    "Foreground" : "#000000",
+                    "FontSize": 42,
+                    "TextOptions": {
+                        "HorizontalAlignment": "Right",
+                    }
+                }               
+            ]
+        },
+
+        //right part
+        {
+            "BlockType": "stack",           
+            "MarginRight": 16,
+            "HorizontalAlignment": "Right",
+            "VerticalAlignment": "Center",
+            "Items": [
+                //logo
+                {
+                    "BlockType": "image",
+                    "MarginLeft" : 12,
+                    "Height": 48,
+                    "MarginRight": 20,
+                    "VerticalAlignment": "Center",
+                    "ImageOptions": {
+                        "Path": "{Item.Team.LogoPath}",
+                        "VerticalAlignment": "Center"
+                    }
+                },
+            ]
+        }
+    ]
+}
