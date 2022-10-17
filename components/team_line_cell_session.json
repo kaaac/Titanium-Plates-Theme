@@ -2,7 +2,30 @@
     "BlockType": "dock",
     "PaddingLeft": 12,
     "PaddingRight": 4,    
-    "BackgroundImage": "images/Team.png",
+    "BackgroundImage": "images/team_bg/team_bg_{Item.Team.Name}.png",
+    "Triggers" : [
+        {
+            "Condition" : "{F1Mode, Converter=BoolReverse}",
+            "Property" : "BackgroundImage",
+            "Value" : "images/Team.png"
+        },
+        {
+            "Condition" : "{Item.PositionString, Converter=StringEquals, Parameter=1}",
+            "Property" : "BackgroundImage",
+            "Value" : "images/podium_bg/team_bg_gold.png"
+        },
+        {
+            "Condition" : "{Item.PositionString, Converter=StringEquals, Parameter=2}",
+            "Property" : "BackgroundImage",
+            "Value" : "images/podium_bg/team_bg_silver.png"
+        },
+        {
+            "Condition" : "{Item.PositionString, Converter=StringEquals, Parameter=3}",
+            "Property" : "BackgroundImage",
+            "Value" : "images/podium_bg/team_bg_copper.png"
+        }
+    ],
+    "UseBackgroundCrop" : false,
     "Height" : 73,
     "Width" : 512,
     "Items": [
@@ -10,7 +33,7 @@
         {
             "BlockType": "stack",                    
             "HorizontalAlignment": "Right",
-            "VerticalAlignment": "Center",
+            "VerticalAlignment": "Bottom",
             "Items": [
 
 
@@ -19,11 +42,14 @@
                     "BlockType": "text",
                     "MaxWidth": 600,                    
                     "Source": "{Item.Team.Name}",
-                    //"HorizontalAlignment": "Right",
-                    "VerticalAlignment": "Center",
-                    "FontName": "{FontNameDefault}",
-                    "Foreground" : "#000000",
-                    "FontSize": 42,
+                    "VerticalAlignment": "Bottom",
+                    "PaddingBottom": 20,
+                    "TextOptionsExtern" : "tableCellDefault",
+                    "Triggers" : [{
+                        "Condition" : "{Item.Position, Converter=NumberLess, Parameter=4}",
+                        "Property" : "Foreground",
+                        "Value" : "#ffffff"
+                    }],
                     "TextOptions": {
                         "HorizontalAlignment": "Right",
                     }
@@ -36,20 +62,42 @@
             "BlockType": "stack",           
             "MarginRight": 16,
             "HorizontalAlignment": "Right",
-            "VerticalAlignment": "Center",
+            "VerticalAlignment": "Bottom",
             "Items": [
                 //logo
                 {
                     "BlockType": "image",
+                    "Source" : "images/cars/{Item.Team.Name}.png",
                     "MarginLeft" : 12,
-                    "Height": 48,
+                    "Height": 73,
+                    "PaddingBottom" : -5,
                     "MarginRight": 20,
-                    "VerticalAlignment": "Center",
+                    "VerticalAlignment": "Bottom",
+                    //"RenderIf" : "{F1Mode}",
                     "ImageOptions": {
-                        "Path": "{Item.Team.LogoPath}",
-                        "VerticalAlignment": "Center"
-                    }
+                        "VerticalAlignment": "Center",
+                        
+                    },
+                    "Triggers" : [{
+                        "Condition" : "{F1Mode, Converter=BoolReverse}",
+                        "Property" : "Source",
+                        "Value" : "{Item.Team.LogoPath}"
+                    },]
                 },
+                //logo
+                //{
+                //    "BlockType": "image",
+                //    "MarginLeft" : 12,
+                //    "Height": 73,
+                //    "PaddingBottom" : -5,
+                //    "MarginRight": 20,
+                //    "VerticalAlignment": "Bottom",
+                //    "RenderIf" : "{F1Mode, Converter=BoolReverse}",
+                //    "ImageOptions": {
+                //        "Path": "{Item.Team.LogoPath}",
+                //        "VerticalAlignment": "Center",
+                //    }
+                //},
             ]
         }
     ]

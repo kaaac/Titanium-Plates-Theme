@@ -8,7 +8,19 @@
     {
         "Name" : "tableColumnHeader",
         "FontName": "{FontNameDefault}",
-        "FontSize": 16,
-        "Foreground": "{TableColumnHeaderForeground}"        
+        "FontSize": 28,
+        "Foreground": "#ffffff"        
     },
+    {
+        "Name" : "tableCellBold",
+        "FontName" : "{FontNameBold}",
+        "FontSize" : 37,
+        "Foreground" : "#000000"
+    },
+    {
+        "Name" : "tableCellDefault",
+        "FontName" : "{FontNameDefault}",
+        "FontSize" : 30,
+        "Foreground" : "#000000"
+    }
 ]

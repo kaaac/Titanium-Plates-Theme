@@ -1,0 +1,114 @@
+{
+    "Name" : "sticker_com",
+    "BlockType" : "dock",
+    "Orientation" : "Horizontal",
+    "Height" : 73,
+    "Width" : 765,
+    "BackgroundImage": "<bg>",
+    "VerticalAlignment" : "Center",
+    "Spacing" : 1,
+    "Items" :
+    [
+        {
+            "Name" : "txt1",
+            "BlockType" : "text",
+            "Source" : "<header>",
+            "VerticalAlignment" : "Bottom",
+            "HorizontalAlignment" : "Left",
+            "PaddingBottom" : 30,
+            "MarginLeft" : 25,
+            "FontName" : "{FontNameDefault}",
+            "FontSize" : 25,
+            "Foreground" : "#ffffff"
+        },
+        {
+            "BlockType": "dock",
+            "Orientation" : "Vertical",
+            "HorizontalAlignment" : "Right",
+            "MarginRight" : 25,
+            "Items" : [
+                {
+                    "BlockType" : "dock",
+                    "Orientation" : "Horizontal",
+                    //"VerticalAlignment" : "Bottom",
+                    "MarginTop": 5,
+                    "Items" : [
+                        {
+                            "BlockType" : "text",
+                            "Source" : "Streamer: ",
+                            "HorizontalAlignment": "Right",
+                            "RenderIf": "{SecondCommentator, Converter=EmptyObjectToFalse}",
+                            "VerticalAlignment" : "Bottom",
+                            "TextOptions": {
+                                "HorizontalAlignment": "Right",
+                                "FontName" : "{FontNameDefault}",
+                                "Foreground" : "#ffffff"
+                            }
+                        },
+                        {
+                            "BlockType" : "text",
+                            "Source" : "<streamer>",
+                            "HorizontalAlignment": "Right",
+                            "TextOptions": {
+                                "HorizontalAlignment": "Right",
+                                "FontName" : "{FontNameBold}",
+                                "FontSize" : 25,
+                                "Foreground" : "#ffffff"
+                            },
+                            "Triggers" : [
+                                {
+                                    "Condition" : "{SecondCommentator, Converter=EmptyObjectToTrue}",
+                                    "Setters" : [
+                                        {
+                                            "Property" : "FontSize",
+                                            "Value" : "40"
+                                        },
+                                        {
+                                            "Property" : "MarginTop",
+                                            "Value" : "5"
+                                        },
+                                        {
+                                            "Property" : "MarginRight",
+                                            "Value" : "50"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "BlockType" : "dock",
+                    "Orientation" : "Horizontal",
+                    "VerticalAlignment" : "Bottom",
+                    "RenderIf": "{SecondCommentator, Converter=EmptyObjectToFalse}",
+                    "MarginBottom" : 5,
+                    "Items" : [
+                        {
+                            "BlockType" : "text",
+                            "Source" : "Second commentator: ",
+                            "HorizontalAlignment": "Right",
+                            "VerticalAlignment" : "Bottom",
+                            "TextOptions": {
+                                "HorizontalAlignment": "Right",
+                                "FontName" : "{FontNameDefault}",
+                                "Foreground" : "#ffffff"
+                            }
+                        },
+                        {
+                            "BlockType" : "text",
+                            "Source" : "<secondcomm>",
+                            "HorizontalAlignment": "Right",
+                            "TextOptions": {
+                                "HorizontalAlignment": "Right",
+                                "FontName" : "{FontNameBold}",
+                                "FontSize" : 25,
+                                "Foreground" : "#ffffff"
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

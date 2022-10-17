@@ -1,5 +1,9 @@
 {
-    "ShowPenaltyPointsInStandings" : true,
-    "ShowWinnerInCalendar" : true,
-    "ShowEventDescriptionInCalendar" : true
+  "ShowPenaltyPointsInStandings": true,
+  "ShowWinnerInCalendar": true,
+  "ShowEventDescriptionInCalendar": true,
+  "F1Mode": true,
+  "DisplayPodiumCards" : true,
+  "Streamer": "Yety",
+  "SecondCommentator": ""
 }

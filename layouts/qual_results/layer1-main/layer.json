@@ -1,0 +1,20 @@
+{
+    "BlockRoot": {
+        "Name": "mainStack",
+        "BlockType": "stack",
+        "Margin": "{MarginRoot}",    
+        "Orientation": "Vertical",
+        "Items": [
+            //header block
+            {
+                "BlockType" : "component",
+                "ComponentName" : "header_block_session"
+            },
+            //separator
+            {
+                "BlockType" : "component",
+                "ComponentName" : "separator"
+            },
+        ]
+    }
+}

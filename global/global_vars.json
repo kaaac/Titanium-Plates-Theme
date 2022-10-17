@@ -10,10 +10,11 @@
     "LMM": "LEMONMILK-Medium",
 
     //margins
-    "MarginRoot" : "1, 0, 1, 1",
+    "MarginRoot" : "0, 0, 0, 0",
     "MarginTable" : "0, 0",
 
     //colors
+    "HeaderForeground" : "#ffffff",
     "ForegroundDarker" : "#FF969696",
     "TableColumnHeaderForeground" : "#AABBBBBB",
     "PenaltyTimeGameForeground" : "#BB7373",
@@ -35,9 +36,10 @@
     "SeasonProgressPositionTop1Foregound" : "#DDDD11",
     "SeasonProgressPointsForeground" : "#AFAFAF",
     "SeasonProgressPointsZeroForeground" : "#666666",
-    "SeasonProgressPointsTopForeground" : "#C2C2C2"
+    "SeasonProgressPointsTopForeground" : "#C2C2C2",
 
-
+    //sizes
+    "FontSizeRightPart" : "25"
 
 
     

@@ -3,6 +3,23 @@
     "PaddingLeft": 12,
     "PaddingRight": 4,
     "BackgroundImage": "images/Driver.png",
+    "Triggers" : [
+        {
+            "Condition" : "{Item.PositionString, Converter=StringEquals, Parameter=1}",
+            "Property" : "BackgroundImage",
+            "Value" : "images/podium_bg/driver_bg_gold.png"
+        },
+        {
+            "Condition" : "{Item.PositionString, Converter=StringEquals, Parameter=2}",
+            "Property" : "BackgroundImage",
+            "Value" : "images/podium_bg/driver_bg_silver.png"
+        },
+        {
+            "Condition" : "{Item.PositionString, Converter=StringEquals, Parameter=3}",
+            "Property" : "BackgroundImage",
+            "Value" : "images/podium_bg/driver_bg_copper.png"
+        }
+    ],
     "Height" : 73,
     "Width" : 631,
     "ColorizeBackground": {
@@ -10,31 +27,32 @@
         "Color": "#FFFF00",
         "BlendPercentage": 10
     },
-    "Triggers": [
-        {
-            "Condition": "{ItemIndex, Converter=NumberEquals, Parameter=0}",
-            "Property": "ColorizeBackgroundOptions.Enabled",
-            "Value": true
-        }
-    ],
     "Items": [
         //left part
         {
             "BlockType": "stack",
             "HorizontalAlignment": "Left",
-            "VerticalAlignment": "Center",
+            "VerticalAlignment": "Bottom",
+            "PaddingBottom" : 10,
             "Items": [
                  //position
                  {
                     "BlockType": "text",
                     "MaxWidth": 90,
                     "MarginLeft": 0,
+                    "Width" : 50,
                     "Source": "{Item.PositionString}",
-                    "HorizontalAlignment": "Left",
+                    "HorizontalAlignment": "Center",
                     "VerticalAlignment": "Center",
-                    "FontName": "{FontNameDefault}",
-                    "Foreground" : "#000000",
-                    "FontSize": 42
+                    "TextOptionsExtern" : "tableCellBold",
+                    "Triggers" : [{
+                        "Condition" : "{Item.Position, Converter=NumberLess, Parameter=4}",
+                        "Property" : "Foreground",
+                        "Value" : "#ffffff"
+                    }],
+                    "TextOptions" : {
+                        "HorizontalAlignment" : "Center"
+                    }
                 },
                 //name
                 {
@@ -44,15 +62,19 @@
                     "Source": "{Item.Driver.Name}",
                     "HorizontalAlignment": "Left",
                     "VerticalAlignment": "Center",
-                    "FontName": "{FontNameDefault}",
-                    "Foreground" : "#000000",
-                    "FontSize": 42
+                    "TextOptionsExtern" : "tableCellBold",
+                    "Triggers" : [{
+                        "Condition" : "{Item.Position, Converter=NumberLess, Parameter=4}",
+                        "Property" : "Foreground",
+                        "Value" : "#ffffff"
+                    }]
                 },
                 //flag
                 {
                     "BlockType": "image",
                     "Height": 48,
                     "MarginRight": 0,
+                    "MarginLeft" : 5,
                     "VerticalAlignment": "Center",
                     "ImageOptions": {
                         "Path": "{Item.Driver.Nationality.LogoPath}",

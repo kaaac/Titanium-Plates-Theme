@@ -4,15 +4,9 @@
         "BlockType": "stack",
         "Items": [
             {
-                "Name": "bg-new",
-                "BlockType": "Shape",
-                "Width" : 5000,
-                "Height" : 5000,
-                "ShapeOptions" : {
-                    "ShapeType" : "rectangular",
-                    "Fill" : "#ffffff"
-                }
-                //"Source": "images/bg{Session.Track.CircuitName}.png"
+                "Name": "bg",
+                "BlockType": "image", 
+                "Source": "images/bg.png"
             }
         ]
     }
