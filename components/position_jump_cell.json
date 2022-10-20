@@ -21,6 +21,11 @@
             "Condition" : "{Item.PositionString, Converter=StringEquals, Parameter=3}",
             "Property" : "BackgroundImage",
             "Value" : "images/podium_bg/pchange_bg_copper.png"
+        },
+        {
+            "Condition" : "{Item.Team.Name, Converter=EmptyObjectToTrue}",
+            "Property" : "BackgroundImage",
+            "Value" : "images/pchange_bg.png"
         }
     ],
     "Width" : 66,

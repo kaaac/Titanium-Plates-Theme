@@ -2,9 +2,7 @@
     "Name": "headerBlock",
     "BlockType": "dock",
     "Orientation": "Horizontal",
-    //"Background" : "#2d2c28",
     "Padding" : "45,10,45,0",
-    //"MarginBottom" : 1,
     "Items": [
         //headerLeft
         {
@@ -73,31 +71,31 @@
                     "Source": "{Season.LeagueInfo.LeagueLogo}"
                 },
                 {
-                "Name" : "middleheader",
-                "BlockType":"stack",
-                "Orientation" : "Vertical",
-                "HorizontalAlignment" : "Center",
-                "Items" :[
-                    {
-                        "BlockType" : "text",
-                        "FontSize" : 60,
-                        "Foreground" : "{HeaderForeground}",
-                        "FontName" : "{FontNameBold}",
-                        "VerticalAlignment" : "Top",
-                        "Source" : "{Season.Name}"
-                    },
-                    {
-                        "BlockType" : "text",
-                        "FontSize" : 40,
-                        "Foreground" : "{HeaderForeground}",
-                        "FontName" : "{FontNameBold}",
-                        "VerticalAlignment" : "Top",
-                        "HorizontalAlignment" : "Center",
-                        "Source" : "{Season.LeagueInfo.LeagueFullName}"
-                    }
-                ]
-            }
-        ]
+                    "Name" : "middleheader",
+                    "BlockType":"stack",
+                    "Orientation" : "Vertical",
+                    "HorizontalAlignment" : "Center",
+                    "Items" :[
+                        {
+                            "BlockType" : "text",
+                            "FontSize" : 60,
+                            "Foreground" : "{HeaderForeground}",
+                            "FontName" : "{FontNameBold}",
+                            "VerticalAlignment" : "Top",
+                            "Source" : "{Season.Name}"
+                        },
+                        {
+                            "BlockType" : "text",
+                            "FontSize" : 40,
+                            "Foreground" : "{HeaderForeground}",
+                            "FontName" : "{FontNameBold}",
+                            "VerticalAlignment" : "Top",
+                            "HorizontalAlignment" : "Center",
+                            "Source" : "{Season.LeagueInfo.LeagueFullName}"
+                        }
+                    ]
+                }
+            ]
         },
         //headerRight
         {

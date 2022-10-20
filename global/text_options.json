@@ -22,5 +22,13 @@
         "FontName" : "{FontNameDefault}",
         "FontSize" : 30,
         "Foreground" : "#000000"
+    },
+    {
+        "Name" : "HorizontalRight",
+        "HorizontalAlignment" : "Right"
+    },
+    {
+        "Name" : "HorizontalCetner",
+        "HorizontalAlignment" : "Center"
     }
 ]

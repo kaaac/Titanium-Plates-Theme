@@ -1,0 +1,59 @@
+{
+    "Name" : "sticker_fl",
+    "BlockType" : "dock",
+    "Orientation" : "Horizontal",
+    "Height" : 73,
+    "Width" : 765,
+    "BackgroundImage": "<bg>",
+    "VerticalAlignment" : "Center",   
+    "Spacing" : 1,
+    "Items" :
+    [
+        {
+            "Name" : "txt1",
+            "BlockType" : "text",
+            "Source" : "<header>",
+            "VerticalAlignment" : "Bottom",
+            "HorizontalAlignment" : "Left",
+            "PaddingBottom" : 30,
+            "MarginLeft" : 50,
+            "FontName" : "{FontNameDefault}",
+            "FontSize" : 25,
+            "Foreground" : "#ffffff"
+        },
+
+        {
+            "Name" : "txt1",
+            "BlockType" : "text",
+            "Source" : "<main>",
+            "VerticalAlignment" : "Bottom",
+            "HorizontalAlignment" : "Center",
+            "FontName" : "{FontNameBold}",
+            "PaddingBottom" : 25,
+            "FontSize" : 32,
+            "Foreground" : "#ffffff"
+        },
+
+        {
+            "Name" : "txt1",
+            "BlockType" : "text",
+            "Source" : "<data>",
+            "VerticalAlignment" : "Bottom",
+            "HorizontalAlignment" : "Right",
+            "FontName" : "{FontNameBold}",
+            "FontSize" : 40,
+            "PaddingBottom" : 25,
+            "Foreground" : "#ffffff"
+        },
+        {
+            "Name" : "tyre",
+            "BlockType" : "image",
+            "Source" : "<tyre>",
+            "HorizontalAlignment" : "Right",
+            "VerticalAlignment" : "Bottom",
+            "PaddingBottom" : 10,
+            "MarginRight" : 10,
+            "Height" : 57
+        }
+    ]
+}

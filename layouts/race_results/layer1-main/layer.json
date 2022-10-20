@@ -20,7 +20,7 @@
                 "MarginRight": 0,
                 "MarginBottom": 5,
                 "Width": "*",
-                "Source": "separator.png"
+                "Source": "images/separator.png"
             },
             {
                 "BlockType": "stack",
@@ -82,19 +82,6 @@
                                         "TextOptionsExtern" : "tableColumnHeader"
                                     },
                                     "Columns": [
-                                        // //position
-                                        //{
-                                        //    "Header": "",
-                                        //    "Template": {
-                                        //        "BlockType" : "component",                                
-                                        //        "ComponentName" : "position_cell",
-                                        //        "ComponentOptions" :{
-                                        //            "Vars" :{
-                                        //                "position" : "{Item.PositionString}"
-                                        //            }
-                                        //        }
-                                        //    }
-                                        //},
 
                                         //driver line
                                         {
@@ -389,13 +376,14 @@
                                                 "RenderIf" : "{Session.FastestLapDriver, Converter=EmptyObjectToFalse}",
                                                 "ComponentOptions" :
                                                 {
-                                                    "ComponentName" : "sticker",
+                                                    "ComponentName" : "sticker_fl",
                                                     "Vars" :
                                                     {
                                                         "bg" : "images/fastlap_bg.png",
                                                         "header" : "FASTEST LAP",
                                                         "main" : "{Session.FastestLapDriver.Name}",
-                                                        "data" : "{Session.FastestLapTime}"
+                                                        "data" : "{Session.FastestLapTime}",
+                                                        "tyre" : "images/tyres/tyres_{Session.FastestLapTyres}.png"
                                                     }
                                                 }
                                             },

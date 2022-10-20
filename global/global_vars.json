@@ -10,7 +10,7 @@
     "LMM": "LEMONMILK-Medium",
 
     //margins
-    "MarginRoot" : "0, 0, 0, 0",
+    "MarginRoot" : "0, 0, 0, 25",
     "MarginTable" : "0, 0",
 
     //colors
@@ -23,7 +23,7 @@
     "FastestLapRaceStickerBackground" : "#20CC00CC",
     "DriverDayRaceStickerBackground" : "#2000CC00",
     "FastestLapQualSelectedForeground" : "#CC25CC",
-    "StandingsPointsForeground" : "#c7c7c7",
+    "StandingsPointsForeground" : "#ffffff",
     "Standings1stCountForeground" : "#D2B200",
     "Standings2ndCountForeground" : "#AEB6BF",
     "Standings3rdCountForeground" : "#BA957B",
