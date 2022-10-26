@@ -259,7 +259,7 @@
                                                 "BlockType": "itemstack",
                                                 "Spacing": 4,
                                                 "Padding": "12, 0",
-                                                "Width" : 423,
+                                                //"Width" : 423,
                                                 "MarginLeft" : 5,
                                                 "MarginRight" : 5,
                                                 "BackgroundImage" : "images/data_bg/stints_bg.png",

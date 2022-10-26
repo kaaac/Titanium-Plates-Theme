@@ -1,0 +1,116 @@
+{
+    "BlockType": "dock",
+    "PaddingLeft": 12,
+    "PaddingRight": 4,    
+    "BackgroundImage": "images/team_bg/team_bg_{Item.Team.Name}.png",
+    "Triggers" : [
+        {
+            "Condition" : "{F1Mode, Converter=BoolReverse}",
+            "Property" : "BackgroundImage",
+            "Value" : "images/Team.png"
+        },
+        {
+            "Condition" : "{Item.Team.Name, Converter=EmptyObjectToTrue}",
+            "Property" : "BackgroundImage",
+            "Value" : "images/Team.png"
+        },
+        {
+            "Condition" : "{Item.PositionString, Converter=StringEquals, Parameter=1}",
+            "Property" : "BackgroundImage",
+            "Value" : "images/podium_bg/team_bg_gold.png"
+        },
+        {
+            "Condition" : "{Item.PositionString, Converter=StringEquals, Parameter=2}",
+            "Property" : "BackgroundImage",
+            "Value" : "images/podium_bg/team_bg_silver.png"
+        },
+        {
+            "Condition" : "{Item.PositionString, Converter=StringEquals, Parameter=3}",
+            "Property" : "BackgroundImage",
+            "Value" : "images/podium_bg/team_bg_copper.png"
+        }
+    ],
+    "UseBackgroundCrop" : false,
+    "Height" : 73,
+    //"Width" : 512,
+    "Items": [
+        //position
+        {
+            "BlockType": "text",
+            "MaxWidth": 90,
+            "MarginLeft": 0,
+            "Width" : 50,
+            "PaddingBottom": 10,
+            "MarginRight": 20,
+            "Source": "{Item.PositionString}",
+            "HorizontalAlignment": "Left",
+            "VerticalAlignment": "Bottom",
+            "TextOptionsExtern" : "tableCellBold",
+            "Triggers" : [{
+                "Condition" : "{Item.Position, Converter=NumberLess, Parameter=4}",
+                "Property" : "Foreground",
+                "Value" : "#ffffff"
+            }],
+            "TextOptions" : {
+                "HorizontalAlignment" : "Center"
+            }
+        },
+        //left part
+        {
+            "BlockType": "stack",                    
+            "HorizontalAlignment": "Right",
+            "VerticalAlignment": "Bottom",
+            "Items": [
+                 
+
+                //name
+                {
+                    "BlockType": "text",
+                    "MaxWidth": 600,                    
+                    "Source": "{Item.Team.Name}",
+                    "VerticalAlignment": "Bottom",
+                    "PaddingBottom": 20,
+                    "TextOptionsExtern" : "tableCellDefault",
+                    "Triggers" : [{
+                        "Condition" : "{Item.Position, Converter=NumberLess, Parameter=4}",
+                        "Property" : "Foreground",
+                        "Value" : "#ffffff"
+                    }],
+                    "TextOptions": {
+                        "HorizontalAlignment": "Right",
+                    }
+                }
+            ]
+        },
+
+        //right part
+        {
+            "BlockType": "stack",           
+            "MarginRight": 16,
+            "HorizontalAlignment": "Right",
+            "VerticalAlignment": "Bottom",
+            "RenderIf" : "{Item.Team.Name, Converter=EmptyObjectToFalse}",
+            "Items": [
+                //logo
+                {
+                    "BlockType": "image",
+                    "Source" : "images/cars/{Item.Team.Name}.png",
+                    "MarginLeft" : 12,
+                    "Height": 73,
+                    "PaddingBottom" : -5,
+                    "MarginRight": 20,
+                    "VerticalAlignment": "Bottom",
+                    "ImageOptions": {
+                        "VerticalAlignment": "Center",
+                        
+                    },
+                    "Triggers" : [{
+                        "Condition" : "{F1Mode, Converter=BoolReverse}",
+                        "Property" : "Source",
+                        "Value" : "{Item.Team.LogoPath}"
+                    },]
+                }
+            ]
+        }
+    ]
+}

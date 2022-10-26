@@ -2,7 +2,7 @@
     "BlockRoot": {
         "Name": "mainStack",
         "BlockType": "stack",
-        "Margin": "{MarginRoot}",
+        "Margin": "{MarginRoot}",       
         "Orientation": "Vertical",
         "Items": [
             //header block
@@ -28,54 +28,57 @@
                 "Width": "*",
                 "Source": "images/separator.png"
             },
-            //table
             {
                 "Name": "mainTable",
                 "BlockType": "table",
                 "HorizontalAlignment" : "Center",
                 //"Margin" : "{MarginTable}",
-                //"Margin" : "auto",
                 //"MarginRight" : 200,
                 "TableOptions": {
-                    "ItemsSource": "{Standings.Drivers}",
+                    "ItemsSource": "{Standings.Teams}",
                     "RowSpacing": 16,
-                    "ColSpacing": 0,
                     "HeaderTemplate": {
                         "BlockType": "text",
                         "MarginBottom": 8,
                         "TextOptionsExtern" : "tableColumnHeader"
                     },
                     "Columns": [
-
-                        //driver line
-                        {
-                            "Header": "Driver",
-                            //"WidthStretch" : true,                            
-                            "Template": {
-                                "BlockType" : "component",
-                                "ComponentName" : "driver_line_cell_session"   
-                            }
-                        },                        
                         {
                             "Header": "Team",
                             //"WidthStretch" : true,
                             "Template":
                             {
                                 "BlockType" : "component",
-                                "ComponentName" : "team_line_cell_session"                                
+                                "ComponentName" : "team_line_cell_team_standings"                                
                             }
                         },
+                   
+
                         //points
                         {
-                            "Header": "Points",
+                            "Header": "[PTS]",
+                            "MarginLeft" : 0,
                             "Template": {
                                 
                                 "BlockType": "dock",
-                                "Height" : 73,
                                 "PaddingLeft" : 24,
                                 "PaddingRight" : 24,
-                                "BackgroundImage": "images/team_bg/gap_bg_{Item.Team.Name}.png",
-                                "Triggers" : [
+                                "Height" : 73,
+                                "BackgroundImage": "images/team_bg/gap_bg_{Item.Team.Name}.png",                            
+                                "Items": [                                    
+                                    {
+                                        "BlockType": "text",
+                                        "Source": "{Item.Points}",
+                                        "HorizontalAlignment": "Right",
+                                        "VerticalAlignment": "Center",
+                                        "TextOptionsExtern": "positionNumber",
+                                        "Foreground" : "{StandingsPointsForeground}",
+                                        "FontName": "{FontNameBold}",
+                                        "FontSize": 45,
+                                    }
+                                ],
+                                "Triggers" :
+                                [
                                     {
                                         "Condition" : "{F1Mode, Converter=BoolReverse}",
                                         "Property" : "BackgroundImage",
@@ -102,129 +105,92 @@
                                         "Value" : "images/gap_bg.png"
                                     },
                                     {
-                                        "Condition" : "{Standings.IsPositionJumpForDriversExists}",
+                                        "Condition" : "{Standings.IsPositionJumpForTeamsExists}",
                                         "Property" : "PaddingRight",
-                                        "Value" : 4
-                                    }
-                                ],
-                                
-                                "Items": [                                    
-                                    {
-                                        "BlockType": "text",
-                                        "Source": "{Item.Points}",
-                                        "HorizontalAlignment": "Right",
-                                        "VerticalAlignment": "Center",
-                                        "Foreground" : "{StandingsPointsForeground}",
-                                        "FontName": "{FontNameBold}",
-                                        "FontSize": 45,   
+                                        "Value" : 24
                                     }
                                 ]
                             }
                         },
 
                          //position_jump
-                         {
-                            "Header": "",
-                            "PaddingLeft" : 0,
-                            "MarginLeft" : -4,
-                            "Template":
-                            {
-                                "BlockType" : "component",
-                                "PaddingLeft" : 0,                               
-                                "PaddingRight" : 12,
-                                "ComponentName" : "position_jump_cell"    
-                            }
-                        },
+                        // {
+                        //    "Header": "",
+                        //    "PaddingLeft" : 0,
+                        //    "MarginLeft" : -4,
+                        //    "Template":
+                        //    {
+                        //        "BlockType" : "component",
+                        //        "PaddingLeft" : 0,                               
+                        //        "PaddingRight" : 12,
+                        //        "ComponentName" : "jump_cell"    
+                        //    }
+                        //},
 
                         //podiums
                         {
-                            "Header" : "Wins",
+                            "Header" : "[Wins]",
                             "MarginLeft" : 20,
                             "Template":{
                                 "BlockType" : "text",
                                 "Padding": "24, 0",
-                                "Background": "{BackgroundDefault}",
                                 "Source" : "{Item.CountP1, Converter=NumberZeroToEmpty}",
-                                "Foreground" : "{Standings1stCountForeground}",
-                                "TextOptionsExtern" : "primaryNumber"
+                                "TextOptionsExtern" : "positionNumber"
                             }
                         },
                         {
-                            "Header" : "2nd",
+                            "Header" : "[2nd]",
                             "MarginLeft" : 0,
                             "Template":{
                                 "BlockType" : "text",
                                 "Padding": "24, 0",
-                                "Background": "{BackgroundDefault}",
                                 "Source" : "{Item.CountP2, Converter=NumberZeroToEmpty}",
-                                "Foreground" : "{Standings2ndCountForeground}",
-                                "TextOptionsExtern" : "primaryNumber"
+                                "TextOptionsExtern" : "positionNumber"
                             }
                         },
                         {
-                            "Header" : "3rd",
+                            "Header" : "[3rd]",
                             "MarginLeft" : 0,
                             "Template":{
                                 "BlockType" : "text",
                                 "Padding": "24, 0",
-                                "Background": "{BackgroundDefault}",
                                 "Source" : "{Item.CountP3, Converter=NumberZeroToEmpty}",
-                                "Foreground" : "{Standings3rdCountForeground}",
-                                "TextOptionsExtern" : "primaryNumber"
+                                "TextOptionsExtern" : "positionNumber"
                             }
                         },
 
                         //stats
                         {
-                            "Header" : "FL",
+                            "Header" : "[FL]",
                             "MarginLeft" : 12,
                             "Template":{
                                 "BlockType" : "text",
                                 "Padding": "24, 0",
-                                "Background": "{BackgroundDefault}",
                                 "Source" : "{Item.RaceFastestLapCount, Converter=NumberZeroToEmpty}",
-                                "Foreground" : "{StandingsFastestLapCountForeground}",
-                                "TextOptionsExtern" : "primaryNumber"
+                                "TextOptionsExtern" : "positionNumber"
                             }
                         },
                         {
-                            "Header" : "Poles",
+                            "Header" : "[Poles]",
                             "MarginLeft" : 0,
                             "Template":{
                                 "BlockType" : "text",
                                 "Padding": "24, 0",
-                                "Background": "{BackgroundDefault}",
                                 "Source" : "{Item.CountQualP1, Converter=NumberZeroToEmpty}",
-                                "Foreground" : "{StandingsPoleCountForeground}",
-                                "TextOptionsExtern" : "primaryNumber"
+                                "TextOptionsExtern" : "positionNumber"
                             }
-                        },
-
-                        //penalty points
-                        {
-                            "Header" : "Pen. pts",                            
-                            "MarginLeft" : 16,
-                            "Template":{
-                                "BlockType" : "text",
-                                "RenderIf" : "{ShowPenaltyPointsInStandings}",
-                                "Padding": "24, 0",
-                                "Background": "{BackgroundDefault}",
-                                "Source" : "{Item.PenaltyPoints, Converter=NumberZeroToEmpty}",
-                                "Foreground" : "{StandingsPenaltyPointCountForeground}",
-                                "TextOptionsExtern" : "primaryNumber"
-                            }
-                        },
+                        },                        
 
                         //events
                         {
-                            "Header" : "Events",
+                            "Header" : "[Events]",
                             "MarginLeft" : 12,
                             "Template":{
                                 "BlockType" : "text",
                                 "Padding": "24, 0",
-                                "Background": "{BackgroundDefault}",
                                 "Source" : "{Item.EventsCount, Converter=NumberZeroToEmpty}",                                
-                                "TextOptionsExtern" : "primaryNumber"
+                                "TextOptionsExtern" : "positionNumber",
+                                "MarginRight":30
                             }
                         }
 

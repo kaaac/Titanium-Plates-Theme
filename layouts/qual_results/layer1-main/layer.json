@@ -59,7 +59,7 @@
                             "Template":
                             {
                                 "BlockType" : "component",
-                                "ComponentName" : "driver_line_cell_session"                                
+                                "ComponentName" : "driver_line_cell_quali"                                
                             }
                         },
                         {
@@ -68,7 +68,7 @@
                             "Template":
                             {
                                 "BlockType" : "component",
-                                "ComponentName" : "team_line_cell_session"                                
+                                "ComponentName" : "team_line_cell_quali"                                
                             }
                         },
                         //interval
@@ -76,7 +76,7 @@
                             "Header": "[Interval]",
                             "Template": {
                                 "Padding": "12, 0",
-                                "BackgroundImage": "images/team_bg/gap_bg_{Item.Team.Name}.png",
+                                "BackgroundImage": "images/quali_bg/gap_bg_{Item.Team.Name}.png",
                                 "Triggers" : [
                                     {
                                         "Condition" : "{F1Mode, Converter=BoolReverse}",
@@ -86,17 +86,7 @@
                                     {
                                         "Condition" : "{Item.PositionString, Converter=StringEquals, Parameter=1}",
                                         "Property" : "BackgroundImage",
-                                        "Value" : "images/podium_bg/gap_bg_gold.png"
-                                    },
-                                    {
-                                        "Condition" : "{Item.PositionString, Converter=StringEquals, Parameter=2}",
-                                        "Property" : "BackgroundImage",
-                                        "Value" : "images/podium_bg/gap_bg_silver.png"
-                                    },
-                                    {
-                                        "Condition" : "{Item.PositionString, Converter=StringEquals, Parameter=3}",
-                                        "Property" : "BackgroundImage",
-                                        "Value" : "images/podium_bg/gap_bg_copper.png"
+                                        "Value" : "images/quali_bg/gap_bg_purple.png"
                                     }
                                 ],
                                 "BlockType": "text",
@@ -229,10 +219,11 @@
                                 "BlockType": "itemstack",
                                 "Spacing": 4,
                                 "Padding": "12, 0",
-                                "Width" : 423,
+                                //"Width" : 423,
                                 "MarginLeft" : 5,
                                 "MarginRight" : 5,
-                                "BackgroundImage" : "images/data_bg/stints_bg.png",
+                                "HorizontalAlignment": "Center",
+                                "BackgroundImage" : "images/quali_bg/stints_bg_q.png",
                                 "ItemStackOptions": {
                                     "ItemSource": "{Item.Stints}",
                                     "Template": {
