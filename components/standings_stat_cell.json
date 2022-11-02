@@ -1,0 +1,17 @@
+{
+    "BlockType" : "dock",
+    "Height" : 73,
+    "Width" : "<width>",
+    "BackgroundImage" : "<bgimage>",
+    "Items" : [
+        {
+            "BlockType" : "text",
+            "Source" : "<source>",
+            "TextOptionsExtern" : "tableCellBold",
+            "Foreground" : "<foregr>",
+            "HorizontalAlignment" : "Center",
+            "VerticalAlignment" : "Bottom",
+            "PaddingBottom" : 17,
+        }
+    ]
+}

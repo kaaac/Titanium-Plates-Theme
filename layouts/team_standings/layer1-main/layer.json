@@ -5,7 +5,6 @@
         "Margin": "{MarginRoot}",       
         "Orientation": "Vertical",
         "Items": [
-            //header block
             {               
                 "BlockType": "component",
                 "ComponentName": "header_block",
@@ -17,7 +16,6 @@
                     }
                 }               
             },
-            ////separator
             {
                 "Name" : "separator",
                 "BlockType": "image",
@@ -32,8 +30,6 @@
                 "Name": "mainTable",
                 "BlockType": "table",
                 "HorizontalAlignment" : "Center",
-                //"Margin" : "{MarginTable}",
-                //"MarginRight" : 200,
                 "TableOptions": {
                     "ItemsSource": "{Standings.Teams}",
                     "RowSpacing": 16,
@@ -45,16 +41,12 @@
                     "Columns": [
                         {
                             "Header": "Team",
-                            //"WidthStretch" : true,
                             "Template":
                             {
                                 "BlockType" : "component",
                                 "ComponentName" : "team_line_cell_team_standings"                                
                             }
                         },
-                   
-
-                        //points
                         {
                             "Header": "[PTS]",
                             "MarginLeft" : 0,
@@ -64,17 +56,16 @@
                                 "PaddingLeft" : 24,
                                 "PaddingRight" : 24,
                                 "Height" : 73,
-                                "BackgroundImage": "images/quali_bg/gap_bg_{Item.Team.Name}.png",                            
+                                "BackgroundImage": "images/team_standings/gap_bg_{Item.Team.Name}.png",                            
                                 "Items": [                                    
                                     {
                                         "BlockType": "text",
                                         "Source": "{Item.Points}",
                                         "HorizontalAlignment": "Right",
                                         "VerticalAlignment": "Center",
-                                        "TextOptionsExtern": "positionNumber",
                                         "Foreground" : "{StandingsPointsForeground}",
                                         "FontName": "{FontNameBold}",
-                                        "FontSize": 45,
+                                        "FontSize": 45
                                     }
                                 ],
                                 "Triggers" :
@@ -84,21 +75,21 @@
                                         "Property" : "BackgroundImage",
                                         "Value" : "images/gap_bg.png"
                                     },
-                                    //{
-                                    //    "Condition" : "{Item.PositionString, Converter=StringEquals, Parameter=1}",
-                                    //    "Property" : "BackgroundImage",
-                                    //    "Value" : "images/team_standings/gap_bg_gold.png"
-                                    //},
-                                    //{
-                                    //    "Condition" : "{Item.PositionString, Converter=StringEquals, Parameter=2}",
-                                    //    "Property" : "BackgroundImage",
-                                    //    "Value" : "images/team_standings/gap_bg_silver.png"
-                                    //},
-                                    //{
-                                    //    "Condition" : "{Item.PositionString, Converter=StringEquals, Parameter=3}",
-                                    //    "Property" : "BackgroundImage",
-                                    //    "Value" : "images/team_standings/gap_bg_copper.png"
-                                    //},
+                                    {
+                                        "Condition" : "{Item.PositionString, Converter=StringEquals, Parameter=1}",
+                                        "Property" : "BackgroundImage",
+                                        "Value" : "images/team_standings/gap_bg_gold.png"
+                                    },
+                                    {
+                                        "Condition" : "{Item.PositionString, Converter=StringEquals, Parameter=2}",
+                                        "Property" : "BackgroundImage",
+                                        "Value" : "images/team_standings/gap_bg_silver.png"
+                                    },
+                                    {
+                                        "Condition" : "{Item.PositionString, Converter=StringEquals, Parameter=3}",
+                                        "Property" : "BackgroundImage",
+                                        "Value" : "images/team_standings/gap_bg_copper.png"
+                                    },
                                     {
                                         "Condition" : "{Item.Team.Name, Converter=EmptyObjectToTrue}",
                                         "Property" : "BackgroundImage",
@@ -112,89 +103,111 @@
                                 ]
                             }
                         },
-
-                         //position_jump
-                        // {
-                        //    "Header": "",
-                        //    "PaddingLeft" : 0,
-                        //    "MarginLeft" : -4,
-                        //    "Template":
-                        //    {
-                        //        "BlockType" : "component",
-                        //        "PaddingLeft" : 0,                               
-                        //        "PaddingRight" : 12,
-                        //        "ComponentName" : "jump_cell"    
-                        //    }
-                        //},
-
-                        //podiums
+                        {
+                            "Header": "",
+                            "PaddingLeft" : 0,
+                            "MarginLeft" : -4,
+                            "Template":
+                            {
+                                "BlockType" : "component",
+                                "PaddingLeft" : 0,                               
+                                "PaddingRight" : 12,
+                                "ComponentName" : "position_jump_cell"    
+                            }
+                        },
                         {
                             "Header" : "[Wins]",
                             "MarginLeft" : 20,
                             "Template":{
-                                "BlockType" : "text",
-                                "Padding": "24, 0",
-                                "Source" : "{Item.CountP1, Converter=NumberZeroToEmpty}",
-                                "TextOptionsExtern" : "positionNumber"
+                                "BlockType" : "component",
+                                "ComponentOptions":{
+                                    "ComponentName" : "standings_stat_cell",
+                                    "Vars" : {
+                                        "width" : "80",
+                                        "bgimage" : "images/bg_start.png",
+                                        "source" : "{Item.CountP1, Converter=NumberZeroToEmpty}",
+                                        "foregr" : "{Standings1stCountForeground}"
+                                    }
+                                }
                             }
                         },
                         {
                             "Header" : "[2nd]",
                             "MarginLeft" : 0,
                             "Template":{
-                                "BlockType" : "text",
-                                "Padding": "24, 0",
-                                "Source" : "{Item.CountP2, Converter=NumberZeroToEmpty}",
-                                "TextOptionsExtern" : "positionNumber"
+                                "BlockType" : "component",
+                                "ComponentOptions":{
+                                    "ComponentName" : "standings_stat_cell",
+                                    "Vars" : {
+                                        "width" : "80",
+                                        "bgimage" : "images/bg_position.png",
+                                        "source" : "{Item.CountP2, Converter=NumberZeroToEmpty}",
+                                        "foregr" : "{Standings2ndCountForeground}"
+                                    }
+                                }
                             }
                         },
                         {
                             "Header" : "[3rd]",
                             "MarginLeft" : 0,
                             "Template":{
-                                "BlockType" : "text",
-                                "Padding": "24, 0",
-                                "Source" : "{Item.CountP3, Converter=NumberZeroToEmpty}",
-                                "TextOptionsExtern" : "positionNumber"
+                                "BlockType" : "component",
+                                "ComponentOptions":{
+                                    "ComponentName" : "standings_stat_cell",
+                                    "Vars" : {
+                                        "width" : "80",
+                                        "bgimage" : "images/bg_position.png",
+                                        "source" : "{Item.CountP3, Converter=NumberZeroToEmpty}",
+                                        "foregr" : "{Standings3rdCountForeground}"
+                                    }
+                                }
                             }
                         },
-
-                        //stats
                         {
                             "Header" : "[FL]",
-                            "MarginLeft" : 12,
                             "Template":{
-                                "BlockType" : "text",
-                                "Padding": "24, 0",
-                                "Source" : "{Item.RaceFastestLapCount, Converter=NumberZeroToEmpty}",
-                                "TextOptionsExtern" : "positionNumber"
+                                "BlockType" : "component",
+                                "ComponentOptions":{
+                                    "ComponentName" : "standings_stat_cell",
+                                    "Vars" : {
+                                        "width" : "80",
+                                        "bgimage" : "images/bg_position.png",
+                                        "source" : "{Item.RaceFastestLapCount, Converter=NumberZeroToEmpty}",
+                                        "foregr" : "{StandingsFastestLapCountForeground}"
+                                    }
+                                }
                             }
                         },
                         {
                             "Header" : "[Poles]",
-                            "MarginLeft" : 0,
                             "Template":{
-                                "BlockType" : "text",
-                                "Padding": "24, 0",
-                                "Source" : "{Item.CountQualP1, Converter=NumberZeroToEmpty}",
-                                "TextOptionsExtern" : "positionNumber"
+                                "BlockType" : "component",
+                                "ComponentOptions":{
+                                    "ComponentName" : "standings_stat_cell",
+                                    "Vars" : {
+                                        "width" : "94",
+                                        "bgimage" : "images/bg_large.png",
+                                        "source" : "{Item.CountQualP1, Converter=NumberZeroToEmpty}",
+                                        "foregr" : "{StandingsPoleCountForeground}"
+                                    }
+                                }
                             }
                         },                        
-
-                        //events
                         {
                             "Header" : "[Events]",
-                            "MarginLeft" : 12,
                             "Template":{
-                                "BlockType" : "text",
-                                "Padding": "24, 0",
-                                "Source" : "{Item.EventsCount, Converter=NumberZeroToEmpty}",                                
-                                "TextOptionsExtern" : "positionNumber",
-                                "MarginRight":30
+                                "BlockType" : "component",
+                                "ComponentOptions":{
+                                    "ComponentName" : "standings_stat_cell",
+                                    "Vars" : {
+                                        "width" : "114",
+                                        "bgimage" : "images/bg_end.png",
+                                        "source" : "{Item.EventsCount, Converter=NumberZeroToEmpty}",
+                                        "foregr" : "#ffffff"
+                                    }
+                                }
                             }
                         }
-
-
                     ]
                 }
             }
