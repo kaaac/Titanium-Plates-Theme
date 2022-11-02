@@ -2,7 +2,7 @@
     "BlockType": "dock",
     "PaddingLeft": 12,
     "PaddingRight": 4,    
-    "BackgroundImage": "images/team_bg/team_bg_{Item.Team.Name}.png",
+    "BackgroundImage": "images/team_standings/team_bg_{Item.Team.Name}.png",
     "Triggers" : [
         {
             "Condition" : "{F1Mode, Converter=BoolReverse}",
@@ -14,21 +14,21 @@
             "Property" : "BackgroundImage",
             "Value" : "images/Team.png"
         },
-        {
-            "Condition" : "{Item.PositionString, Converter=StringEquals, Parameter=1}",
-            "Property" : "BackgroundImage",
-            "Value" : "images/podium_bg/team_bg_gold.png"
-        },
-        {
-            "Condition" : "{Item.PositionString, Converter=StringEquals, Parameter=2}",
-            "Property" : "BackgroundImage",
-            "Value" : "images/podium_bg/team_bg_silver.png"
-        },
-        {
-            "Condition" : "{Item.PositionString, Converter=StringEquals, Parameter=3}",
-            "Property" : "BackgroundImage",
-            "Value" : "images/podium_bg/team_bg_copper.png"
-        }
+        //{
+        //    "Condition" : "{Item.PositionString, Converter=StringEquals, Parameter=1}",
+        //    "Property" : "BackgroundImage",
+        //    "Value" : "images/team_standings/team_bg_gold.png"
+        //},
+        //{
+        //    "Condition" : "{Item.PositionString, Converter=StringEquals, Parameter=2}",
+        //    "Property" : "BackgroundImage",
+        //    "Value" : "images/team_standings/team_bg_silver.png"
+        //},
+        //{
+        //    "Condition" : "{Item.PositionString, Converter=StringEquals, Parameter=3}",
+        //    "Property" : "BackgroundImage",
+        //    "Value" : "images/team_standings/team_bg_copper.png"
+        //}
     ],
     "UseBackgroundCrop" : false,
     "Height" : 73,

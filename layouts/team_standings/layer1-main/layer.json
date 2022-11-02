@@ -64,7 +64,7 @@
                                 "PaddingLeft" : 24,
                                 "PaddingRight" : 24,
                                 "Height" : 73,
-                                "BackgroundImage": "images/team_bg/gap_bg_{Item.Team.Name}.png",                            
+                                "BackgroundImage": "images/quali_bg/gap_bg_{Item.Team.Name}.png",                            
                                 "Items": [                                    
                                     {
                                         "BlockType": "text",
@@ -84,21 +84,21 @@
                                         "Property" : "BackgroundImage",
                                         "Value" : "images/gap_bg.png"
                                     },
-                                    {
-                                        "Condition" : "{Item.PositionString, Converter=StringEquals, Parameter=1}",
-                                        "Property" : "BackgroundImage",
-                                        "Value" : "images/podium_bg/gap_bg_gold.png"
-                                    },
-                                    {
-                                        "Condition" : "{Item.PositionString, Converter=StringEquals, Parameter=2}",
-                                        "Property" : "BackgroundImage",
-                                        "Value" : "images/podium_bg/gap_bg_silver.png"
-                                    },
-                                    {
-                                        "Condition" : "{Item.PositionString, Converter=StringEquals, Parameter=3}",
-                                        "Property" : "BackgroundImage",
-                                        "Value" : "images/podium_bg/gap_bg_copper.png"
-                                    },
+                                    //{
+                                    //    "Condition" : "{Item.PositionString, Converter=StringEquals, Parameter=1}",
+                                    //    "Property" : "BackgroundImage",
+                                    //    "Value" : "images/team_standings/gap_bg_gold.png"
+                                    //},
+                                    //{
+                                    //    "Condition" : "{Item.PositionString, Converter=StringEquals, Parameter=2}",
+                                    //    "Property" : "BackgroundImage",
+                                    //    "Value" : "images/team_standings/gap_bg_silver.png"
+                                    //},
+                                    //{
+                                    //    "Condition" : "{Item.PositionString, Converter=StringEquals, Parameter=3}",
+                                    //    "Property" : "BackgroundImage",
+                                    //    "Value" : "images/team_standings/gap_bg_copper.png"
+                                    //},
                                     {
                                         "Condition" : "{Item.Team.Name, Converter=EmptyObjectToTrue}",
                                         "Property" : "BackgroundImage",
