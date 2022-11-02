@@ -9,11 +9,9 @@
     "MgMI":"Magistral-MediumItalic",
     "LMM": "LEMONMILK-Medium",
 
-    //margins
     "MarginRoot" : "0, 0, 0, 25",
     "MarginTable" : "0, 0",
 
-    //colors
     "HeaderForeground" : "#ffffff",
     "ForegroundDarker" : "#FF969696",
     "TableColumnHeaderForeground" : "#AABBBBBB",
@@ -38,7 +36,6 @@
     "SeasonProgressPointsZeroForeground" : "#666666",
     "SeasonProgressPointsTopForeground" : "#C2C2C2",
 
-    //sizes
     "FontSizeRightPart" : "25"
 
 
