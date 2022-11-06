@@ -5,13 +5,10 @@
         "Margin": "{MarginRoot}",       
         "Orientation": "Vertical",
         "Items": [
-            //header block
             {
                 "BlockType" : "component",
                 "ComponentName" : "header_block_session"
             },
-
-            ////separator
             {
                 "Name" : "separator",
                 "BlockType": "image",
@@ -35,7 +32,7 @@
                                 "BlockType" : "image",
                                 "Source" : "images/podium.png",
                                 "MarginTop" : 40,
-                                "Width" : 350,
+                                "Width" : 350
                             },
                             {
                                 "BlockType" : "itemstack",
@@ -45,7 +42,7 @@
                                     "Limit" : 3,
                                     "Template": {
                                         "BlockType" : "image",
-                                        "Source" : "images/cards/card_{Item.Driver.Name}.png",
+                                        "Source" : "images/cards/card_Herox16.png",
                                         "BackgroundImage" : "images/cards/plate_bg_{Item.PositionString}.png",
                                         "Padding" : "30, 0, 30, 45",
                                         "Margin" : "10, 10, 10, 10",
@@ -65,13 +62,11 @@
                         "BlockType" : "stack",
                         "Orientation" : "Vertical",
                         "Items" : [
-                            //table
                             {
                                 "Name": "mainTable",
                                 "BlockType": "table",
                                 "Margin" : "{MarginTable}",
                                 "Padding" : "45,0,45,20",
-                                //"Background" : "#2d2c28",
                                 "TableOptions": {
                                     "ItemsSource": "{Session.Drivers}",
                                     "RowSpacing": 13,
@@ -82,8 +77,6 @@
                                         "TextOptionsExtern" : "tableColumnHeader"
                                     },
                                     "Columns": [
-
-                                        //driver line
                                         {
                                             "Header": "Driver",
                                             "WidthStretch" : true,
@@ -95,14 +88,12 @@
                                         },
                                         {
                                             "Header": "Team",
-                                            //"WidthStretch" : true,
                                             "Template":
                                             {
                                                 "BlockType" : "component",
                                                 "ComponentName" : "team_line_cell_session"                                
                                             }
                                         },
-                                        //interval
                                         {
                                             "Header": "[Interval]",
                                             "Template": {
@@ -140,7 +131,6 @@
                                                 }
                                             }
                                         },
-                                        //position_jump
                                         {
                                             "Header": "",
                                             "Template":
@@ -149,7 +139,6 @@
                                                 "ComponentName" : "position_jump_cell"    
                                             }
                                         },
-                                        //penalties
                                         {
                                             "Header": "[Penalties]",
                                             "Template": { 
@@ -178,31 +167,16 @@
                                                                     "Foreground": "#000000",
                                                                     "HorizontalAlignment": "Center"
                                                                 }
-                                                            },
-                                                            //{
-                                                            //    "BlockType": "text",
-                                                            //    "Source": "{Item.PenaltyTimeStringRightPart}",
-                                                            //    "HorizontalAlignment": "Center",
-                                                            //    "VerticalAlignment": "Center",
-                                                            //    "TextOptions": {
-                                                            //        "FontName": "{FontNameDefault}",
-                                                            //        "FontSize": 15,
-                                                            //        "Foreground": "#000000",
-                                                            //        "HorizontalAlignment": "Center"
-                                                            //    }
-                                                            //}
+                                                            }
                                                         ]
                                                     }
                                                 ]
                                             }
                                         },
-
-                                        //fastest lap
                                         {
                                             "Header": "[Fastest Lap]",
                                             "Template": {
                                                 "BlockType": "dock",
-                                                //s"Padding": "12, 0",
                                                 "MarginLeft" : 5,
                                                 "MarginRight" : 5,
                                                 "Width" : 237,
@@ -251,15 +225,12 @@
                                                 ]
                                             }
                                         },
-
-                                        //stints
                                         {
                                             "Header": "[Stints]",
                                             "Template": {
                                                 "BlockType": "itemstack",
                                                 "Spacing": 4,
                                                 "Padding": "12, 0",
-                                                //"Width" : 423,
                                                 "MarginLeft" : 5,
                                                 "MarginRight" : 5,
                                                 "BackgroundImage" : "images/data_bg/stints_bg.png",
@@ -297,7 +268,6 @@
                                                 }
                                             }
                                         },
-                                        //points
                                         {
                                             "Header": "[Pit Stop]",
                                             "Template": {
@@ -325,7 +295,6 @@
                                                 ]
                                             }
                                         },
-                                        //points
                                         {
                                             "Header": "[Pts]",
                                             "Template": {
@@ -359,16 +328,12 @@
                                 "Name": "footerBlock",
                                 "BlockType": "dock",
                                 "Orientation": "Horizontal",
-                                //"Background" : "#2d2c28",
-                                //"MarginBottom" : 0,
                                 "Items": [
-                                    //footer
                                     {
                                         "BlockType" : "stack",
                                         "Margin" : "8, 36, 8, 8",
                                         "HorizontalAlignment" : "Center",
                                         "Spacing" : 32,
-                                        //"Background" : "#2d2c28",
                                         "Items" :[
                                             {
                                                 "BlockType" : "component",
@@ -418,7 +383,7 @@
                                                         "secondcomm" : "{SecondCommentator}"
                                                     }
                                                 }
-                                            },
+                                            }
                                         ]
                                     }
                                 ]

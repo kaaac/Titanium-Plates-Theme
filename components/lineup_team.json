@@ -1,0 +1,52 @@
+{
+    "BlockType" : "stack",
+    "Orientation" : "Vertical",
+    "Width" : 1314,
+    "Height" : 1114,
+    "MarginBottom" : 150,
+    "BackgroundImage" : "images/lineup/card_{Item.Team.Name}.png",
+    "Items" : [
+        {
+            "BlockType" : "text",
+            "Source" : "{Item.Team.Name}",
+            "FontSize" : 80,
+            "MarginTop" : 30,
+            "Foreground" : "#ffffff",
+            "FontName" : "{FontNameBold}",
+            "HorizontalAlignment" : "Center"
+        },
+        {
+            "BlockType" : "Itemstack",
+            "Orientation" : "Horizontal",
+            
+            "ItemStackOptions" : {
+                "ItemSource" : "{Item.Lines}",
+                "Template" : {
+                    "BlockType" : "text",
+                    "Source" : "{Item.Driver.Name}",
+                    "FontSize" : 60,
+                    "Forergound" : "#ffffff",
+                    "BackgroundImage" : "images/cards/card_Herox16.png",
+                    "Width" : 638,
+                    "Height" : 830
+                }
+            }
+        },
+        {
+            "BlockType" : "image",
+            "Source" : "images/cars/{Item.Team.Name}.png",
+            //"Height": 73,
+            "Width" : 680,
+            "PaddingTop" : -40,
+            //"PaddingBottom" : 15,
+            //"MarginRight": 20,
+            "VerticalAlignment": "Bottom",
+            "HorizontalAlignment": "Center",
+            "ImageOptions": {
+                
+
+            }
+        }
+    ]
+}
+

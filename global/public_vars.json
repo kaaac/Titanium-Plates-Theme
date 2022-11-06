@@ -3,7 +3,7 @@
   //"ShowWinnerInCalendar": true,
   //"ShowEventDescriptionInCalendar": true,
   "F1Mode": true,
-  "DisplayPodiumCards": true,
+  "DisplayPodiumCards": false,
   "Streamer": "Yety",
   "SecondCommentator": ""
 }

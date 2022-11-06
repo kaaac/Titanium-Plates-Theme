@@ -12,34 +12,25 @@
             "MarginTop" : 15,
             "MarginLeft" : 15,
             "MarginRight" : 48,
-            "Spacing": 12,
+            "Spacing": 6,
             "HorizontalAlignment": "Left",
             "Items": [
-                //league name
                 {
-                    "BlockType" : "stack",
-                    "VerticalAlignment" : "Center",
-                    "Items" :
-                    [
-                        {
-                            "BlockType": "text",                            
-                            "VerticalAlignment": "Center",                            
-                            "Source": "<header>",
-                            "FontName" : "{FontNameBold}",
-                            "Foreground" : "{HeaderForeground}",
-                            "FontSize": 60
-                        },
-                        {                            
-                            "BlockType": "text",                                                                         
-                            "MarginLeft": 12,
-                            "MarginTop": 4,
-                            "VerticalAlignment": "Center",
-                            "Source": "<subHeader>",
-                            "FontName" : "{FontNameBold}",
-                            "Foreground" : "{HeaderForeground}",
-                            "FontSize": 40
-                        }
-                    ]
+                    "BlockType": "text",                            
+                    "VerticalAlignment": "Center",                            
+                    "Source": "<header>",
+                    "FontName" : "{FontNameBold}",
+                    "Foreground" : "{HeaderForeground}",
+                    "FontSize": 60
+                },
+                {                            
+                    "BlockType": "text",                                                                         
+                    "MarginLeft": 12,
+                    "VerticalAlignment": "Center",
+                    "Source": "<subHeader>",
+                    "FontName" : "{FontNameBold}",
+                    "Foreground" : "{HeaderForeground}",
+                    "FontSize": 40
                 }
             ]
         },

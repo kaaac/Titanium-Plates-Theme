@@ -11,7 +11,7 @@
             "Foreground" : "<foregr>",
             "HorizontalAlignment" : "Center",
             "VerticalAlignment" : "Bottom",
-            "PaddingBottom" : 17,
+            "PaddingBottom" : 17
         }
     ]
 }

@@ -1,0 +1,57 @@
+{
+    "BlockRoot": {
+        "Name": "mainStack",
+        "BlockType": "stack",
+        "Margin": "{MarginRoot}",       
+        "Orientation": "Vertical",
+        "Items": [
+            //{
+            //    "BlockType" : "component",
+            //    "ComponentName" : "header_block_session"
+            //},
+            {
+                "Name" : "separator",
+                "BlockType": "image",
+                "MarginTop": 0,
+                "MarginLeft": 0,
+                "MarginRight": 0,
+                "MarginBottom": 5,
+                "Width": "*",
+                "Source": "images/separator.png"
+            },
+            {
+                "BlockType" : "dock",
+                "Orientation" : "Horizontal",
+                "Items" : [
+                    {
+                        "BlockType" : "Itemstack",
+                        "Orientation" : "Vertical",
+                        "MarginRight" : 150,
+                        "ItemStackOptions" : {
+                            "ItemSource" : "{Lineups.Teams}",
+                            "CollectionPart" : "1/2",
+                            "Template": {
+                                "BlockType" : "component",
+                                "ComponentName" : "lineup_team"
+                            }
+                        }
+                        
+                    },
+                    {
+                        "BlockType" : "Itemstack",
+                        "Orientation" : "Vertical",
+                        "ItemStackOptions" : {
+                            "ItemSource" : "{Lineups.Teams}",
+                            "CollectionPart" : "2/2",
+                            "Template": {
+                                "BlockType" : "component",
+                                "ComponentName" : "lineup_team"
+                            }
+                        }
+                        
+                    }
+                ]
+            }
+        ]
+    }
+}

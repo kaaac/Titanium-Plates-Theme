@@ -12,7 +12,8 @@
                 {
                     "Vars":
                     {
-                        "header" : "Driver standings"
+                        "header": "Season progress",
+                        "subHeader": "Positions"
                     }
                 }               
             },
@@ -123,110 +124,81 @@
                             }
                         },
                         {
-                            "Header" : "[Wins]",
                             "MarginLeft" : 20,
-                            "Template":{
-                                "BlockType" : "component",
-                                "ComponentOptions":{
-                                    "ComponentName" : "standings_stat_cell",
-                                    "Vars" : {
-                                        "width" : "80",
-                                        "bgimage" : "images/bg_start.png",
-                                        "source" : "{Item.CountP1, Converter=NumberZeroToEmpty}",
-                                        "foregr" : "{Standings1stCountForeground}"                                        
+                            "MultiColumnHeadersSource": "{Standings.Events}",
+                            "MultiColumnItemsSource": "{Item.Events}",
+                            "MultiColumnHeaderTemplate": {
+                                "BlockType": "stack",
+                                "Orientation": "Vertical",
+                                "Spacing": 4,
+                                "HorizontalAlignment": "Center",
+                                "Items": [
+                                    {
+                                        "BlockType": "image",
+                                        "Source": "{Item.Track.Nation.LogoPath}",
+                                        "HorizontalAlignment": "Center",
+                                        "Height": 32
+                                    },
+                                    {
+                                        "BlockType": "text",
+                                        "MarginBottom": 8,
+                                        "HorizontalAlignment": "Center",
+                                        "Source": "{Item.Track.Nation.Code}",
+                                        "TextOptionsExtern" : "tableColumnHeader"                                        
                                     }
-                                }
-                            }
-                        },
-                        {
-                            "Header" : "[2nd]",
-                            "Template":{
-                                "BlockType" : "component",
-                                "ComponentOptions":{
-                                    "ComponentName" : "standings_stat_cell",
-                                    "Vars" : {
-                                        "width" : "80",
-                                        "bgimage" : "images/bg_position.png",
-                                        "source" : "{Item.CountP2, Converter=NumberZeroToEmpty}",
-                                        "foregr" : "{Standings2ndCountForeground}"
+                                ]
+                            },
+                            
+                            "Template" : {
+
+                                "BlockType" : "dock",
+                                "Width" : 80,
+                                "Height" : 73,
+                                "RenderIf" : "{Item.Event.WinnerString, Converter=EmptyObjectToFalse}",
+                                "BackgroundImage" : "images/bg_position.png",
+                                "Items" : [
+                                    {
+                                      "BlockType": "text",
+                                        "Source": "{Item.RaceMajorPositionString}",
+                                        "FontName" : "{FontNameBold}",
+                                        "FontSize" : 28,
+                                        "HorizontalAlignment" : "Center",
+                                        "VerticalAlignment" : "Bottom",
+                                        "PaddingBottom" : 30,
+                                        "TextOptions" : {
+                                            "HorizontalAlignment":"Center",
+                                        },
+                                        "Triggers": [
+                                            {
+                                                "Condition": "{Item.IsRaceMajorClassified, Converter=BoolReverse}",
+                                                "Setters": [
+                                                    {
+                                                        "Property": "Foreground",
+                                                        "Value": "{SeasonProgressPositionNotClassifiedForeground}"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "Condition": "{Item.RaceMajorPosition, Converter=NumberLess, Parameter=11}",
+                                                "Setters": [
+                                                    {
+                                                        "Property": "Foreground",
+                                                        "Value": "{StandingsPointsForeground}"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "Condition": "{Item.RaceMajorPosition, Converter=NumberEquals, Parameter=1}",
+                                                "Setters": [
+                                                    {
+                                                        "Property": "Foreground",
+                                                        "Value": "{Standings1stCountForeground}"
+                                                    }
+                                                ]
+                                            }
+                                        ]
                                     }
-                                }
-                            }
-                        },
-                        {
-                            "Header" : "[3rd]",
-                            "Template":{
-                                "BlockType" : "component",
-                                "ComponentOptions":{
-                                    "ComponentName" : "standings_stat_cell",
-                                    "Vars" : {
-                                        "width" : "80",
-                                        "bgimage" : "images/bg_position.png",
-                                        "source" : "{Item.CountP3, Converter=NumberZeroToEmpty}",
-                                        "foregr" : "{Standings3rdCountForeground}"
-                                    }
-                                }
-                            }
-                        },
-                        {
-                            "Header" : "[FL]",
-                            "Template":{
-                                "BlockType" : "component",
-                                "ComponentOptions":{
-                                    "ComponentName" : "standings_stat_cell",
-                                    "Vars" : {
-                                        "width" : "80",
-                                        "bgimage" : "images/bg_position.png",
-                                        "source" : "{Item.RaceFastestLapCount, Converter=NumberZeroToEmpty}",
-                                        "foregr" : "{StandingsFastestLapCountForeground}"
-                                    }
-                                }
-                            }
-                        },
-                        {
-                            "Header" : "[Poles]",
-                            "Template":{
-                                "BlockType" : "component",
-                                "ComponentOptions":{
-                                    "ComponentName" : "standings_stat_cell",
-                                    "Vars" : {
-                                        "width" : "94",
-                                        "bgimage" : "images/bg_large.png",
-                                        "source" : "{Item.CountQualP1, Converter=NumberZeroToEmpty}",
-                                        "foregr" : "{StandingsPoleCountForeground}"
-                                    }
-                                }
-                            }
-                        },
-                        {
-                            "Header" : "[PP]",
-                            "Template":{
-                                "BlockType" : "component",
-                                "RenderIf" : "{ShowPenaltyPointsInStandings}",
-                                "ComponentOptions":{
-                                    "ComponentName" : "standings_stat_cell",
-                                    "Vars" : {
-                                        "width" : "94",
-                                        "bgimage" : "images/bg_large.png",
-                                        "source" : "{Item.PenaltyPoints, Converter=NumberZeroToEmpty}",
-                                        "foregr" : "{StandingsPenaltyPointCountForeground}"
-                                    }
-                                }
-                            }
-                        },
-                        {
-                            "Header" : "[Events]",
-                            "Template":{
-                                "BlockType" : "component",
-                                "ComponentOptions":{
-                                    "ComponentName" : "standings_stat_cell",
-                                    "Vars" : {
-                                        "width" : "114",
-                                        "bgimage" : "images/bg_end.png",
-                                        "source" : "{Item.EventsCount, Converter=NumberZeroToEmpty}",
-                                        "foregr" : "{StandingsPointsForeground}"
-                                    }
-                                }
+                                ]
                             }
                         }
                     ]
