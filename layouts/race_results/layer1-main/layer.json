@@ -146,29 +146,35 @@
                                                 "Padding": "12, 0",
                                                 "Width" : 161,
                                                 "Height" : 73,
-                                                "MarginLeft" : 10,
-                                                "MarginRight" : 5,
+                                                "MarginLeft" : "{MarginLeftTableCell}",
                                                 "BackgroundImage" : "images/data_bg/penalties_bg.png",
                                                 "Items": [
                                                     {
-                                                        "BlockType": "stack",
+                                                        "BlockType": "text",
+                                                        "Source": "{Item.PenaltyTimeTotal}s",
                                                         "HorizontalAlignment": "Center",
                                                         "VerticalAlignment": "Bottom",
-                                                        "Items": [
+                                                        "PaddingBottom" : 25,
+                                                        "TextOptions": {
+                                                            "FontName": "{FontNameDefault}",
+                                                            "FontSize": 30,
+                                                            "Foreground": "#824040",
+                                                            "HorizontalAlignment": "Center"
+                                                        },
+                                                        "Triggers" : [
                                                             {
-                                                                "BlockType": "text",
-                                                                "Source": "{Item.PenaltyTimeStringLeftPart}",
-                                                                "HorizontalAlignment": "Center",
-                                                                "VerticalAlignment": "Bottom",
-                                                                "PaddingBottom" : 25,
-                                                                "TextOptions": {
-                                                                    "FontName": "{FontNameDefault}",
-                                                                    "FontSize": 30,
-                                                                    "Foreground": "#000000",
-                                                                    "HorizontalAlignment": "Center"
-                                                                }
+                                                                "Condition":"{Item.PenaltyTimeTotal, Converter=NumberEquals, Parameter=0}",
+                                                                "Property" : "Source",
+                                                                "Value" : ""
                                                             }
                                                         ]
+                                                    },
+                                                ],
+                                                "Triggers" : [
+                                                    {
+                                                        "Condition":"{Item.PenaltyTimeTotal, Converter=NumberEquals, Parameter=0}",
+                                                        "Property" : "Height",
+                                                        "Value" : ""
                                                     }
                                                 ]
                                             }
@@ -177,8 +183,7 @@
                                             "Header": "[Fastest Lap]",
                                             "Template": {
                                                 "BlockType": "dock",
-                                                "MarginLeft" : 5,
-                                                "MarginRight" : 5,
+                                                "MarginLeft" : "{MarginLeftTableCell}",
                                                 "Width" : 237,
                                                 "BackgroundImage" : "images/data_bg/fastlap_bg.png",
                                                 "Triggers" : [
@@ -231,8 +236,7 @@
                                                 "BlockType": "itemstack",
                                                 "Spacing": 4,
                                                 "Padding": "12, 0",
-                                                "MarginLeft" : 5,
-                                                "MarginRight" : 5,
+                                                "MarginLeft" : "{MarginLeftTableCell}",
                                                 "BackgroundImage" : "images/data_bg/stints_bg.png",
                                                 "ItemStackOptions": {
                                                     "ItemSource": "{Item.Stints}",
@@ -274,8 +278,7 @@
                                                 "BlockType": "dock",
                                                 "Padding": "24, 0",
                                                 "Width" : 60,
-                                                "MarginLeft" : 5,
-                                                "MarginRight" : 5,
+                                                "MarginLeft" : "{MarginLeftTableCell}",
                                                 "BackgroundImage" : "images/data_bg/pitstop_bg.png",
                                                 "HorizontalAlignment": "Center",
                                                 "Items": [
@@ -290,7 +293,14 @@
                                                             "FontSize": 30,                                            
                                                             "HorizontalAlignment": "Center",
                                                             "Foreground" : "#000000"
-                                                        }
+                                                        },
+                                                        "Triggers" : [
+                                                            {
+                                                                "Condition":"{Item.PitsCount, Converter=NumberEquals, Parameter=0}",
+                                                                "Property" : "Source",
+                                                                "Value" : ""
+                                                            }
+                                                        ]
                                                     }
                                                 ]
                                             }
@@ -300,8 +310,7 @@
                                             "Template": {
                                                 "BlockType": "dock",
                                                 "Width" : 143,
-                                                "MarginLeft" : 5,
-                                                "MarginRight" : 5,
+                                                "MarginLeft" : "{MarginLeftTableCell}",
                                                 "BackgroundImage" : "images/data_bg/pts_bg.png",
                                                 "HorizontalAlignment": "Center",
                                                 "Items": [

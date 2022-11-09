@@ -45,11 +45,23 @@
                     "HorizontalAlignment": "Center",
                     "VerticalAlignment": "Center",
                     "TextOptionsExtern" : "tableCellBold",
-                    "Triggers" : [{
-                        "Condition" : "{Item.Position, Converter=NumberLess, Parameter=4}",
-                        "Property" : "Foreground",
-                        "Value" : "#ffffff"
-                    }],
+                    "Triggers" : [
+                        {
+                            "Condition" : "{Item.PositionString, Converter=StringEquals, Parameter=3}",
+                            "Property" : "Foreground",
+                            "Value" : "#ffffff"
+                        },
+                        {
+                            "Condition" : "{Item.PositionString, Converter=StringEquals, Parameter=2}",
+                            "Property" : "Foreground",
+                            "Value" : "#ffffff"
+                        },
+                        {
+                            "Condition" : "{Item.PositionString, Converter=StringEquals, Parameter=1}",
+                            "Property" : "Foreground",
+                            "Value" : "#ffffff"
+                        }
+                    ],
                     "TextOptions" : {
                         "HorizontalAlignment" : "Center"
                     }
@@ -63,11 +75,23 @@
                     "HorizontalAlignment": "Left",
                     "VerticalAlignment": "Center",
                     "TextOptionsExtern" : "tableCellBold",
-                    "Triggers" : [{
-                        "Condition" : "{Item.Position, Converter=NumberLess, Parameter=4}",
-                        "Property" : "Foreground",
-                        "Value" : "#ffffff"
-                    }]
+                    "Triggers" : [
+                        {
+                            "Condition" : "{Item.PositionString, Converter=StringEquals, Parameter=3}",
+                            "Property" : "Foreground",
+                            "Value" : "#ffffff"
+                        },
+                        {
+                            "Condition" : "{Item.PositionString, Converter=StringEquals, Parameter=2}",
+                            "Property" : "Foreground",
+                            "Value" : "#ffffff"
+                        },
+                        {
+                            "Condition" : "{Item.PositionString, Converter=StringEquals, Parameter=1}",
+                            "Property" : "Foreground",
+                            "Value" : "#ffffff"
+                        }
+                    ]
                 },
                 //flag
                 {

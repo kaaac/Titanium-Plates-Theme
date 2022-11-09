@@ -51,11 +51,23 @@
                     "RenderIf" : "{Item.Team.Name, Converter=EmptyObjectToFalse}",
                     "PaddingBottom": 20,
                     "TextOptionsExtern" : "tableCellDefault",
-                    "Triggers" : [{
-                        "Condition" : "{Item.Position, Converter=NumberLess, Parameter=4}",
-                        "Property" : "Foreground",
-                        "Value" : "#ffffff"
-                    }],
+                    "Triggers" : [
+                        {
+                            "Condition" : "{Item.PositionString, Converter=StringEquals, Parameter=3}",
+                            "Property" : "Foreground",
+                            "Value" : "#ffffff"
+                        },
+                        {
+                            "Condition" : "{Item.PositionString, Converter=StringEquals, Parameter=2}",
+                            "Property" : "Foreground",
+                            "Value" : "#ffffff"
+                        },
+                        {
+                            "Condition" : "{Item.PositionString, Converter=StringEquals, Parameter=1}",
+                            "Property" : "Foreground",
+                            "Value" : "#ffffff"
+                        }
+                    ],
                     "TextOptions": {
                         "HorizontalAlignment": "Right",
                     }

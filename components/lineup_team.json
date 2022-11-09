@@ -1,8 +1,8 @@
 {
     "BlockType" : "stack",
     "Orientation" : "Vertical",
-    "Width" : 1314,
-    "Height" : 1114,
+    "Width" : 1314, //1314
+    "Height" : 1114, //1114, //
     "MarginBottom" : 150,
     "BackgroundImage" : "images/lineup/card_{Item.Team.Name}.png",
     "Items" : [
@@ -10,11 +10,30 @@
             "BlockType" : "text",
             "Source" : "{Item.Team.Name}",
             "FontSize" : 80,
-            "MarginTop" : 30,
+            "MarginTop" : 35,
             "Foreground" : "#ffffff",
             "FontName" : "{FontNameBold}",
             "HorizontalAlignment" : "Center"
         },
+        //{
+        //    "BlockType" : "text",
+        //    "Source" : " Lines: {Item.Lines}",
+        //    "FontSize" : 80,
+        //    "MarginTop" : 30,
+        //    "Foreground" : "#ffffff",
+        //    "FontName" : "{FontNameBold}",
+        //    "HorizontalAlignment" : "Center",
+        //    "Triggers" : [
+        //        {
+        //            "Condition" : "{Item.Lines, Converter=NumberEquals, Parameter=2}",
+        //            "Property" : "Source",
+        //            "Value" : "2 seats"
+        //        }
+        //    ],
+        //    "TextOptions": {
+        //        "Wrap": true
+        //    }
+        //},
         {
             "BlockType" : "Itemstack",
             "Orientation" : "Horizontal",

@@ -124,6 +124,36 @@
                             }
                         },
                         {
+                            "Header" : "[Poles]",
+                            "Template":{
+                                "BlockType" : "component",
+                                "ComponentOptions":{
+                                    "ComponentName" : "standings_stat_cell",
+                                    "Vars" : {
+                                        "width" : "94",
+                                        "bgimage" : "images/bg_start.png",
+                                        "source" : "{Item.CountQualP1, Converter=NumberZeroToEmpty}",
+                                        "foregr" : "{StandingsPoleCountForeground}"
+                                    }
+                                }
+                            }
+                        },
+                        {
+                            "Header" : "[Events]",
+                            "Template":{
+                                "BlockType" : "component",
+                                "ComponentOptions":{
+                                    "ComponentName" : "standings_stat_cell",
+                                    "Vars" : {
+                                        "width" : "114",
+                                        "bgimage" : "images/bg_end.png",
+                                        "source" : "{Item.EventsCount, Converter=NumberZeroToEmpty}",
+                                        "foregr" : "{StandingsPointsForeground}"
+                                    }
+                                }
+                            }
+                        },
+                        {
                             "MarginLeft" : 20,
                             "MultiColumnHeadersSource": "{Standings.Events}",
                             "MultiColumnItemsSource": "{Item.Events}",
@@ -158,7 +188,7 @@
                                 "BackgroundImage" : "images/bg_position.png",
                                 "Items" : [
                                     {
-                                      "BlockType": "text",
+                                        "BlockType": "text",
                                         "Source": "{Item.RaceMajorPositionString}",
                                         "FontName" : "{FontNameBold}",
                                         "FontSize" : 28,
@@ -195,9 +225,38 @@
                                                         "Value": "{Standings1stCountForeground}"
                                                     }
                                                 ]
+                                            },
+                                            {
+                                                "Condition": "{Item.RaceMajorPositionString, Converter=StringEquals, Parameter=DNF}",
+                                                "Setters": [
+                                                    {
+                                                        "Property": "Foreground",
+                                                        "Value": "{SeasonProgressDNF}"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "Condition": "{Item.IsMajorRaceFastestLap}",
+                                                "Setters": [
+                                                    {
+                                                        "Property": "Foreground",
+                                                        "Value": "{SeasonProgressPointsFastestLapForeground}"
+                                                    }
+                                                ]
                                             }
                                         ]
                                     }
+                                ],
+                                "Triggers" : [
+                                    {
+                                        "Condition": "{Item.IsMajorQualPole}",
+                                        "Setters": [
+                                            {
+                                                "Property": "BackgroundImage",
+                                                "Value": "images/bg_position_purple.png"
+                                            }
+                                        ]
+                                    },
                                 ]
                             }
                         }
