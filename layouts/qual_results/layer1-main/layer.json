@@ -5,29 +5,19 @@
         "Margin": "{MarginRoot}",
         "Orientation": "Vertical",
         "Items": [
-            //header block
             {
                 "BlockType" : "component",
                 "ComponentName" : "header_block_session"
             },
-            ////separator
             {
-                "Name" : "separator",
-                "BlockType": "image",
-                "MarginTop": 0,
-                "MarginLeft": 0,
-                "MarginRight": 0,
-                "MarginBottom": 5,
-                "Width": "*",
-                "Source": "images/separator.png"
+                "BlockType" : "component",
+                "ComponentName" : "separator"
             },
-            //table
             {
                 "Name": "mainTable",
                 "BlockType": "table",
                 "Margin" : "{MarginTable}",
                 "Padding" : "45,0,45,20",
-                //"Background" : "#2d2c28",
                 "TableOptions": {
                     "ItemsSource": "{Session.Drivers}",
                     "RowSpacing": 13,
@@ -38,21 +28,6 @@
                         "TextOptionsExtern" : "tableColumnHeader"
                     },
                     "Columns": [
-                        // //position
-                        //{
-                        //    "Header": "",
-                        //    "Template": {
-                        //        "BlockType" : "component",                                
-                        //        "ComponentName" : "position_cell",
-                        //        "ComponentOptions" :{
-                        //            "Vars" :{
-                        //                "position" : "{Item.PositionString}"
-                        //            }
-                        //        }
-                        //    }
-                        //},
-
-                        //driver line
                         {
                             "Header": "Driver",
                             "WidthStretch" : true,
@@ -64,14 +39,12 @@
                         },
                         {
                             "Header": "Team",
-                            //"WidthStretch" : true,
                             "Template":
                             {
                                 "BlockType" : "component",
                                 "ComponentName" : "team_line_cell_quali"                                
                             }
                         },
-                        //interval
                         {
                             "Header": "[Interval]",
                             "Template": {
@@ -99,7 +72,6 @@
                                 }
                             }
                         },
-                        //position_jump
                         {
                             "Header": "",
                             "Template":
@@ -108,7 +80,6 @@
                                 "ComponentName" : "position_jump_cell"    
                             }
                         },
-                        //penalties
                         {
                             "Header": "[Penalties]",
                             "Template": { 
@@ -116,8 +87,7 @@
                                 "Padding": "12, 0",
                                 "Width" : 161,
                                 "Height" : 73,
-                                "MarginLeft" : 10,
-                                "MarginRight" : 5,
+                                "MarginLeft" : "{MarginLeftTableCell}",
                                 "RenderIf" : "{Item.PenaltyTimeStringLeftPart, Converter=EmptyObjectToFalse}",
                                 "BackgroundImage" : "images/data_bg/penalties_bg.png",
                                 "Items": [
@@ -138,33 +108,17 @@
                                                     "Foreground": "#000000",
                                                     "HorizontalAlignment": "Center"
                                                 }
-                                            },
-                                            //{
-                                            //    "BlockType": "text",
-                                            //    "Source": "{Item.PenaltyTimeStringRightPart}",
-                                            //    "HorizontalAlignment": "Center",
-                                            //    "VerticalAlignment": "Center",
-                                            //    "TextOptions": {
-                                            //        "FontName": "{FontNameDefault}",
-                                            //        "FontSize": 15,
-                                            //        "Foreground": "#000000",
-                                            //        "HorizontalAlignment": "Center"
-                                            //    }
-                                            //}
+                                            }
                                         ]
                                     }
                                 ]
                             }
                         },
-
-                        //fastest lap
                         {
                             "Header": "[Fastest Lap]",
                             "Template": {
                                 "BlockType": "dock",
-                                //s"Padding": "12, 0",
-                                "MarginLeft" : 5,
-                                "MarginRight" : 5,
+                                "MarginLeft" : "{MarginLeftTableCell}",
                                 "Width" : 237,
                                 "BackgroundImage" : "images/data_bg/fastlap_bg.png",
                                 "Triggers" : [
@@ -211,50 +165,12 @@
                                 ]
                             }
                         },
-
-                        //stints
                         {
                             "Header": "[Stints]",
                             "Template": {
-                                "BlockType": "itemstack",
-                                "Spacing": 4,
-                                "Padding": "12, 0",
-                                //"Width" : 423,
-                                "MarginLeft" : 5,
-                                "MarginRight" : 5,
-                                "HorizontalAlignment": "Center",
-                                "BackgroundImage" : "images/quali_bg/stints_bg_q.png",
-                                "ItemStackOptions": {
-                                    "ItemSource": "{Item.Stints}",
-                                    "Template": {
-                                        "BlockType": "stack",
-                                        "VerticalAlignment": "Bottom",
-                                        "MarginRight" : 4,
-                                        "Spacing": 3,
-                                        "Items": [
-                                            {
-                                                "BlockType": "image",
-                                                "Height": 40,
-                                                "VerticalAlignment": "Bottom",
-                                                "PaddingBottom" : 13,
-                                                "Source": "tyres_{Item.Tyres}.png"
-                                            },
-                                            {
-                                                "BlockType": "text",
-                                                "Source": "{Item.Laps}",
-                                                "HorizontalAlignment": "Center",
-                                                "VerticalAlignment": "Bottom",
-                                                "PaddingBottom" : 27,
-                                                "FontSize": 30,
-                                                "TextOptions": {
-                                                    "FontName": "{FontNameBold}",
-                                                    "HorizontalAlignment": "Center",
-                                                    "Foreground" : "#ffffff"
-                                                }
-                                            }
-
-                                        ]
-                                    }
+                                "BlockType" : "component",
+                                "ComponentOptions" : {
+                                    "ComponentName" : "stints_cell"
                                 }
                             }
                         }

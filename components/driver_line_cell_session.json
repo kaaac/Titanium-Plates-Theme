@@ -28,14 +28,12 @@
         "BlendPercentage": 10
     },
     "Items": [
-        //left part
         {
             "BlockType": "stack",
             "HorizontalAlignment": "Left",
             "VerticalAlignment": "Bottom",
             "PaddingBottom" : 10,
             "Items": [
-                 //position
                  {
                     "BlockType": "text",
                     "MaxWidth": 90,
@@ -66,7 +64,6 @@
                         "HorizontalAlignment" : "Center"
                     }
                 },
-                //name
                 {
                     "BlockType": "text",
                     "MaxWidth": 600,
@@ -93,7 +90,6 @@
                         }
                     ]
                 },
-                //flag
                 {
                     "BlockType": "image",
                     "Height": 48,
@@ -105,121 +101,7 @@
                         "VerticalAlignment": "Center"
                     }
                 }
-                //icon badges
-                //{
-                //    "BlockType": "itemstack",
-                //    "Spacing": 4,
-                //    "MarginLeft": 6,
-                //    "MarginTop": 4,
-                //    "ItemStackOptions": {
-                //        "ItemSource": "{Item.Driver.BadgeImages}",
-                //        "Template": {
-                //            "BlockType": "image",
-                //            "Height": 24,
-                //            "Source": "{Item}"
-                //        }
-                //    }
-                //},
-//
-                ////text badge
-                //{
-                //    "BlockType": "text",
-                //    "MaxWidth": 400,
-                //    "MarginLeft": 8,
-                //    "MarginTop": 8,
-                //    "Source": "{Item.Driver.BadgeText}",
-                //    "HorizontalAlignment": "Left",
-                //    "VerticalAlignment": "Top",
-                //    "FontName": "{FontNameDefault}",
-                //    "FontSize": 16
-                //}
             ]
-        },
-
-        //right part
-        //{
-        //    "BlockType": "stack",
-        //    "Height": "*",
-        //    "MarginLeft": 82,
-        //    "HorizontalAlignment": "Right",
-        //    "VerticalAlignment": "Center",
-        //    "Items": [
-        //        //teams block
-        //        {
-        //            "BlockType": "stack",
-        //            "VerticalAlignment": "Center",
-        //            "Spacing": 8,
-        //            "RenderIf": "{Season.LineupsBasedType, Converter=StringEquals, Parameter=Teams}",
-        //            "Items": [
-        //                //name
-        //                {
-        //                    "BlockType": "text",
-        //                    "Source": "{Item.Team.Name}",
-        //                    //"MarginRight": 4,
-        //                    "HorizontalAlignment": "Left",
-        //                    "VerticalAlignment": "Center",
-        //                    "FontName": "{FontNameDefault}",
-        //                    "FontSize": 22,
-        //                    "TextOptions": {
-        //                        "VerticalAlignment": "Center"
-        //                    }
-        //                },
-//
-        //                //logo
-        //                {
-        //                    "BlockType": "image",
-        //                    "Height": 40,
-        //                    "MarginRight": 0,
-        //                    "VerticalAlignment": "Center",
-        //                    "ImageOptions": {
-        //                        "Path": "{Item.Team.LogoPath}",
-        //                        "VerticalAlignment": "Center"
-        //                    }
-        //                },
-        //                {                    
-        //                    "BlockType": "text",
-        //                    "Source" : "{Item.Team.Color}",
-        //                    "FontSize" : 22,
-        //                                 
-        //                }    
-        //            ]
-        //        },
-//
-        //        //cars block
-        //        {
-        //            "BlockType": "stack",
-        //            "VerticalAlignment": "Center",
-        //            "Spacing": 8,
-        //            "RenderIf": "{Season.LineupsBasedType, Converter=StringEquals, Parameter=Cars}",
-        //            "Items": [
-        //                //name
-        //                {
-        //                    "BlockType": "text",
-        //                    "Source": "{Item.Car.Name}",
-        //                    "MarginRight": 8,
-        //                    "HorizontalAlignment": "Left",
-        //                    "VerticalAlignment": "Center",
-        //                    "FontName": "{FontNameDefault}",
-        //                    "FontSize": 22,
-        //                    "TextOptions": {
-        //                        "VerticalAlignment": "Center"
-        //                    }
-        //                },
-//
-        //                //logo
-        //                {
-        //                    "BlockType": "image",
-        //                    "Height": 40,
-        //                    "MarginRight": 0,
-        //                    "VerticalAlignment": "Center",
-        //                    "ImageOptions": {
-        //                        "Path": "{Item.Car.Vendor.LogoPath}",
-        //                        "VerticalAlignment": "Center"
-        //                    }
-        //                }
-        //            ]
-        //        }
-        //    ]
-        //}
+        }
     ]
 }

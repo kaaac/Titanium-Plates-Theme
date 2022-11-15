@@ -18,18 +18,13 @@
                 }               
             },
             {
-                "Name" : "separator",
-                "BlockType": "image",
-                "MarginTop": 0,
-                "MarginLeft": 0,
-                "MarginRight": 0,
-                "MarginBottom": 5,
-                "Width": "*",
-                "Source": "images/separator.png"
+                "BlockType" : "component",
+                "ComponentName" : "separator"
             },
             {
                 "Name": "mainTable",
                 "BlockType": "table",
+                "Padding" : "{PaddingTableSingle}",
                 "HorizontalAlignment" : "Center",
                 "TableOptions": {
                     "ItemsSource": "{Standings.Drivers}",
@@ -114,7 +109,7 @@
                         {
                             "Header": "",
                             "PaddingLeft" : 0,
-                            "MarginLeft" : -4,
+                            "MarginRight" : 15,
                             "Template":
                             {
                                 "BlockType" : "component",

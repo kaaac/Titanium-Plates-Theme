@@ -17,14 +17,8 @@
                 }               
             },
             {
-                "Name" : "separator",
-                "BlockType": "image",
-                "MarginTop": 0,
-                "MarginLeft": 0,
-                "MarginRight": 0,
-                "MarginBottom": 5,
-                "Width": "*",
-                "Source": "images/separator.png"
+                "BlockType" : "component",
+                "ComponentName" : "separator"
             },
             {
                 "Name": "mainTable",

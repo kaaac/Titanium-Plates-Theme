@@ -1,10 +1,8 @@
-//header block
 {
     "Name": "headerBlock",
     "BlockType": "dock",
     "Orientation": "Horizontal",
     "Items": [
-        //headerLeft
         {
             "Name": "headerLeftPart",
             "BlockType": "stack",
@@ -78,7 +76,6 @@
                 }
             ]
         },
-        //headerRight
         {
             "Name": "headerRightPart",
             "BlockType": "stack",

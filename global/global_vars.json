@@ -11,7 +11,10 @@
 
     "MarginRoot" : "0, 0, 0, 25",
     "MarginTable" : "0, 0",
+    "MarginSeparator" : "0,0,0,5",
+    "PaddingTableSingle" : "30,30,30,30",
     "MarginLeftTableCell" : "10",
+    
     "HeaderForeground" : "#ffffff",
     "ForegroundDarker" : "#FF969696",
     "TableColumnHeaderForeground" : "#AABBBBBB",
@@ -38,7 +41,8 @@
     "SeasonProgressPointsFastestLapForeground" : "#93278f",
     "SeasonProgressDNF" : "#824040",
 
-    "FontSizeRightPart" : "25"
+    "FontSizeRightPart" : "25",
+    "StintsBarHeight" : "30"
 
 
     

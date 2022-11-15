@@ -35,7 +35,7 @@
                             "FontSize" : 50,
                             "Foreground" : "{HeaderForeground}",
                             "FontName" : "{FontNameBold}",
-                            "Source": "{Session.Track.LocationName}",
+                            "Source": "{Session.Track.CircuitName}",
                             "TextOptionsExtern": "locationName"
                         },
                         {
@@ -45,7 +45,7 @@
                             "FontSize" : 50,
                             "Foreground" : "{HeaderForeground}",
                             "FontName" : "{FontNameDefault}",
-                            "Source": "{Session.Track.CircuitName}",
+                            "Source": "{Session.Track.CountryName}",
                             "TextOptionsExtern": "countryName"
                         }
                         

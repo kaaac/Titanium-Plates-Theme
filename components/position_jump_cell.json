@@ -47,7 +47,7 @@
                     "Source" : "images/arrow_up_white.png",
                     "HorizontalAlignment": "Center",
                     "VerticalAlignment" : "Center",
-                    "Height" : 12,
+                    "Height" : 12
                 },
                 {
                     "BlockType" : "image",
@@ -55,7 +55,7 @@
                     "Source" : "images/arrow_down_white.png",
                     "HorizontalAlignment": "Center",
                     "VerticalAlignment" : "Center",
-                    "Height" : 12,
+                    "Height" : 12
                 },
                 {
                     "BlockType": "text",

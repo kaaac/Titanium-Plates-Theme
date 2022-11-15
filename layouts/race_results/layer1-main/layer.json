@@ -10,14 +10,8 @@
                 "ComponentName" : "header_block_session"
             },
             {
-                "Name" : "separator",
-                "BlockType": "image",
-                "MarginTop": 0,
-                "MarginLeft": 0,
-                "MarginRight": 0,
-                "MarginBottom": 5,
-                "Width": "*",
-                "Source": "images/separator.png"
+                "BlockType" : "component",
+                "ComponentName" : "separator"
             },
             {
                 "BlockType": "stack",
@@ -71,6 +65,7 @@
                                     "ItemsSource": "{Session.Drivers}",
                                     "RowSpacing": 13,
                                     "ColSpacing": 0,
+                                    "IndexStart" : 3,
                                     "HeaderTemplate": {
                                         "BlockType": "text",
                                         "MarginBottom": 8,
@@ -210,7 +205,7 @@
                                                                 "Source": "{Item.FastestLapTime}",
                                                                 "HorizontalAlignment": "Center",
                                                                 "VerticalAlignment": "Bottom",
-                                                                "PaddingBottom" : 27,
+                                                                "PaddingBottom" : 30,
                                                                 "TextOptions": {
                                                                     "FontName": "{FontNameBold}",
                                                                     "FontSize": 30,
@@ -223,6 +218,7 @@
                                                                 "Source": "tyres_{Item.FastestLapTyres}.png",
                                                                 "HorizontalAlignment": "Center",
                                                                 "VerticalAlignment": "Center",
+                                                                "PaddingBottom" : 5,
                                                                 "Height": 40
                                                             }
                                                         ]
@@ -233,42 +229,9 @@
                                         {
                                             "Header": "[Stints]",
                                             "Template": {
-                                                "BlockType": "itemstack",
-                                                "Spacing": 4,
-                                                "Padding": "12, 0",
-                                                "MarginLeft" : "{MarginLeftTableCell}",
-                                                "BackgroundImage" : "images/data_bg/stints_bg.png",
-                                                "ItemStackOptions": {
-                                                    "ItemSource": "{Item.Stints}",
-                                                    "Template": {
-                                                        "BlockType": "stack",
-                                                        "VerticalAlignment": "Bottom",
-                                                        "MarginRight" : 4,
-                                                        "Spacing": 3,
-                                                        "Items": [
-                                                            {
-                                                                "BlockType": "image",
-                                                                "Height": 40,
-                                                                "VerticalAlignment": "Bottom",
-                                                                "PaddingBottom" : 13,
-                                                                "Source": "tyres_{Item.Tyres}.png"
-                                                            },
-                                                            {
-                                                                "BlockType": "text",
-                                                                "Source": "{Item.Laps}",
-                                                                "HorizontalAlignment": "Center",
-                                                                "VerticalAlignment": "Bottom",
-                                                                "PaddingBottom" : 27,
-                                                                "FontSize": 30,
-                                                                "TextOptions": {
-                                                                    "FontName": "{FontNameBold}",
-                                                                    "HorizontalAlignment": "Center",
-                                                                    "Foreground" : "#ffffff"
-                                                                }
-                                                            }
-
-                                                        ]
-                                                    }
+                                                "BlockType" : "component",
+                                                "ComponentOptions" : {
+                                                    "ComponentName" : "stints_cell"
                                                 }
                                             }
                                         },

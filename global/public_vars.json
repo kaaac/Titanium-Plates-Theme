@@ -4,6 +4,7 @@
   //"ShowEventDescriptionInCalendar": true,
   "F1Mode": true,
   "DisplayPodiumCards": false,
-  "Streamer": "Yety",
-  "SecondCommentator": ""
+  "Streamer": "",
+  "SecondCommentator": "",
+  "SeasonSeatPerTeam" : 4
 }
