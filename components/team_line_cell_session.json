@@ -34,21 +34,17 @@
     "Height" : 73,
     "Width" : 512,
     "Items": [
-        //left part
         {
             "BlockType": "stack",                    
             "HorizontalAlignment": "Right",
             "VerticalAlignment": "Bottom",
             "Items": [
-
-
-                //name
                 {
                     "BlockType": "text",
                     "MaxWidth": 600,                    
                     "Source": "{Item.Team.Name}",
                     "VerticalAlignment": "Bottom",
-                    "RenderIf" : "{Item.Team.Name, Converter=EmptyObjectToFalse}",
+                    //"RenderIf" : "{Item.Team.Name, Converter=EmptyObjectToFalse}",
                     "PaddingBottom": 20,
                     "TextOptionsExtern" : "tableCellDefault",
                     "Triggers" : [
@@ -66,30 +62,35 @@
                             "Condition" : "{Item.PositionString, Converter=StringEquals, Parameter=1}",
                             "Property" : "Foreground",
                             "Value" : "#ffffff"
+                        },
+                        {
+                            "Condition" : "{Item.Team.Name, Converter=EmptyObjectToTrue}",
+                            "Property" : "Source",
+                            "Value" : "Reserve"
                         }
                     ],
                     "TextOptions": {
-                        "HorizontalAlignment": "Right",
+                        "HorizontalAlignment": "Right"
                     }
                 },
-                {
-                    "BlockType": "text",
-                    "MaxWidth": 600,                    
-                    "Source": "Reserve Driver",
-                    "VerticalAlignment": "Bottom",
-                    "RenderIf" : "{Item.Team.Name, Converter=EmptyObjectToTrue}",
-                    "PaddingBottom": 20,
-                    "MarginRight" : 150,
-                    "TextOptionsExtern" : "tableCellDefault",
-                    "Triggers" : [{
-                        "Condition" : "{Item.Position, Converter=NumberLess, Parameter=4}",
-                        "Property" : "Foreground",
-                        "Value" : "#ffffff"
-                    }],
-                    "TextOptions": {
-                        "HorizontalAlignment": "Center",
-                    }
-                }
+                //{
+                //    "BlockType": "text",
+                //    "MaxWidth": 600,                    
+                //    "Source": "Reserve Driver",
+                //    "VerticalAlignment": "Bottom",
+                //    "RenderIf" : "{Item.Team.Name, Converter=EmptyObjectToTrue}",
+                //    "PaddingBottom": 20,
+                //    "MarginRight" : 150,
+                //    "TextOptionsExtern" : "tableCellDefault",
+                //    "Triggers" : [{
+                //        "Condition" : "{Item.Position, Converter=NumberLess, Parameter=4}",
+                //        "Property" : "Foreground",
+                //        "Value" : "#ffffff"
+                //    }],
+                //    "TextOptions": {
+                //        "HorizontalAlignment": "Center",
+                //    }
+                //}
             ]
         },
 
@@ -99,7 +100,7 @@
             "MarginRight": 16,
             "HorizontalAlignment": "Right",
             "VerticalAlignment": "Bottom",
-            "RenderIf" : "{Item.Team.Name, Converter=EmptyObjectToFalse}",
+            //"RenderIf" : "{Item.Team.Name, Converter=EmptyObjectToFalse}",
             "Items": [
                 //logo
                 {
@@ -114,11 +115,18 @@
                         "VerticalAlignment": "Center",
                         
                     },
-                    "Triggers" : [{
-                        "Condition" : "{F1Mode, Converter=BoolReverse}",
-                        "Property" : "Source",
-                        "Value" : "{Item.Team.LogoPath}"
-                    },]
+                    "Triggers" : [
+                        {
+                            "Condition" : "{Item.Team.Name, Converter=EmptyObjectToTrue}",
+                            "Property" : "Source",
+                            "Value" : "images/cars/Riserve.png"
+                        },
+                        {
+                            "Condition" : "{F1Mode, Converter=BoolReverse}",
+                            "Property" : "Source",
+                            "Value" : "{Item.Team.LogoPath}"
+                        }
+                    ]
                 }
             ]
         }

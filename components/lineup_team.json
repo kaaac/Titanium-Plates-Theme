@@ -92,10 +92,6 @@
             "ItemStackOptions" : {
                 "ItemSource" : "{Item.Lines}",
                 "Template" : {
-                    //"BlockType" : "text",
-                    //"Source" : "{Item.Driver.Name}",
-                    //"FontSize" : 60,
-                    //"Forergound" : "#ffffff",
                     "BlockType" : "dock",
                     "Orientation" : "Vertical",
                     "BackgroundImage" : "images/card_blank.png",
@@ -159,10 +155,13 @@
                                         }
                                     ]
                                 },
-                                //{
-                                //    "BlockType" : "image",
-                                //    "Path" : ""
-                                //}
+                                {
+                                    "BlockType" : "image",
+                                    "HorizontalAlignment" : "Right",
+                                    "Source" : "images/suit/{Item.Team.Name}.png",
+                                    "Width" : 500,
+                                    "MarginTop" : 45
+                                }
                             ]
                         },
                         {
@@ -171,7 +170,7 @@
                             "Foreground" : "#ffffff",
                             "FontSize" : 50,
                             "MarginLeft" : -20,
-                            "MarginTop" : 205,
+                            "MarginTop" : 70,
                             //"Background" : "#93278f",
                             "HorizontalAlignment" : "Center"
                         },

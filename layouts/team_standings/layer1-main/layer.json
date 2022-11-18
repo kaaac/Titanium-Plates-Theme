@@ -17,10 +17,6 @@
                 }               
             },
             {
-                "BlockType" : "text",
-                "Source" : "{Metadata.RenderType}"
-            },
-            {
                 "Name" : "separator",
                 "BlockType": "image",
                 "MarginTop": 0,

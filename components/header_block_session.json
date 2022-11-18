@@ -43,6 +43,7 @@
                             "BlockType": "text",
                             "HorizontalAlignment" : "Left",
                             "FontSize" : 50,
+                            "MarginRight" : 15,
                             "Foreground" : "{HeaderForeground}",
                             "FontName" : "{FontNameDefault}",
                             "Source": "{Session.Track.CountryName}",
@@ -118,7 +119,7 @@
                                     "BlockType": "text",
                                     "HorizontalAlignment": "Right",
                                     "Source": "[Round] {Event.Position} [of] {Season.SeasonOverallNumberEvents}",
-                                    "FontName": "{FontNameBold}",
+                                    "FontName": "{FontNameDefault}",
                                     "FontSize": "{FontSizeRightPart}",
                                     "Foreground": "{HeaderForeground}"
                                 },
@@ -130,7 +131,7 @@
                                         {
                                             "BlockType": "text",
                                             "Source": "[{Session.SessionType}]",
-                                            "FontName": "{FontNameBold}",
+                                            "FontName": "{FontNameDefault}",
                                             "FontSize": "{FontSizeRightPart}",
                                             "Foreground": "{HeaderForeground}",
                                         },
@@ -139,7 +140,7 @@
                                             "BlockType": "text",                                            
                                             "RenderIf": false,
                                             "Source": " • {Session.TotalLaps} [laps]",
-                                            "FontName": "{FontNameBold}",
+                                            "FontName": "{FontNameDefault}",
                                             "FontSize": "{FontSizeRightPart}",
                                             "Foreground": "{HeaderForeground}",
                                             "Triggers" : 
@@ -157,7 +158,7 @@
                                             "BlockType": "text",                                                                                  
                                             "RenderIf": false,
                                             "Source": " • {Session.SessionDurationMinutes} [min].",
-                                            "FontName": "{FontNameBold}",
+                                            "FontName": "{FontNameDefault}",
                                             "FontSize": "{FontSizeRightPart}",
                                             "Foreground": "{HeaderForeground}",
                                             "Triggers" : 
@@ -189,7 +190,7 @@
                                             "BlockType": "text",
                                             "VerticalAlignment": "Center",
                                             "Source": "{Session.AirTemperatureString}",
-                                            "FontName": "{FontNameBold}",
+                                            "FontName": "{FontNameDefault}",
                                             "Foreground": "{HeaderForeground}",
                                             "FontSize": "{FontSizeRightPart}"
                                         }

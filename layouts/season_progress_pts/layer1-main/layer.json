@@ -13,7 +13,7 @@
                     "Vars":
                     {
                         "header": "Season progress",
-                        "subHeader": "Positions"
+                        "subHeader": "Points"
                     }
                 }               
             },
@@ -184,7 +184,7 @@
                                 "Items" : [
                                     {
                                         "BlockType": "text",
-                                        "Source": "{Item.RaceMajorPositionString}",
+                                        "Source": "{Item.PointsString}",
                                         "FontName" : "{FontNameBold}",
                                         "FontSize" : 28,
                                         "HorizontalAlignment" : "Center",
@@ -238,7 +238,16 @@
                                                         "Value": "{SeasonProgressPointsFastestLapForeground}"
                                                     }
                                                 ]
-                                            }
+                                            },
+                                            {
+                                                "Condition": "{Item.PointsString, Converter=StringEquals, Parameter=0}",
+                                                "Setters": [
+                                                    {
+                                                        "Property": "Source",
+                                                        "Value": ""
+                                                    }
+                                                ]
+                                            },
                                         ]
                                     }
                                 ],

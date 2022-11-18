@@ -1,10 +1,7 @@
 {
-  //"ShowPenaltyPointsInStandings": true,
-  //"ShowWinnerInCalendar": true,
-  //"ShowEventDescriptionInCalendar": true,
-  "F1Mode": true,
+  "F1Mode": false,
   "DisplayPodiumCards": false,
-  "Streamer": "",
-  "SecondCommentator": "",
-  "SeasonSeatPerTeam" : 4
+  "SeasonSeatPerTeam": 4,
+  "Streamer": "Yety",
+  "SecondCommentator": "M4P1-S"
 }
