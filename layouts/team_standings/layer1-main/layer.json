@@ -17,39 +17,14 @@
                 }               
             },
             {
-                "Name" : "separator",
-                "BlockType": "image",
-                "MarginTop": 0,
-                "MarginLeft": 0,
-                "MarginRight": 0,
-                "MarginBottom": 5,
-                "Width": "*",
-                "Source": "images/separator.png"
+                "BlockType" : "component",
+                "ComponentName" : "separator"
             },
             {
                 "BlockType": "stack",
                 "Orientation" : "Horizontal",
                 "HorizontalAlignment" : "Center",
                 "Items" : [
-                    {
-                        "BlockType" : "stack",
-                        "Orientation" : "Vertical",
-                        "RenderIf" : "{DisplayPodiumCards}",
-                        "MarginRight" : 40,
-                        "Items" : [
-                            {
-                                "BlockType" : "image",
-                                "Source" : "images/podium.png",
-                                "MarginTop" : 40,
-                                "Width" : 350
-                            },
-                            {
-                                "BlockType" : "image",
-                                "Source" : "images/cards/card_williams.png",
-                                "Width" : 350
-                            }
-                        ]
-                    },
                     {
                         "Name": "mainTable",
                         "BlockType": "table",
@@ -63,7 +38,7 @@
                             },
                             "Columns": [
                                 {
-                                    "Header": "Team",
+                                    "Header": "[Team]",
                                     "Template":
                                     {
                                         "BlockType" : "component",
