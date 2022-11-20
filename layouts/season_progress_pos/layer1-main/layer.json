@@ -37,14 +37,14 @@
                     },
                     "Columns": [
                         {
-                            "Header": "Driver",
+                            "Header": "[Driver]",
                             "Template": {
                                 "BlockType" : "component",
                                 "ComponentName" : "driver_line_cell_session"   
                             }
                         },                        
                         {
-                            "Header": "Team",
+                            "Header": "[Team]",
                             "Template":
                             {
                                 "BlockType" : "component",
@@ -52,7 +52,7 @@
                             }
                         },
                         {
-                            "Header": "Points",
+                            "Header": "[Points]",
                             "Template": {
                                 
                                 "BlockType": "dock",
@@ -173,9 +173,7 @@
                                     }
                                 ]
                             },
-                            
                             "Template" : {
-
                                 "BlockType" : "dock",
                                 "Width" : 80,
                                 "Height" : 73,
@@ -251,7 +249,7 @@
                                                 "Value": "images/bg_position_purple.png"
                                             }
                                         ]
-                                    },
+                                    }
                                 ]
                             }
                         }

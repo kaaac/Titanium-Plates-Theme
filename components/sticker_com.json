@@ -30,12 +30,11 @@
                 {
                     "BlockType" : "dock",
                     "Orientation" : "Horizontal",
-                    //"VerticalAlignment" : "Bottom",
                     "MarginTop": 5,
                     "Items" : [
                         {
                             "BlockType" : "text",
-                            "Source" : "Streamer: ",
+                            "Source" : "[Streamer]: ",
                             "HorizontalAlignment": "Right",
                             "RenderIf": "{SecondCommentator, Converter=EmptyObjectToFalse}",
                             "VerticalAlignment" : "Bottom",

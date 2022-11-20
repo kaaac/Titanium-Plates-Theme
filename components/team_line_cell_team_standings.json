@@ -32,9 +32,7 @@
     ],
     "UseBackgroundCrop" : false,
     "Height" : 73,
-    //"Width" : 512,
     "Items": [
-        //position
         {
             "BlockType": "text",
             "MaxWidth": 90,
@@ -55,15 +53,11 @@
                 "HorizontalAlignment" : "Center"
             }
         },
-        //left part
         {
             "BlockType": "stack",                    
             "HorizontalAlignment": "Right",
             "VerticalAlignment": "Bottom",
             "Items": [
-                 
-
-                //name
                 {
                     "BlockType": "text",
                     "MaxWidth": 600,                    
@@ -77,13 +71,11 @@
                         "Value" : "#ffffff"
                     }],
                     "TextOptions": {
-                        "HorizontalAlignment": "Right",
+                        "HorizontalAlignment": "Right"
                     }
                 }
             ]
         },
-
-        //right part
         {
             "BlockType": "stack",           
             "MarginRight": 16,
@@ -91,7 +83,6 @@
             "VerticalAlignment": "Bottom",
             "RenderIf" : "{Item.Team.Name, Converter=EmptyObjectToFalse}",
             "Items": [
-                //logo
                 {
                     "BlockType": "image",
                     "Source" : "images/cars/{Item.Team.Name}.png",
@@ -101,14 +92,16 @@
                     "MarginRight": 20,
                     "VerticalAlignment": "Bottom",
                     "ImageOptions": {
-                        "VerticalAlignment": "Center",
+                        "VerticalAlignment": "Center"
                         
                     },
-                    "Triggers" : [{
-                        "Condition" : "{F1Mode, Converter=BoolReverse}",
-                        "Property" : "Source",
-                        "Value" : "{Item.Team.LogoPath}"
-                    },]
+                    "Triggers" : [
+                        {
+                            "Condition" : "{F1Mode, Converter=BoolReverse}",
+                            "Property" : "Source",
+                            "Value" : "{Item.Team.LogoPath}"
+                        }
+                    ]
                 }
             ]
         }

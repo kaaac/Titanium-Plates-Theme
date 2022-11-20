@@ -1,1 +1,21 @@
-{}
+{
+    "Driver" : "Driver",
+    "Team" : "Team",
+    "Points" : "Points",
+    "Wins" : "Wins",
+    "2nd" : "2nd",
+    "3rd" : "3rd",
+    "Poles" : "Poles",
+    "PP" : "PP",
+    "Events" : "Events",
+    "Interval" : "Interval",
+    "Penalties" : "Penalties",
+    "Fastest Lap" : "Fastest Lap",
+    "Stints" : "Stints",
+    "Pit Stop" : "Pit Stop",
+    "Pts" : "Pts",
+    "FASTEST LAP" : "FASTEST LAP",
+    "DRIVER OF THE DAY" : "DRIVER OF THE DAY",
+    "COMMENTATOR" : "COMMENTATOR",
+    "Streamer" : "Streamer",
+}

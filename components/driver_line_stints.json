@@ -2,37 +2,8 @@
     "BlockType": "dock",
     "PaddingLeft": 12,
     "PaddingRight": 4,    
-    //"BackgroundImage": "images/team_bg/team_bg_{Item.Team.Name}.png",
-    //"Triggers" : [
-    //    {
-    //        "Condition" : "{F1Mode, Converter=BoolReverse}",
-    //        "Property" : "BackgroundImage",
-    //        "Value" : "images/Team.png"
-    //    },
-    //    {
-    //        "Condition" : "{Item.Team.Name, Converter=EmptyObjectToTrue}",
-    //        "Property" : "BackgroundImage",
-    //        "Value" : "images/Team.png"
-    //    },
-    //    {
-    //        "Condition" : "{Item.PositionString, Converter=StringEquals, Parameter=1}",
-    //        "Property" : "BackgroundImage",
-    //        "Value" : "images/podium_bg/team_bg_gold.png"
-    //    },
-    //    {
-    //        "Condition" : "{Item.PositionString, Converter=StringEquals, Parameter=2}",
-    //        "Property" : "BackgroundImage",
-    //        "Value" : "images/podium_bg/team_bg_silver.png"
-    //    },
-    //    {
-    //        "Condition" : "{Item.PositionString, Converter=StringEquals, Parameter=3}",
-    //        "Property" : "BackgroundImage",
-    //        "Value" : "images/podium_bg/team_bg_copper.png"
-    //    }
-    //],
     "UseBackgroundCrop" : false,
     "Height" : 73,
-    //"Width" : 700,
     "Items": [
         {
             "BlockType": "text",
@@ -67,41 +38,21 @@
                 "HorizontalAlignment" : "Center"
             }
         },
-        //left part
         {
             "BlockType": "stack",                    
             "HorizontalAlignment": "Right",
             "VerticalAlignment": "Bottom",
             "Items": [
-                //name
                 {
                     "BlockType": "text",
                     "MaxWidth": 600,                    
                     "Source": "{Item.Driver.Name}",
                     "VerticalAlignment": "Bottom",
                     "MarginLeft" : 100,
-                    //"RenderIf" : "{Item.Team.Name, Converter=EmptyObjectToFalse}",
                     "PaddingBottom": 20,
                     "FontName" : "{FontNameDefault}",
                     "FontSize" : 30,
                     "Foreground" : "#ffffff",
-                    //"Triggers" : [
-                    //    {
-                    //        "Condition" : "{Item.PositionString, Converter=StringEquals, Parameter=3}",
-                    //        "Property" : "Foreground",
-                    //        "Value" : "#ffffff"
-                    //    },
-                    //    {
-                    //        "Condition" : "{Item.PositionString, Converter=StringEquals, Parameter=2}",
-                    //        "Property" : "Foreground",
-                    //        "Value" : "#ffffff"
-                    //    },
-                    //    {
-                    //        "Condition" : "{Item.PositionString, Converter=StringEquals, Parameter=1}",
-                    //        "Property" : "Foreground",
-                    //        "Value" : "#ffffff"
-                    //    }
-                    //],
                     "TextOptions": {
                         "HorizontalAlignment": "Right",
                     }
@@ -126,8 +77,6 @@
                 }
             ]
         },
-
-        //right part
         {
             "BlockType": "stack",           
             "MarginRight": 16,
@@ -135,7 +84,6 @@
             "VerticalAlignment": "Bottom",
             "RenderIf" : "{Item.Team.Name, Converter=EmptyObjectToFalse}",
             "Items": [
-                //logo
                 {
                     "BlockType": "image",
                     "Source" : "images/cars/{Item.Team.Name}.png",
@@ -145,14 +93,15 @@
                     "MarginRight": 20,
                     "VerticalAlignment": "Bottom",
                     "ImageOptions": {
-                        "VerticalAlignment": "Center",
-                        
+                        "VerticalAlignment": "Center"
                     },
-                    "Triggers" : [{
-                        "Condition" : "{F1Mode, Converter=BoolReverse}",
-                        "Property" : "Source",
-                        "Value" : "{Item.Team.LogoPath}"
-                    },]
+                    "Triggers" : [
+                        {
+                            "Condition" : "{F1Mode, Converter=BoolReverse}",
+                            "Property" : "Source",
+                            "Value" : "{Item.Team.LogoPath}"
+                        }
+                    ]
                 }
             ]
         }

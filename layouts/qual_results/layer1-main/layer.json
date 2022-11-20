@@ -29,7 +29,7 @@
                     },
                     "Columns": [
                         {
-                            "Header": "Driver",
+                            "Header": "[Driver]",
                             "WidthStretch" : true,
                             "Template":
                             {
@@ -38,7 +38,7 @@
                             }
                         },
                         {
-                            "Header": "Team",
+                            "Header": "[Team]",
                             "Template":
                             {
                                 "BlockType" : "component",

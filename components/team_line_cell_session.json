@@ -44,7 +44,6 @@
                     "MaxWidth": 600,                    
                     "Source": "{Item.Team.Name}",
                     "VerticalAlignment": "Bottom",
-                    //"RenderIf" : "{Item.Team.Name, Converter=EmptyObjectToFalse}",
                     "PaddingBottom": 20,
                     "TextOptionsExtern" : "tableCellDefault",
                     "Triggers" : [
@@ -72,37 +71,15 @@
                     "TextOptions": {
                         "HorizontalAlignment": "Right"
                     }
-                },
-                //{
-                //    "BlockType": "text",
-                //    "MaxWidth": 600,                    
-                //    "Source": "Reserve Driver",
-                //    "VerticalAlignment": "Bottom",
-                //    "RenderIf" : "{Item.Team.Name, Converter=EmptyObjectToTrue}",
-                //    "PaddingBottom": 20,
-                //    "MarginRight" : 150,
-                //    "TextOptionsExtern" : "tableCellDefault",
-                //    "Triggers" : [{
-                //        "Condition" : "{Item.Position, Converter=NumberLess, Parameter=4}",
-                //        "Property" : "Foreground",
-                //        "Value" : "#ffffff"
-                //    }],
-                //    "TextOptions": {
-                //        "HorizontalAlignment": "Center",
-                //    }
-                //}
+                }
             ]
         },
-
-        //right part
         {
             "BlockType": "stack",           
             "MarginRight": 16,
             "HorizontalAlignment": "Right",
             "VerticalAlignment": "Bottom",
-            //"RenderIf" : "{Item.Team.Name, Converter=EmptyObjectToFalse}",
             "Items": [
-                //logo
                 {
                     "BlockType": "image",
                     "Source" : "images/cars/{Item.Team.Name}.png",

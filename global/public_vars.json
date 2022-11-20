@@ -1,7 +1,7 @@
 {
-  "F1Mode": false,
-  "DisplayPodiumCards": false,
+  "F1Mode": true,
+  "DisplayPodiumCards": true,
   "SeasonSeatPerTeam": 4,
-  "Streamer": "Yety",
-  "SecondCommentator": "M4P1-S"
+  "Streamer": "M4P1-S",
+  "SecondCommentator": ""
 }

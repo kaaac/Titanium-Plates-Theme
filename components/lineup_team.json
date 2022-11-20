@@ -7,15 +7,15 @@
     "BackgroundImage" : "images/lineup/card_one_driver.png",
     "Triggers" : [
         {
-            "Condition" : "{SeasonSeatPerTeam, Converter=NumberEquals, Parameter=2}",
+            "Condition" : "{Season.SeatsPerTeam, Converter=NumberEquals, Parameter=2}",
             "Setters" : [
                 {
                     "Property" : "Width",
-                    "Value" : "1314",
+                    "Value" : "1314"
                 },
                 {
                     "Property" : "Height",
-                    "Value" : "955",
+                    "Value" : "955"
                 },
                 {
                     "Property" : "BackgroundImage",
@@ -24,15 +24,15 @@
             ]
         },
         {
-            "Condition" : "{SeasonSeatPerTeam, Converter=NumberEquals, Parameter=3}",
+            "Condition" : "{Season.SeatsPerTeam, Converter=NumberEquals, Parameter=3}",
             "Setters" : [
                 {
                     "Property" : "Width",
-                    "Value" : "1950",
+                    "Value" : "1950"
                 },
                 {
                     "Property" : "Height",
-                    "Value" : "955",
+                    "Value" : "955"
                 },
                 {
                     "Property" : "BackgroundImage",
@@ -41,15 +41,15 @@
             ]
         },
         {
-            "Condition" : "{SeasonSeatPerTeam, Converter=NumberEquals, Parameter=4}",
+            "Condition" : "{Season.SeatsPerTeam, Converter=NumberEquals, Parameter=4}",
             "Setters" : [
                 {
                     "Property" : "Width",
-                    "Value" : "2596",
+                    "Value" : "2596"
                 },
                 {
                     "Property" : "Height",
-                    "Value" : "955",
+                    "Value" : "955"
                 },
                 {
                     "Property" : "BackgroundImage",
@@ -62,11 +62,11 @@
             "Setters" : [
                 {
                     "Property" : "Width",
-                    "Value" : "1314",
+                    "Value" : "1314"
                 },
                 {
                     "Property" : "Height",
-                    "Value" : "1114",
+                    "Value" : "1114"
                 },
                 {
                     "Property" : "BackgroundImage",
@@ -129,27 +129,18 @@
                                         {
                                             "BlockType" : "image",
                                             "Source" : "images/platform/platform_{Item.Driver.GamePlatform}.png",
-                                            //"Foreground" : "#ffffff",
-                                            //"FontSize" : 80,
                                             "Height" : 80,
                                             "MarginLeft" : 70,
                                             "MarginTop" : 30,
                                         },
-                                        //{
-                                        //    "BlockType" : "text",
-                                        //    "Source" : "{Item.Driver.Nationality.Code}",
-                                        //    "Foreground" : "#ffffff",
-                                        //    "FontSize" : 80
-                                        //},
                                         {
                                             "BlockType": "image",
                                             "Height": 50,
-                                            //"MarginRight": 0,
                                             "MarginTop" : 42,
                                             "MarginLeft" : 70,
                                             "VerticalAlignment": "Center",
                                             "ImageOptions": {
-                                                "Path": "images/flags/{Item.Driver.Nationality.Code}.png",//"{Item.Driver.Nationality.LogoPath}",
+                                                "Path": "images/flags/{Item.Driver.Nationality.Code}.png",
                                                 "VerticalAlignment": "Center"
                                             }
                                         }
@@ -160,7 +151,7 @@
                                     "HorizontalAlignment" : "Right",
                                     "Source" : "images/suit/{Item.Team.Name}.png",
                                     "Width" : 500,
-                                    "MarginTop" : 45
+                                    "MarginTop" : 100
                                 }
                             ]
                         },
@@ -170,8 +161,7 @@
                             "Foreground" : "#ffffff",
                             "FontSize" : 50,
                             "MarginLeft" : -20,
-                            "MarginTop" : 70,
-                            //"Background" : "#93278f",
+                            "MarginTop" : 15,
                             "HorizontalAlignment" : "Center"
                         },
                         {
@@ -183,7 +173,6 @@
                                     "BlockType" : "image",
                                     "Source" : "{Season.LeagueInfo.LeagueLogo}",
                                     "HorizontalAlignment" : "Left",
-                                    //"Background" : "#93278f",
                                     "MarginTop" : -5,
                                     "MarginLeft" : 50,
                                     "Height" : 65,
@@ -209,7 +198,6 @@
                                     "Source": "images/f1_logo.png",
                                     "HorizontalAlignment" : "Right",
                                     "RenderIf" : "{F1Mode}",
-                                    //"Background" : "#93278f",
                                     "MarginRight" : 180,
                                     "Height" : 55
                                 }
@@ -226,11 +214,7 @@
             "Width" : 680,
             "PaddingTop" : -40,
             "VerticalAlignment": "Bottom",
-            "HorizontalAlignment": "Center",
-            "ImageOptions": {
-                
-
-            }
+            "HorizontalAlignment": "Center"
         }
     ]
 }

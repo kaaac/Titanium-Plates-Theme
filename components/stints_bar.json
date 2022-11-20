@@ -24,13 +24,9 @@
                         {
                             "Condition" : "{Item.StartLapNumber, Converter=NumberEquals, Parameter=1}",
                             "Setters" : [
-                                //{
-                                //    "Property" : "Source",
-                                //    "Value" : " ",
-                                //},
                                 {
                                     "Property" : "PositionY",
-                                    "Value" : "0",
+                                    "Value" : "0"
                                 }
                             ]
                         }
@@ -51,13 +47,9 @@
                         {
                             "Condition" : "{Item.StartLapNumber, Converter=NumberEquals, Parameter=1}",
                             "Setters" : [
-                                //{
-                                //    "Property" : "Source",
-                                //    "Value" : " ",
-                                //},
                                 {
                                     "Property" : "PositionY",
-                                    "Value" : "0",
+                                    "Value" : "0"
                                 }
                             ]
                         }
@@ -78,13 +70,9 @@
                         {
                             "Condition" : "{Item.StartLapNumber, Converter=NumberEquals, Parameter=1}",
                             "Setters" : [
-                                //{
-                                //    "Property" : "Source",
-                                //    "Value" : " ",
-                                //},
                                 {
                                     "Property" : "PositionY",
-                                    "Value" : "0",
+                                    "Value" : "0"
                                 }
                             ]
                         }
@@ -105,13 +93,9 @@
                         {
                             "Condition" : "{Item.StartLapNumber, Converter=NumberEquals, Parameter=1}",
                             "Setters" : [
-                                //{
-                                //    "Property" : "Source",
-                                //    "Value" : " ",
-                                //},
                                 {
                                     "Property" : "PositionY",
-                                    "Value" : "0",
+                                    "Value" : "0"
                                 }
                             ]
                         }
@@ -133,7 +117,7 @@
                             "Setters" : [
                                 {
                                     "Property" : "PositionY",
-                                    "Value" : "0",
+                                    "Value" : "0"
                                 }
                             ]
                         }
@@ -141,15 +125,10 @@
                 },
                 {
                     "BlockType" : "image",
-                    //"Source" : " ",//{Item.StartLapNumber}",
                     "VerticalAlignment" : "Top",
                     "FontSize" : 25,
                     "Foreground" : "#000000",
                     "Source" : "images/pit/pit_{Item.Tyres}.png",
-                    //"PaddingLeft" : 5,
-                    //"PaddingRight" : 5,
-                    //"MarginBottom" : -25,
-                    //"PositionY" : -10,
                     "RenderIf" : true,
                     "Height" : 73,
                     "Width" : 73,
@@ -157,10 +136,6 @@
                         {
                             "Condition" : "{Item.StartLapNumber, Converter=NumberEquals, Parameter=1}",
                             "Setters" : [
-                                //{
-                                //    "Property" : "Source",
-                                //    "Value" : " ",
-                                //},
                                 {
                                     "Property" : "RenderIf",
                                     "Value" : false
@@ -168,30 +143,8 @@
                             ]
                         }
                     ]
-                },
+                }
             ]
-        },
-        
-        //{
-        //    "BlockType": "image",
-        //    "Height": 40,
-        //    "VerticalAlignment": "Bottom",
-        //    "PaddingBottom" : 13,
-        //    "Source": "tyres_{Item.Tyres}.png"
-        //},
-        //{
-        //    "BlockType": "text",
-        //    "Source": "{Item.Percentage}",
-        //    "HorizontalAlignment": "Center",
-        //    "VerticalAlignment": "Bottom",
-        //    "PaddingBottom" : 27,
-        //    "FontSize": 30,
-        //    "TextOptions": {
-        //        "FontName": "{FontNameBold}",
-        //        "HorizontalAlignment": "Center",
-        //        "Foreground" : "#ffffff"
-        //    }
-        //}
-    
+        }
     ]
 }

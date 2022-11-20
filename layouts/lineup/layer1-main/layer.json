@@ -5,10 +5,6 @@
         "Margin": "{MarginRoot}",       
         "Orientation": "Vertical",
         "Items": [
-            //{
-            //    "BlockType" : "component",
-            //    "ComponentName" : "header_block_session"
-            //},
             {
                 "Name" : "separator",
                 "BlockType": "image",

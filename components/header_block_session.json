@@ -4,7 +4,6 @@
     "Orientation": "Horizontal",
     "Padding" : "45,10,45,0",
     "Items": [
-        //headerLeft
         {
             "Name": "headerLeftpart",
             "BlockType": "stack",
@@ -98,7 +97,6 @@
                 }
             ]
         },
-        //headerRight
         {
             "Name": "headerRightPart",
             "BlockType": "stack",
@@ -135,7 +133,6 @@
                                             "FontSize": "{FontSizeRightPart}",
                                             "Foreground": "{HeaderForeground}",
                                         },
-                                        //race duration
                                         {
                                             "BlockType": "text",                                            
                                             "RenderIf": false,
@@ -153,7 +150,6 @@
                                                 }
                                             ]
                                         },
-                                        //qual, practice duration
                                         {
                                             "BlockType": "text",                                                                                  
                                             "RenderIf": false,

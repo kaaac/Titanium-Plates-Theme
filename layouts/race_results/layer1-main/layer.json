@@ -16,10 +16,12 @@
             {
                 "BlockType": "stack",
                 "Orientation" : "Horizontal",
+                "Margin" : "{MarginTable}",
                 "Items" : [
                     {
                         "BlockType" : "stack",
                         "Orientation" : "Vertical",
+                        "MarginRight" : 45,
                         "RenderIf" : "{DisplayPodiumCards}",
                         "Items" : [
                             {
@@ -35,17 +37,131 @@
                                     "ItemSource": "{Session.Drivers}",
                                     "Limit" : 3,
                                     "Template": {
-                                        "BlockType" : "image",
-                                        "Source" : "images/cards/card_Herox16.png",
+                                        "BlockType" : "stack",
                                         "BackgroundImage" : "images/cards/plate_bg_{Item.PositionString}.png",
-                                        "Padding" : "30, 0, 30, 45",
-                                        "Margin" : "10, 10, 10, 10",
+                                        "Padding" : "20, 0, 20, 45",
+                                        "Margin" : "15, 10, 15, 10",
                                         "HorizontalAlignment" : "Center",
                                         "Width" : 250,
-                                        "ImageOptions":
-                                        {
-                                            "HorizontalAlignment" : "Center"
-                                        }
+                                        "Height" : 330,
+                                        "Items" : [
+                                            {
+                                                "BlockType" : "dock",
+                                                "Orientation" : "Vertical",
+                                                "BackgroundImage" : "images/card_blank.png",
+                                                "Width" : 250,
+                                                "Height" : 325,
+                                                "Items" : [
+                                                    {
+                                                        "BlockType" : "dock",
+                                                        "Orientation" : "Horizontal",
+                                                        "Items": [
+                                                            {
+                                                                "BlockType" : "stack",
+                                                                "Orientation" : "Vertical",
+                                                                "HorizontalAlignment" : "Left",
+                                                                "Items" : [
+                                                                    {
+                                                                        "BlockType" : "text",
+                                                                        "Source" : "{Item.Driver.RaceNumber}",
+                                                                        "Foreground" : "#ffffff",
+                                                                        "FontSize" : 35,
+                                                                        "MarginLeft" : 28,
+                                                                        "MarginTop" : 42,
+                                                                        "TextOptions" : {
+                                                                            "HorizontalAlignment" : "Center"
+                                                                        },
+                                                                        "Triggers" : [
+                                                                            {
+                                                                                "Condition" : "{Item.Driver.RaceNumber, Converter=NumberLess, Parameter=10}",
+                                                                                "Property" : "Source",
+                                                                                "Value" : "0{Item.Driver.RaceNumber}"
+                                                                            }
+                                                                        ]
+                                                                    },
+                                                                    {
+                                                                        "BlockType" : "image",
+                                                                        "Source" : "images/platform/platform_{Item.Driver.GamePlatform}.png",
+                                                                        "Height" : 35,
+                                                                        "MarginLeft" : 27,
+                                                                        "MarginTop" : 9
+                                                                    },
+                                                                    {
+                                                                        "BlockType": "image",
+                                                                        "Height": 19,
+                                                                        "MarginTop" : 14,
+                                                                        "MarginLeft" : 28,
+                                                                        "VerticalAlignment": "Center",
+                                                                        "ImageOptions": {
+                                                                            "Path": "images/flags/{Item.Driver.Nationality.Code}.png",
+                                                                            "VerticalAlignment": "Center"
+                                                                        }
+                                                                    }
+                                                                ]
+                                                            },
+                                                            {
+                                                                "BlockType" : "image",
+                                                                "HorizontalAlignment" : "Right",
+                                                                "Source" : "images/suit/{Item.Team.Name}.png",
+                                                                "Width" : 200,
+                                                                "MarginTop" : 40
+                                                            }
+                                                        ]
+                                                    },
+                                                    {
+                                                        "BlockType" : "text",
+                                                        "Source" : "{Item.Driver.Name}",
+                                                        "Foreground" : "#ffffff",
+                                                        "FontSize" : 20,
+                                                        "MarginLeft" : -6,
+                                                        "MarginTop" : 3,
+                                                        "HorizontalAlignment" : "Center"
+                                                    },
+                                                    {
+                                                        "BlockType" : "dock",
+                                                        "Orientation" : "Horizontal",
+                                                        "MarginTop" : 13,
+                                                        "Items" : [
+                                                            {
+                                                                "BlockType" : "image",
+                                                                "Source" : "{Season.LeagueInfo.LeagueLogo}",
+                                                                "HorizontalAlignment" : "Left",
+                                                                "MarginTop" : -1,
+                                                                "MarginLeft" : 15,
+                                                                "Height" : 35,
+                                                                "RenderIf" : true,
+                                                                "Triggers" : [
+                                                                    {
+                                                                        "Condition" : "{F1Mode, Converter=BoolReverse}",
+                                                                        "Setters" : [
+                                                                            {
+                                                                                "Property" : "HorizontalAlignment",
+                                                                                "Value" : "Center"
+                                                                            },
+                                                                            {
+                                                                                "Property" : "MarginLeft",
+                                                                                "Value" : "-15"
+                                                                            }
+                                                                        ]
+                                                                    }
+                                                                ]
+                                                            },
+                                                            {
+                                                                "BlockType" : "image",
+                                                                "Source": "images/f1_logo.png",
+                                                                "HorizontalAlignment" : "Right",
+                                                                "RenderIf" : "{F1Mode}",
+                                                                "MarginRight" : 60,
+                                                                "Height" : 20,
+                                                                "MarginTop" : 5
+
+                                                            }
+                                                        ]
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                        
                                         
                                     }
                                 }
@@ -59,8 +175,6 @@
                             {
                                 "Name": "mainTable",
                                 "BlockType": "table",
-                                "Margin" : "{MarginTable}",
-                                "Padding" : "45,0,45,20",
                                 "TableOptions": {
                                     "ItemsSource": "{Session.Drivers}",
                                     "RowSpacing": 13,
@@ -73,7 +187,7 @@
                                     },
                                     "Columns": [
                                         {
-                                            "Header": "Driver",
+                                            "Header": "[Driver]",
                                             "WidthStretch" : true,
                                             "Template":
                                             {
@@ -82,7 +196,7 @@
                                             }
                                         },
                                         {
-                                            "Header": "Team",
+                                            "Header": "[Team]",
                                             "Template":
                                             {
                                                 "BlockType" : "component",
@@ -317,7 +431,7 @@
                                                     "Vars" :
                                                     {
                                                         "bg" : "images/fastlap_bg.png",
-                                                        "header" : "FASTEST LAP",
+                                                        "header" : "[FASTEST LAP]",
                                                         "main" : "{Session.FastestLapDriver.Name}",
                                                         "data" : "{Session.FastestLapTime}",
                                                         "tyre" : "images/tyres/tyres_{Session.FastestLapTyres}.png"
@@ -334,7 +448,7 @@
                                                     "Vars" :
                                                     {
                                                         "bg" : "images/driveroftheday_bg.png",
-                                                        "header" : "DRIVER OF THE DAY",
+                                                        "header" : "[DRIVER OF THE DAY]",
                                                         "main" : "",
                                                         "data" : "{Session.DriverDayDriver.Name}"
                                                     }
@@ -350,7 +464,7 @@
                                                     "Vars" :
                                                     {
                                                         "bg" : "images/commentator_bg.png",
-                                                        "header" : "COMMENTATOR",
+                                                        "header" : "[COMMENTATOR]",
                                                         "streamer" : "{Streamer}",
                                                         "secondcomm" : "{SecondCommentator}"
                                                     }
