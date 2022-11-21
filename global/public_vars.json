@@ -1,6 +1,6 @@
 {
-  "F1Mode": true,
-  "DisplayPodiumCards": true,
+  "F1Mode": false,
+  "DisplayPodiumCards": false,
   "SeasonSeatPerTeam": 4,
   "Streamer": "M4P1-S",
   "SecondCommentator": ""

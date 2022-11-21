@@ -1,6 +1,7 @@
 {
     "Name": "headerBlock",
     "BlockType": "dock",
+    "Padding" : "{HeaderPadding}",
     "Orientation": "Horizontal",
     "Items": [
         {
@@ -61,6 +62,7 @@
                             "Foreground" : "{HeaderForeground}",
                             "FontName" : "{FontNameBold}",
                             "VerticalAlignment" : "Top",
+                            "HorizontalAlignment" : "Center",
                             "Source" : "{Season.Name}"
                         },
                         {

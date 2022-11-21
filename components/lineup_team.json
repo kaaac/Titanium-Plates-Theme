@@ -112,6 +112,7 @@
                                             "BlockType" : "text",
                                             "Source" : "{Item.Driver.RaceNumber}",
                                             "Foreground" : "#ffffff",
+                                            "FontName" : "{FontNameBold}",
                                             "FontSize" : 80,
                                             "MarginLeft" : 75,
                                             "MarginTop" : 110,
@@ -140,7 +141,7 @@
                                             "MarginLeft" : 70,
                                             "VerticalAlignment": "Center",
                                             "ImageOptions": {
-                                                "Path": "images/flags/{Item.Driver.Nationality.Code}.png",
+                                                "Path": "images/flags/flag_{Item.Driver.Nationality.Code}.png",
                                                 "VerticalAlignment": "Center"
                                             }
                                         }
@@ -149,9 +150,16 @@
                                 {
                                     "BlockType" : "image",
                                     "HorizontalAlignment" : "Right",
-                                    "Source" : "images/suit/{Item.Team.Name}.png",
+                                    "Source" : "images/suit/{Item.Team.Name}_{Item.SeatPosition}.png",
                                     "Width" : 500,
-                                    "MarginTop" : 100
+                                    "MarginTop" : 60,
+                                    "Triggers" : [
+                                        {
+                                            "Condition" : "{F1Mode, Converter=BoolReverse}",
+                                            "Property" : "Source",
+                                            "Value" : "images/suit/Neutral.png"
+                                        }
+                                    ]
                                 }
                             ]
                         },
@@ -161,7 +169,7 @@
                             "Foreground" : "#ffffff",
                             "FontSize" : 50,
                             "MarginLeft" : -20,
-                            "MarginTop" : 15,
+                            "MarginTop" : 20,
                             "HorizontalAlignment" : "Center"
                         },
                         {

@@ -23,6 +23,7 @@
             {
                 "Name": "mainTable",
                 "BlockType": "table",
+                "Margin" : "{MarginTable}",
                 "HorizontalAlignment" : "Center",
                 "TableOptions": {
                     "ItemsSource": "{Standings.Drivers}",
@@ -65,6 +66,11 @@
                                         "Value" : "images/gap_bg.png"
                                     },
                                     {
+                                        "Condition" : "{Item.Team.Name, Converter=EmptyObjectToTrue}",
+                                        "Property" : "BackgroundImage",
+                                        "Value" : "images/gap_bg.png"
+                                    },
+                                    {
                                         "Condition" : "{Item.PositionString, Converter=StringEquals, Parameter=1}",
                                         "Property" : "BackgroundImage",
                                         "Value" : "images/podium_bg/gap_bg_gold.png"
@@ -79,11 +85,7 @@
                                         "Property" : "BackgroundImage",
                                         "Value" : "images/podium_bg/gap_bg_copper.png"
                                     },
-                                    {
-                                        "Condition" : "{Item.Team.Name, Converter=EmptyObjectToTrue}",
-                                        "Property" : "BackgroundImage",
-                                        "Value" : "images/gap_bg.png"
-                                    },
+                                    
                                     {
                                         "Condition" : "{Standings.IsPositionJumpForDriversExists}",
                                         "Property" : "PaddingRight",

@@ -1,5 +1,6 @@
 {
     "BlockType": "dock",
+    //"RenderIf" : "{Season.LineupsBasedType, Converter=StringEquals, Parameter=Teams}",
     "PaddingLeft": 12,
     "PaddingRight": 4,    
     "BackgroundImage": "images/team_bg/team_bg_{Item.Team.Name}.png",
@@ -66,6 +67,11 @@
                             "Condition" : "{Item.Team.Name, Converter=EmptyObjectToTrue}",
                             "Property" : "Source",
                             "Value" : "Reserve"
+                        },
+                        {
+                            "Condition" : "{Season.LineupsBasedType, Converter=StringEquals, Parameter=Cars}",
+                            "Property" : "Source",
+                            "Value" : "{Item.Team.Car.CarClass}"
                         }
                     ],
                     "TextOptions": {
@@ -102,7 +108,10 @@
                             "Condition" : "{F1Mode, Converter=BoolReverse}",
                             "Property" : "Source",
                             "Value" : "{Item.Team.LogoPath}"
-                        }
+                        },
+                        //{
+                        //    "Condition" : 
+                        //}
                     ]
                 }
             ]
