@@ -114,7 +114,7 @@
                                             "Foreground" : "#ffffff",
                                             "FontName" : "{FontNameBold}",
                                             "FontSize" : 80,
-                                            "MarginLeft" : 75,
+                                            "MarginLeft" : 80,
                                             "MarginTop" : 110,
                                             "TextOptions" : {
                                                 "HorizontalAlignment" : "Center"
@@ -131,13 +131,13 @@
                                             "BlockType" : "image",
                                             "Source" : "images/platform/platform_{Item.Driver.GamePlatform}.png",
                                             "Height" : 80,
-                                            "MarginLeft" : 70,
-                                            "MarginTop" : 30,
+                                            "MarginLeft" : 72,
+                                            "MarginTop" : 15,
                                         },
                                         {
                                             "BlockType": "image",
                                             "Height": 50,
-                                            "MarginTop" : 42,
+                                            "MarginTop" : 57,
                                             "MarginLeft" : 70,
                                             "VerticalAlignment": "Center",
                                             "ImageOptions": {
@@ -161,10 +161,10 @@
                                                     "Property" : "Source",
                                                     "Value" : "images/suit/Neutral.png"
                                                 },
-                                                {
-                                                    "Property" : "MarginBottom",
-                                                    "Value" : "33",
-                                                }
+                                                //{
+                                                //    "Property" : "MarginBottom",
+                                                //    "Value" : "33",
+                                                //}
                                             ]
                                            
                                         }

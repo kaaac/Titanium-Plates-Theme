@@ -64,28 +64,6 @@
                                                     "Template": {
                                                         "Padding": "12, 0",
                                                         "BackgroundImage": "images/team_bg/gap_bg_{Item.Team.Name}.png",
-                                                        "Triggers" : [
-                                                            {
-                                                                "Condition" : "{F1Mode, Converter=BoolReverse}",
-                                                                "Property" : "BackgroundImage",
-                                                                "Value" : "images/gap_bg.png"
-                                                            },
-                                                            {
-                                                                "Condition" : "{Item.PositionString, Converter=StringEquals, Parameter=1}",
-                                                                "Property" : "BackgroundImage",
-                                                                "Value" : "images/podium_bg/gap_bg_gold.png"
-                                                            },
-                                                            {
-                                                                "Condition" : "{Item.PositionString, Converter=StringEquals, Parameter=2}",
-                                                                "Property" : "BackgroundImage",
-                                                                "Value" : "images/podium_bg/gap_bg_silver.png"
-                                                            },
-                                                            {
-                                                                "Condition" : "{Item.PositionString, Converter=StringEquals, Parameter=3}",
-                                                                "Property" : "BackgroundImage",
-                                                                "Value" : "images/podium_bg/gap_bg_copper.png"
-                                                            }
-                                                        ],
                                                         "BlockType": "text",
                                                         "Source": "{Item.IntervalRace}",
                                                         "HorizontalAlignment": "Left",
@@ -93,7 +71,65 @@
                                                         "TextOptions": {
                                                             "HorizontalAlignment": "Center",
                                                             "Foreground" : "#ffffff"
-                                                        }
+                                                        },
+                                                        "Triggers" : [
+                                                            {
+                                                                "Condition" : "{F1Mode, Converter=BoolReverse}",
+                                                                "Setters" : [
+                                                                    {
+                                                                        "Property" : "BackgroundImage",
+                                                                        "Value" : "images/gap_bg.png"
+                                                                    },
+                                                                    {
+                                                                        "Property" : "Foreground",
+                                                                        "Value" : "#000000"
+                                                                    }
+                                                                ]
+                                                                
+                                                            },
+                                                            {
+                                                                "Condition" : "{Item.PositionString, Converter=StringEquals, Parameter=1}",
+                                                                "Setters" : [
+                                                                    {
+                                                                        "Property" : "BackgroundImage",
+                                                                        "Value" : "images/podium_bg/gap_bg_gold.png"
+                                                                    },
+                                                                    {
+                                                                        "Property" : "Foreground",
+                                                                        "Value" : "#ffffff"
+                                                                    }
+                                                                ]
+                                                                
+                                                            },
+                                                            {
+                                                                "Condition" : "{Item.PositionString, Converter=StringEquals, Parameter=2}",
+                                                                "Setters" : [
+                                                                    {
+                                                                        "Property" : "BackgroundImage",
+                                                                        "Value" : "images/podium_bg/gap_bg_silver.png"
+                                                                    },
+                                                                    {
+                                                                        "Property" : "Foreground",
+                                                                        "Value" : "#ffffff"
+                                                                    }
+                                                                ]
+                                                                
+                                                            },
+                                                            {
+                                                                "Condition" : "{Item.PositionString, Converter=StringEquals, Parameter=3}",
+                                                                "Setters" : [
+                                                                    {
+                                                                        "Property" : "BackgroundImage",
+                                                                        "Value" : "images/podium_bg/gap_bg_copper.png"
+                                                                    },
+                                                                    {
+                                                                        "Property" : "Foreground",
+                                                                        "Value" : "#ffffff"
+                                                                    }
+                                                                ]
+                                                                
+                                                            }
+                                                        ]
                                                     }
                                                 },
                                                 {

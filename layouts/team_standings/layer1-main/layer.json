@@ -61,32 +61,103 @@
                                                 "Source": "{Item.Points}",
                                                 "HorizontalAlignment": "Right",
                                                 "VerticalAlignment": "Center",
-                                                "Foreground" : "{StandingsPointsForeground}",
+                                                "Foreground" : "#ffffff",
                                                 "FontName": "{FontNameBold}",
-                                                "FontSize": 45
+                                                "FontSize": 45,
+                                                "Triggers" :
+                                                    [
+                                                        {
+                                                            "Condition" : "{F1Mode, Converter=BoolReverse}",
+                                                            "Setters" : [
+                                                                {
+                                                                    "Property" : "Foreground",
+                                                                    "Value" : "#000000"
+                                                                }
+                                                            ]
+                                                        },
+                                                        {
+                                                            "Condition" : "{Item.PositionString, Converter=StringEquals, Parameter=1}",
+                                                            "Setters" : [
+                                                                {
+                                                                    "Property" : "Foreground",
+                                                                    "Value" : "#ffffff"
+                                                                }
+                                                            ]
+                                                        },
+                                                        {
+                                                            "Condition" : "{Item.PositionString, Converter=StringEquals, Parameter=2}",
+                                                            "Setters" : [
+                                                                {
+                                                                    "Property" : "Foreground",
+                                                                    "Value" : "#ffffff"
+                                                                }
+                                                            ]
+                                                        },
+                                                        {
+                                                            "Condition" : "{Item.PositionString, Converter=StringEquals, Parameter=3}",
+                                                            "Setters" : [
+                                                                {
+                                                                    "Property" : "Foreground",
+                                                                    "Value" : "#ffffff"
+                                                                }
+                                                            ]
+                                                        }
+                                                    ]
                                             }
                                         ],
                                         "Triggers" :
                                         [
                                             {
                                                 "Condition" : "{F1Mode, Converter=BoolReverse}",
-                                                "Property" : "BackgroundImage",
-                                                "Value" : "images/gap_bg.png"
+                                                "Setters" : [
+                                                    {
+                                                        "Property" : "BackgroundImage",
+                                                        "Value" : "images/gap_bg.png"
+                                                    },
+                                                    {
+                                                        "Property" : "Foreground",
+                                                        "Value" : "#000000"
+                                                    }
+                                                ]
                                             },
                                             {
                                                 "Condition" : "{Item.PositionString, Converter=StringEquals, Parameter=1}",
-                                                "Property" : "BackgroundImage",
-                                                "Value" : "images/team_standings/gap_bg_gold.png"
+                                                "Setters" : [
+                                                    {
+                                                        "Property" : "BackgroundImage",
+                                                        "Value" : "images/team_standings/gap_bg_gold.png"
+                                                    },
+                                                    {
+                                                        "Property" : "Foreground",
+                                                        "Value" : "#ffffff"
+                                                    }
+                                                ]
                                             },
                                             {
                                                 "Condition" : "{Item.PositionString, Converter=StringEquals, Parameter=2}",
-                                                "Property" : "BackgroundImage",
-                                                "Value" : "images/team_standings/gap_bg_silver.png"
+                                                "Setters" : [
+                                                    {
+                                                        "Property" : "BackgroundImage",
+                                                        "Value" : "images/team_standings/gap_bg_silver.png"
+                                                    },
+                                                    {
+                                                        "Property" : "Foreground",
+                                                        "Value" : "#ffffff"
+                                                    }
+                                                ]
                                             },
                                             {
                                                 "Condition" : "{Item.PositionString, Converter=StringEquals, Parameter=3}",
-                                                "Property" : "BackgroundImage",
-                                                "Value" : "images/team_standings/gap_bg_copper.png"
+                                                "Setters" : [
+                                                    {
+                                                        "Property" : "BackgroundImage",
+                                                        "Value" : "images/team_standings/gap_bg_copper.png"
+                                                    },
+                                                    {
+                                                        "Property" : "Foreground",
+                                                        "Value" : "#ffffff"
+                                                    }
+                                                ]
                                             },
                                             {
                                                 "Condition" : "{Item.Team.Name, Converter=EmptyObjectToTrue}",

@@ -99,9 +99,47 @@
                                         "Source": "{Item.Points}",
                                         "HorizontalAlignment": "Right",
                                         "VerticalAlignment": "Center",
-                                        "Foreground" : "{StandingsPointsForeground}",
+                                        "Foreground" : "#ffffff",
                                         "FontName": "{FontNameBold}",
-                                        "FontSize": 45
+                                        "FontSize": 45,
+                                        "Triggers" : [
+                                            {
+                                                "Condition" : "{F1Mode, Converter=BoolReverse}",
+                                                "Setters" : [
+                                                    {
+                                                        "Property" : "Foreground",
+                                                        "Value" : "#000000"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "Condition" : "{Item.PositionString, Converter=StringEquals, Parameter=1}",
+                                                "Setters" : [
+                                                    {
+                                                        "Property" : "Foreground",
+                                                        "Value" : "#ffffff"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "Condition" : "{Item.PositionString, Converter=StringEquals, Parameter=2}",
+                                                "Setters" : [
+                                                    {
+                                                        "Property" : "Foreground",
+                                                        "Value" : "#ffffff"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "Condition" : "{Item.PositionString, Converter=StringEquals, Parameter=3}",
+                                                "Setters" : [
+                                                    {
+                                                        "Property" : "Foreground",
+                                                        "Value" : "#ffffff"
+                                                    }
+                                                ]
+                                            }
+                                        ]
                                     }
                                 ]
                             }
