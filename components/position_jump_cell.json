@@ -47,7 +47,45 @@
                     "Source" : "images/arrow_up_white.png",
                     "HorizontalAlignment": "Center",
                     "VerticalAlignment" : "Center",
-                    "Height" : 12
+                    "Height" : 12,
+                    "Triggers" : [
+                        {
+                            "Condition" : "{F1Mode, Converter=BoolReverse}",
+                            "Setters" : [
+                                {
+                                    "Property" : "Source",
+                                    "Value" : "images/arrow_up_black.png"
+                                }
+                            ]
+                        },
+                        {
+                            "Condition" : "{Item.PositionString, Converter=StringEquals, Parameter=1}",
+                            "Setters" : [
+                                {
+                                    "Property" : "Source",
+                                    "Value" : "images/arrow_up_white.png"
+                                }
+                            ]
+                        },
+                        {
+                            "Condition" : "{Item.PositionString, Converter=StringEquals, Parameter=2}",
+                            "Setters" : [
+                                {
+                                    "Property" : "Source",
+                                    "Value" : "images/arrow_up_white.png"
+                                }
+                            ]
+                        },
+                        {
+                            "Condition" : "{Item.PositionString, Converter=StringEquals, Parameter=3}",
+                            "Setters" : [
+                                {
+                                    "Property" : "Source",
+                                    "Value" : "images/arrow_up_white.png"
+                                }
+                            ]
+                        }
+                    ]
                 },
                 {
                     "BlockType" : "image",
@@ -55,7 +93,45 @@
                     "Source" : "images/arrow_down_white.png",
                     "HorizontalAlignment": "Center",
                     "VerticalAlignment" : "Center",
-                    "Height" : 12
+                    "Height" : 12,
+                    "Triggers" : [
+                        {
+                            "Condition" : "{F1Mode, Converter=BoolReverse}",
+                            "Setters" : [
+                                {
+                                    "Property" : "Source",
+                                    "Value" : "images/arrow_down_black.png"
+                                }
+                            ]
+                        },
+                        {
+                            "Condition" : "{Item.PositionString, Converter=StringEquals, Parameter=1}",
+                            "Setters" : [
+                                {
+                                    "Property" : "Source",
+                                    "Value" : "images/arrow_down_white.png"
+                                }
+                            ]
+                        },
+                        {
+                            "Condition" : "{Item.PositionString, Converter=StringEquals, Parameter=2}",
+                            "Setters" : [
+                                {
+                                    "Property" : "Source",
+                                    "Value" : "images/arrow_down_white.png"
+                                }
+                            ]
+                        },
+                        {
+                            "Condition" : "{Item.PositionString, Converter=StringEquals, Parameter=3}",
+                            "Setters" : [
+                                {
+                                    "Property" : "Source",
+                                    "Value" : "images/arrow_down_white.png"
+                                }
+                            ]
+                        }
+                    ]
                 },
                 {
                     "BlockType": "text",
