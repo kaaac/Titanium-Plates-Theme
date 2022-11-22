@@ -163,7 +163,7 @@
                                                 },
                                                 {
                                                     "Property" : "MarginBottom",
-                                                    "Value" : "35",
+                                                    "Value" : "33",
                                                 }
                                             ]
                                            
@@ -176,6 +176,7 @@
                             "BlockType" : "text",
                             "Source" : "{Item.Driver.Name}",
                             "Foreground" : "#ffffff",
+                            "FontName" : "{FontNameBold}",
                             "FontSize" : 50,
                             "MarginLeft" : -20,
                             "MarginTop" : 20,
