@@ -1,6 +1,8 @@
 {
     "Driver" : "Driver",
     "Team" : "Team",
+    "CarsTeam" : "Car",
+    "TeamsTeam" : "Team",
     "Points" : "Points",
     "Wins" : "Wins",
     "2nd" : "2nd",

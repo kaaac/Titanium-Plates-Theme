@@ -44,7 +44,7 @@
                             }
                         },                        
                         {
-                            "Header": "[Team]",
+                            "Header": "[{Season.LineupsBasedType}Team]",
                             "Template":
                             {
                                 "BlockType" : "component",

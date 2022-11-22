@@ -1,6 +1,6 @@
 {
     "BlockType": "dock",
-    "RenderIf" : "{Season.LineupsBasedType, Converter=StringEquals, Parameter=Teams}",
+    //"RenderIf" : "{Season.LineupsBasedType, Converter=StringEquals, Parameter=Teams}",
     "PaddingLeft": 12,
     "PaddingRight": 2,    
     "BackgroundImage": "images/quali_bg/team_bg_{Item.Team.Name}.png",
@@ -35,36 +35,43 @@
                     "MaxWidth": 600,                    
                     "Source": "{Item.Team.Name}",
                     "VerticalAlignment": "Bottom",
-                    "RenderIf" : "{Item.Team.Name, Converter=EmptyObjectToFalse}",
+                    //"RenderIf" : "{Item.Team.Name, Converter=EmptyObjectToFalse}",
                     "PaddingBottom": 20,
                     "TextOptionsExtern" : "tableCellDefault",
-                    "Triggers" : [{
-                        "Condition" : "{Item.Position, Converter=NumberLess, Parameter=2}",
-                        "Property" : "Foreground",
-                        "Value" : "#ffffff"
-                    }],
+                    "Triggers" : [
+                        {
+                            "Condition" : "{Item.Position, Converter=NumberLess, Parameter=2}",
+                            "Property" : "Foreground",
+                            "Value" : "#ffffff"
+                        },
+                        {
+                            "Condition" : "{Season.LineupsBasedType, Converter=StringEquals, Parameter=Cars}",
+                            "Property" : "Source",
+                            "Value" : "{Item.Team.Car.CarClass}"
+                        }
+                    ],
                     "TextOptions": {
                         "HorizontalAlignment": "Right"
                     }
                 },
-                {
-                    "BlockType": "text",
-                    "MaxWidth": 600,                    
-                    "Source": "Reserve Driver",
-                    "VerticalAlignment": "Bottom",
-                    "RenderIf" : "{Item.Team.Name, Converter=EmptyObjectToTrue}",
-                    "PaddingBottom": 20,
-                    "MarginRight" : 150,
-                    "TextOptionsExtern" : "tableCellDefault",
-                    "Triggers" : [{
-                        "Condition" : "{Item.Position, Converter=NumberLess, Parameter=2}",
-                        "Property" : "Foreground",
-                        "Value" : "#ffffff"
-                    }],
-                    "TextOptions": {
-                        "HorizontalAlignment": "Center"
-                    }
-                }
+                //{
+                //    "BlockType": "text",
+                //    "MaxWidth": 600,                    
+                //    "Source": "Reserve Driver",
+                //    "VerticalAlignment": "Bottom",
+                //    "RenderIf" : "{Item.Team.Name, Converter=EmptyObjectToTrue}",
+                //    "PaddingBottom": 20,
+                //    "MarginRight" : 150,
+                //    "TextOptionsExtern" : "tableCellDefault",
+                //    "Triggers" : [{
+                //        "Condition" : "{Item.Position, Converter=NumberLess, Parameter=2}",
+                //        "Property" : "Foreground",
+                //        "Value" : "#ffffff"
+                //    }],
+                //    "TextOptions": {
+                //        "HorizontalAlignment": "Center"
+                //    }
+                //}
             ]
         },
         {
