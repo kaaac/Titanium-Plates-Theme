@@ -156,8 +156,17 @@
                                     "Triggers" : [
                                         {
                                             "Condition" : "{F1Mode, Converter=BoolReverse}",
-                                            "Property" : "Source",
-                                            "Value" : "images/suit/Neutral.png"
+                                            "Setters" : [
+                                                {
+                                                    "Property" : "Source",
+                                                    "Value" : "images/suit/Neutral.png"
+                                                },
+                                                {
+                                                    "Property" : "MarginBottom",
+                                                    "Value" : "35",
+                                                }
+                                            ]
+                                           
                                         }
                                     ]
                                 }
