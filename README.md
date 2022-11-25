@@ -16,7 +16,7 @@ We are aiming to ensure compatibility with all games the results of which can be
 
 - Driver Standings and Team Standing
 
-![Driver Standings](docs/driver_and_team_standing .png "Driver Standings")
+![Driver Standings](docs/driver_and_team_standing.png "Driver Standings")
 
 - Driver Standings - Progress Positions/Points
 
