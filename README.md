@@ -12,11 +12,11 @@ We are aiming to ensure compatibility with all games the results of which can be
 
 - Race Results and Qualification Results
 
-![Race Results](docs/race.png "Race Results")
+![Race Results](docs/race_and_quali.png "Race Results")
 
 - Driver Standings and Team Standing
 
-![Driver Standings](docs/driver_standings.png "Driver Standings")
+![Driver Standings](docs/driver_and_team_standing .png "Driver Standings")
 
 - Driver Standings - Progress Positions/Points
 
