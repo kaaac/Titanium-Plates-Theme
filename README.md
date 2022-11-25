@@ -1,4 +1,4 @@
-# Caccia's Theme for Racing League Tools
+# Modern Racing Theme for Racing League Tools
 
 We are very excited to introduce you to the Racing League Tools theme by Caccia.
 
@@ -7,6 +7,15 @@ Initially, the theme was intended for the League's internal use, but the theme e
 ## Purpose of the theme
 
 We are aiming to ensure compatibility with all games the results of which can be stored in Racing League Tools. If our theme doesn't work properly with your game, please let us know
+
+## Features and Update
+
+- Special sticker for one or two streamers/commentators
+
+- A unique visualization has been prepared especially for the F1 leagues, containing the colors of individual F1 teams and even their cars!
+- Automatic card generation, and if F1 mode is activated there will be the faces of real F1 drivers
+- A patch will come in the future to improve the use of cards in various renders
+
 
 ## Available render layouts:
 
@@ -26,12 +35,4 @@ We are aiming to ensure compatibility with all games the results of which can be
 
 ![Driver Standings - Progress Positions](docs/driver_progress_positions.png "Driver Standings - Progress Positions")
 
-
-## Features
-
-- Special sticker for one or two streamers/commentators
-
-## An extra feature for the F1 game
-
-A unique visualization has been prepared especially for the F1 leagues, containing the colors of individual F1 teams and even their cars!
 
