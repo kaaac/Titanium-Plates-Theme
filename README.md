@@ -10,29 +10,17 @@ We are aiming to ensure compatibility with all games the results of which can be
 
 ## Available render layouts:
 
-- Race Results
+- Race Results and Qualification Results
 
 ![Race Results](docs/race.png "Race Results")
 
-- Qualification Results
-
-![Qualification Results](docs/quali.png "Qualification Results")
-
-- Driver Standings
+- Driver Standings and Team Standing
 
 ![Driver Standings](docs/driver_standings.png "Driver Standings")
 
-- Driver Standings - Progress Positions
+- Driver Standings - Progress Positions/Points
 
 ![Driver Standings - Progress Positions](docs/driver_progress_positions.png "Driver Standings - Progress Positions")
-
-- Driver Standings - Progress Points
-
-![Driver Standings - Progress Points](docs/driver_progress_points.png "Driver Standings - Progress Points")
-
-- Team Standings
-
-![Team Standings](docs/team_standings.png "Team Standings")
 
 
 ## Features
