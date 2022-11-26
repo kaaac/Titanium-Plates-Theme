@@ -177,7 +177,7 @@
                             "Source" : "{Item.Driver.Name}",
                             "Foreground" : "#ffffff",
                             "FontName" : "{FontNameBold}",
-                            "FontSize" : 50,
+                            "FontSize" : "{DriverNameFontSizeOnLineup}",
                             "MarginLeft" : -20,
                             "MarginTop" : 20,
                             "HorizontalAlignment" : "Center"
