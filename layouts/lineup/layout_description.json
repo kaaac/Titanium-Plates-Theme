@@ -1,6 +1,6 @@
 {
-    "LayoutName": "CustomLineup",
+    "LayoutName": "GridLineup",
     "RenderType": "Lineups",
-	"RenderCaption": "CustomLineup",
+    "RenderCaption": "GridLineup",
     "Index" : 0
 }
