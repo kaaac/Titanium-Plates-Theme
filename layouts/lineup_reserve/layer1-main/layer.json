@@ -25,7 +25,56 @@
                 "BlockType" : "dock",
                 "Orientation" : "Horizontal",
                 "Padding" : "{MarginTable}",
-                "RenderIf" : "{Season.LineupsBasedType, Converter=StringEquals, Parameter=Teams}",
+                "RenderIf" : "{F1Mode}",
+                "Items" : [
+                    {
+                        "BlockType" : "Itemstack",
+                        "Orientation" : "Vertical",
+                        "MarginRight" : 150,
+                        "ItemStackOptions" : {
+                            "ItemSource" : "{Lineups.LineupsReserves}",
+                            "CollectionPart" : "1/3",
+                            "Template": {
+                                "BlockType" : "component",
+                                "ComponentName" : "lineup_f1reserve"
+                            }
+                        }
+                        
+                    },
+                    {
+                        "BlockType" : "Itemstack",
+                        "Orientation" : "Vertical",
+                        "MarginRight" : 150,
+                        "ItemStackOptions" : {
+                            "ItemSource" : "{Lineups.LineupsReserves}",
+                            "CollectionPart" : "2/3",
+                            "Template": {
+                                "BlockType" : "component",
+                                "ComponentName" : "lineup_f1reserve"
+                            }
+                        }
+                        
+                    },
+                    {
+                        "BlockType" : "Itemstack",
+                        "Orientation" : "Vertical",
+                        "ItemStackOptions" : {
+                            "ItemSource" : "{Lineups.LineupsReserves}",
+                            "CollectionPart" : "3/3",
+                            "Template": {
+                                "BlockType" : "component",
+                                "ComponentName" : "lineup_f1reserve"
+                            }
+                        }
+                        
+                    }
+                ]
+            },
+            {
+                "BlockType" : "dock",
+                "Orientation" : "Horizontal",
+                "Padding" : "{MarginTable}",
+                "RenderIf" : "{F1Mode, Converter=BoolReverse}",
                 "Items" : [
                     {
                         "BlockType" : "Itemstack",
@@ -64,68 +113,6 @@
                             "Template": {
                                 "BlockType" : "component",
                                 "ComponentName" : "lineup_reserve"
-                            }
-                        }
-                        
-                    }
-                ]
-            },
-            {
-                "BlockType" : "dock",
-                "Orientation" : "Horizontal",
-                "RenderIf" : "{Season.LineupsBasedType, Converter=StringEquals, Parameter=Cars}",
-                "Items" : [
-                    {
-                        "BlockType" : "Itemstack",
-                        "Orientation" : "Vertical",
-                        "MarginRight" : 150,
-                        "ItemStackOptions" : {
-                            "ItemSource" : "{Lineups.Lineups}",
-                            "CollectionPart" : "1/4",
-                            "Template": {
-                                "BlockType" : "component",
-                                "ComponentName" : "lineup_car"
-                            }
-                        }
-                        
-                    },
-                    {
-                        "BlockType" : "Itemstack",
-                        "Orientation" : "Vertical",
-                        "MarginRight" : 150,
-                        "ItemStackOptions" : {
-                            "ItemSource" : "{Lineups.Lineups}",
-                            "CollectionPart" : "2/4",
-                            "Template": {
-                                "BlockType" : "component",
-                                "ComponentName" : "lineup_car"
-                            }
-                        }
-                        
-                    },
-                    {
-                        "BlockType" : "Itemstack",
-                        "Orientation" : "Vertical",
-                        "MarginRight" : 150,
-                        "ItemStackOptions" : {
-                            "ItemSource" : "{Lineups.Lineups}",
-                            "CollectionPart" : "3/4",
-                            "Template": {
-                                "BlockType" : "component",
-                                "ComponentName" : "lineup_car"
-                            }
-                        }
-                        
-                    },
-                    {
-                        "BlockType" : "Itemstack",
-                        "Orientation" : "Vertical",
-                        "ItemStackOptions" : {
-                            "ItemSource" : "{Lineups.Lineups}",
-                            "CollectionPart" : "4/4",
-                            "Template": {
-                                "BlockType" : "component",
-                                "ComponentName" : "lineup_car"
                             }
                         }
                         

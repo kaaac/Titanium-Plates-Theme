@@ -55,7 +55,7 @@
                                 {
                                     "BlockType": "image",
                                     "Height": 50,
-                                    "MarginTop" : 63,
+                                    "MarginTop" : 83,
                                     "MarginLeft" : 70,
                                     "VerticalAlignment": "Center",
                                     "ImageOptions": {
@@ -68,7 +68,7 @@
                                             "Setters" : [
                                                 {
                                                     "Property" : "MarginTop",
-                                                    "Value" : "158"
+                                                    "Value" : "178"
                                                 }
                                             ]
                                         }
@@ -104,7 +104,7 @@
                     "FontName" : "{FontNameBold}",
                     "FontSize" : "{DriverNameFontSizeOnLineup}",
                     "MarginLeft" : -20,
-                    "MarginTop" : 35,
+                    "MarginTop" : 65,
                     "HorizontalAlignment" : "Center"
                 },
                 {
