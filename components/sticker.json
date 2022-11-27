@@ -41,7 +41,7 @@
             "VerticalAlignment" : "Bottom",
             "HorizontalAlignment" : "Right",
             "FontName" : "{FontNameBold}",
-            "FontSize" : 40,
+            "FontSize" : 35,
             "PaddingBottom" : 25,
             "MarginRight" : 50,
             "Foreground" : "#ffffff"

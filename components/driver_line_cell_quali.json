@@ -58,12 +58,12 @@
                 },
                 {
                     "BlockType": "image",
-                    "Height": 48,
+                    "Height": 30,
                     "MarginRight": 0,
                     "MarginLeft" : 5,
                     "VerticalAlignment": "Center",
                     "ImageOptions": {
-                        "Path": "{Item.Driver.Nationality.LogoPath}",
+                        "Path": "images/flags/flag_{Item.Driver.Nationality.Code}.png",
                         "VerticalAlignment": "Center"
                     }
                 }

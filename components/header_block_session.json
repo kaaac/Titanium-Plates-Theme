@@ -15,8 +15,9 @@
                     "Name": "CountryFlag",
                     "BlockType": "image",
                     "VerticalAlignment": "Top",
-                    "Height": 160,
-                    "Source": "{Session.Track.Nation.LogoPath}"
+                    "Height": 105,
+                    "MarginTop" : 25,
+                    "Source": "images/flags/flag_{Session.Track.Nation.Code}.png"
                 },
                 {
                     "Name": "CountryRightStack",
