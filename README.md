@@ -1,4 +1,4 @@
-# Modern Racing Theme for Racing League Tools
+# Titanium Plates Theme for Racing League Tools
 
 We are very excited to introduce you to the Racing League Tools theme by Caccia.
 
