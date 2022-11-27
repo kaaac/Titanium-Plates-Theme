@@ -1,4 +1,4 @@
-# Caccia's Theme for Racing League Tools
+# Modern Racing Theme for Racing League Tools
 
 We are very excited to introduce you to the Racing League Tools theme by Caccia.
 
@@ -8,38 +8,31 @@ Initially, the theme was intended for the League's internal use, but the theme e
 
 We are aiming to ensure compatibility with all games the results of which can be stored in Racing League Tools. If our theme doesn't work properly with your game, please let us know
 
-## Available render layouts:
-
-- Race Results
-
-![Race Results](docs/race.png "Race Results")
-
-- Qualification Results
-
-![Qualification Results](docs/quali.png "Qualification Results")
-
-- Driver Standings
-
-![Driver Standings](docs/driver_standings.png "Driver Standings")
-
-- Driver Standings - Progress Positions
-
-![Driver Standings - Progress Positions](docs/driver_progress_positions.png "Driver Standings - Progress Positions")
-
-- Driver Standings - Progress Points
-
-![Driver Standings - Progress Points](docs/driver_progress_points.png "Driver Standings - Progress Points")
-
-- Team Standings
-
-![Team Standings](docs/team_standings.png "Team Standings")
-
-
-## Features
+## Features and Update
 
 - Special sticker for one or two streamers/commentators
 
-## An extra feature for the F1 game
+- A unique visualization has been prepared especially for the F1 leagues, containing the colors of individual F1 teams and even their cars!
+- Automatic card generation, and if F1 mode is activated there will be the faces of real F1 drivers
+- A patch will come in the future to improve the use of cards in various renders
 
-A unique visualization has been prepared especially for the F1 leagues, containing the colors of individual F1 teams and even their cars!
+
+## Available render layouts:
+
+- Race Results and Qualification Results
+
+![Race Results and Quali](docs/race_and_quali.png "Race Results")
+
+- Driver Standings and Team Standing
+
+![Driver and Team Standings](docs/driver_and_team_standing.png "Driver Standings")
+
+ Line-up with Cards
+
+![Line-up](docs/lineup.png "Driver Standings")
+
+- Driver Standings - Progress Positions/Points
+
+![Driver Standings - Progress Positions](docs/driver_progress_positions.png "Driver Standings - Progress Positions")
+
 
