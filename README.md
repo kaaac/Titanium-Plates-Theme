@@ -33,6 +33,6 @@ We are aiming to ensure compatibility with all games the results of which can be
 
 - Driver Standings - Progress Positions/Points
 
-![Driver Standings - Progress Positions](docs/driver_progress_positions.png "Driver Standings - Progress Positions")
+![Driver Standings - Progress Positions](docs/season_progress.png "Driver Standings - Progress Positions")
 
 
