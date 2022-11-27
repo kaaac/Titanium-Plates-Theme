@@ -132,7 +132,7 @@
                                             "Source" : "images/platform/platform_{Item.Driver.GamePlatform}.png",
                                             "Height" : 80,
                                             "MarginLeft" : 72,
-                                            "MarginTop" : 15,
+                                            "MarginTop" : 15
                                         },
                                         {
                                             "BlockType": "image",
@@ -160,11 +160,7 @@
                                                 {
                                                     "Property" : "Source",
                                                     "Value" : "images/suit/Neutral.png"
-                                                },
-                                                //{
-                                                //    "Property" : "MarginBottom",
-                                                //    "Value" : "33",
-                                                //}
+                                                }
                                             ]
                                            
                                         }

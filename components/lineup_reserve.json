@@ -19,7 +19,6 @@
                 {
                     "BlockType" : "dock",
                     "Orientation" : "Horizontal",
-                    //"MarginTop" : "",
                     "Items": [
                         {
                             "BlockType" : "stack",
@@ -50,7 +49,7 @@
                                     "Source" : "images/platform/platform_{Item.Driver.GamePlatform}.png",
                                     "Height" : 80,
                                     "MarginLeft" : 72,
-                                    "MarginTop" : 15,
+                                    "MarginTop" : 15
                                 },
                                 {
                                     "BlockType": "image",
@@ -151,10 +150,6 @@
                 {
                     "Condition" : "{F1Mode, Converter=BoolReverse}",
                     "Setters" : [
-                        //{
-                        //    "Property" : "MarginBottom",
-                        //    "Value" : ""MarginBottom" : 50,"
-                        //}
                     ]
                 }
             ]
