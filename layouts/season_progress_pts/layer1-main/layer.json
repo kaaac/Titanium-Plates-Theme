@@ -166,8 +166,8 @@
                                     "Vars" : {
                                         "width" : "94",
                                         "bgimage" : "images/bg_start.png",
-                                        "source" : "{Item.CountQualP1, Converter=NumberZeroToEmpty}",
-                                        "foregr" : "{StandingsPoleCountForeground}"
+                                        "source" : "{Item.PenaltyPoints, Converter=NumberZeroToEmpty}",
+                                        "foregr" : "{StandingsPenaltyPointCountForeground}"
                                     }
                                 }
                             }
