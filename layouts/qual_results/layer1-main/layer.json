@@ -117,7 +117,7 @@
                                                 "Width" : 161,
                                                 "Height" : 73,
                                                 "MarginLeft" : "{MarginLeftTableCell}",
-                                                "RenderIf" : "{Item.PenaltyTimeStringLeftPart, Converter=EmptyObjectToFalse}",
+                                                "RenderIf" : "{SplitPenaltiesAtSessionResults, Converter=BoolReverse}",
                                                 "BackgroundImage" : "images/data_bg/penalties_bg.png",
                                                 "Items": [
                                                     {
@@ -127,7 +127,7 @@
                                                         "Items": [
                                                             {
                                                                 "BlockType": "text",
-                                                                "Source": "{Item.PenaltyTimeStringLeftPart}",
+                                                                "Source": "{Item.PenaltyTimeTotal}s",
                                                                 "HorizontalAlignment": "Center",
                                                                 "VerticalAlignment": "Bottom",
                                                                 "PaddingBottom" : 25,
@@ -136,9 +136,119 @@
                                                                     "FontSize": 30,
                                                                     "Foreground": "#000000",
                                                                     "HorizontalAlignment": "Center"
-                                                                }
+                                                                },
+                                                                "Triggers" : [
+                                                                    {
+                                                                        "Condition":"{Item.PenaltyTimeTotal, Converter=NumberEquals, Parameter=0}",
+                                                                        "Property" : "Source",
+                                                                        "Value" : ""
+                                                                    }
+                                                                ]
                                                             }
                                                         ]
+                                                    }
+                                                ],
+                                                "Triggers" : [
+                                                    {
+                                                        "Condition":"{Item.PenaltyTimeTotal, Converter=NumberEquals, Parameter=0}",
+                                                        "Property" : "Height",
+                                                        "Value" : ""
+                                                    }
+                                                ]
+                                            }
+                                        },
+                                        {
+                                            "Header": "[Penalties]",
+                                            "Template": { 
+                                                "BlockType": "dock",
+                                                "Padding": "12, 0",
+                                                "Width" : 161,
+                                                "Height" : 73,
+                                                "MarginLeft" : "{MarginLeftTableCell}",
+                                                "RenderIf" : "{SplitPenaltiesAtSessionResults}",
+                                                "BackgroundImage" : "images/data_bg/penalties_bg.png",
+                                                "Items": [
+                                                    {
+                                                        "BlockType": "stack",
+                                                        "HorizontalAlignment": "Center",
+                                                        "VerticalAlignment": "Bottom",
+                                                        "Items": [
+                                                            {
+                                                                "BlockType": "text",
+                                                                "Source": "{Item.PenaltyTimeIngame}s",
+                                                                "HorizontalAlignment": "Center",
+                                                                "VerticalAlignment": "Bottom",
+                                                                "PaddingBottom" : 25,
+                                                                "TextOptions": {
+                                                                    "FontName": "{FontNameDefault}",
+                                                                    "FontSize": 30,
+                                                                    "Foreground": "#000000",
+                                                                    "HorizontalAlignment": "Center"
+                                                                },
+                                                                "Triggers" : [
+                                                                    {
+                                                                        "Condition":"{Item.PenaltyTimeIngame, Converter=NumberEquals, Parameter=0}",
+                                                                        "Property" : "Source",
+                                                                        "Value" : ""
+                                                                    }
+                                                                ]
+                                                            }
+                                                        ]
+                                                    }
+                                                ],
+                                                "Triggers" : [
+                                                    {
+                                                        "Condition":"{Item.PenaltyTimeIngame, Converter=NumberEquals, Parameter=0}",
+                                                        "Property" : "Height",
+                                                        "Value" : ""
+                                                    }
+                                                ]
+                                            }
+                                        },
+                                        {
+                                            "Header": "[Stew Pen.]",
+                                            "Template": { 
+                                                "BlockType": "dock",
+                                                "Padding": "12, 0",
+                                                "Width" : 161,
+                                                "Height" : 73,
+                                                "MarginLeft" : "{MarginLeftTableCell}",
+                                                "RenderIf" : "{SplitPenaltiesAtSessionResults}",
+                                                "BackgroundImage" : "images/data_bg/penalties_bg.png",
+                                                "Items": [
+                                                    {
+                                                        "BlockType": "stack",
+                                                        "HorizontalAlignment": "Center",
+                                                        "VerticalAlignment": "Bottom",
+                                                        "Items": [
+                                                            {
+                                                                "BlockType": "text",
+                                                                "Source": "{Item.PenaltyTimeStewards}s",
+                                                                "HorizontalAlignment": "Center",
+                                                                "VerticalAlignment": "Bottom",
+                                                                "PaddingBottom" : 25,
+                                                                "TextOptions": {
+                                                                    "FontName": "{FontNameDefault}",
+                                                                    "FontSize": 30,
+                                                                    "Foreground": "#000000",
+                                                                    "HorizontalAlignment": "Center"
+                                                                },
+                                                                "Triggers" : [
+                                                                    {
+                                                                        "Condition":"{Item.PenaltyTimeStewards, Converter=NumberEquals, Parameter=0}",
+                                                                        "Property" : "Source",
+                                                                        "Value" : ""
+                                                                    }
+                                                                ]
+                                                            }
+                                                        ]
+                                                    }
+                                                ],
+                                                "Triggers" : [
+                                                    {
+                                                        "Condition":"{Item.PenaltyTimeStewards, Converter=NumberEquals, Parameter=0}",
+                                                        "Property" : "Height",
+                                                        "Value" : ""
                                                     }
                                                 ]
                                             }

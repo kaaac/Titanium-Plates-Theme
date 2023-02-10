@@ -43,6 +43,18 @@
                     }
                 },
                 {
+                    "BlockType": "image",
+                    "Height": 30,
+                    "MarginRight": 0,
+                    "MarginLeft" : 5,
+                    "VerticalAlignment": "Center",
+                    "RenderIf" : "{DisplayFlagsOnLeftSideOfDriverName}",
+                    "ImageOptions": {
+                        "Path": "images/flags/flag_{Item.Driver.Nationality.Code}.png",
+                        "VerticalAlignment": "Center"
+                    }
+                },
+                {
                     "BlockType": "text",
                     "MaxWidth": 600,
                     "MarginLeft": 8,
@@ -62,6 +74,7 @@
                     "MarginRight": 0,
                     "MarginLeft" : 5,
                     "VerticalAlignment": "Center",
+                    "RenderIf" : "{DisplayFlagsOnLeftSideOfDriverName, Converter=BoolReverse}",
                     "ImageOptions": {
                         "Path": "images/flags/flag_{Item.Driver.Nationality.Code}.png",
                         "VerticalAlignment": "Center"
