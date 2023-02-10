@@ -35,7 +35,6 @@
                                             "ItemsSource": "{Session.Drivers}",
                                             "RowSpacing": 13,
                                             "ColSpacing": 0,
-                                            "IndexStart" : 3,
                                             "HeaderTemplate": {
                                                 "BlockType": "text",
                                                 "MarginBottom": 8,
@@ -164,16 +163,67 @@
                                                                 },
                                                                 "Triggers" : [
                                                                     {
+                                                                        "Condition" : "{SplitPenaltiesAtSessionResults}",
+                                                                        "Property" : "Source",
+                                                                        "Value": "{Item.PenaltyTimeIngame}s"
+                                                                    },
+                                                                    {
                                                                         "Condition":"{Item.PenaltyTimeTotal, Converter=NumberEquals, Parameter=0}",
                                                                         "Property" : "Source",
                                                                         "Value" : ""
                                                                     }
                                                                 ]
-                                                            },
+                                                            }
                                                         ],
                                                         "Triggers" : [
                                                             {
                                                                 "Condition":"{Item.PenaltyTimeTotal, Converter=NumberEquals, Parameter=0}",
+                                                                "Property" : "Height",
+                                                                "Value" : ""
+                                                            }
+                                                        ]
+                                                    }
+                                                },
+                                                {
+                                                    "Header": "[Stew Pen.]",
+                                                    "Template": { 
+                                                        "BlockType": "dock",
+                                                        "Padding": "12, 0",
+                                                        "Width" : 161,
+                                                        "Height" : 73,
+                                                        "MarginLeft" : "{MarginLeftTableCell}",
+                                                        "BackgroundImage" : "images/data_bg/penalties_bg.png",
+                                                        "RenderIf" : "{SplitPenaltiesAtSessionResults}",
+                                                        "Items": [
+                                                            {
+                                                                "BlockType": "text",
+                                                                "Source": "{Item.PenaltyTimeTotal}s",
+                                                                "HorizontalAlignment": "Center",
+                                                                "VerticalAlignment": "Bottom",
+                                                                "PaddingBottom" : 25,
+                                                                "TextOptions": {
+                                                                    "FontName": "{FontNameDefault}",
+                                                                    "FontSize": 30,
+                                                                    "Foreground": "#824040",
+                                                                    "HorizontalAlignment": "Center"
+                                                                },
+                                                                "Triggers" : [
+                                                                    {
+                                                                        "Condition" : "{SplitPenaltiesAtSessionResults}",
+                                                                        "Property" : "Source",
+                                                                        "Value": "{Item.PenaltyTimeStewards}s"
+                                                                    },
+                                                                    {
+                                                                        "Condition":"{Item.PenaltyTimeStewards, Converter=NumberEquals, Parameter=0}",
+                                                                        "Property" : "Source",
+                                                                        "Value" : ""
+                                                                    }
+                                                                ]
+                                                            }
+                                                        ],
+                                                        "Triggers" : [
+                                                            {
+                                                                "Condition":"{Item.PenaltyTimeStewards, Converter=NumberEquals, Parameter=0}",
                                                                 "Property" : "Height",
                                                                 "Value" : ""
                                                             }
@@ -301,7 +351,7 @@
                                                 }
                                             ]
                                         }
-                                    },
+                                    }
                                 ]
                             }
                         ]

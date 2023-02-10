@@ -1,7 +1,9 @@
 {
   "F1Mode": false,
+  "DisplayFlagsOnLeftSideOfDriverName": true,
+  "SplitPenaltiesAtSessionResults" : false,
   "SeasonSeatPerTeam": 4,
+  "DriverNameFontSizeOnLineup": 45,
   "Streamer": "ChangeMe",
-  "SecondCommentator": "",
-  "DriverNameFontSizeOnLineup" : 45
+  "SecondCommentator": ""
 }
