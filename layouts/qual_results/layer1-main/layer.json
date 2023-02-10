@@ -67,7 +67,7 @@
                                                 "TextOptionsExtern" : "tableCellBold",
                                                 "Foreground" : "#ffffff",
                                                 "TextOptions": {
-                                                    "HorizontalAlignment": "Center",
+                                                    "HorizontalAlignment": "Center"
 
                                                 },
                                                 "Triggers" : [
@@ -76,7 +76,7 @@
                                                         "Setters" : [
                                                             {
                                                                 "Property" : "BackgroundImage",
-                                                                "Value" : "images/gap_bg.png",
+                                                                "Value" : "images/gap_bg.png"
                                                             },
                                                             {
                                                                 "Property" : "Foreground",
@@ -90,7 +90,7 @@
                                                         "Setters" : [
                                                             {
                                                                 "Property" : "BackgroundImage",
-                                                                "Value" : "images/quali_bg/gap_bg_purple.png",
+                                                                "Value" : "images/quali_bg/gap_bg_purple.png"
                                                             },
                                                             {
                                                                 "Property" : "Foreground",
