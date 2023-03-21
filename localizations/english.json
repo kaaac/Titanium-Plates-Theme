@@ -20,4 +20,8 @@
     "DRIVER OF THE DAY" : "DRIVER OF THE DAY",
     "COMMENTATOR" : "COMMENTATOR",
     "Streamer" : "Streamer",
+    "1th" : "1st",
+    "2th" : "2nd",
+    "3th" : "3rd",
+    "-th" : "-"
 }

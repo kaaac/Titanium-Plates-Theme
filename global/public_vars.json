@@ -1,9 +1,16 @@
 {
-  "F1Mode": false,
+  "F1Mode": true,
   "DisplayFlagsOnLeftSideOfDriverName": true,
-  "SplitPenaltiesAtSessionResults" : false,
+  "DisplayDriverNumberAtResults" : true,
+  "DisplayPodiumCards": true,
+  "SplitPenaltiesAtSessionResults": false,
+  "RenderSectorsOnQualiLayout": true,
+  "ShowPenaltyPointsInStandings": true,
+  "HorizontalLineups" : true,
+  "TeamNumberToCompare": 4,
+  "NumberOfDriversForGrid": 20,
   "SeasonSeatPerTeam": 4,
   "DriverNameFontSizeOnLineup": 45,
-  "Streamer": "ChangeMe",
+  "Streamer": "",
   "SecondCommentator": ""
 }

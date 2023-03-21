@@ -65,6 +65,59 @@
                     }
                 },
                 {
+                    "BlockType" : "text",
+                    "BackgroundImage" : "images/number.png",
+                    "VerticalAlignment": "Center",
+                    "Height" : 50,
+                    "Width" : 132,
+                    "FontSize" : 40,
+                    "MarginBottom" : -4,
+                    "FontName" : "{FontNameBold}",
+                    "Source" : "{Item.Driver.RaceNumber}",
+                    "RenderIf" : "{DisplayDriverNumberAtResults}",
+                    "TextOptions" : {
+                        "HorizontalAlignment" : "Center",
+                        "Foreground" : "#{Item.Team.Color}"
+                    },
+                    "Triggers" : [
+                        {
+                            "Condition" : "{F1Mode}",
+                            "Setters" : [
+                                {
+                                    "Property" : "FontName",
+                                    "Value" : "TPTF1Numbers{Item.Team.Name}"
+                                },
+                                {
+                                    "Property" : "FontSize",
+                                    "Value" : "70"
+                                },
+                                {
+                                    "Property" : "PaddingRight",
+                                    "Value" : "5"
+                                }
+                            ]
+                        },
+                        {
+                            "Condition" : "{Item.Team.Name, Converter=EmptyObjectToTrue}",
+                            "ConditionAnd" : "{F1Mode}",
+                            "Setters" : [
+                                {
+                                    "Property" : "FontName",
+                                    "Value" : "{FontNameBold}"
+                                },
+                                {
+                                    "Property" : "FontSize",
+                                    "Value" : "28"
+                                },
+                                {
+                                    "Property" : "PaddingRight",
+                                    "Value" : "0"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
                     "BlockType": "image",
                     "Height": 30,
                     "MarginRight": 0,

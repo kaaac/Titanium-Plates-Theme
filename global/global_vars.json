@@ -9,8 +9,8 @@
     //"MgMI":"Magistral-MediumItalic",
     //"LMM": "LEMONMILK-Medium",
 
-    "MarginRoot" : "0, 0, 0, 25",
-    "MarginTable" : "45,0,45,20",
+    "MarginRoot" : "20, 20, 20, 20",
+    "MarginTable" : "15,15,15,15",
     "MarginSeparator" : "0,0,0,5",
     "PaddingTableSingle" : "30,30,30,30",
     "MarginLeftTableCell" : "10",
@@ -42,8 +42,16 @@
     "SeasonProgressPointsFastestLapForeground" : "#93278f",
     "SeasonProgressDNF" : "#824040",
 
+    "ComparisonCellWidth" : "156",
+    "ComparisonCellHeight" : "73",
+    "ComparisonFontSize" : "25",
+    "ComparisonTitleSize" : "25",
+    "ComparisonNumberSize" : "35",
     "FontSizeRightPart" : "30",
-    "StintsBarHeight" : "30"
+    "StintsBarHeight" : "36",
+    "StintsBarPositionY" : "28",
+    "ComparisonSpacingMid" : "58",
+    "ComparisonSpacing" : "28"
 
 
     

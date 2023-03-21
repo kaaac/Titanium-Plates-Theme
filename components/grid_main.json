@@ -1,0 +1,101 @@
+{
+    "Name": "mainStack",
+    "BlockType": "stack",
+    "Margin": "{MarginRoot}",
+    "Orientation": "Vertical",
+    "Items": [
+        {
+            "BlockType" : "component",
+            "ComponentName" : "header_block_session"
+        },
+        {
+            "BlockType" : "component",
+            "ComponentName" : "separator"
+        },
+        {
+            "BlockType" : "stack",
+            "Orientation" : "Horizontal",
+            "HorizontalAlignment" : "Center",
+            "Items" : [
+                {
+                    "BlockType" : "stack",
+                    "Orientation" : "Horizontal",
+                    "HorizontalAlignment" : "Center",
+                    "Margin" : "{MarginTable}",
+                    "Items" : [
+                        {
+                            "BlockType" : "image",
+                            "Source" : "images/grid/thegrid.png",
+                            "MarginRight" : 40,
+                            "Height" : "{NumberOfDriversForGrid, Converter=NumberMultiply, Parameter=58}"
+                        },
+                        {
+                            "BlockType" : "image",
+                            "Source" : "images/grid/track_{Session.Track.CircuitName}.png",
+                            "MarginRight" : 30,
+                            "Height" : "{NumberOfDriversForGrid, Converter=NumberMultiply, Parameter=58}"
+                        },
+                        {
+                            "BlockType": "stack",
+                            "MarginTop" : 30,
+                            "Orientation" : "Horizontal",
+                            "Items" : [
+                                {
+                                    "BlockType" : "itemstack",
+                                    "Orientation" : "Vertical",
+                                    "ItemStackOptions" : {
+                                        "ItemSource" : "{Session.Drivers}",
+                                        "Template": {
+                                            "BlockType" : "component",
+                                            "ComponentOptions" : {
+                                                "ComponentName" : "driver_line_grid",
+                                                "Vars" : {
+                                                    "renderif" : "{Item.Position, Converter=NumberIsOdd}",
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            ]    
+                        },
+                        {
+                            "BlockType": "stack",
+                            "Orientation" : "Vertical",
+                            "MarginLeft" : 45,
+                            "Items" : [
+                                {
+                                    "BlockType" : "text",
+                                    "Source" : "Starting Grid",
+                                    "FontSize" : 75,
+                                    "Foreground" : "#ffffff",
+                                    "HorizontalAlignment": "Center",
+                                    "VerticalAlignment": "Center",
+                                    "FontName" : "{FontNameBold}",
+                                    "TextOptions" : {
+                                        "HorizontalAlignment" : "Center"
+                                    }
+                                },
+                                {
+                                    "BlockType" : "itemstack",
+                                    "Orientation" : "Vertical",
+                                    "ItemStackOptions" : {
+                                        "ItemSource" : "{Session.Drivers}",
+                                        "Template": {
+                                            "BlockType" : "component",
+                                            "ComponentOptions" : {
+                                                "ComponentName" : "driver_line_grid",
+                                                "Vars" : {
+                                                    "renderif" : "{Item.Position, Converter=NumberIsEven}",
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            ]    
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

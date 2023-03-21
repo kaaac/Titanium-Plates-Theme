@@ -3,35 +3,44 @@
     "PaddingLeft": 12,
     "PaddingRight": 4,    
     "UseBackgroundCrop" : false,
+    "BackgroundImage": "images/Driver_Tyre_v2.png",
     "Height" : 73,
+    "Triggers" : [
+        {
+            "Condition" : "{F1Mode}",
+            "Property" : "BackgroundImage",
+            "Value" : "images/Driver_Tyre_v2_f1.png"
+        }
+    ],
     "Items": [
         {
             "BlockType": "text",
             "MaxWidth": 90,
             "MarginLeft": 0,
-            "MarginBottom" : 7,
+            "MarginBottom" : 0,
+            "PaddingBottom" : 5,
             "Width" : 50,
             "Source": "{Item.PositionString}",
             "HorizontalAlignment": "Left",
             "VerticalAlignment": "Bottom",
             "FontName" : "{FontNameBold}",
-            "FontSize" : 37,
-            "Foreground" : "#ffffff",
+            "FontSize" : 33,
+            "Foreground" : "#000000",
             "Triggers" : [
                 {
                     "Condition" : "{Item.PositionString, Converter=StringEquals, Parameter=3}",
                     "Property" : "Foreground",
-                    "Value" : "#ffffff"
+                    "Value" : "#000000"
                 },
                 {
                     "Condition" : "{Item.PositionString, Converter=StringEquals, Parameter=2}",
                     "Property" : "Foreground",
-                    "Value" : "#ffffff"
+                    "Value" : "#000000"
                 },
                 {
                     "Condition" : "{Item.PositionString, Converter=StringEquals, Parameter=1}",
                     "Property" : "Foreground",
-                    "Value" : "#ffffff"
+                    "Value" : "#000000"
                 }
             ],
             "TextOptions" : {
@@ -45,34 +54,14 @@
             "Items": [
                 {
                     "BlockType": "text",
-                    "MaxWidth": 600,                    
                     "Source": "{Item.Driver.Name}",
                     "VerticalAlignment": "Bottom",
-                    "MarginLeft" : 100,
-                    "PaddingBottom": 20,
+                   "PaddingBottom" : 5,
                     "FontName" : "{FontNameDefault}",
-                    "FontSize" : 30,
-                    "Foreground" : "#ffffff",
+                    "FontSize" : 33,
+                    "Foreground" : "#000000",
                     "TextOptions": {
-                        "HorizontalAlignment": "Right",
-                    }
-                },
-                {
-                    "BlockType": "text",
-                    "MaxWidth": 600,                    
-                    "Source": "Reserve Driver",
-                    "VerticalAlignment": "Bottom",
-                    "RenderIf" : "{Item.Team.Name, Converter=EmptyObjectToTrue}",
-                    "PaddingBottom": 20,
-                    "MarginRight" : 150,
-                    "TextOptionsExtern" : "tableCellDefault",
-                    "Triggers" : [{
-                        "Condition" : "{Item.Position, Converter=NumberLess, Parameter=4}",
-                        "Property" : "Foreground",
-                        "Value" : "#ffffff"
-                    }],
-                    "TextOptions": {
-                        "HorizontalAlignment": "Center",
+                        "HorizontalAlignment": "Right"
                     }
                 }
             ]
@@ -88,8 +77,7 @@
                     "BlockType": "image",
                     "Source" : "images/cars/{Item.Team.Name}.png",
                     "MarginLeft" : 12,
-                    "Height": 73,
-                    "PaddingBottom" : -5,
+                    "Height": 55,
                     "MarginRight": 20,
                     "VerticalAlignment": "Bottom",
                     "ImageOptions": {
@@ -98,8 +86,16 @@
                     "Triggers" : [
                         {
                             "Condition" : "{F1Mode, Converter=BoolReverse}",
-                            "Property" : "Source",
-                            "Value" : "{Item.Team.LogoPath}"
+                            "Setters" : [
+                                {
+                                    "Property" : "Source",
+                                    "Value" : "{Item.Team.LogoPath}"
+                                },
+                                {
+                                    "Property" : "Height",
+                                    "Value" : "65"
+                                }
+                            ]
                         }
                     ]
                 }

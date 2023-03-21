@@ -17,12 +17,42 @@
                 "BlockType" : "stack",
                 "Orientation" : "Horizontal",
                 "HorizontalAlignment" : "Center",
+                "Margin" : "{MarginTable}",
                 "Items" : [
                     {
                         "BlockType": "stack",
+                        "Orientation": "Vertical",
+                        "RenderIf" : "{DisplayPodiumCards}",
+                        "MarginRight" : 15,
+                        "MarginTop" : -5,
+                        "Items" : [
+                            {
+                                "Name" : "PodiumHeaderImage",
+                                "BlockType": "image",
+                                "Source" : "images/podium.png",
+                                "HorizontalAlignment" : "Center",
+                                "Width" : 250
+                                
+                            },
+                            {
+                                "BlockType" : "itemstack",
+                                "Orientation" : "Vertical",
+                                "MarginTop" : 5,
+                                "ItemStackOptions": {
+                                    "ItemSource": "{Session.Drivers}",
+                                    "Limit" : 3,
+                                    "Template": {
+                                        "BlockType" : "component",
+                                        "ComponentName" : "cards_podium"
+                                    }
+                                }
+                            
+                            }
+                        ]
+                    },
+                    {
+                        "BlockType": "stack",
                         "Orientation" : "Horizontal",
-                        "HorizontalAlignment" : "Center",
-                        "Margin" : "{MarginTable}",
                         "Items" : [
                             {
                                 "BlockType" : "stack",
@@ -361,6 +391,7 @@
                                                     "Template": {
                                                         "BlockType": "dock",
                                                         "Width" : 143,
+                                                        "Height" : 73,
                                                         "MarginLeft" : "{MarginLeftTableCell}",
                                                         "BackgroundImage" : "images/data_bg/pts_bg.png",
                                                         "HorizontalAlignment": "Center",
@@ -394,6 +425,7 @@
                 "BlockType" : "stack",
                 "Orientation" : "Horizontal",
                 "HorizontalAlignment" : "Center",
+                "MarginTop" : 30,
                 "Items" : [
                     {
                         "Name": "footerBlock",
@@ -403,7 +435,7 @@
                         "Items": [
                             {
                                 "BlockType" : "stack",
-                                "Margin" : "8, 36, 8, 8",
+                                "Margin" : "8, 8, 8, 8",
                                 "HorizontalAlignment" : "Center",
                                 "Spacing" : 32,
                                 "Items" :[

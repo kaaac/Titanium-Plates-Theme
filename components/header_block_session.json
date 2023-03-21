@@ -2,6 +2,7 @@
     "Name": "headerBlock",
     "BlockType": "dock",
     "Orientation": "Horizontal",
+    "HorizontalAlignment" : "Center",
     "Padding" : "{HeaderPadding}",
     "Items": [
         {
@@ -33,7 +34,7 @@
                             "HorizontalAlignment" : "Left",
                             "MarginTop" : 12,
                             "FontSize" : 50,
-                            "Foreground" : "{HeaderForeground}",
+                            "Foreground" : "#ffffffff",//"{HeaderForeground}",
                             "FontName" : "{FontNameBold}",
                             "Source": "{Session.Track.CircuitName}",
                             "TextOptionsExtern": "locationName"
@@ -174,14 +175,43 @@
 
                                 {
                                     "BlockType": "stack",
-                                    "RenderIf": "{Session.IsLiveData}",
                                     "HorizontalAlignment": "Right",
                                     "Spacing": 4,
                                     "Items": [
                                         {
+                                            "Name": "DummyTextForFixWidth",
+                                            "BlockType": "text",
+                                            "HorizontalAlignment" : "Left",
+                                            "FontSize" : "{FontSizeRightPart}",
+                                            "MarginRight" : 15,
+                                            "Foreground" : "#00000000",
+                                            "FontName" : "{FontNameDefault}",
+                                            "Source": "{Session.Track.CountryName}",
+                                            "TextOptionsExtern": "countryName"
+                                        },
+                                        {
+                                            "Name": "DummyTextForFixWidth2",
+                                            "BlockType": "text",
+                                            "HorizontalAlignment" : "Left",
+                                            "FontSize" : "{FontSizeRightPart, Converter=NumberDivide, Parameter=2}",
+                                            "MarginRight" : 15,
+                                            "Foreground" : "#00000000",
+                                            "FontName" : "{FontNameDefault}",
+                                            "Source": "{Session.Track.CountryName}",
+                                            "TextOptionsExtern": "countryName",
+                                            "Triggers" : [
+                                                {
+                                                    "Condition" : "{Session.IsLiveData, Converter=BoolReverse}",
+                                                    "Property" : "MarginRight",
+                                                    "Value" : "100"
+                                                }
+                                            ]
+                                        },
+                                        {
                                             "BlockType": "image",
                                             "Height": 32,
                                             "VerticalAlignment": "Center",
+                                            "RenderIf": "{Session.IsLiveData}",
                                             "Source": "images/weather/weather_{Session.WeatherType}.png"
                                         },
                                         {
@@ -190,6 +220,7 @@
                                             "Source": "{Session.AirTemperatureString}",
                                             "FontName": "{FontNameDefault}",
                                             "Foreground": "{HeaderForeground}",
+                                            "RenderIf": "{Session.IsLiveData}",
                                             "FontSize": "{FontSizeRightPart}"
                                         }
                                     ]

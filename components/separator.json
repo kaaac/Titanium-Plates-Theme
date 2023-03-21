@@ -3,5 +3,6 @@
     "BlockType": "image",
     "Margin" : "{MarginSeparator}",
     "Width": "*",
-    "Source": "images/separator.png"
+    "Source": "images/separator.png",
+    "HorizontalAlignment" : "Center"
 }

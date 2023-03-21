@@ -1,0 +1,128 @@
+{
+    "BlockType" : "stack",
+    "Orientation" : "Horizontal",
+    "Items": [
+        {
+            "BlockType" : "stack",
+            "Orientation" : "Horizontal",
+            "HorizontalAlignment" : "Left",
+            "MarginRight" : "{ComparisonSpacingMid}",
+            "Items" : [
+                {
+                    "BlockType" : "stack",
+                    "Orientation" : "Vertical",
+                    "Width" : "{ComparisonCellWidth}",
+                    "Height" : "{ComparisonCellHeight}",
+                    "HorizontalAlignment" : "Center",
+                    "VerticalAlignment" : "Center",
+                    "BackgroundImage" : "images/team_drv/bgdark_<bg>.png",
+                    "MarginRight" : "{ComparisonSpacing}",
+                    "Items" : [
+                        {
+                            "BlockType" : "text",
+                            "Source" : "<statname>",
+                            "VerticalAlignment" : "Center",
+                            "HorizontalAlignment" : "Center",
+                            "MarginTop" : 5,
+                            "FontSize" : "{ComparisonTitleSize}",
+                            "TextOptions" : {
+                                "HorizontalAlignment" : "Center",
+                                "VerticalAlignment" : "Center",
+                                "FontName" : "{FontNameBold}",
+                                "Foreground" : "#ffffff"
+                            }
+                        },
+                        {
+                            "BlockType" : "text",
+                            "Source" : "<statnamesec>",
+                            "VerticalAlignment" : "Center",
+                            "HorizontalAlignment" : "Center",
+                            "FontSize" : "{ComparisonTitleSize}",
+                            "TextOptions" : {
+                                "HorizontalAlignment" : "Center",
+                                "VerticalAlignment" : "Center",
+                                "FontName" : "{FontNameBold}",
+                                "Foreground" : "#ffffff"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "BlockType" : "text",
+                    "Source" : "<statval>",
+                    "Width" : "{ComparisonCellWidth}",
+                    "Height" : "{ComparisonCellHeight}",
+                    "FontSize" : "{ComparisonNumberSize}",
+                    "HorizontalAlignment" : "Center",
+                    "BackgroundImage" : "images/team_drv/bglight_<bg>.png",
+                    "TextOptions" : {
+                        "HorizontalAlignment" : "Center",
+                        "FontName" : "{FontNameBold}",
+                        "Foreground" : "#000000"
+                    }
+                }
+            ]
+        },
+        {
+            "BlockType" : "stack",
+            "Orientation" : "Horizontal",
+            "HorizontalAlignment" : "right",
+            "Items" : [
+                {
+                    "BlockType" : "stack",
+                    "Orientation" : "Vertical",
+                    "Width" : "{ComparisonCellWidth}",
+                    "Height" : "{ComparisonCellHeight}",
+                    "HorizontalAlignment" : "Center",
+                    "VerticalAlignment" : "Center",
+                    "BackgroundImage" : "images/team_drv/bgdark_<bg>.png",
+                    "MarginRight" : "{ComparisonSpacing}",
+                    "Items" : [
+                        {
+                            "BlockType" : "text",
+                            "Source" : "<statname>",
+                            "VerticalAlignment" : "Center",
+                            "HorizontalAlignment" : "Center",
+                            "MarginTop" : 5,
+                            "FontSize" : "{ComparisonTitleSize}",
+                            "TextOptions" : {
+                                "HorizontalAlignment" : "Center",
+                                "VerticalAlignment" : "Center",
+                                "FontName" : "{FontNameBold}",
+                                "Foreground" : "#ffffff"
+                            }
+                        },
+                        {
+                            "BlockType" : "text",
+                            "Source" : "<statnamesec>",
+                            "VerticalAlignment" : "Center",
+                            "HorizontalAlignment" : "Center",
+                            "FontSize" : "{ComparisonTitleSize}",
+                            "TextOptions" : {
+                                "HorizontalAlignment" : "Center",
+                                "VerticalAlignment" : "Center",
+                                "FontName" : "{FontNameBold}",
+                                "Foreground" : "#ffffff"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "BlockType" : "text",
+                    "Source" : "<statvalsec>",
+                    "Width" : "{ComparisonCellWidth}",
+                    "Height" : "{ComparisonCellHeight}",
+                    "FontSize" : "{ComparisonNumberSize}",
+                    "HorizontalAlignment" : "Center",
+                    "BackgroundImage" : "images/team_drv/bglight_<bg>.png",
+                    "MarginRight" : "0",
+                    "TextOptions" : {
+                        "HorizontalAlignment" : "Center",
+                        "FontName" : "{FontNameBold}",
+                        "Foreground" : "#000000"
+                    }
+                }
+            ]
+        }
+    ]
+}

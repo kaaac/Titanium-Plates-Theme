@@ -1,0 +1,48 @@
+{
+    "Name": "HeaderStints",
+    "BlockType" : "dock",
+    "Orientation" : "Horizontal",
+    //"Margin" : "{MarginTable}",
+    "MarginTop" : 30,
+    "Padding" : "45,0,45,0",
+    "Items" : [
+        {
+            "BlockType" : "stack",
+            "Orientation" : "Horizontal",
+            "Width" : 2000,
+            "HorizontalAlignment" : "Right",
+            "MarginRight" : 105,
+            "Height" : 70,
+            //"Background" : "#ffffff",
+            "Items" : [
+                {
+                    "BlockType" : "text",
+                    "Source" : "1",
+                    "FontSize" : "40",
+                    "Foreground" : "#ffffff",
+                    "Width" : "142",
+                    "RenderIf" : "{Session.TotalLaps, Converter=NumberGreater, Parameter=1}",
+                    //"Width" : "{2000, Converter=NumberDivide, Parameter=Session.TotalLaps}"
+                },
+                {
+                    "BlockType" : "text",
+                    "Source" : "2",
+                    "FontSize" : "40",
+                    "Foreground" : "#ffffff",
+                    "Width" : "142",
+                    "RenderIf" : "{Session.TotalLaps, Converter=NumberGreater, Parameter=2}",
+                    //"Width" : "{2000, Converter=NumberDivide, Parameter=Session.TotalLaps}"
+                },
+                {
+                    "BlockType" : "text",
+                    "Source" : "3",
+                    "FontSize" : "40",
+                    "Foreground" : "#ffffff",
+                    "Width" : "142",
+                    "RenderIf" : "{Session.TotalLaps, Converter=NumberGreater, Parameter=3}",
+                    //"Width" : "{2000, Converter=NumberDivide, Parameter=Session.TotalLaps}"
+                }
+            ]
+        }
+    ]
+}

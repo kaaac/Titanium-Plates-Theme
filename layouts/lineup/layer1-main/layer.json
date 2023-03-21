@@ -2,12 +2,13 @@
     "BlockRoot": {
         "Name": "mainStack",
         "BlockType": "stack",
-        "Margin": "{MarginRoot}",       
+        "Margin": "60,60,60,60",       
         "Orientation": "Vertical",
+        //"Background" : "#dd0000",
         "Items": [
             {               
                 "BlockType": "component",
-                "ComponentName": "header_block",
+                "ComponentName": "header_block_lineup",
                 "ComponentOptions" :
                 {
                     "Vars":
@@ -25,6 +26,13 @@
                 "BlockType" : "dock",
                 "Orientation" : "Horizontal",
                 "Padding" : "{MarginTable}",
+                "Triggers" : [
+                    {
+                        "Condition" : "{HorizontalLineups}",
+                        "Property" : "Orientation",
+                        "Value" : "Vertical"
+                    }
+                ],
                 "RenderIf" : "{Season.LineupsBasedType, Converter=StringEquals, Parameter=Teams}",
                 "Items" : [
                     {
@@ -38,7 +46,14 @@
                                 "BlockType" : "component",
                                 "ComponentName" : "lineup_team"
                             }
-                        }
+                        },
+                        "Triggers" : [
+                            {
+                                "Condition" : "{HorizontalLineups}",
+                                "Property" : "Orientation",
+                                "Value" : "Horizontal"
+                            }
+                        ]
                         
                     },
                     {
@@ -51,8 +66,14 @@
                                 "BlockType" : "component",
                                 "ComponentName" : "lineup_team"
                             }
-                        }
-                        
+                        },
+                        "Triggers" : [
+                            {
+                                "Condition" : "{HorizontalLineups}",
+                                "Property" : "Orientation",
+                                "Value" : "Horizontal"
+                            }
+                        ]                        
                     }
                 ]
             },
@@ -117,6 +138,13 @@
                         }
                     }
                 ]
+            }
+        ],
+        "Triggers" : [
+            {
+                "Condition" : "{HorizontalLineups}",
+                "Property" : "MarginRight",
+                "Value" : "-200"
             }
         ]
     }

@@ -1,0 +1,84 @@
+{
+    "BlockType": "dock",
+    //"PaddingLeft": 12,
+    //"PaddingRight": 4,
+    "RenderIf" : "<renderif>",
+    "BackgroundImage": "images/grid/grid_{Item.Team.Name}.png",
+    "Height" : 0,
+    "Width" : 0,
+    "MarginBottom" : 35,
+    "Triggers" : [
+        {
+            "Condition" : "<renderif>",
+            "Setters" : [
+                {
+                    "Property" : "Height",
+                    "Value" : "73"
+                },
+                {
+                    "Property" : "Width",
+                    "Value" : "866"
+                }
+            ]
+        },
+        {
+            "Condition" : "{F1Mode, Converter=BoolReverse}",
+            "Property" : "BackgroundImage",
+            "Value" : "images/grid/grid_neutral.png"
+        }
+    ],
+    "Items": [
+        {
+            "BlockType": "stack",
+            "HorizontalAlignment": "Left",
+            "VerticalAlignment": "Bottom",
+            "Items": [
+                 {
+                    "BlockType": "text",
+                    "Width" : 175,
+                    "Height" : 73,
+                    "Source": "[{Item.PositionString}th]",
+                    "HorizontalAlignment": "Center",
+                    "VerticalAlignment": "Center",
+                    "Foreground" : "#ffffff",
+                    "TextOptionsExtern" : "tableCellBold",
+                    "TextOptions" : {
+                        "HorizontalAlignment" : "Center"
+                    }
+                },
+                {
+                    "BlockType": "text",
+                    "MarginLeft": 35,
+                    "Source": "{Item.Driver.Name}",
+                    "HorizontalAlignment": "Left",
+                    "VerticalAlignment": "Bottom",
+                    "MarginBottom" : 10,
+                    "TextOptionsExtern" : "tableCellBold",
+                    "Foreground" : "#ffffff",
+                    "Triggers" : [
+                        {
+                            "Condition" : "{F1Mode, Converter=BoolReverse}",
+                            "Property" : "Foreground",
+                            "Value" : "#000000"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "BlockType" : "image",
+            "HorizontalAlignment" : "Right",
+            "VerticalAlignment" : "Bottom",
+            "Source" : "images/cars/{Item.Team.Name}.png",
+            "Height" : 62,
+            "MarginRight" : 10,
+            "Triggers" : [
+                {
+                    "Condition" : "{F1Mode, Converter=BoolReverse}",
+                    "Property" : "Source",
+                    "Value" : "{Item.Team.LogoPath}"
+                }
+            ]
+        }
+    ]
+}

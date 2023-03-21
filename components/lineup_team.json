@@ -7,6 +7,11 @@
     "BackgroundImage" : "images/lineup/card_one_driver.png",
     "Triggers" : [
         {
+            "Condition" : "{HorizontalLineups}",
+            "Property" : "MarginRight",
+            "Value" : "150"
+        },
+        {
             "Condition" : "{Season.SeatsPerTeam, Converter=NumberEquals, Parameter=2}",
             "Setters" : [
                 {

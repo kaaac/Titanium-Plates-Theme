@@ -1,0 +1,146 @@
+{
+    "BlockType" : "stack",
+    "BackgroundImage" : "images/plates/plate_bg_{Item.Position}",
+    "Width" : 430, //425,
+    "Height" : 560, //636, //553,
+    "MarginBottom" : 8,
+    "Items" : [
+
+
+        {
+            "BlockType" : "dock",
+            "Orientation" : "Vertical",
+            "BackgroundImage" : "images/card_blank.png",
+            "HorizontalAlignment" : "Center",
+            "Margin" : "28,8,28,64",
+            "Width" : 374,
+            "Height" : 469,
+            "Items" : [
+                {
+                    "BlockType" : "dock",
+                    "Orientation" : "Horizontal",
+                    "Items": [
+                        {
+                            "BlockType" : "stack",
+                            "Orientation" : "Vertical",
+                            "HorizontalAlignment" : "Left",
+                            "Items" : [
+                                {
+                                    "BlockType" : "text",
+                                    "Source" : "{Item.Driver.RaceNumber}",
+                                    "Foreground" : "#ffffff",
+                                    "FontName" : "{FontNameBold}",
+                                    "FontSize" : 45,
+                                    "MarginLeft" : 46,
+                                    "MarginTop" : 68,
+                                    "TextOptions" : {
+                                        "HorizontalAlignment" : "Center"
+                                    },
+                                    "Triggers" : [
+                                        {
+                                            "Condition" : "{Item.Driver.RaceNumber, Converter=NumberLess, Parameter=10}",
+                                            "Property" : "Source",
+                                            "Value" : "0{Item.Driver.RaceNumber}"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "BlockType" : "image",
+                                    "Source" : "images/platform/platform_{Item.Driver.GamePlatform}.png",
+                                    "Height" : 44,
+                                    "MarginLeft" : 44,
+                                    "MarginTop" : 14
+                                },
+                                {
+                                    "BlockType": "image",
+                                    "Height": 30,
+                                    "MarginTop" : 30,
+                                    "MarginLeft" : 41,
+                                    "VerticalAlignment": "Center",
+                                    "ImageOptions": {
+                                        "Path": "images/flags/flag_{Item.Driver.Nationality.Code}.png",
+                                        "VerticalAlignment": "Center"
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "BlockType" : "image",
+                            "HorizontalAlignment" : "Right",
+                            "Source" : "images/suit/{Item.Team.Name}_{Item.SeatPosition}.png",
+                            "Width" : 281,
+                            "MarginTop" : 52,
+                            "Triggers" : [
+                                {
+                                    "Condition" : "{F1Mode, Converter=BoolReverse}",
+                                    "Setters" : [
+                                        {
+                                            "Property" : "Source",
+                                            "Value" : "images/suit/Neutral.png"
+                                        }
+                                    ]
+                                
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "BlockType" : "text",
+                    "Source" : "{Item.Driver.Name}",
+                    "Foreground" : "#ffffff",
+                    "FontName" : "{FontNameBold}",
+                    "FontSize" : 26,
+                    "MarginLeft" : 0,
+                    "MarginTop" : 12,
+                    "HorizontalAlignment" : "Center"
+                },
+                {
+                    "BlockType" : "dock",
+                    "Orientation" : "Horizontal",
+                    "MarginTop" : 28,
+                    "Items" : [
+                        {
+                            "BlockType" : "image",
+                            "Source" : "{Season.LeagueInfo.LeagueLogo}",
+                            "HorizontalAlignment" : "Left",
+                            "MarginLeft" : 44,
+                            "Height" : 35,
+                            "RenderIf" : true,
+                            "Triggers" : [
+                                {
+                                    "Condition" : "{F1Mode, Converter=BoolReverse}",
+                                    "Setters" : [
+                                        {
+                                            "Property" : "HorizontalAlignment",
+                                            "Value" : "Center"
+                                        },
+                                        {
+                                            "Property" : "MarginLeft",
+                                            "Value" : "-44"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "BlockType" : "image",
+                            "Source": "images/f1_logo.png",
+                            "HorizontalAlignment" : "Right",
+                            "RenderIf" : "{F1Mode}",
+                            "MarginRight" : 114,
+                            "Height" : 30
+                        }
+                    ]
+                }
+            ]
+        }        
+    ],
+    "Triggers" : [
+        {
+            "Condition" : "{Item.Position, Converter=StringEquals, Parameter=3}",
+            "Property" : "MarginBottom",
+            "Value" : "0"
+        }
+    ]
+}

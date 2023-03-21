@@ -1,0 +1,558 @@
+{
+    "Name": "mainStack",
+    "BlockType": "stack",
+    "Margin": "{MarginRoot}",
+    "Orientation": "Vertical",
+    "Items": [
+        {
+            "BlockType" : "component",
+            "ComponentName" : "header_block_session"
+        },
+        {
+            "BlockType" : "component",
+            "ComponentName" : "separator"
+        },
+        {
+            "BlockType" : "stack",
+            "Orientation" : "Horizontal",
+            "HorizontalAlignment" : "Center",
+            "Margin" : "{MarginTable}",
+            "Items" : [
+                {
+                    "BlockType": "stack",
+                    "Orientation": "Vertical",
+                    "RenderIf" : "{DisplayPodiumCards}",
+                    "MarginRight" : 15,
+                    "MarginTop" : -5,
+                    "Items" : [
+                        {
+                            "Name" : "PodiumHeaderImage",
+                            "BlockType": "image",
+                            "Source" : "images/podium.png",
+                            "HorizontalAlignment" : "Center",
+                            "Width" : 250
+                            
+                        },
+                        {
+                            "BlockType" : "itemstack",
+                            "Orientation" : "Vertical",
+                            "MarginTop" : 5,
+                            "ItemStackOptions": {
+                                "ItemSource": "{Session.Drivers}",
+                                "Limit" : 3,
+                                "Template": {
+                                    "BlockType" : "component",
+                                    "ComponentName" : "cards_podium"
+                                }
+                            }
+                        
+                        }
+                    ]
+                },
+                {
+                    "BlockType": "stack",
+                    "Orientation" : "Horizontal",
+                    "Items" : [
+                        {
+                            "BlockType" : "stack",
+                            "Orientation" : "Vertical",
+                            "Items" : [
+                                {
+                                    "Name": "mainTable",
+                                    "BlockType": "table",
+                                    "HorizontalAlignment" : "Center",
+                                    "TableOptions": {
+                                        "ItemsSource": "{Session.Drivers}",
+                                        "RowSpacing": 13,
+                                        "ColSpacing": 0,
+                                        "HeaderTemplate": {
+                                            "BlockType": "text",
+                                            "MarginBottom": 8,
+                                            "TextOptionsExtern" : "tableColumnHeader"
+                                        },
+                                        "Columns": [
+                                            {
+                                                "Header": "[Driver]",
+                                                "WidthStretch" : true,
+                                                "Template":
+                                                {
+                                                    "BlockType" : "component",
+                                                    "ComponentName" : "driver_line_cell_quali"                                
+                                                }
+                                            },
+                                            {
+                                                "Header": "[{Season.LineupsBasedType}Team]",
+                                                "Template":
+                                                {
+                                                    "BlockType" : "component",
+                                                    "ComponentName" : "team_line_cell_quali"                                
+                                                }
+                                            },
+                                            {
+                                                "Header": "[Interval]",
+                                                "Template": {
+                                                    "Padding": "12, 0",
+                                                    "BackgroundImage": "images/quali_bg/gap_bg_{Item.Team.Name}.png",
+                                                    "BlockType": "text",
+                                                    "Source": "{Item.Time}",
+                                                    "HorizontalAlignment": "Left",
+                                                    "TextOptionsExtern" : "tableCellBold",
+                                                    "Foreground" : "#ffffff",
+                                                    "TextOptions": {
+                                                        "HorizontalAlignment": "Center"
+                                                    
+                                                    },
+                                                    "Triggers" : [
+                                                        {
+                                                            "Condition" : "{F1Mode, Converter=BoolReverse}",
+                                                            "Setters" : [
+                                                                {
+                                                                    "Property" : "BackgroundImage",
+                                                                    "Value" : "images/gap_bg.png"
+                                                                },
+                                                                {
+                                                                    "Property" : "Foreground",
+                                                                    "Value" : "#000000"
+                                                                }
+                                                            ]
+                                                        
+                                                        },
+                                                        {
+                                                            "Condition" : "{Item.PositionString, Converter=StringEquals, Parameter=1}",
+                                                            "Setters" : [
+                                                                {
+                                                                    "Property" : "BackgroundImage",
+                                                                    "Value" : "images/quali_bg/gap_bg_purple.png"
+                                                                },
+                                                                {
+                                                                    "Property" : "Foreground",
+                                                                    "Value" : "#ffffff"
+                                                                }
+                                                            ]
+                                                        }
+                                                    ]
+                                                }
+                                            },
+                                            {
+                                                "Header": "[Penalties]",
+                                                "Template": { 
+                                                    "BlockType": "dock",
+                                                    "Padding": "12, 0",
+                                                    "Width" : 161,
+                                                    "Height" : 73,
+                                                    "MarginLeft" : "{MarginLeftTableCell}",
+                                                    "RenderIf" : "{SplitPenaltiesAtSessionResults, Converter=BoolReverse}",
+                                                    "BackgroundImage" : "images/data_bg/penalties_bg.png",
+                                                    "Items": [
+                                                        {
+                                                            "BlockType": "stack",
+                                                            "HorizontalAlignment": "Center",
+                                                            "VerticalAlignment": "Bottom",
+                                                            "Items": [
+                                                                {
+                                                                    "BlockType": "text",
+                                                                    "Source": "{Item.PenaltyTimeTotal}s",
+                                                                    "HorizontalAlignment": "Center",
+                                                                    "VerticalAlignment": "Bottom",
+                                                                    "PaddingBottom" : 25,
+                                                                    "TextOptions": {
+                                                                        "FontName": "{FontNameDefault}",
+                                                                        "FontSize": 30,
+                                                                        "Foreground": "#000000",
+                                                                        "HorizontalAlignment": "Center"
+                                                                    },
+                                                                    "Triggers" : [
+                                                                        {
+                                                                            "Condition":"{Item.PenaltyTimeTotal, Converter=NumberEquals, Parameter=0}",
+                                                                            "Property" : "Source",
+                                                                            "Value" : ""
+                                                                        }
+                                                                    ]
+                                                                }
+                                                            ]
+                                                        }
+                                                    ],
+                                                    "Triggers" : [
+                                                        {
+                                                            "Condition":"{Item.PenaltyTimeTotal, Converter=NumberEquals, Parameter=0}",
+                                                            "Property" : "Height",
+                                                            "Value" : ""
+                                                        }
+                                                    ]
+                                                }
+                                            },
+                                            {
+                                                "Header": "[Penalties]",
+                                                "Template": { 
+                                                    "BlockType": "dock",
+                                                    "Padding": "12, 0",
+                                                    "Width" : 161,
+                                                    "Height" : 73,
+                                                    "MarginLeft" : "{MarginLeftTableCell}",
+                                                    "RenderIf" : "{SplitPenaltiesAtSessionResults}",
+                                                    "BackgroundImage" : "images/data_bg/penalties_bg.png",
+                                                    "Items": [
+                                                        {
+                                                            "BlockType": "stack",
+                                                            "HorizontalAlignment": "Center",
+                                                            "VerticalAlignment": "Bottom",
+                                                            "Items": [
+                                                                {
+                                                                    "BlockType": "text",
+                                                                    "Source": "{Item.PenaltyTimeIngame}s",
+                                                                    "HorizontalAlignment": "Center",
+                                                                    "VerticalAlignment": "Bottom",
+                                                                    "PaddingBottom" : 25,
+                                                                    "TextOptions": {
+                                                                        "FontName": "{FontNameDefault}",
+                                                                        "FontSize": 30,
+                                                                        "Foreground": "#000000",
+                                                                        "HorizontalAlignment": "Center"
+                                                                    },
+                                                                    "Triggers" : [
+                                                                        {
+                                                                            "Condition":"{Item.PenaltyTimeIngame, Converter=NumberEquals, Parameter=0}",
+                                                                            "Property" : "Source",
+                                                                            "Value" : ""
+                                                                        }
+                                                                    ]
+                                                                }
+                                                            ]
+                                                        }
+                                                    ],
+                                                    "Triggers" : [
+                                                        {
+                                                            "Condition":"{Item.PenaltyTimeIngame, Converter=NumberEquals, Parameter=0}",
+                                                            "Property" : "Height",
+                                                            "Value" : ""
+                                                        }
+                                                    ]
+                                                }
+                                            },
+                                            {
+                                                "Header": "[Stew Pen.]",
+                                                "Template": { 
+                                                    "BlockType": "dock",
+                                                    "Padding": "12, 0",
+                                                    "Width" : 161,
+                                                    "Height" : 73,
+                                                    "MarginLeft" : "{MarginLeftTableCell}",
+                                                    "RenderIf" : "{SplitPenaltiesAtSessionResults}",
+                                                    "BackgroundImage" : "images/data_bg/penalties_bg.png",
+                                                    "Items": [
+                                                        {
+                                                            "BlockType": "stack",
+                                                            "HorizontalAlignment": "Center",
+                                                            "VerticalAlignment": "Bottom",
+                                                            "Items": [
+                                                                {
+                                                                    "BlockType": "text",
+                                                                    "Source": "{Item.PenaltyTimeStewards}s",
+                                                                    "HorizontalAlignment": "Center",
+                                                                    "VerticalAlignment": "Bottom",
+                                                                    "PaddingBottom" : 25,
+                                                                    "TextOptions": {
+                                                                        "FontName": "{FontNameDefault}",
+                                                                        "FontSize": 30,
+                                                                        "Foreground": "#000000",
+                                                                        "HorizontalAlignment": "Center"
+                                                                    },
+                                                                    "Triggers" : [
+                                                                        {
+                                                                            "Condition":"{Item.PenaltyTimeStewards, Converter=NumberEquals, Parameter=0}",
+                                                                            "Property" : "Source",
+                                                                            "Value" : ""
+                                                                        }
+                                                                    ]
+                                                                }
+                                                            ]
+                                                        }
+                                                    ],
+                                                    "Triggers" : [
+                                                        {
+                                                            "Condition":"{Item.PenaltyTimeStewards, Converter=NumberEquals, Parameter=0}",
+                                                            "Property" : "Height",
+                                                            "Value" : ""
+                                                        }
+                                                    ]
+                                                }
+                                            },
+                                            {
+                                                "Header": "[Fastest Lap]",
+                                                "Template": {
+                                                    "BlockType": "dock",
+                                                    "MarginLeft" : "{MarginLeftTableCell}",
+                                                    "Width" : 237,
+                                                    "BackgroundImage" : "images/data_bg/fastlap_bg.png",
+                                                    "Triggers" : [
+                                                        {
+                                                            "Condition" : "{Item.IsRaceFastestLap}",
+                                                            "Setters" :
+                                                            [
+                                                                {
+                                                                    "Property" : "BackgroundImage",
+                                                                    "Value" : "images/data_bg/fastlap_bg_purple.png"
+                                                                }
+                                                            ]
+                                                        }
+                                                    ],
+                                                    "Items": [
+                                                        {
+                                                            "BlockType": "stack",
+                                                            "HorizontalAlignment": "Center",
+                                                            "VerticalAlignment": "Bottom",
+                                                            "Spacing": 8,
+                                                            "Items": [
+                                                                {
+                                                                    "BlockType": "text",
+                                                                    "Source": "{Item.FastestLapTime}",
+                                                                    "HorizontalAlignment": "Center",
+                                                                    "VerticalAlignment": "Bottom",
+                                                                    "PaddingBottom" : 27,
+                                                                    "TextOptions": {
+                                                                        "FontName": "{FontNameBold}",
+                                                                        "FontSize": 30,
+                                                                        "HorizontalAlignment": "Center",
+                                                                        "Foreground" : "#ffffff"
+                                                                    }
+                                                                },
+                                                                {
+                                                                    "BlockType": "image",
+                                                                    "Source": "tyres_{Item.FastestLapTyres}.png",
+                                                                    "HorizontalAlignment": "Center",
+                                                                    "VerticalAlignment": "Center",
+                                                                    "Height": 40
+                                                                }
+                                                            ]
+                                                        }
+                                                    ]
+                                                }
+                                            },
+                                            {
+                                                "Header": "[Sector 1]",
+                                                "Template": {
+                                                    "BlockType": "dock",
+                                                    "MarginLeft" : "{MarginLeftTableCell}",
+                                                    "RenderIf" : "{RenderSectorsOnQualiLayout}",
+                                                    "Width" : 180,
+                                                    "BackgroundImage" : "images/data_bg/fastlap_bg.png",
+                                                    "Triggers" : [
+                                                        {
+                                                            "Condition" : "{Item.IsOverallFastestSector1}",
+                                                            "Setters" :
+                                                            [
+                                                                {
+                                                                    "Property" : "BackgroundImage",
+                                                                    "Value" : "images/data_bg/fastlap_bg_purple.png"
+                                                                }
+                                                            ]
+                                                        }
+                                                    ],
+                                                    "Items": [
+                                                        {
+                                                            "BlockType": "stack",
+                                                            "HorizontalAlignment": "Center",
+                                                            "VerticalAlignment": "Bottom",
+                                                            "Spacing": 8,
+                                                            "Items": [
+                                                                {
+                                                                    "BlockType": "text",
+                                                                    "Source": "{Item.FastestLapSector1}",
+                                                                    "HorizontalAlignment": "Center",
+                                                                    "VerticalAlignment": "Bottom",
+                                                                    "PaddingBottom" : 27,
+                                                                    "TextOptions": {
+                                                                        "FontName": "{FontNameBold}",
+                                                                        "FontSize": 30,
+                                                                        "HorizontalAlignment": "Center",
+                                                                        "Foreground" : "#ffffff"
+                                                                    }
+                                                                }
+                                                            ]
+                                                        }
+                                                    ]
+                                                }
+                                            },
+                                            {
+                                                "Header": "[Sector 2]",
+                                                "Template": {
+                                                    "BlockType": "dock",
+                                                    "MarginLeft" : "{MarginLeftTableCell}",
+                                                    "RenderIf" : "{RenderSectorsOnQualiLayout}",
+                                                    "Width" : 180,
+                                                    "BackgroundImage" : "images/data_bg/fastlap_bg.png",
+                                                    "Triggers" : [
+                                                        {
+                                                            "Condition" : "{Item.IsOverallFastestSector2}",
+                                                            "Setters" :
+                                                            [
+                                                                {
+                                                                    "Property" : "BackgroundImage",
+                                                                    "Value" : "images/data_bg/fastlap_bg_purple.png"
+                                                                }
+                                                            ]
+                                                        }
+                                                    ],
+                                                    "Items": [
+                                                        {
+                                                            "BlockType": "stack",
+                                                            "HorizontalAlignment": "Center",
+                                                            "VerticalAlignment": "Bottom",
+                                                            "Spacing": 8,
+                                                            "Items": [
+                                                                {
+                                                                    "BlockType": "text",
+                                                                    "Source": "{Item.FastestLapSector2}",
+                                                                    "HorizontalAlignment": "Center",
+                                                                    "VerticalAlignment": "Bottom",
+                                                                    "PaddingBottom" : 27,
+                                                                    "TextOptions": {
+                                                                        "FontName": "{FontNameBold}",
+                                                                        "FontSize": 30,
+                                                                        "HorizontalAlignment": "Center",
+                                                                        "Foreground" : "#ffffff"
+                                                                    }
+                                                                }
+                                                            ]
+                                                        }
+                                                    ]
+                                                }
+                                            },
+                                            {
+                                                "Header": "[Sector 3]",
+                                                "Template": {
+                                                    "BlockType": "dock",
+                                                    "MarginLeft" : "{MarginLeftTableCell}",
+                                                    "RenderIf" : "{RenderSectorsOnQualiLayout}",
+                                                    "Width" : 180,
+                                                    "BackgroundImage" : "images/data_bg/fastlap_bg.png",
+                                                    "Triggers" : [
+                                                        {
+                                                            "Condition" : "{Item.IsOverallFastestSector3}",
+                                                            "Setters" :
+                                                            [
+                                                                {
+                                                                    "Property" : "BackgroundImage",
+                                                                    "Value" : "images/data_bg/fastlap_bg_purple.png"
+                                                                }
+                                                            ]
+                                                        }
+                                                    ],
+                                                    "Items": [
+                                                        {
+                                                            "BlockType": "stack",
+                                                            "HorizontalAlignment": "Center",
+                                                            "VerticalAlignment": "Bottom",
+                                                            "Spacing": 8,
+                                                            "Items": [
+                                                                {
+                                                                    "BlockType": "text",
+                                                                    "Source": "{Item.FastestLapSector3}",
+                                                                    "HorizontalAlignment": "Center",
+                                                                    "VerticalAlignment": "Bottom",
+                                                                    "PaddingBottom" : 27,
+                                                                    "TextOptions": {
+                                                                        "FontName": "{FontNameBold}",
+                                                                        "FontSize": 30,
+                                                                        "HorizontalAlignment": "Center",
+                                                                        "Foreground" : "#ffffff"
+                                                                    }
+                                                                }
+                                                            ]
+                                                        }
+                                                    ]
+                                                }
+                                            },
+                                            {
+                                                "Header": "[Stints]",
+                                                "Template": {
+                                                    "BlockType" : "component",
+                                                    "ComponentOptions" : {
+                                                        "ComponentName" : "stints_cell"
+                                                    }
+                                                }
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "BlockType" : "stack",
+                                    "Orientation" : "Horizontal",
+                                    "HorizontalAlignment" : "Center",
+                                    "MarginTop" : 30,
+                                    "Items" : [
+                                        {
+                                            "Name": "footerBlock",
+                                            "BlockType": "dock",
+                                            "Orientation": "Horizontal",
+                                            "HorizontalAlignment" : "Center",
+                                            "Items": [
+                                                {
+                                                    "BlockType" : "stack",
+                                                    "Margin" : "8, 8, 8, 8",
+                                                    "HorizontalAlignment" : "Center",
+                                                    "Spacing" : 32,
+                                                    "Items" :[
+                                                        {
+                                                            "BlockType" : "component",
+                                                            "Name" : "stickerFastestLap",
+                                                            "RenderIf" : "{Session.FastestLapDriver, Converter=EmptyObjectToFalse}",
+                                                            "ComponentOptions" :
+                                                            {
+                                                                "ComponentName" : "sticker_fl",
+                                                                "Vars" :
+                                                                {
+                                                                    "bg" : "images/fastlap_bg.png",
+                                                                    "header" : "[FASTEST LAP]",
+                                                                    "main" : "{Session.FastestLapDriver.Name}",
+                                                                    "data" : "{Session.FastestLapTime}",
+                                                                    "tyre" : "images/tyres/tyres_{Session.FastestLapTyres}.png"
+                                                                }
+                                                            }
+                                                        },
+                                                    
+                                                        {                       
+                                                            "BlockType" : "component",
+                                                            "RenderIf" : "{Session.DriverDayDriver, Converter=EmptyObjectToFalse}",
+                                                            "ComponentOptions" :
+                                                            {
+                                                                "ComponentName" : "sticker",
+                                                                "Vars" :
+                                                                {
+                                                                    "bg" : "images/driveroftheday_bg.png",
+                                                                    "header" : "[DRIVER OF THE DAY]",
+                                                                    "main" : "",
+                                                                    "data" : "{Session.DriverDayDriver.Name}"
+                                                                }
+                                                            }
+                                                        },
+                                                        {
+                                                            "BlockType" : "component",
+                                                            "Name" : "stickerCommentator",
+                                                            "RenderIf" : "{Streamer, Converter=EmptyObjectToFalse}",
+                                                            "ComponentOptions" :
+                                                            {
+                                                                "ComponentName" : "sticker_com",
+                                                                "Vars" :
+                                                                {
+                                                                    "bg" : "images/commentator_bg.png",
+                                                                    "header" : "[COMMENTATOR]",
+                                                                    "streamer" : "{Streamer}",
+                                                                    "secondcomm" : "{SecondCommentator}"
+                                                                }
+                                                            }
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]    
+                }
+            ]
+        }
+    ]
+}

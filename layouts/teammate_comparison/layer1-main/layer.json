@@ -1,0 +1,284 @@
+{
+    "BlockRoot": {
+        "Name": "mainStack",
+        "BlockType": "stack",
+        "Margin": "{MarginRoot}",       
+        "Orientation": "Vertical",
+        "Items": [
+            {               
+                "BlockType": "image",
+                "Source" : "images/team_drv/teammate.png",
+                "HorizontalAlignment" : "Center"
+            },
+            {
+                "BlockType": "stack",
+                "Orientation" : "Horizontal",
+                "HorizontalAlignment" : "Center",
+                "MarginTop" : 22,
+                "Items" : [
+                    {
+                        "BlockType": "image",
+                        "VerticalAlignment" : "Center",
+                        "HorizontalAlignment" : "Left",
+                        "Source" : "images/team_drv/drivers.png",
+                        "MarginRight" : 22
+                    },
+                    {
+                        "BlockType": "itemstack",
+                        "Orientation" : "Vertical",
+                        "VerticalAlignment" : "Center",
+                        "HorizontalAlignment" : "Right",
+                        "ItemStackOptions" : {
+                            "ItemSource" : "{Standings.Teams}",
+                            "TakeItemIndex" : "{TeamNumberToCompare}",
+                            "Template" : {
+                                "BlockType" : "stack",
+                                "Orientation" : "Vertical",
+                                "HorizontalAlignment" : "Center",
+                                "Height" : 625, //1114,
+                                "Width" : 738, //1314,
+                                "BackgroundImage" : "images/lineup/card_{Item.Team.Name}.png",
+                                "Items" : [
+                                    {
+                                        "BlockType" : "text",
+                                        "Source" : "{Item.Team.Name}",
+                                        "HorizontalAlignment" : "Center",
+                                        "MarginTop" : 40,
+                                        "TextOptions" : {
+                                            "HorizontalAlignment" : "Center",
+                                            "FontSize" : "72",
+                                            "Foreground" : "#ffffff"
+                                        }
+                                    },
+                                    {
+                                        "BlockType" : "dock",
+                                        "Orientation" : "Horizontal",
+                                        "Items" : [
+                                            {
+                                                "BlockType" : "stack",
+                                                "Orientation" : "Vertical",
+                                                "HorizontalAlignment" : "Left",
+                                                "MarginLeft" : 30,
+                                                "Items" : [
+                                                    {
+                                                        "BlockType" : "image",
+                                                        "HorizontalAlignment" : "Center",
+                                                        "Source" : "images/suit/{Item.Team.Name}_1.png",
+                                                        "Height" : 300,
+                                                    },
+                                                    {
+                                                        "BlockType" : "text",
+                                                        "BackgroundImage" : "images/team_drv/bg_plate.png",
+                                                        "HorizontalAlignment" : "Center",
+                                                        "Width" : 288,
+                                                        "Height" : 73,
+                                                        "Source" : "{Item.Driver0.Driver.Name}",
+                                                        "TextOptions" : {
+                                                            "HorizontalAlignment" : "Center",
+                                                            "FontSize" : "25",
+                                                            "Foreground" : "#ffffff"
+                                                        }
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "BlockType" : "stack",
+                                                "Orientation" : "Vertical",
+                                                "HorizontalAlignment" : "Right",
+                                                "MarginRight" : 30,
+                                                "Items" : [
+                                                    {
+                                                        "BlockType" : "image",
+                                                        "HorizontalAlignment" : "Center",
+                                                        "Source" : "images/suit/{Item.Team.Name}_2.png",
+                                                        "Height" : 300,
+                                                    },
+                                                    {
+                                                        "BlockType" : "text",
+                                                        "BackgroundImage" : "images/team_drv/bg_plate.png",
+                                                        "HorizontalAlignment" : "Center",
+                                                        "Width" : 288,
+                                                        "Height" : 73,
+                                                        "Source" : "{Item.Driver1.Driver.Name}",
+                                                        "TextOptions" : {
+                                                            "HorizontalAlignment" : "Center",
+                                                            "FontSize" : "25",
+                                                            "Foreground" : "#ffffff"
+                                                        }
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "BlockType": "image",
+                                        "Source" : "images/cars/{Item.Team.Name}.png",
+                                        "Height" : "120",
+                                        "HorizontalAlignment" : "Center"
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                ]
+            },
+            {
+                "BlockType": "stack",
+                "Orientation" : "Horizontal",
+                "HorizontalAlignment" : "Center",
+                "MarginTop" : 40,
+                "Items" : [
+                    {
+                        "BlockType": "image",
+                        "VerticalAlignment" : "Center",
+                        "Source" : "images/team_drv/statistics.png",
+                        "MarginRight" : 22
+                    },
+                    {
+                        "BlockType": "itemstack",
+                        "Orientation" : "Vertical",
+                        "HorizontalAlignment" : "Center",
+                        "ItemStackOptions" : {
+                            "ItemSource" : "{Standings.Teams}",
+                            "TakeItemIndex" : "{TeamNumberToCompare}",
+                            "Template" : {
+                                "BlockType" : "stack",
+                                "Orientation" : "Vertical",
+                                "HorizontalAlignment" : "Center",
+                                "Items" : [
+                                    //Comp Position
+                                    {
+                                        "BlockType" : "component",
+                                        "ComponentOptions" : {
+                                            "ComponentName" : "comparison_row",
+                                            "Vars" : {
+                                                "statname" : "Position",
+                                                "statval" : "{Item.Driver0.Position}",
+                                                "statvalsec" : "{Item.Driver1.Position}",
+                                                "bg" : "top"
+                                            }
+                                        }
+                                    },
+                                    //Comp Points
+                                    {
+                                        "BlockType" : "component",
+                                        "ComponentOptions" : {
+                                            "ComponentName" : "comparison_row",
+                                            "Vars" : {
+                                                "statname" : "Points",
+                                                "statval" : "{Item.Driver0.Points}",
+                                                "statvalsec" : "{Item.Driver1.Points}",
+                                                "bg" : "mid"
+                                            }
+                                        }
+                                    },
+                                    //Comp Races
+                                    {
+                                        "BlockType" : "component",
+                                        "ComponentOptions" : {
+                                            "ComponentName" : "comparison_row",
+                                            "Vars" : {
+                                                "statname" : "Races",
+                                                "statval" : "{Item.Driver0.RacesCount}",
+                                                "statvalsec" : "{Item.Driver1.RacesCount}",
+                                                "bg" : "mid"
+                                            }
+                                        }
+                                    },
+                                    
+                                
+                                    // Count DNF
+                                    {
+                                        "BlockType" : "component",
+                                        "ComponentOptions" : {
+                                            "ComponentName" : "comparison_row",
+                                            "Vars" : {
+                                                "statname" : "DNFs",
+                                                "statval" : "{Item.Driver0.CountDnf}",
+                                                "statvalsec" : "{Item.Driver1.CountDnf}",
+                                                "bg" : "bot"
+                                            }
+                                        }
+                                    },
+                                    //separated
+                                    //Wins
+                                    {
+                                        "BlockType" : "component",
+                                        "MarginTop" : 20,
+                                        "ComponentOptions" : {
+                                            "ComponentName" : "comparison_row_double",
+                                            "Vars" : {
+                                                "statname" : "Race",
+                                                "statnamesec" : "Wins",
+                                                "statval" : "{Item.Driver0.CountP1}",
+                                                "statvalsec" : "{Item.Driver1.CountP1}",
+                                                "bg" : "top"
+                                            }
+                                        }
+                                    },
+                                    
+                                    
+                                    //Poles
+                                    {
+                                        "BlockType" : "component",
+                                        "ComponentOptions" : {
+                                            "ComponentName" : "comparison_row",
+                                            "Vars" : {
+                                                "statname" : "Poles",
+                                                "statval" : "{Item.Driver0.CountQualP1}",
+                                                "statvalsec" : "{Item.Driver1.CountQualP1}",
+                                                "bg" : "mid"
+                                            }
+                                        }
+                                    },
+                                    // FastestLaps
+                                    {
+                                        "BlockType" : "component",
+                                        "ComponentOptions" : {
+                                            "ComponentName" : "comparison_row_double",
+                                            "Vars" : {
+                                                "statname" : "Fastest",
+                                                "statnamesec" : "Laps",
+                                                "statval" : "{Item.Driver0.RaceFastestLapCount}",
+                                                "statvalsec" : "{Item.Driver1.RaceFastestLapCount}",
+                                                "bg" : "mid"
+                                            }
+                                        }
+                                    },
+                                    //DOTD
+                                    {
+                                        "BlockType" : "component",
+                                        "ComponentOptions" : {
+                                            "ComponentName" : "comparison_row_double",
+                                            "Vars" : {
+                                                "statname" : "Driver of",
+                                                "statnamesec" : "the Day",
+                                                "statval" : "{Item.Driver0.RaceDriverDayCount}",
+                                                "statvalsec" : "{Item.Driver1.RaceDriverDayCount}",
+                                                "bg" : "mid"
+                                            }
+                                        }
+                                    },
+                                    //Penalty Points
+                                    {
+                                        "BlockType" : "component",
+                                        "ComponentOptions" : {
+                                            "ComponentName" : "comparison_row_double",
+                                            "Vars" : {
+                                                "statname" : "Penalty",
+                                                "statnamesec" : "Points",
+                                                "statval" : "{Item.Driver0.PenaltyPoints}",
+                                                "statvalsec" : "{Item.Driver1.PenaltyPoints}",
+                                                "bg" : "bot"
+                                            }
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                ]
+            }
+        ]
+    }
+}
