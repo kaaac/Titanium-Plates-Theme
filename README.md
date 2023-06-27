@@ -80,5 +80,6 @@ As an additional render you can compare the drivers of the various teams (to cha
 All RLT renders are included (some renders require access to the various "Advanced" and "Pro" additional features)
 
 ![Statistics](docs/statistics.png "Statistics")
+![Battle](docs/battle.png "Battle")
 
 
