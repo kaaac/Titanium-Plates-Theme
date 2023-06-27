@@ -19,20 +19,48 @@ We are aiming to ensure compatibility with all games the results of which can be
 
 ## Available render layouts:
 
-- Race Results and Qualification Results
+- Race Results and Qualification Results (with cards)
 
-![Race Results and Quali](docs/race_and_quali.png "Race Results")
+![Race Results and Quali](docs/race_and_quali_card.png "Race Results")
 
-- Driver Standings and Team Standing
+- Driver Standings and Team Standing (with cards)
 
-![Driver and Team Standings](docs/driver_and_team_standing.png "Driver Standings")
+![Driver and Team Standings](docs/driver_and_team_standing_card.png "Driver Standings")
 
- Line-up with Cards
+- Line-up with Cards
 
 ![Line-up](docs/lineup.png "Driver Standings")
 
-- Driver Standings - Progress Positions/Points
+- Driver Standings - Progress Positions/Points (with cards)
 
-![Driver Standings - Progress Positions](docs/season_progress.png "Driver Standings - Progress Positions")
+![Driver Standings - Progress Positions](docs/season_progress_card.png "Driver Standings - Progress Positions")
+
+- Calendar
+
+![Calendar](docs/calendar.png "Calendar")
+
+- Penalties (single and multi)
+
+![Penalties](docs/penalties.png "Penalties")
+
+- Podium and Top 10 (with cards)
+
+![Podium and Top 10](docs/podium_and_top_ten.png "Podium")
+
+- The Grid
+
+![The Grid](docs/the_grid.png "Grid")
+
+- Stints
+
+![Stints](docs/stints.png "Stints")
+
+- Team Comparisons (with cards)
+
+![Team compare](docs/team_compare.png "Team compare")
+
+- Statistics (sessions and season)
+
+![Statistics](docs/statistics.png "Statistics")
 
 
