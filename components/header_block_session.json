@@ -67,8 +67,9 @@
                     "Name": "leagueLogo",
                     "BlockType": "image",
                     "VerticalAlignment" : "Top",
-                    "Height": 145,
-                    "MarginTop": -10,
+                    "Height": 105,
+                    "MarginTop": 9,
+                    "MarginRight" : 20,
                     "MarginLeft": 36,
                     "Source": "{Season.LeagueInfo.LeagueLogo}"
                 },

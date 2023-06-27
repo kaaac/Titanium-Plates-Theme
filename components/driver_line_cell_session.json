@@ -39,6 +39,7 @@
                     "MaxWidth": 90,
                     "MarginLeft": 0,
                     "Width" : 50,
+                    "RenderIf" : "<renderpos>",
                     "Source": "{Item.PositionString}",
                     "HorizontalAlignment": "Center",
                     "VerticalAlignment": "Center",
@@ -58,6 +59,11 @@
                             "Condition" : "{Item.PositionString, Converter=StringEquals, Parameter=1}",
                             "Property" : "Foreground",
                             "Value" : "#ffffff"
+                        },
+                        {
+                            "Condition" : "{Item.PositionString, Converter=EmptyObjectToTrue}",
+                            "Property" : "Source",
+                            "Value" : "{Item.Position}"
                         }
                     ],
                     "TextOptions" : {

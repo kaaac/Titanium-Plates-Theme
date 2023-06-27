@@ -1,0 +1,6 @@
+{
+    "LayoutName": "raceResultsPodium",
+    "RenderType": "RaceResults",
+    "Index" : 2,
+    "RenderCaption" : "top 10 with podium"
+}

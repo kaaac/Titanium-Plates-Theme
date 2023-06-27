@@ -1,6 +1,6 @@
 {
     "BlockType": "dock",
-    //"RenderIf" : "{Season.LineupsBasedType, Converter=StringEquals, Parameter=Teams}",
+    "RenderIf" : true,
     "PaddingLeft": 12,
     "PaddingRight": 4,    
     "BackgroundImage": "images/team_bg/team_bg_{Item.Team.Name}.png",

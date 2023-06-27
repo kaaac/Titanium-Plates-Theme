@@ -18,9 +18,13 @@
                     "BlockType": "text",                            
                     "VerticalAlignment": "Center",                            
                     "Source": "<header>",
+                    "Width" : 750,
                     "FontName" : "{FontNameBold}",
                     "Foreground" : "{HeaderForeground}",
-                    "FontSize": 60
+                    "FontSize": 60,
+                    "TextOptions" : {
+                        "Wrap" : true,
+                    }
                 },
                 {                            
                     "BlockType": "text",                                                                         

@@ -1,0 +1,9 @@
+{
+    "Name" : "separator",
+    "BlockType": "image",
+    "Margin" : "{MarginSeparator}",
+    "Width": "<Width>",
+    "Height" : 4,
+    "Source": "images/separator_black.png",
+    "HorizontalAlignment" : "Center"
+}

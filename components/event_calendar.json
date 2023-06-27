@@ -1,0 +1,120 @@
+{
+    "BlockType" : "stack",
+    "Orientation" : "Horizontal",
+    "Items":
+    [
+        {
+            "BlockType" : "stack",
+            "HorizontalAlignment" : "Left",
+            "Orientation" : "Horizontal",
+            "MarginTop" : 10,
+            "MarginBottom" : 10,
+            "Width" : "166",
+            "Height" : "74",
+            "BackgroundImage" : "images/cal/bg_front.png",
+            "Items": [
+                {
+                    "BlockType" : "stack",
+                    "HorizontalAlignment" : "Left",
+                    "Width" : "80",
+                    "Orientation" : "Vertical",
+                    "Items": [
+                        {
+                            "BlockType" : "text",
+                            "Source" : "{Item.Date, Converter=DateToDayOfMonth}",
+                            "HorizontalAlignment" : "Center",
+                            "Foreground" : "#000000",
+                            "FontName" : "{FontNameBold}",
+                            "MarginTop" : 20,
+                        },
+                        {
+                            "BlockType" : "text",
+                            "Source" : "[c{Item.Date, Converter=DateToMonth}]",
+                            "HorizontalAlignment" : "Center",
+                            "Foreground" : "#000000",
+                            "FontName" : "{FontNameBold}",
+                        },
+                    ]
+                },
+                {
+                    "BlockType" : "Image",
+                    "Height" : "50",
+                    "Width" : "75",
+                    "VerticalAlignment" : "Bottom",
+                    "HorizontalAlignment" : "Right",
+                    "PaddingBottom" : 6,
+                    "ImageOptions": {
+                        "Path": "images/flags/flag_{Item.Track.Nation.Code}.png"
+                    }
+                }
+            ]
+        },
+        {
+            "BlockType" : "stack",
+            "HorizontalAlignment" : "Center",
+            "Orientation" : "Vertical",
+            "MarginTop" : 10,
+            "MarginBottom" : 10,
+            "Width" : "350",
+            "Height" : "74",
+            "BackgroundImage" : "images/cal/bg_middle.png",
+            "Items": [
+                {
+                    "BlockType" : "text",
+                    "Source" : "{Item.Track.CircuitName}",//"{Item.Track.CountryName, Converter=StringToUpperString}",
+                    "HorizontalAlignment" : "Left",
+                    "Foreground" : "#000000",
+                    "FontName" : "{FontNameBold}",
+                    "FontSize" : 20,
+                    "MarginTop" : 20,
+                },
+                {
+                    "BlockType" : "text",
+                    "Source": "{Item.WinnerString}",
+                    "HorizontalAlignment" : "Left",
+                    "Foreground" : "{CalendarWinnerStringColour}",
+                    "FontSize" : 15,
+                    "MarginTop" : 5,
+                    "FontName" : "{FontNameBold}",
+                }
+            ]
+        },
+        {
+            "BlockType" : "stack",
+            "HorizontalAlignment" : "Right",
+            "Orientation" : "Horizontal",
+            "MarginTop" : 10,
+            "MarginBottom" : 10,
+            "Width" : "110",
+            "Height" : "74",
+            "BackgroundImage" : "images/cal/bg_end.png",
+            "Items": [
+                {
+                    "BlockType" : "Image",
+                    "Width" : "110",
+                    "Height" : "74",
+                    "Source" : "images/cal/tracks/track_{Item.Track.CircuitName}.png",
+                    //"VerticalAlignment" : "Bottom",
+                    //"HorizontalAlignment" : "Right",
+                    //"PaddingBottom" : 6,
+                    //"ImageOptions": {
+                    //    "Path": "images/cal/tracks_{Item.Track.CircuitName}.png"
+                    //}
+                }
+            ]
+        },
+        {
+            "BlockType" : "shape",
+            "RenderIf" : "<renderline>",
+            "MarginRight" : 25,
+            "MarginLeft" : 25,
+            //"PaddingTop" : 10,
+            "Width" : 2,
+            "Height" : 94,
+            "ShapeOptions" : {
+                "ShapeType" : "rectangle",
+                "Fill" : "#ff0000", // red,
+            }
+        }
+    ]
+}

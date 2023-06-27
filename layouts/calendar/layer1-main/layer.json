@@ -1,0 +1,112 @@
+{
+    "BlockRoot": {
+        "Name": "mainStack",
+        "BlockType": "stack",
+        "Margin": "25,25,25,25",       
+        "Orientation": "Vertical",
+        "Items": [
+            {
+                "BlockType" : "stack",
+                "Orientation" : "Vertical",
+                "HorizontalAlignment" : "Center",
+                "ItemSpacing" : 20,
+                "Items": [
+                    {
+                        "BlockType" : "stack",
+                        "HorizontalAlignment" : "Center",
+                        "MarginTop" : 20,
+                        "Orientation" : "Horizontal",
+                        "Items" : [
+                            {
+                                "BlockType" : "image",
+                                "Height" : 90,
+                                "MarginRight" : 20,
+                                "HorizontalAlignment" : "Center",
+                                "Source": "{Season.LeagueInfo.LeagueLogo}"
+                            },
+                            {
+                                "BlockType" : "image",
+                                "Height" : 90,
+                                "MarginLeft" : 20,
+                                "HorizontalAlignment" : "Center",
+                                "Source": "images/pen/f1_logo.png"
+                            }
+                        ]
+                    },
+                    {
+                        "BlockType" : "text",
+                        "MarginTop" : 25,
+                        "Foreground" : "#ffffff",
+                        "FontSize" : 60,
+                        "FontName" : "{FontNameBold}",
+                        "Source" : "CALENDAR · {Season.Name}",
+                        "HorizontalAlignment" : "Center",
+                    },
+                    {
+                        "BlockType" : "text",
+                        "MarginTop" : 20,
+                        "MarginBottom" : 20,
+                        "Foreground" : "#ffffff",
+                        "FontSize" : 35,
+                        "FontName" : "{FontNameBold}",
+                        "Source" : "{Season.LeagueInfo.LeagueFullName}",
+                        "HorizontalAlignment" : "Center",
+                    }
+                ]
+            },
+
+            {
+                "BlockType" : "dock",
+                "Orientation" : "Horizontal",
+                "Width" : "*",
+                "Items" : [
+                    {
+                        "BlockType" : "itemstack",
+                        "Orientation" : "Vertical",
+                        "ItemStackOptions" : {
+                            "ItemSource" : "{Events.Events}",
+                            "Limit" : "{CalendarEventsInColumn}",
+                            "Template": {
+                                "BlockType" : "component",
+                                "ComponentName" : "event_calendar",
+                                "ComponentOptions" : {
+                                    "Vars" : {
+                                        "renderline" : true
+                                    }
+                                }
+                            }
+                        }
+                        
+                    },
+                    //{
+                    //    "BlockType" : "image",
+                    //    "Width" : 4,
+                    //    "Height" : 155,
+                    //    "ImageOptions" : {
+                    //        "Path" : "images/cal/red_line.png",
+                    //    }
+                    //},
+                    {
+                        "BlockType" : "itemstack",
+                        "Orientation" : "Vertical",
+                        "ItemStackOptions" : {
+                            "ItemSource" : "{Events.Events}",
+                            "Limit" : "{CalendarEventsInColumn}",
+                            "IndexStart" : "{CalendarEventsInColumn}",
+                            "Template": {
+                                "BlockType" : "component",
+                                "ComponentName" : "event_calendar",
+                                "ComponentOptions" : {
+                                    "Vars" : {
+                                        "renderline" : false
+                                    }
+                                }
+                            }
+                        }
+                        
+                    }
+                ]
+            }
+        ]
+    }
+}

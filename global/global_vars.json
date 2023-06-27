@@ -16,11 +16,16 @@
     "MarginLeftTableCell" : "10",
     "HeaderPadding" : "45,10,45,0",
     
+    "ForegroundBlack" : "#000000",
     "HeaderForeground" : "#ffffff",
     "ForegroundDarker" : "#FF969696",
+    "ForegroundWhite" : "#ffffff",
+    "ForegroundGold" : "#DDDD11",
     "TableColumnHeaderForeground" : "#AABBBBBB",
     "PenaltyTimeGameForeground" : "#BB7373",
     "PenaltyTimeStewardsForeground" : "#F03232",
+    "MultiPenaltyTitle" : "#000000",
+    
     "FastestLapRaceSelectedForeground" : "#DC46DC",
     "FastestLapRaceStickerBackground" : "#20CC00CC",
     "DriverDayRaceStickerBackground" : "#2000CC00",
@@ -51,9 +56,20 @@
     "StintsBarHeight" : "36",
     "StintsBarPositionY" : "28",
     "ComparisonSpacingMid" : "58",
-    "ComparisonSpacing" : "28"
+    "ComparisonSpacing" : "28",
 
+    "ReportRegularFontSize" : "35",
+    "MultiPenaltyLeftColumn" : "170",
+    "MultiPenaltyRightColumn" : "900",
+    "MultiPenaltyLeftColumnFirstPart" : "110",
+    "MultiPenaltyFontSize" : "25",
 
-    
+    "StatCellColumnBgImage" : "images/stats/bg_position.png",
+    "StatCellColumnBgImageLarge" : "images/stats/bg_large.png",
+    "StatCellColumnBgImageRating" : "images/stats/bg_rating.png",
+    "StatCellColumnBgImageStints" : "images/stats/stints_bg.png",
+    "StatCellColumnForeground" : "#fffff",
+
+    "CalendarWinnerStringColour" : "#DE0600"
 
 }
