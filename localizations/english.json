@@ -58,5 +58,7 @@
     "c10":"OCT",
     "c11":"NOV",
     "c12":"DEC",
+    "LapShort" : "Lap",
+    "TurnShort" : "Turn",
 
 }

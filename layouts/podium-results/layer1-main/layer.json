@@ -23,7 +23,9 @@
                         "BlockType": "stack",
                         "Orientation": "Horizontal",
                         "HorizontalAlignment" : "Center",
-                        "MarginTop" : 30,
+                        //"RenderIf" : "{DisplayPodiumCards}",
+                        //"MarginRight" : 15,
+                        "MarginTop" : -5,
                         "Items" : [
                             {
                                 "BlockType" : "itemstack",
@@ -72,7 +74,7 @@
                                 "BlockType" : "itemstack",
                                 "HorizontalAlignment" : "Center",
                                 "Orientation" : "Horizontal",
-                                "Margin" : "70,5,70,0",
+                                "Margin" : "25,5,25,0",
                                 "ItemStackOptions": {
                                     "ItemSource": "{Session.Drivers}",
                                     "Limit" : 1,
@@ -156,8 +158,137 @@
                         ]
                     },
                     {
+                        "BlockType": "stack",
+                        "Orientation" : "Horizontal",
+                        "HorizontalAlignment" : "Center",
+                        "RenderIf" : "{IncludeTop10AtPodiumRender}",
+                        "MarginTop" : 100,
+                        "Items" : [
+                            {
+                                "BlockType" : "stack",
+                                "Orientation" : "Vertical",
+                                "Items" : [
+                                    {
+                                        "Name": "mainTable",
+                                        "BlockType": "table",
+                                        "TableOptions": {
+                                            "ItemsSource": "{Session.Drivers}",
+                                            "RowSpacing": 20,
+                                            "ColSpacing": 0,
+                                            "IndexStart" : 3,
+                                            "Limit" : 10,
+                                            "HeaderTemplate": {
+                                                "BlockType": "text",
+                                                "MarginBottom": 8,
+                                                "TextOptionsExtern" : "tableColumnHeader"
+                                            },
+                                            "Columns": [
+                                                {
+                                                    "Header": "",
+                                                    "WidthStretch" : true,
+                                                    "Template":
+                                                    {
+                                                        "BlockType" : "component",
+                                                        "ComponentOptions" : {
+                                                            "ComponentName" : "driver_line_cell_session",
+                                                            "Vars" : {
+                                                                "renderpos" : "false"
+                                                            }
+                                                        }
+                                                    }
+                                                },
+                                                {
+                                                    "Header": "",
+                                                    "Template":
+                                                    {
+                                                        "BlockType" : "component",
+                                                        "ComponentName" : "team_line_cell_session"                                
+                                                    }
+                                                },
+                                                {
+                                                    "Header": "",
+                                                    "Template": {
+                                                        "Padding": "12, 0",
+                                                        "BackgroundImage": "images/team_bg/gap_bg_{Item.Team.Name}.png",
+                                                        "BlockType": "text",
+                                                        "Source": "[{Item.PositionString}th]",
+                                                        "HorizontalAlignment": "Left",
+                                                        "TextOptionsExtern" : "tableCellBold",
+                                                        "TextOptions": {
+                                                            "HorizontalAlignment": "Center",
+                                                            "Foreground" : "#ffffff"
+                                                        },
+                                                        "Triggers" : [
+                                                            {
+                                                                "Condition" : "{F1Mode, Converter=BoolReverse}",
+                                                                "Setters" : [
+                                                                    {
+                                                                        "Property" : "BackgroundImage",
+                                                                        "Value" : "images/gap_bg.png"
+                                                                    },
+                                                                    {
+                                                                        "Property" : "Foreground",
+                                                                        "Value" : "#000000"
+                                                                    }
+                                                                ]
+                                                                
+                                                            },
+                                                            {
+                                                                "Condition" : "{Item.PositionString, Converter=StringEquals, Parameter=1}",
+                                                                "Setters" : [
+                                                                    {
+                                                                        "Property" : "BackgroundImage",
+                                                                        "Value" : "images/podium_bg/gap_bg_gold.png"
+                                                                    },
+                                                                    {
+                                                                        "Property" : "Foreground",
+                                                                        "Value" : "#ffffff"
+                                                                    }
+                                                                ]
+                                                                
+                                                            },
+                                                            {
+                                                                "Condition" : "{Item.PositionString, Converter=StringEquals, Parameter=2}",
+                                                                "Setters" : [
+                                                                    {
+                                                                        "Property" : "BackgroundImage",
+                                                                        "Value" : "images/podium_bg/gap_bg_silver.png"
+                                                                    },
+                                                                    {
+                                                                        "Property" : "Foreground",
+                                                                        "Value" : "#ffffff"
+                                                                    }
+                                                                ]
+                                                                
+                                                            },
+                                                            {
+                                                                "Condition" : "{Item.PositionString, Converter=StringEquals, Parameter=3}",
+                                                                "Setters" : [
+                                                                    {
+                                                                        "Property" : "BackgroundImage",
+                                                                        "Value" : "images/podium_bg/gap_bg_copper.png"
+                                                                    },
+                                                                    {
+                                                                        "Property" : "Foreground",
+                                                                        "Value" : "#ffffff"
+                                                                    }
+                                                                ]
+                                                                
+                                                            }
+                                                        ]
+                                                    }
+                                                }
+                                            ]
+                                        }
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
                         "BlockType" : "image",
                         "Width" : 1500,
+                        "RenderIf" : "{IncludeTop10AtPodiumRender, Converter=BoolReverse}",
                         "ImageOptions" : {
                             "Path" : "images/plates/top_podium"
                         }

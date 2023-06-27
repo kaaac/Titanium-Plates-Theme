@@ -128,7 +128,7 @@
                                                     "Vars" :
                                                     {
                                                         "bg" : "images/fastlap_bg.png",
-                                                        "header" : "FASTEST LAP",
+                                                        "header" : "[FASTEST LAP]",
                                                         "main" : "{Session.FastestLapDriver.Name}",
                                                         "data" : "{Session.FastestLapTime}",
                                                         "tyre" : "images/tyres/tyres_{Session.FastestLapTyres}.png"
@@ -145,7 +145,7 @@
                                                     "Vars" :
                                                     {
                                                         "bg" : "images/driveroftheday_bg.png",
-                                                        "header" : "DRIVER OF THE DAY",
+                                                        "header" : "[DRIVER OF THE DAY]",
                                                         "main" : "",
                                                         "data" : "{Session.DriverDayDriver.Name}"
                                                     }
@@ -161,7 +161,7 @@
                                                     "Vars" :
                                                     {
                                                         "bg" : "images/commentator_bg.png",
-                                                        "header" : "COMMENTATOR",
+                                                        "header" : "[COMMENTATOR]",
                                                         "streamer" : "{Streamer}",
                                                         "secondcomm" : "{SecondCommentator}"
                                                     }

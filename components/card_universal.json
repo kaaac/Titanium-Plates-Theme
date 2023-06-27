@@ -114,7 +114,7 @@
                                             "Value" : "Center"
                                         },
                                         {
-                                            "Property" : "MarginLeft",
+                                            "Property" : "Margin",
                                             "Value" : "<LeagueLogoMarginNonF1>"
                                         }
                                     ]

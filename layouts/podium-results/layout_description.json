@@ -2,5 +2,5 @@
     "LayoutName": "raceResultsPodium",
     "RenderType": "RaceResults",
     "Index" : 2,
-    "RenderCaption" : "top 10 with podium"
+    "RenderCaption" : "podium results (use theme options to change version)"
 }
