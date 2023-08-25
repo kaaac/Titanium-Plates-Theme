@@ -168,6 +168,16 @@
                                                 }
                                             ]
                                            
+                                        },
+                                        {
+                                            "Condition" : "{UseDriverAvatars}",
+                                            "Setters" : [
+                                                {
+                                                    "Property" : "Source",
+                                                    "Value" : "{Item.Driver.LogoPath}"
+                                                }
+                                            ]
+                                        
                                         }
                                     ]
                                 }

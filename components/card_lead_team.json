@@ -84,6 +84,15 @@
                                             "Value" : "images/suit/Neutral.png"
                                         }
                                     ]
+                                },
+                                {
+                                    "Condition" : "{UseDriverAvatars}",
+                                    "Setters" : [
+                                        {
+                                            "Property" : "Source",
+                                            "Value" : "{Item.Driver.LogoPath}"
+                                        }
+                                    ]
                                 
                                 }
                             ]
@@ -226,6 +235,15 @@
                                         {
                                             "Property" : "Source",
                                             "Value" : "images/suit/Neutral.png"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "Condition" : "{UseDriverAvatars}",
+                                    "Setters" : [
+                                        {
+                                            "Property" : "Source",
+                                            "Value" : "{Item.Driver.LogoPath}"
                                         }
                                     ]
                                 

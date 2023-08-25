@@ -42,7 +42,7 @@
                                     "ItemSource": "{Session.Drivers}",
                                     "Limit" : 3,
                                     "Template": {
-                                        "BlockType" : "component",
+                                        "BlockType" : "Component",
                                         "ComponentOptions" : {
                                             "ComponentName" : "card_universal",
                                             "Vars" : {
@@ -64,6 +64,7 @@
                                                 "SuitMargin" : "0,52,0,0",
                                                 "DriverNameFontSize" : "26",
                                                 "DriverNameMargin" : "0,10,0,0",
+                                                "DriverNameMarginTopIfNoRoles":"33",
                                                 "logosMargin" : "0,28,0,0",
                                                 "LeagueLogoHeight" : "35",
                                                 "LeagueLogoMargin" : "36,0,0,0",

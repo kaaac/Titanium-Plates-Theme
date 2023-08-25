@@ -77,10 +77,40 @@
                                         }
                                     ]
                                 
+                                },
+                                {
+                                    "Condition" : "{UseDriverAvatars}",
+                                    "Setters" : [
+                                        {
+                                            "Property" : "Source",
+                                            "Value" : "{Item.Driver.LogoPath}"
+                                        }
+                                    ]
+                                
                                 }
                             ]
                         }
                     ]
+                },
+                {
+                    "BlockType" : "itemstack",
+                    "Orientation" : "Horizontal",
+                    "HorizontalAlignment" : "Center",
+                    "MarginTop" : -50,
+                    "ItemStackOptions": {
+                        "ItemSource": "{Item.Driver.LeagueRoles}",
+                        "Limit" : 5,
+                        "Spacing" : 40,
+                        "Template": {
+                            "BlockType" : "image",
+                            "Height" : "30",
+                            "Width" : "30",
+                            "MarginRight" : 15,
+                            "MarginLeft" : 15,
+                            "Source" : "images/roles/{Item.LeagueRoleBuiltIn}_role.png"
+                        }
+                    }
+                    
                 },
                 {
                     "BlockType" : "text",
@@ -91,7 +121,14 @@
                     "DriverNameMargin" : "0,12,0,0",
                     "FontSize" : "<DriverNameFontSize>",
                     "Margin" : "<DriverNameMargin>",
-                    "HorizontalAlignment" : "Center"
+                    "HorizontalAlignment" : "Center",
+                    "Triggers" : [
+                        {
+                            "Condition" : "{Item.Driver.LeagueRoles, Converter=EmptyObjectToFalse}",
+                            "Property" : "MarginTop",
+                            "Value" : "<DriverNameMarginTopIfNoRoles>"
+                        }
+                    ]
                 },
                 {
                     "BlockType" : "dock",

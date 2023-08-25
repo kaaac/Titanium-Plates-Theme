@@ -98,13 +98,19 @@
                                                 {
                                                     "Property" : "Source",
                                                     "Value" : "images/suit/Neutral.png"
-                                                },
-                                                //{
-                                                //    "Property" : "MarginBottom",
-                                                //    "Value" : "33",
-                                                //}
+                                                }
                                             ]
                                            
+                                        },
+                                        {
+                                            "Condition" : "{UseDriverAvatars}",
+                                            "Setters" : [
+                                                {
+                                                    "Property" : "Source",
+                                                    "Value" : "{Item.Driver.LogoPath}"
+                                                }
+                                            ]
+                                        
                                         }
                                     ]
                                 }

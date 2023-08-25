@@ -60,13 +60,35 @@
             "BackgroundImage" : "images/cal/bg_middle.png",
             "Items": [
                 {
-                    "BlockType" : "text",
-                    "Source" : "{Item.Track.CircuitName}",//"{Item.Track.CountryName, Converter=StringToUpperString}",
-                    "HorizontalAlignment" : "Left",
-                    "Foreground" : "#000000",
-                    "FontName" : "{FontNameBold}",
-                    "FontSize" : 20,
-                    "MarginTop" : 20,
+                    "BlockType" : "stack",
+                    "Orientation" : "Horizontal",
+                    "Items" : [
+                        {
+                            "BlockType" : "text",
+                            "Source" : "{Item.Track.CircuitName}",
+                            "HorizontalAlignment" : "Left",
+                            "Foreground" : "#000000",
+                            "FontName" : "{FontNameBold}",
+                            "FontSize" : 20,
+                            "MarginTop" : 20,
+                        },
+                        {
+                            "BlockType":"itemstack",
+                            "Orientation" : "Horizontal",
+                            "ItemStackOptions" : {
+                                "ItemSource" : "{Item.Races}",
+                                "Template" : {
+                                    "BlockType" : "image",
+                                    "Source" : "images/sprint.png",
+                                    "Height" : 20,
+                                    "VerticalAlignment" : "Bottom",
+                                    "MarginTop" : 21,
+                                    "MarginLeft" : 5,
+                                    "RenderIf" : "{Item.RaceType, converter=StringEquals, parameter=Sprint}"
+                                }
+                            }
+                        }
+                    ]
                 },
                 {
                     "BlockType" : "text",
@@ -76,6 +98,21 @@
                     "FontSize" : 15,
                     "MarginTop" : 5,
                     "FontName" : "{FontNameBold}",
+                    "Triggers" : [
+                        {
+                            "Condition" : "{Item.CompletedStatus, Converter=StringEquals, Parameter=InFuture}",
+                            "Setters" : [
+                                {
+                                    "Property" : "Source",
+                                    "Value" : "[Start at] {Item.DateLocal, Converter=DateToTime}"
+                                },
+                                {
+                                    "Property" : "Foreground",
+                                    "Value" :  "#000000"
+                                }
+                            ]
+                        }
+                    ]
                 }
             ]
         },
