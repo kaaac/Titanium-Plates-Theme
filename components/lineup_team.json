@@ -184,14 +184,40 @@
                             ]
                         },
                         {
+                            "BlockType" : "itemstack",
+                            "Orientation" : "Horizontal",
+                            "HorizontalAlignment" : "Center",
+                            "MarginTop" : -90,
+                            "ItemStackOptions": {
+                                "ItemSource": "{Item.Driver.LeagueRoles}",
+                                "Limit" : 5,
+                                "Template": {
+                                    "BlockType" : "image",
+                                    "Height" : "60",
+                                    "Width" : "60",
+                                    "MarginRight" : 12,
+                                    "MarginLeft" : 12,
+                                    "Source" : "images/roles/{Item.LeagueRoleBuiltIn}_role.png"
+                                }
+                            }
+                            
+                        },
+                        {
                             "BlockType" : "text",
                             "Source" : "{Item.Driver.Name}",
                             "Foreground" : "#ffffff",
                             "FontName" : "{FontNameBold}",
                             "FontSize" : "{DriverNameFontSizeOnLineup}",
                             "MarginLeft" : -20,
-                            "MarginTop" : 20,
-                            "HorizontalAlignment" : "Center"
+                            "MarginTop" : 57,
+                            "HorizontalAlignment" : "Center",
+                            "Triggers" : [
+                                {
+                                    "Condition" : "{Item.Driver.LeagueRoles, Converter=EmptyObjectToTrue}",
+                                    "Property" : "MarginTop",
+                                    "Value" : "27"
+                                }
+                            ]
                         },
                         {
                             "BlockType" : "dock",

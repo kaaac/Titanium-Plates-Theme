@@ -106,14 +106,40 @@
                     ]
                 },
                 {
+                    "BlockType" : "itemstack",
+                    "Orientation" : "Horizontal",
+                    "HorizontalAlignment" : "Center",
+                    "MarginTop" : -55,
+                    "ItemStackOptions": {
+                        "ItemSource": "{Item.Driver.LeagueRoles}",
+                        "Limit" : 5,
+                        "Template": {
+                            "BlockType" : "image",
+                            "Height" : "40",
+                            "Width" : "40",
+                            "MarginRight" : 8,
+                            "MarginLeft" : 8,
+                            "Source" : "images/roles/{Item.LeagueRoleBuiltIn}_role.png"
+                        }
+                    }
+                    
+                },
+                {
                     "BlockType" : "text",
                     "Source" : "{Item.Driver.Name}",
                     "Foreground" : "#ffffff",
                     "FontName" : "{FontNameBold}",
                     "FontSize" : "{DriverNameFontSizeOnLineup}",
                     "MarginLeft" : -20,
-                    "MarginTop" : 35,
-                    "HorizontalAlignment" : "Center"
+                    "MarginTop" : 50,
+                    "HorizontalAlignment" : "Center",
+                    "Triggers" : [
+                        {
+                            "Condition" : "{Item.Driver.LeagueRoles, Converter=EmptyObjectToTrue}",
+                            "Property" : "MarginTop",
+                            "Value" : "35"
+                        }
+                    ]
                 },
                 {
                     "BlockType" : "dock",
