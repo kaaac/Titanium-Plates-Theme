@@ -120,7 +120,7 @@
                             "Width" : "40",
                             "MarginRight" : 8,
                             "MarginLeft" : 8,
-                            "Source" : "images/roles/{Item.LeagueRoleBuiltIn}_role.png"
+                            "Source" : "images/roles/{Item.Name}_role.png"
                         }
                     }
                     

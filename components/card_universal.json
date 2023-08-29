@@ -107,7 +107,7 @@
                             "MarginRight" : 8,
                             "MarginLeft" : 8,
                             "RenderIf" : true,
-                            "Source" : "images/roles/{Item.LeagueRoleBuiltIn}_role.png",
+                            "Source" : "images/roles/{Item.Name}_role.png",
                         }
                     }
                 },
