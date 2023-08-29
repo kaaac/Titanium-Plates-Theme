@@ -106,10 +106,10 @@
                             "Width" : "40",
                             "MarginRight" : 8,
                             "MarginLeft" : 8,
-                            "Source" : "images/roles/{Item.LeagueRoleBuiltIn}_role.png"
+                            "RenderIf" : true,
+                            "Source" : "images/roles/{Item.LeagueRoleBuiltIn}_role.png",
                         }
                     }
-                    
                 },
                 {
                     "BlockType" : "text",

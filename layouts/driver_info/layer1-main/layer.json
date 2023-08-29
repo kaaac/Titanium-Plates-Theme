@@ -126,7 +126,6 @@
                                         "Source" : "images/roles/{Item.LeagueRoleBuiltIn}_role.png"
                                     }
                                 }
-                                
                             },
                             {
                                 "BlockType" : "text",
