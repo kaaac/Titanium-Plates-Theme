@@ -17,27 +17,27 @@
             "VerticalAlignment": "Bottom",
             "PaddingBottom" : 10,
             "Items": [
-                 {
-                    "BlockType": "text",
-                    "MaxWidth": 90,
-                    "MarginLeft": 0,
-                    "Width" : 50,
-                    "Source": "{Item.PositionString}",
-                    "HorizontalAlignment": "Center",
-                    "VerticalAlignment": "Center",
-                    "TextOptionsExtern" : "tableCellBold",
-                    "Triggers" : [
-
-                        {
-                            "Condition" : "{Item.PositionString, Converter=EmptyObjectToTrue}",
-                            "Property" : "Source",
-                            "Value" : "{Item.Position}"
-                        }
-                    ],
-                    "TextOptions" : {
-                        "HorizontalAlignment" : "Center"
-                    }
-                },
+                //TEMPORARY DISABLED
+                //{
+                //    "BlockType": "text",
+                //    "MaxWidth": 90,
+                //    "MarginLeft": 0,
+                //    "Width" : 50,
+                //    "Source": "{Item.PositionString}",
+                //    "HorizontalAlignment": "Center",
+                //    "VerticalAlignment": "Center",
+                //    "TextOptionsExtern" : "tableCellBold",
+                //    "Triggers" : [
+                //        {
+                //            "Condition" : "{Item.PositionString, Converter=EmptyObjectToTrue}",
+                //            "Property" : "Source",
+                //            "Value" : "{Item.Position}"
+                //        }
+                //    ],
+                //    "TextOptions" : {
+                //        "HorizontalAlignment" : "Center"
+                //    }
+                //},
                 {
                     "BlockType" : "text",
                     "BackgroundImage" : "images/number.png",

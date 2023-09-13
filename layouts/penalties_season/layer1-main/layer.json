@@ -6,7 +6,6 @@
         
         "Orientation": "Vertical",
         "Items": [
-            //header block
             {               
                 "BlockType": "component",
                 "ComponentName": "header_block",
@@ -18,8 +17,6 @@
                     }
                 }               
             },
-
-            //separator
             {
               "BlockType" : "component",
               "ComponentName" : "separator"
@@ -38,12 +35,9 @@
                           "BlockType" : "stack",
                           "Orientation" : "Vertical",
                           "Items" : [
-
-                            //table
                               {
                                   "Name": "mainTable",
                                   "BlockType": "table",
-                                  //"MarginRight" : 200,
                                   "HorizontalAlignment" : "Center",
                                   "TableOptions": {
                                   "ItemsSource": "{Penalties.Drivers}",
@@ -51,7 +45,6 @@
                                   "OrderByDescending2": "PenaltySeconds",
                                   "OrderByDescending3": "PenaltyIngameSeconds",
                                   "RowSpacing": 16,
-                                  //"ColSpacing": 4,
                                   "HeaderTemplate": {
                                     "BlockType": "text",
                                     "MarginBottom": 8,
@@ -73,10 +66,8 @@
                                           "ComponentName" : "team_line_cell_session"                                
                                       }
                                     },
-                                    //points
                                     {
                                       "Header": "PPA",
-                                      //"MarginLeft": 20,
                                       "Template": {
                                       
                                         "BlockType": "dock",
@@ -115,12 +106,23 @@
                                         "Items": [
                                           {
                                             "BlockType": "text",
-                                            "Source": "{Item.PenaltyPointsActive, Converter=NumberZeroToEmpty}",
+                                            "Source": "{Item.PenaltyPointsActive}",
                                             "HorizontalAlignment": "Right",
                                             "VerticalAlignment": "Center",
                                             "FontName": "{FontNameBold}",
                                             "Foreground": "#000000",
                                             "TextOptionsExtern": "primaryNumber",
+                                            "Triggers" : [
+                                              {
+                                                "Condition" : "{Item.PenaltyPointsActive, Converter=NumberEquals, Parameter=0}",
+                                                "Setters" : [
+                                                  {
+                                                    "Property" : "Foreground",
+                                                    "Value" : "#00000000"
+                                                  }
+                                                ]
+                                              }
+                                            ]
                                           }
                                         ]
                                       }
@@ -136,8 +138,9 @@
                                             "Vars" : {
                                                 "width" : "94",
                                                 "bgimage" : "images/bg_position.png",
-                                                "source" : "{Item.PenaltyWarningsActive, Converter=NumberZeroToEmpty}",
-                                                "foregr" : "{StandingsPointsForeground}",
+                                                "source" : "{Item.PenaltyWarningsActive}",
+                                                "cond" : "{Item.PenaltyWarningsActive, Converter=NumberLess, Parameter=1}",
+                                                "foregr" : "{StandingsPointsForeground}"
                                             }
                                         
                                         }
@@ -154,7 +157,8 @@
                                             "Vars" : {
                                                 "width" : "94",
                                                 "bgimage" : "images/bg_position.png",
-                                                "source" : "{Item.PenaltySeconds, Converter=NumberZeroToEmpty}",
+                                                "source" : "{Item.PenaltySeconds}",
+                                                "cond" : "{Item.PenaltySeconds, Converter=NumberLess, Parameter=1}",
                                                 "foregr" : "{StandingsPointsForeground}"
                                             }
                                         
@@ -173,7 +177,8 @@
                                             "Vars" : {
                                                 "width" : "94",
                                                 "bgimage" : "images/bg_position.png",
-                                                "source" : "{Item.PenaltyPositions, Converter=NumberZeroToEmpty}",
+                                                "source" : "{Item.PenaltyPositions}",
+                                                "cond" : "{Item.PenaltyPositions, Converter=NumberLess, Parameter=1}",
                                                 "foregr" : "{StandingsPointsForeground}"
                                             }
                                         
@@ -192,7 +197,8 @@
                                             "Vars" : {
                                                 "width" : "94",
                                                 "bgimage" : "images/bg_position.png",
-                                                "source" : "{Item.PenaltyIngameSeconds, Converter=NumberZeroToEmpty}",
+                                                "source" : "{Item.PenaltyIngameSeconds}",
+                                                "cond" : "{Item.PenaltyIngameSeconds, Converter=NumberLess, Parameter=1}",
                                                 "foregr" : "{StandingsPointsForeground}"
                                             }
                                         
@@ -210,7 +216,8 @@
                                             "Vars" : {
                                                 "width" : "94",
                                                 "bgimage" : "images/bg_position.png",
-                                                "source" : "{Item.PenaltyPointsOverall, Converter=NumberZeroToEmpty}",
+                                                "source" : "{Item.PenaltyPointsOverall}",
+                                                "cond" : "{Item.PenaltyPointsOverall, Converter=NumberLess, Parameter=1}",
                                                 "foregr" : "{StandingsPointsForeground}"
                                             }
                                         
@@ -228,7 +235,8 @@
                                             "Vars" : {
                                                 "width" : "94",
                                                 "bgimage" : "images/bg_position.png",
-                                                "source" : "{Item.PenaltyWarningsOverall, Converter=NumberZeroToEmpty}",
+                                                "source" : "{Item.PenaltyWarningsOverall}",
+                                                "cond" : "{Item.PenaltyWarningsOverall, Converter=NumberLess, Parameter=1}",
                                                 "foregr" : "{StandingsPointsForeground}"
                                             }
                                         
@@ -238,7 +246,6 @@
                                   ]
                                 }
                               },
-                              //footer
                               {
                                 "BlockType": "dock",
                                 "Width": "*",

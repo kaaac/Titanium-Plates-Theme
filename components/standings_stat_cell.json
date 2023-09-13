@@ -11,7 +11,14 @@
             "Foreground" : "<foregr>",
             "HorizontalAlignment" : "Center",
             "VerticalAlignment" : "Bottom",
-            "PaddingBottom" : 17
+            "PaddingBottom" : 17,
+            "Triggers" : [
+                {
+                    "Condition" : "<cond>",
+                    "Property" : "Foreground",
+                    "Value" : "#00000000"
+                }
+            ]
         }
     ]
 }

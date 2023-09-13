@@ -277,6 +277,18 @@
                             "Value" : "{FontNameBold}"
                         }
                     ]
+                },{
+                    "Condition" : "<{data.Value, Converter=EmptyObjectToTrue}>",
+                    "Setters":
+                    [                       
+                        {
+                            "Property" : "Source",
+                            "Value" : "n"
+                        },{
+                            "Property" : "Foreground",
+                            "Value" : "#00000000"
+                        }
+                    ]                
                 }
             ]          
         },

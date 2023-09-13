@@ -1,6 +1,5 @@
 {
     "BlockType": "dock",
-    //"RenderIf" : "{Season.LineupsBasedType, Converter=StringEquals, Parameter=Teams}",
     "PaddingLeft": 12,
     "PaddingRight": 2,    
     "BackgroundImage": "images/quali_bg/team_bg_{Item.Team.Name}.png",
@@ -19,7 +18,7 @@
             "Condition" : "{Item.PositionString, Converter=StringEquals, Parameter=1}",
             "Property" : "BackgroundImage",
             "Value" : "images/quali_bg/team_bg_purple.png"
-        },
+        }
     ],
     "UseBackgroundCrop" : false,
     "Height" : 73,
@@ -55,7 +54,7 @@
             "MarginRight": 16,
             "HorizontalAlignment": "Right",
             "VerticalAlignment": "Bottom",
-            "RenderIf" : "{Item.Team.Name, Converter=EmptyObjectToFalse}",
+            //"RenderIf" : "{Item.Team.Name, Converter=EmptyObjectToFalse}",
             "Items": [
                 {
                     "BlockType": "image",
@@ -67,13 +66,23 @@
                     "VerticalAlignment": "Bottom",
                     "ImageOptions": {
                         "VerticalAlignment": "Center",
-                        
                     },
                     "Triggers" : [
                         {
                             "Condition" : "{F1Mode, Converter=BoolReverse}",
                             "Property" : "Source",
                             "Value" : "{Item.Team.LogoPath}"
+                        },
+                        {
+                            "Condition" : "{Item.Team.Name, Converter=EmptyObjectToTrue}",
+                            "Property" : "Source",
+                            "Value" : "images/cars/Riserve.png"
+                        },
+                        {
+                            "Condition" : "{Item.Team.Name, Converter=EmptyObjectToTrue}",
+                            "ConditionAnd" : "{F1Mode, Converter=BoolReverse}",
+                            "Property" : "Source",
+                            "Value" : "images/cars/blank.png"
                         }
                     ]
                 }

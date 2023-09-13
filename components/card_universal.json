@@ -96,7 +96,7 @@
                     "BlockType" : "itemstack",
                     "Orientation" : "Horizontal",
                     "HorizontalAlignment" : "Center",
-                    "MarginTop" : -60,
+                    "MarginTop" : -75,
                     "ItemStackOptions": {
                         "ItemSource": "{Item.Driver.LeagueRoles}",
                         "Limit" : 5,

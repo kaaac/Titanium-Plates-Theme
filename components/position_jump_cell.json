@@ -135,7 +135,7 @@
                 },
                 {
                     "BlockType": "text",
-                    "RenderIf" : "{Item.PositionJump, Converter=NumberNotEquals, Parameter=0}",
+                    //"RenderIf" : "{Item.PositionJump, Converter=NumberNotEquals, Parameter=0}",
                     "Source": "{Item.PositionJump, Converter=NumberAbs}",                            
                     "HorizontalAlignment": "Center",
                     "VerticalAlignment" : "Center",
@@ -179,6 +179,15 @@
                                 {
                                     "Property" : "Foreground",
                                     "Value" : "#ffffff"
+                                }
+                            ]
+                        },
+                        {
+                            "Condition" : "{Item.PositionJump, Converter=StringEquals, Parameter=0}",
+                            "Setters" : [
+                                {
+                                    "Property" : "Foreground",
+                                    "Value" : "#00000000"
                                 }
                             ]
                         }

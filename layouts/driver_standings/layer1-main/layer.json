@@ -211,6 +211,19 @@
                                                                                 "Value" : "#ffffff",
                                                                             }
                                                                         ]
+                                                                    },
+                                                                    {
+                                                                        "Condition" : "{Item.Points, Converter=EmptyObjectToTrue}",
+                                                                        "Setters" : [
+                                                                            {
+                                                                                "Property" : "Source",
+                                                                                "Value" : "n"
+                                                                            },
+                                                                            {
+                                                                                "Property" : "Foreground",
+                                                                                "Value" : "#00000000"
+                                                                            }
+                                                                        ]
                                                                     }
                                                                 ]
                                                             }
@@ -239,7 +252,8 @@
                                                             "Vars" : {
                                                                 "width" : "80",
                                                                 "bgimage" : "images/bg_start.png",
-                                                                "source" : "{Item.CountP1, Converter=NumberZeroToEmpty}",
+                                                                "source" : "{Item.CountP1}",
+                                                                "cond" : "{Item.CountP1, Converter=NumberLess, Parameter=1}",
                                                                 "foregr" : "{Standings1stCountForeground}"                                        
                                                             }
                                                         }
@@ -254,7 +268,8 @@
                                                             "Vars" : {
                                                                 "width" : "80",
                                                                 "bgimage" : "images/bg_position.png",
-                                                                "source" : "{Item.CountP2, Converter=NumberZeroToEmpty}",
+                                                                "source" : "{Item.CountP2}",
+                                                                "cond" : "{Item.CountP2, Converter=NumberLess, Parameter=1}",
                                                                 "foregr" : "{Standings2ndCountForeground}"
                                                             }
                                                         }
@@ -269,7 +284,8 @@
                                                             "Vars" : {
                                                                 "width" : "80",
                                                                 "bgimage" : "images/bg_position.png",
-                                                                "source" : "{Item.CountP3, Converter=NumberZeroToEmpty}",
+                                                                "source" : "{Item.CountP3}",
+                                                                "cond" : "{Item.CountP3, Converter=NumberLess, Parameter=1}",
                                                                 "foregr" : "{Standings3rdCountForeground}"
                                                             }
                                                         }
@@ -284,7 +300,8 @@
                                                             "Vars" : {
                                                                 "width" : "80",
                                                                 "bgimage" : "images/bg_position.png",
-                                                                "source" : "{Item.RaceFastestLapCount, Converter=NumberZeroToEmpty}",
+                                                                "source" : "{Item.RaceFastestLapCount}",
+                                                                "cond" : "{Item.RaceFastestLapCount, Converter=NumberLess, Parameter=1}",
                                                                 "foregr" : "{StandingsFastestLapCountForeground}"
                                                             }
                                                         }
@@ -299,7 +316,8 @@
                                                             "Vars" : {
                                                                 "width" : "94",
                                                                 "bgimage" : "images/bg_large.png",
-                                                                "source" : "{Item.CountQualP1, Converter=NumberZeroToEmpty}",
+                                                                "source" : "{Item.CountQualP1}",
+                                                                "cond" : "{Item.CountQualP1, Converter=NumberLess, Parameter=1}",
                                                                 "foregr" : "{StandingsPoleCountForeground}"
                                                             }
                                                         }
@@ -330,7 +348,8 @@
                                                             "Vars" : {
                                                                 "width" : "114",
                                                                 "bgimage" : "images/bg_end.png",
-                                                                "source" : "{Item.EventsCount, Converter=NumberZeroToEmpty}",
+                                                                "source" : "{Item.EventsCount}",
+                                                                "cond" : "{Item.EventsCount, Converter=NumberLess, Parameter=1}",
                                                                 "foregr" : "{StandingsPointsForeground}"
                                                             }
                                                         }

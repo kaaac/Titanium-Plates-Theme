@@ -63,6 +63,7 @@
                                                     "Template": {
                                                         "BlockType" : "component",
                                                         "ComponentName" : "driver_line_cell_session",
+                                                        "RenderForce" : false,
                                                         "Triggers" : [
                                                             {
                                                                 "Condition" : "{Statistics.Header, Converter=StringEquals, Parameter=Top battles}",
@@ -78,6 +79,7 @@
                                                     {
                                                         "BlockType" : "component",
                                                         "ComponentName" : "stats_team",
+                                                        "RenderForce" : false,
                                                         "Triggers" : [
                                                             {
                                                                 "Condition" : "{Statistics.Header, Converter=StringEquals, Parameter=Top battles}",

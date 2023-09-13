@@ -17,7 +17,6 @@
                     }
                 }               
             },
-            //separator
             {
                 "BlockType" : "component",
                 "ComponentName" : "separator"
@@ -36,37 +35,19 @@
                                 "BlockType" : "stack",
                                 "Orientation" : "Vertical",
                                 "Items" : [
-                                    //table
                                     {
                                         "Name": "mainTable",
                                         "BlockType": "table",
                                         "TableOptions": {
                                             "ItemsSource": "{Statistics.Drivers}",
                                             "RowSpacing": 12,
-                                            //"ColSpacing": 24,
-                                            //"SeparatorSpace": 12,
-                                            //"GroupSpaceReduction": 12,
                                             "HeaderTemplate": {
                                                 "BlockType": "text",
                                                 "MarginBottom": 8,
                                                 "TextOptionsExtern": "tableColumnHeader"
                                             },
                                             "Columns": [
-                                                // //position
-                                                //{
-                                                //    "Header": "",
-                                                //    "Template": {
-                                                //        "BlockType": "component",
-                                                //        "ComponentName": "position_cell",
-                                                //        "ComponentOptions": {
-                                                //            "Vars": {
-                                                //                "position": "{Item.Position}"
-                                                //            }
-                                                //        }
-                                                //    }
-                                                //},
-                                            
-                                                //driver line
+
                                                 {
                                                     "Header": "",
                                                     "WidthStretch": true,
@@ -90,8 +71,6 @@
                                                         ]
                                                     }
                                                 },
-                                            
-                                                //column 0
                                                 {
                                                     "Header": "{Statistics.Column0.Header}",
                                                     "IsSeparator": "{Statistics.Column0.Type, Converter=EnumEquals, Parameter=Separator}",
@@ -109,8 +88,6 @@
                                                         }
                                                     }
                                                 },
-                                            
-                                                //column 1
                                                 {
                                                     "Header": "{Statistics.Column1.Header}",
                                                     "IsSeparator": "{Statistics.Column1.Type, Converter=EnumEquals, Parameter=Separator}",

@@ -98,13 +98,10 @@
                                     {
                                         "Name": "mainTable",
                                         "BlockType": "table",
-                                        //"Padding" : "{PaddingTableSingle}",
                                         "HorizontalAlignment" : "Center",
                                         "TableOptions": {
                                             "ItemsSource": "{Standings.Drivers}",
                                             "OrderByDescending": "PenaltyPoints",
-                                            //"OrderByDescending2": "PenaltySeconds",
-                                            //"OrderByDescending3": "PenaltyIngameSeconds",
                                             "RowSpacing": 13,
                                             "ColSpacing": 0,
                                             "HeaderTemplate": {
@@ -147,7 +144,7 @@
                                                                 "Condition" : "{Item.Team.Name, Converter=EmptyObjectToTrue}",
                                                                 "Property" : "BackgroundImage",
                                                                 "Value" : "images/gap_bg.png"
-                                                            },
+                                                            }
                                                         ],
 
                                                         "Items": [                                    
@@ -169,66 +166,39 @@
                                                                             }
                                                                         ]
                                                                     },
-                                                                    {
-                                                                        "Condition" : "{Item.PositionString, Converter=StringEquals, Parameter=1}",
-                                                                        "Setters" : [
-                                                                            {
-                                                                                "Property" : "Foreground",
-                                                                                "Value" : "#ffffff"
-                                                                            }
-                                                                        ]
-                                                                    },
-                                                                    {
-                                                                        "Condition" : "{Item.PositionString, Converter=StringEquals, Parameter=2}",
-                                                                        "Setters" : [
-                                                                            {
-                                                                                "Property" : "Foreground",
-                                                                                "Value" : "#ffffff"
-                                                                            }
-                                                                        ]
-                                                                    },
-                                                                    {
-                                                                        "Condition" : "{Item.PositionString, Converter=StringEquals, Parameter=3}",
-                                                                        "Setters" : [
-                                                                            {
-                                                                                "Property" : "Foreground",
-                                                                                "Value" : "#ffffff"
-                                                                            }
-                                                                        ]
-                                                                    }
+                                                                    // TEMPORARY DISABLED. DONT BE ANGRY FOR COMMENTED AREA
+                                                                    //{
+                                                                    //    "Condition" : "{Item.PositionString, Converter=StringEquals, Parameter=1}",
+                                                                    //    "Setters" : [
+                                                                    //        {
+                                                                    //            "Property" : "Foreground",
+                                                                    //            "Value" : "#ffffff"
+                                                                    //        }
+                                                                    //    ]
+                                                                    //},
+                                                                    //{
+                                                                    //    "Condition" : "{Item.PositionString, Converter=StringEquals, Parameter=2}",
+                                                                    //    "Setters" : [
+                                                                    //        {
+                                                                    //            "Property" : "Foreground",
+                                                                    //            "Value" : "#ffffff"
+                                                                    //        }
+                                                                    //    ]
+                                                                    //},
+                                                                    //{
+                                                                    //    "Condition" : "{Item.PositionString, Converter=StringEquals, Parameter=3}",
+                                                                    //    "Setters" : [
+                                                                    //        {
+                                                                    //            "Property" : "Foreground",
+                                                                    //            "Value" : "#ffffff"
+                                                                    //        }
+                                                                    //    ]
+                                                                    //}
                                                                 ]
                                                             }
                                                         ]
                                                     }
                                                 },
-                                                //{
-                                                //    "Header": "",
-                                                //    "PaddingLeft" : 0,
-                                                //    "MarginRight" : 15,
-                                                //    "Template":
-                                                //    {
-                                                //        "BlockType" : "component",
-                                                //        "PaddingLeft" : 0,                               
-                                                //        "PaddingRight" : 12,
-                                                //        "ComponentName" : "position_jump_cell"    
-                                                //    }
-                                                //},
-                                                //{
-                                                //    "Header" : "[PP]",
-                                                //    "MarginLeft" : 20,
-                                                //    "Template":{
-                                                //        "BlockType" : "component",
-                                                //        "ComponentOptions":{
-                                                //            "ComponentName" : "standings_stat_cell",
-                                                //            "Vars" : {
-                                                //                "width" : "94",
-                                                //                "bgimage" : "images/bg_start.png",
-                                                //                "source" : "{Item.PenaltyPoints, Converter=NumberZeroToEmpty}",
-                                                //                "foregr" : "{StandingsPenaltyPointCountForeground}"
-                                                //            }
-                                                //        }
-                                                //    }
-                                                //},
                                                 {
                                                     "Header" : "[Events]",
                                                     "MarginLeft" : 20,
@@ -292,51 +262,6 @@
                                                                     "Foreground" : "{StandingsPointsForeground}"
                                                                 },
                                                                 "Triggers": [
-                                                                    //{
-                                                                    //    "Condition": "{Item.IsRaceMajorClassified, Converter=BoolReverse}",
-                                                                    //    "Setters": [
-                                                                    //        {
-                                                                    //            "Property": "Foreground",
-                                                                    //            "Value": "{SeasonProgressPositionNotClassifiedForeground}"
-                                                                    //        }
-                                                                    //    ]
-                                                                    //},
-                                                                    //{
-                                                                    //    "Condition": "{Item.RaceMajorPosition, Converter=NumberLess, Parameter=11}",
-                                                                    //    "Setters": [
-                                                                    //        {
-                                                                    //            "Property": "Foreground",
-                                                                    //            "Value": "{StandingsPointsForeground}"
-                                                                    //        }
-                                                                    //    ]
-                                                                    //},
-                                                                    //{
-                                                                    //    "Condition": "{Item.RaceMajorPosition, Converter=NumberEquals, Parameter=1}",
-                                                                    //    "Setters": [
-                                                                    //        {
-                                                                    //            "Property": "Foreground",
-                                                                    //            "Value": "{Standings1stCountForeground}"
-                                                                    //        }
-                                                                    //    ]
-                                                                    //},
-                                                                    //{
-                                                                    //    "Condition": "{Item.RaceMajorPositionString, Converter=StringEquals, Parameter=DNF}",
-                                                                    //    "Setters": [
-                                                                    //        {
-                                                                    //            "Property": "Foreground",
-                                                                    //            "Value": "{SeasonProgressDNF}"
-                                                                    //        }
-                                                                    //    ]
-                                                                    //},
-                                                                    //{
-                                                                    //    "Condition": "{Item.IsMajorRaceFastestLap}",
-                                                                    //    "Setters": [
-                                                                    //        {
-                                                                    //            "Property": "Foreground",
-                                                                    //            "Value": "{SeasonProgressPointsFastestLapForeground}"
-                                                                    //        }
-                                                                    //    ]
-                                                                    //},
                                                                     {
                                                                         "Condition": "{Item.PenaltyPoints, Converter=StringEquals, Parameter=0}",
                                                                         "Setters": [
@@ -345,21 +270,10 @@
                                                                                 "Value": ""
                                                                             }
                                                                         ]
-                                                                    },
+                                                                    }
                                                                 ]
                                                             }
-                                                        ],
-                                                        //"Triggers" : [
-                                                        //    {
-                                                        //        "Condition": "{Item.IsMajorQualPole}",
-                                                        //        "Setters": [
-                                                        //            {
-                                                        //                "Property": "BackgroundImage",
-                                                        //                "Value": "images/bg_position_purple.png"
-                                                        //            }
-                                                        //        ]
-                                                        //    }
-                                                        //]
+                                                        ]
                                                     }
                                                 }
                                             ]

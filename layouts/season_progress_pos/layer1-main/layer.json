@@ -213,6 +213,19 @@
                                                                                 "Value" : "#ffffff"
                                                                             }
                                                                         ]
+                                                                    },
+                                                                    {
+                                                                        "Condition" : "{Item.Points, Converter=EmptyObjectToTrue}",
+                                                                        "Setters" : [
+                                                                            {
+                                                                                "Property" : "Source",
+                                                                                "Value" : "n"
+                                                                            },
+                                                                            {
+                                                                                "Property" : "Foreground",
+                                                                                "Value" : "#00000000"
+                                                                            }
+                                                                        ]
                                                                     }
                                                                 ]
                                                             }
@@ -241,7 +254,8 @@
                                                             "Vars" : {
                                                                 "width" : "94",
                                                                 "bgimage" : "images/bg_start.png",
-                                                                "source" : "{Item.PenaltyPoints, Converter=NumberZeroToEmpty}",
+                                                                "source" : "{Item.PenaltyPoints}",
+                                                                "cond" : "{Item.PenaltyPoints, Converter=NumberLess, Parameter=1}",
                                                                 "foregr" : "{StandingsPenaltyPointCountForeground}"
                                                             }
                                                         }

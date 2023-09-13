@@ -305,6 +305,7 @@
               "Orientation" : "Horizontal",
               "HorizontalAlignment" : "Center",
               "MarginTop" : 20,
+              "MarginBottom" : 20,
               "Items" : [
                 {
                   "BlockType" : "text",
@@ -358,9 +359,8 @@
             },
             {
               "BlockType" : "text",
-              "Width" : "*",
+              "Width" : "1250",
               "Source" : "<{Penalty.Description}>",
-              "MarginTop" : 30,
               "FontSize" : "{ReportRegularFontSize}",
               "Foreground" : "{ForegroundBlack}",
               "TextOptions" : {
@@ -373,6 +373,7 @@
     },
     {
       "BlockType" : "component",
+      "MarginTop" : 10,
       "ComponentOptions" : {
           "ComponentName" : "separator_black",
           "Vars" : {
