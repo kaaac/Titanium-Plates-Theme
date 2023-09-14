@@ -418,7 +418,7 @@
         },
         {
           "BlockType" : "text",
-          "Width" : "1370",
+          "Width" : "1250",
           "Foreground" : "{ForegroundBlack}",
           "FontSize" : "{ReportRegularFontSize}",
           "Source" : "<{Penalty.Verdict}>",
