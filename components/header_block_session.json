@@ -191,6 +191,17 @@
                                             "TextOptionsExtern": "countryName"
                                         },
                                         {
+                                            "Name": "DummyTextForFixWidth3",
+                                            "BlockType": "text",
+                                            "HorizontalAlignment" : "Left",
+                                            "FontSize" : "{FontSizeRightPart}",
+                                            "MarginRight" : 15,
+                                            "Foreground" : "#00000000",
+                                            "FontName" : "{FontNameDefault}",
+                                            "Source": "{Session.Track.CircuitName}",
+                                            "TextOptionsExtern": "countryName"
+                                        },
+                                        {
                                             "Name": "DummyTextForFixWidth2",
                                             "BlockType": "text",
                                             "HorizontalAlignment" : "Left",

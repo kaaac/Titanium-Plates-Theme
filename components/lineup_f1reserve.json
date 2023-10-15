@@ -21,6 +21,36 @@
                     "Orientation" : "Horizontal",
                     "Items": [
                         {
+                            "BlockType" : "image",
+                            "HorizontalAlignment" : "Right",
+                            "Source" : "images/suit/Reserve.png",
+                            "Width" : 370,
+                            "MarginTop" : 60,
+                            "MarginRight" : 65,
+                            "Triggers" : [
+                                {
+                                    "Condition" : "{F1Mode, Converter=BoolReverse}",
+                                    "Setters" : [
+                                        {
+                                            "Property" : "Source",
+                                            "Value" : "images/suit/Reserve Neutral.png"
+                                        }
+                                    ]
+                                   
+                                },
+                                {
+                                    "Condition" : "{UseDriverAvatars}",
+                                    "Setters" : [
+                                        {
+                                            "Property" : "Source",
+                                            "Value" : "{Item.Driver.LogoPath}"
+                                        }
+                                    ]
+                                
+                                }
+                            ]
+                        },
+                        {
                             "BlockType" : "stack",
                             "Orientation" : "Vertical",
                             "HorizontalAlignment" : "Left",
@@ -75,55 +105,8 @@
                                 }
                             ]
                         },
-                        {
-                            "BlockType" : "image",
-                            "HorizontalAlignment" : "Right",
-                            "Source" : "images/suit/Reserve.png",
-                            "Width" : 500,
-                            "MarginTop" : 60,
-                            "Triggers" : [
-                                {
-                                    "Condition" : "{F1Mode, Converter=BoolReverse}",
-                                    "Setters" : [
-                                        {
-                                            "Property" : "Source",
-                                            "Value" : "images/suit/Reserve Neutral.png"
-                                        }
-                                    ]
-                                   
-                                },
-                                {
-                                    "Condition" : "{UseDriverAvatars}",
-                                    "Setters" : [
-                                        {
-                                            "Property" : "Source",
-                                            "Value" : "{Item.Driver.LogoPath}"
-                                        }
-                                    ]
-                                
-                                }
-                            ]
-                        }
+                        
                     ]
-                },
-                {
-                    "BlockType" : "itemstack",
-                    "Orientation" : "Horizontal",
-                    "HorizontalAlignment" : "Center",
-                    "MarginTop" : -50,
-                    "ItemStackOptions": {
-                        "ItemSource": "{Item.Driver.LeagueRoles}",
-                        "Limit" : 5,
-                        "Template": {
-                            "BlockType" : "image",
-                            "Height" : "40",
-                            "Width" : "40",
-                            "MarginRight" : 8,
-                            "MarginLeft" : 8,
-                            "Source" : "images/roles/{Item.Name}_role.png"
-                        }
-                    }
-                    
                 },
                 {
                     "BlockType" : "text",
@@ -132,15 +115,8 @@
                     "FontName" : "{FontNameBold}",
                     "FontSize" : "{DriverNameFontSizeOnLineup}",
                     "MarginLeft" : -20,
-                    "MarginTop" : 75,
+                    "MarginTop" : 50,
                     "HorizontalAlignment" : "Center",
-                    "Triggers" : [
-                        {
-                            "Condition" : "{Item.Driver.LeagueRoles, Converter=EmptyObjectToTrue}",
-                            "Property" : "MarginTop",
-                            "Value" : "40"
-                        }
-                    ]
                 },
                 {
                     "BlockType" : "dock",

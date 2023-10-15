@@ -28,6 +28,44 @@
                                 "Orientation" : "Horizontal",
                                 "Items": [
                                     {
+                                        "BlockType" : "image",
+                                        "HorizontalAlignment" : "Right",
+                                        "Source" : "images/suit/{DriverInfo.Team.Name}_{DriverInfo.DriverSeason.SeatPosition}.png",
+                                        "Width" : "210",
+                                        "Margin" : "0,52,40,0",
+                                        "Triggers" : [
+                                            {
+                                                "Condition" : "{F1Mode, Converter=BoolReverse}",
+                                                "Setters" : [
+                                                    {
+                                                        "Property" : "Source",
+                                                        "Value" : "images/suit/Neutral.png"
+                                                    }
+                                                ]
+                                            
+                                            },
+                                            {
+                                                "Condition": "{DriverInfo.Team.Name, Converter=EmptyObjectToTrue}",
+                                                "Setters" : [
+                                                    {
+                                                        "Property" : "Source",
+                                                        "Value" : "images/suit/Neutral.png"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "Condition" : "{UseDriverAvatars}",
+                                                "Setters" : [
+                                                    {
+                                                        "Property" : "Source",
+                                                        "Value" : "{DriverInfo.Driver.LogoPath}"
+                                                    }
+                                                ]
+                                            
+                                            }
+                                        ]
+                                    },
+                                    {
                                         "BlockType" : "stack",
                                         "Orientation" : "Vertical",
                                         "HorizontalAlignment" : "Left",
@@ -65,67 +103,33 @@
                                                     "Path": "images/flags/flag_{DriverInfo.Driver.Nationality.Code}.png",
                                                     "VerticalAlignment": "Center"
                                                 }
+                                            },
+                                            {
+                                                "BlockType" : "itemstack",
+                                                "Orientation" : "Horizontal",
+                                                "HorizontalAlignment" : "Left",
+                                                "Height" : 40,
+                                                "RenderIf" : "{DriverInfo.Driver.LeagueRoles, Converter=EmptyObjectToFalse}",
+                                                "MarginTop" : 20,
+                                                "MarginLeft" : 36,
+                                                "ItemStackOptions": {
+                                                    "ItemSource": "{DriverInfo.Driver.LeagueRoles}",
+                                                    "Limit" : 1,
+                                                    "Spacing" : 40,
+                                                    "Template": {
+                                                        "BlockType" : "image",
+                                                        "Height" : "40",
+                                                        "Width" : "40",
+                                                        "MarginRight" : 8,
+                                                        "MarginLeft" : 8,
+                                                        "Source" : "images/roles/{Item.Name}_role.png"
+                                                    }
+                                                }
                                             }
                                         ]
                                     },
-                                    {
-                                        "BlockType" : "image",
-                                        "HorizontalAlignment" : "Right",
-                                        "Source" : "images/suit/{DriverInfo.Team.Name}_{DriverInfo.DriverSeason.SeatPosition}.png",
-                                        "Width" : "281",
-                                        "Margin" : "0,52,0,0",
-                                        "Triggers" : [
-                                            {
-                                                "Condition" : "{F1Mode, Converter=BoolReverse}",
-                                                "Setters" : [
-                                                    {
-                                                        "Property" : "Source",
-                                                        "Value" : "images/suit/Neutral.png"
-                                                    }
-                                                ]
-                                            
-                                            },
-                                            {
-                                                "Condition": "{DriverInfo.Team.Name, Converter=EmptyObjectToTrue}",
-                                                "Setters" : [
-                                                    {
-                                                        "Property" : "Source",
-                                                        "Value" : "images/suit/Neutral.png"
-                                                    }
-                                                ]
-                                            },
-                                            {
-                                                "Condition" : "{UseDriverAvatars}",
-                                                "Setters" : [
-                                                    {
-                                                        "Property" : "Source",
-                                                        "Value" : "{DriverInfo.Driver.LogoPath}"
-                                                    }
-                                                ]
-                                            
-                                            }
-                                        ]
-                                    }
+                                    
                                 ]
-                            },
-                            {
-                                "BlockType" : "itemstack",
-                                "Orientation" : "Horizontal",
-                                "HorizontalAlignment" : "Center",
-                                "MarginTop" : -60,
-                                "ItemStackOptions": {
-                                    "ItemSource": "{DriverInfo.Driver.LeagueRoles}",
-                                    "Limit" : 5,
-                                    "Spacing" : 40,
-                                    "Template": {
-                                        "BlockType" : "image",
-                                        "Height" : "40",
-                                        "Width" : "40",
-                                        "MarginRight" : 8,
-                                        "MarginLeft" : 8,
-                                        "Source" : "images/roles/{Item.Name}_role.png"
-                                    }
-                                }
                             },
                             {
                                 "BlockType" : "text",
@@ -133,15 +137,9 @@
                                 "Foreground" : "#ffffff",
                                 "FontName" : "{FontNameBold}",
                                 "FontSize" : "26",
-                                "Margin" : "0,30,0,0",
+                                "Margin" : "0,17,0,0",
                                 "HorizontalAlignment" : "Center",
-                                "Triggers" : [
-                                    {
-                                        "Condition" : "{DriverInfo.Driver.LeagueRoles, Converter=EmptyObjectToTrue}",
-                                        "Property" : "Margin",
-                                        "Value" : "0,12,0,0"
-                                    }
-                                ]
+
                             },
                             {
                                 "BlockType" : "dock",

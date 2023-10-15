@@ -66,6 +66,24 @@
                                         "Path": "images/flags/flag_{Item.Driver0.Driver.Nationality.Code}.png",
                                         "VerticalAlignment": "Center"
                                     }
+                                },{
+                                    "BlockType" : "itemstack",
+                                    "Orientation" : "Horizontal",
+                                    "HorizontalAlignment" : "Left",
+                                    "Height" : 25,
+                                    "RenderIf" : "{Item.Driver0.Driver.LeagueRoles, Converter=EmptyObjectToFalse}",
+                                    "MarginTop" : 15,
+                                    "MarginLeft" : 32,
+                                    "ItemStackOptions": {
+                                        "ItemSource": "{Item.Driver0.Driver.LeagueRoles}",
+                                        "Limit" : 1,
+                                        "Template": {
+                                            "BlockType" : "image",
+                                            "Height" : "25",
+                                            "Width" : "25",
+                                            "Source" : "images/roles/{Item.Name}_role.png"
+                                        }
+                                    }
                                 }
                             ]
                         },
@@ -73,8 +91,9 @@
                             "BlockType" : "image",
                             "HorizontalAlignment" : "Right",
                             "Source" : "images/suit/{Item.Team.Name}_{Item.Driver0.SeatPosition}.png",
-                            "Width" : 195,
+                            "Width" : 140,
                             "MarginTop" : 36,
+                            "MarginRight" : 35,
                             "Triggers" : [
                                 {
                                     "Condition" : "{F1Mode, Converter=BoolReverse}",
@@ -100,33 +119,13 @@
                     ]
                 },
                 {
-                    "BlockType" : "itemstack",
-                    "Orientation" : "Horizontal",
-                    "HorizontalAlignment" : "Center",
-                    "MarginTop" : -50,
-                    "MarginBottom" : 20,
-                    "ItemStackOptions": {
-                        "ItemSource": "{Item.Driver0.Driver.LeagueRoles}",
-                        "Limit" : 5,
-                        "Template": {
-                            "BlockType" : "image",
-                            "Height" : "30",
-                            "Width" : "30",
-                            "MarginRight" : 8,
-                            "MarginLeft" : 8,
-                            "Source" : "images/roles/{Item.Name}_role.png"
-                        }
-                    }
-                    
-                },
-                {
                     "BlockType" : "text",
                     "Source" : "{Item.Driver0.Driver.Name}",
                     "Foreground" : "#ffffff",
                     "FontName" : "{FontNameBold}",
                     "FontSize" : 18,
                     "MarginLeft" : 0,
-                    "MarginTop" : 0,
+                    "MarginTop" : 12,
                     "HorizontalAlignment" : "Center"
                 },
                 {
@@ -237,6 +236,24 @@
                                         "Path": "images/flags/flag_{Item.Driver1.Driver.Nationality.Code}.png",
                                         "VerticalAlignment": "Center"
                                     }
+                                },{
+                                    "BlockType" : "itemstack",
+                                    "Orientation" : "Horizontal",
+                                    "HorizontalAlignment" : "Left",
+                                    "Height" : 25,
+                                    "RenderIf" : "{Item.Driver0.Driver.LeagueRoles, Converter=EmptyObjectToFalse}",
+                                    "MarginTop" : 15,
+                                    "MarginLeft" : 32,
+                                    "ItemStackOptions": {
+                                        "ItemSource": "{Item.Driver0.Driver.LeagueRoles}",
+                                        "Limit" : 1,
+                                        "Template": {
+                                            "BlockType" : "image",
+                                            "Height" : "25",
+                                            "Width" : "25",
+                                            "Source" : "images/roles/{Item.Name}_role.png"
+                                        }
+                                    }
                                 }
                             ]
                         },
@@ -244,8 +261,9 @@
                             "BlockType" : "image",
                             "HorizontalAlignment" : "Right",
                             "Source" : "images/suit/{Item.Team.Name}_{Item.Driver1.SeatPosition}.png",
-                            "Width" : 195,
+                            "Width" : 140,
                             "MarginTop" : 36,
+                            "MarginRight" : 35,
                             "Triggers" : [
                                 {
                                     "Condition" : "{F1Mode, Converter=BoolReverse}",
@@ -269,25 +287,6 @@
                             ]
                         }
                     ]
-                },{
-                    "BlockType" : "itemstack",
-                    "Orientation" : "Horizontal",
-                    "HorizontalAlignment" : "Center",
-                    "MarginTop" : -50,
-                    "MarginBottom" : 20,
-                    "ItemStackOptions": {
-                        "ItemSource": "{Item.Driver1.Driver.LeagueRoles}",
-                        "Limit" : 5,
-                        "Template": {
-                            "BlockType" : "image",
-                            "Height" : "30",
-                            "Width" : "30",
-                            "MarginRight" : 8,
-                            "MarginLeft" : 8,
-                            "Source" : "images/roles/{Item.Name}_role.png"
-                        }
-                    }
-                    
                 },
                 {
                     "BlockType" : "text",
@@ -296,7 +295,7 @@
                     "FontName" : "{FontNameBold}",
                     "FontSize" : 18,
                     "MarginLeft" : 0,
-                    "MarginTop" : 0,
+                    "MarginTop" : 12,
                     "HorizontalAlignment" : "Center"
                 },
                 {

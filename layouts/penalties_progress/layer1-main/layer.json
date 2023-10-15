@@ -54,7 +54,7 @@
                                         "ComponentOptions" : {
                                             "ComponentName" : "card_universal",
                                             "Vars" : {
-                                                "platebg" : "images/plates/plate_bg_{Item.Position}",
+                                                "platebg" : "images/plates/plate_bg_{Item.Index, Converter=NumberAdd, Parameter=1}",
                                                 "plateWidth" : "430",
                                                 "plateHeight" : "560",
                                                 "plateMargin" : "0,0,0,8",
@@ -67,9 +67,10 @@
                                                 "PlatformMargin" : "44,14,0,0",
                                                 "FlagHeight" : "30",
                                                 "FlagMargin" : "41,30,0,0",
+                                                "RoleSize" : "40",
                                                 "Suit" : "images/suit/{Item.Team.Name}_{Item.SeatPosition}.png",
-                                                "SuitWidth" : "281",
-                                                "SuitMargin" : "0,52,0,0",
+                                                "SuitWidth" : "210",
+                                                "SuitMargin" : "0,52,40,0",
                                                 "DriverNameFontSize" : "26",
                                                 "DriverNameMargin" : "0,10,0,0",
                                                 "DriverNameMarginTopIfNoRoles":"33",
@@ -166,34 +167,15 @@
                                                                             }
                                                                         ]
                                                                     },
-                                                                    // TEMPORARY DISABLED. DONT BE ANGRY FOR COMMENTED AREA
-                                                                    //{
-                                                                    //    "Condition" : "{Item.PositionString, Converter=StringEquals, Parameter=1}",
-                                                                    //    "Setters" : [
-                                                                    //        {
-                                                                    //            "Property" : "Foreground",
-                                                                    //            "Value" : "#ffffff"
-                                                                    //        }
-                                                                    //    ]
-                                                                    //},
-                                                                    //{
-                                                                    //    "Condition" : "{Item.PositionString, Converter=StringEquals, Parameter=2}",
-                                                                    //    "Setters" : [
-                                                                    //        {
-                                                                    //            "Property" : "Foreground",
-                                                                    //            "Value" : "#ffffff"
-                                                                    //        }
-                                                                    //    ]
-                                                                    //},
-                                                                    //{
-                                                                    //    "Condition" : "{Item.PositionString, Converter=StringEquals, Parameter=3}",
-                                                                    //    "Setters" : [
-                                                                    //        {
-                                                                    //            "Property" : "Foreground",
-                                                                    //            "Value" : "#ffffff"
-                                                                    //        }
-                                                                    //    ]
-                                                                    //}
+                                                                    {
+                                                                        "Condition" : "{Item.PenaltyPoints, Converter=NumberEquals, Parameter=0}",
+                                                                        "Setters" : [
+                                                                            {
+                                                                                "Property" : "Foreground",
+                                                                                "Value" : "#00000000"
+                                                                            }
+                                                                        ]
+                                                                    }
                                                                 ]
                                                             }
                                                         ]
