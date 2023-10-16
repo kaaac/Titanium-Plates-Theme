@@ -109,12 +109,15 @@
                                     "Setters" : [
                                         {
                                             "Property" : "Source",
-                                            "Value" : "{Item.Driver.LogoPath}"
+                                            "Value" : "{Item.Driver0.Driver.LogoPath}"
                                         }
                                     ]
                                 
                                 }
-                            ]
+                            ],
+                            "ImageOptions" : {
+                                "DefaultPath" : "images/suit/Neutral.png"
+                            }
                         }
                     ]
                 },
@@ -279,12 +282,15 @@
                                     "Setters" : [
                                         {
                                             "Property" : "Source",
-                                            "Value" : "{Item.Driver.LogoPath}"
+                                            "Value" : "{Item.Driver1.Driver.LogoPath}"
                                         }
                                     ]
                                 
                                 }
-                            ]
+                            ],
+                            "ImageOptions" : {
+                                "DefaultPath" : "images/suit/Neutral.png"
+                            }
                         }
                     ]
                 },

@@ -75,8 +75,29 @@
                                                                     }
                                                                 ]
                                                             
+                                                            },
+                                                            {
+                                                                "Condition" : "{UseDriverAvatars, Converter=BoolReverse}",
+                                                                "ConditionAnd" : "{F1Mode, Converter=BoolReverse}",
+                                                                "Setters" : [
+                                                                    {
+                                                                        "Property" : "Source",
+                                                                        "Value" : "images/suit/Neutral.png"
+                                                                    }
+                                                                ]
+                                                            
                                                             }
-                                                        ]
+                                                        ],
+                                                        "ImageOptions" : {
+                                                            "DefaultPath" : "images/suit/Neutral.png",
+                                                            "Triggers" : [
+                                                                {
+                                                                    "Condition" : "{F1Mode}",
+                                                                    "Property" : "DefaultPath",
+                                                                    "Value" : "images/suit/{Item.Team.Name}_1.png"
+                                                                }
+                                                            ]
+                                                        }
                                                     },
                                                     {
                                                         "BlockType" : "text",
@@ -114,8 +135,29 @@
                                                                     }
                                                                 ]
                                                             
+                                                            },
+                                                            {
+                                                                "Condition" : "{UseDriverAvatars, Converter=BoolReverse}",
+                                                                "ConditionAnd" : "{F1Mode, Converter=BoolReverse}",
+                                                                "Setters" : [
+                                                                    {
+                                                                        "Property" : "Source",
+                                                                        "Value" : "images/suit/Neutral.png"
+                                                                    }
+                                                                ]
+                                                            
                                                             }
-                                                        ]
+                                                        ],
+                                                        "ImageOptions" : {
+                                                            "DefaultPath" : "images/suit/Neutral.png",
+                                                            "Triggers" : [
+                                                                {
+                                                                    "Condition" : "{F1Mode}",
+                                                                    "Property" : "DefaultPath",
+                                                                    "Value" : "images/suit/{Item.Team.Name}_2.png"
+                                                                }
+                                                            ]
+                                                        }
                                                     },
                                                     {
                                                         "BlockType" : "text",

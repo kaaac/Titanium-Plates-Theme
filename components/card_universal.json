@@ -23,32 +23,37 @@
                         {
                             "BlockType" : "image",
                             "HorizontalAlignment" : "Right",
+                            "Source" : "<Suit>",
                             "ImageOptions" : {
-                                "Path" : "<Suit>",
-                                "DefaultPath" : "images/suit/Neutral.png",
-                                "Triggers" : [
-                                    {
-                                        "Condition" : "{F1Mode, Converter=BoolReverse}",
-                                        "Setters" : [
-                                            {
-                                                "Property" : "Path",
-                                                "Value" : "images/suit/Neutral.png"
-                                            }
-                                        ]
-                                    
-                                    },
-                                    {
-                                        "Condition" : "{UseDriverAvatars}",
-                                        "Setters" : [
-                                            {
-                                                "Property" : "Path",
-                                                "Value" : "{Item.Driver.LogoPath}"
-                                            }
-                                        ]
-                                    
-                                    }
-                                ]
+                                  "DefaultPath" : "images/suit/Neutral.png",
+                                  //"Triggers" : [
+                                  //  {
+                                  //      "Condition" : "{F1Mode}",
+                                  //      "Property" : "DefaultPath",
+                                  //      "Value" : "",
+                                  //  }
+                                  //]
                             },
+                            "Triggers" : [
+                                {
+                                    "Condition" : "{UseDriverAvatars}",
+                                    "ConditionAnd" : "{F1Mode}",
+                                    "Property" : "Source",
+                                    "Value" : "{Item.Driver.LogoPath}"
+                                },
+                                {
+                                    "Condition" : "{UseDriverAvatars}",
+                                    "ConditionAnd" : "{F1Mode, Converter=BoolReverse}",
+                                    "Property" : "Source",
+                                    "Value" : "{Item.Driver.LogoPath}"
+                                },
+                                {
+                                    "Condition" : "{UseDriverAvatars, Converter=BoolReverse}",
+                                    "ConditionAnd" : "{F1Mode, Converter=BoolReverse}",
+                                    "Property" : "Source",
+                                    "Value" : "images/suit/Neutral.png"
+                                },
+                            ],
                             "Width" : "<SuitWidth>",
                             "Margin" : "<SuitMargin>",
                         },

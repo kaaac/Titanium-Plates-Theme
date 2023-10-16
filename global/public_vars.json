@@ -1,5 +1,5 @@
 {
-  "F1Mode": false,
+  "F1Mode": true,
   "UseDriverAvatars": false,
   "IncludeTop10AtPodiumRender": true,
   "DisplayFlagsOnLeftSideOfDriverName": true,
@@ -9,7 +9,7 @@
   "RenderSectorsOnQualiLayout": true,
   "ShowPenaltyPointsInStandings": true,
   "HorizontalLineups": true,
-  "TeamNumberToCompare": 3,
+  "TeamNumberToCompare": 0,
   "NumberOfDriversForGrid": 20,
   "SeasonSeatPerTeam": 4,
   "DriverNameFontSizeOnLineup": 45,
