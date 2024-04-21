@@ -9,7 +9,7 @@
   "RenderSectorsOnQualiLayout": true,
   "ShowPenaltyPointsInStandings": true,
   "HorizontalLineups": true,
-  "TeamNumberToCompare": 0,
+  "TeamNumberToCompare": 2,
   "NumberOfDriversForGrid": 20,
   "SeasonSeatPerTeam": 4,
   "DriverNameFontSizeOnLineup": 45,

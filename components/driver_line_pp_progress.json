@@ -110,7 +110,7 @@
                     "Source": "{Item.Driver.Name}",
                     "HorizontalAlignment": "Left",
                     "VerticalAlignment": "Center",
-                    "TextOptionsExtern" : "tableCellBold",
+                    "TextOptionsExtern" : "tableCellBold"
                     //"Triggers" : [
                     //    {
                     //        "Condition" : "{Item.PositionString, Converter=StringEquals, Parameter=3}",

@@ -25,7 +25,7 @@
                             "HorizontalAlignment" : "Right",
                             "Source" : "<Suit>",
                             "ImageOptions" : {
-                                  "DefaultPath" : "images/suit/Neutral.png",
+                                  "DefaultPath" : "images/suit/Neutral.png"
                                   //"Triggers" : [
                                   //  {
                                   //      "Condition" : "{F1Mode}",
@@ -52,10 +52,10 @@
                                     "ConditionAnd" : "{F1Mode, Converter=BoolReverse}",
                                     "Property" : "Source",
                                     "Value" : "images/suit/Neutral.png"
-                                },
+                                }
                             ],
                             "Width" : "<SuitWidth>",
-                            "Margin" : "<SuitMargin>",
+                            "Margin" : "<SuitMargin>"
                         },
                         {
                             "BlockType" : "stack",
@@ -118,8 +118,7 @@
                                     }
                                 }
                             ]
-                        },
-                        
+                        }
                     ]
                 },
                 {
@@ -131,7 +130,7 @@
                     "DriverNameMargin" : "0,12,0,0",
                     "FontSize" : "<DriverNameFontSize>",
                     "Margin" : "<DriverNameMargin>",
-                    "HorizontalAlignment" : "Center",
+                    "HorizontalAlignment" : "Center"
                 },
                 {
                     "BlockType" : "dock",

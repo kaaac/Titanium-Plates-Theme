@@ -63,7 +63,7 @@
                                                     {
                                                         "BlockType" : "image",
                                                         "HorizontalAlignment" : "Center",
-                                                        "Source" : "images/suit/{Item.Team.Name}_1.png",
+                                                        "Source" : "images/suit/{Item.Team.Name}_{Item.Driver0.SeatPosition}.png",
                                                         "Height" : 300,
                                                         "Triggers" : [
                                                             {
@@ -94,7 +94,7 @@
                                                                 {
                                                                     "Condition" : "{F1Mode}",
                                                                     "Property" : "DefaultPath",
-                                                                    "Value" : "images/suit/{Item.Team.Name}_1.png"
+                                                                    "Value" : "images/suit/{Item.Team.Name}_{Item.Driver1.SeatPosition}.png"
                                                                 }
                                                             ]
                                                         }

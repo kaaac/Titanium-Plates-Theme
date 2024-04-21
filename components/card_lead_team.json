@@ -338,7 +338,7 @@
                             "HorizontalAlignment" : "Right",
                             "RenderIf" : "{F1Mode}",
                             "MarginRight" : 79,
-                            "Height" : 21,
+                            "Height" : 21
                         }
                     ]
                 }
