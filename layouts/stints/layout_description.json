@@ -1,6 +1,5 @@
 {
     "LayoutName": "RaceStints",
     "RenderType": "RaceResults",
-    "RenderCaption": "Render Stints",
-    "Index" : 1
+    "RenderCaption": "Render Stints"
 }

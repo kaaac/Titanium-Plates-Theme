@@ -1,0 +1,397 @@
+{
+    "BlockRoot": {
+        "Name": "mainStack",
+        "BlockType": "stack",
+        "Margin": "{MarginRoot}",
+        "Orientation": "Vertical",
+        "Items": [
+            {               
+                "BlockType": "component",
+                "Component": "header_block",
+                "ComponentOptions" :
+                {
+                    "Vars":
+                    {
+                        "header": "Season progress",
+                        "headerFontSize" : 60,
+                        "subHeader": "Positions"
+                    }
+                }               
+            },
+            {
+                "BlockType" : "component",
+                "Component" : "separator"
+            },
+            {
+                "BlockType" : "stack",
+                "Orientation" : "Horizontal",
+                "HorizontalAlignment" : "Center",
+                "Margin" : "{MarginTable}",
+                "Items" : [
+                    {
+                        "BlockType": "stack",
+                        "Orientation": "Vertical",
+                        "RenderIf" : "{DisplayPodiumCards}",
+                        "MarginRight" : 15,
+                        "Items" : [
+                            {
+                                "Name" : "PodiumHeaderImage",
+                                "BlockType": "image",
+                                "Source" : "podium.png",
+                                "HorizontalAlignment" : "Center",
+                                "MarginTop" : 25,
+                                "Width" : 250
+
+                            },
+                            {
+                                "BlockType" : "itemstack",
+                                "Orientation" : "Vertical",
+                                "MarginTop" : 10,
+                                "ItemStackOptions": {
+                                    "ItemSource": "{Standings.Drivers}",
+                                    "Limit" : 3,
+                                    "ItemTemplate": {
+                                        "BlockType" : "component",
+                                        "Component" : "card_universal",
+                                        "ComponentOptions" : {
+                                            "Vars" : {
+                                                "platebg" : "plates/plate_bg_{Item.Position}",
+                                                "plateWidth" : "430",
+                                                "plateHeight" : "560",
+                                                "plateMargin" : "0,0,0,8",
+                                                "cardWidth" : "374",
+                                                "cardHeight" : "469",
+                                                "cardMargin" : "28,8,28,64",
+                                                "RacNoFontS" : "45",
+                                                "RaceNoMargin" : "46,68,0,0",
+                                                "PlatformHeight" : "44",
+                                                "PlatformMargin" : "44,14,0,0",
+                                                "FlagHeight" : "30",
+                                                "FlagMargin" : "41,30,0,0",
+                                                "RoleSize" : "40",
+                                                "Suit" : "suit/{Item.Team.Name}_{Item.SeatPosition}.png",
+                                                "SuitWidth" : "210",
+                                                "SuitMargin" : "0,52,40,0",
+                                                "DriverNameFontSize" : "26",
+                                                "DriverNameMargin" : "0,15,0,0",
+                                                "logosMargin" : "0,30,0,0",
+                                                "LeagueLogoHeight" : "35",
+                                                "LeagueLogoMargin" : "36,0,0,0",
+                                                "LeagueLogoMarginNonF1" : "-44,0,0,0",
+                                                "F1LogoHeight" : "30",
+                                                "F1LogoMargin" : "0,0,104,0"
+                                            }
+                                        }
+                                    }
+                                }
+                            
+                            }
+                        ]
+                    },
+                    {
+                        "BlockType": "stack",
+                        "Orientation" : "Horizontal",
+                        "Items" : [
+                            {
+                                "BlockType" : "stack",
+                                "Orientation" : "Vertical",
+                                "Items" : [
+                                    {
+                                        "Name": "mainTable",
+                                        "BlockType": "table",
+                                        "HorizontalAlignment" : "Center",
+                                        "TableOptions": {
+                                            "ItemsSource": "{Standings.Drivers}",
+                                            "RowSpacing": 13,
+                                            "ColSpacing": 0,
+                                            "HeaderTemplate": {
+                                                "BlockType": "text",
+                                                "MarginBottom": 8,
+                                                "VerticalAlignment" : "Bottom",
+                                                "Style" : "tableColumnHeader"
+                                            },
+                                            "Columns": [
+                                                {
+                                                    "Header": "[Driver]",
+                                                    "Template": {
+                                                        "BlockType" : "component",
+                                                        "Component" : "driver_line_cell_session"   
+                                                    }
+                                                },                        
+                                                {
+                                                    "Header": "[Team]",
+                                                    "Template":
+                                                    {
+                                                        "BlockType" : "component",
+                                                        "Component" : "team_line_cell_session"                                
+                                                    }
+                                                },
+                                                {
+                                                    "Header": "[Points]",
+                                                    "Template": {
+                                                    
+                                                        "BlockType": "dock",
+                                                        "Height" : 73,
+                                                        "PaddingLeft" : 24,
+                                                        "PaddingRight" : 24,
+                                                        "BackgroundImage": "team_bg/gap_bg_{Item.Team.Name}.png",
+                                                        "Triggers" : [
+                                                            {
+                                                                "Condition" : "{F1Mode, Converter=BoolReverse}",
+                                                                "Property" : "BackgroundImage",
+                                                                "Value" : "gap_bg.png"
+                                                            },
+                                                            {
+                                                                "Condition" : "{Item.Team.Name, Converter=EmptyObjectToTrue}",
+                                                                "Property" : "BackgroundImage",
+                                                                "Value" : "gap_bg.png"
+                                                            },
+                                                            {
+                                                                "Condition" : "{Item.PositionString, Converter=StringEquals, Parameter=1}",
+                                                                "Property" : "BackgroundImage",
+                                                                "Value" : "podium_bg/gap_bg_gold.png"
+                                                            },
+                                                            {
+                                                                "Condition" : "{Item.PositionString, Converter=StringEquals, Parameter=2}",
+                                                                "Property" : "BackgroundImage",
+                                                                "Value" : "podium_bg/gap_bg_silver.png"
+                                                            },
+                                                            {
+                                                                "Condition" : "{Item.PositionString, Converter=StringEquals, Parameter=3}",
+                                                                "Property" : "BackgroundImage",
+                                                                "Value" : "podium_bg/gap_bg_copper.png"
+                                                            },
+                                                            {
+                                                                "Condition" : "{Standings.IsPositionJumpForDriversExists}",
+                                                                "Property" : "PaddingRight",
+                                                                "Value" : 4
+                                                            }
+                                                        ],
+                                                    
+                                                        "Items": [                                    
+                                                            {
+                                                                "BlockType": "text",
+                                                                "Source": "{Item.Points}",
+                                                                "HorizontalAlignment": "Right",
+                                                                "VerticalAlignment": "Center",
+                                                                "MarginTop" : 5,
+                                                                "PaddingBottom" : 0,
+                                                                "Foreground" : "#ffffff",
+                                                                "FontName": "{FontNameBold}",
+                                                                "FontSize": 45,
+                                                                "Triggers" : [
+                                                                    {
+                                                                        "Condition" : "{F1Mode, Converter=BoolReverse}",
+                                                                        "Setters" : [
+                                                                            {
+                                                                                "Property" : "Foreground",
+                                                                                "Value" : "#000000"
+                                                                            }
+                                                                        ]
+                                                                    },
+                                                                    {
+                                                                        "Condition" : "{Item.PositionString, Converter=StringEquals, Parameter=1}",
+                                                                        "Setters" : [
+                                                                            {
+                                                                                "Property" : "Foreground",
+                                                                                "Value" : "#ffffff"
+                                                                            }
+                                                                        ]
+                                                                    },
+                                                                    {
+                                                                        "Condition" : "{Item.PositionString, Converter=StringEquals, Parameter=2}",
+                                                                        "Setters" : [
+                                                                            {
+                                                                                "Property" : "Foreground",
+                                                                                "Value" : "#ffffff"
+                                                                            }
+                                                                        ]
+                                                                    },
+                                                                    {
+                                                                        "Condition" : "{Item.PositionString, Converter=StringEquals, Parameter=3}",
+                                                                        "Setters" : [
+                                                                            {
+                                                                                "Property" : "Foreground",
+                                                                                "Value" : "#ffffff"
+                                                                            }
+                                                                        ]
+                                                                    },
+                                                                    {
+                                                                        "Condition" : "{Item.Points, Converter=EmptyObjectToTrue}",
+                                                                        "Setters" : [
+                                                                            {
+                                                                                "Property" : "Source",
+                                                                                "Value" : "n"
+                                                                            },
+                                                                            {
+                                                                                "Property" : "Foreground",
+                                                                                "Value" : "#00000000"
+                                                                            }
+                                                                        ]
+                                                                    }
+                                                                ]
+                                                            }
+                                                        ]
+                                                    }
+                                                },
+                                                {
+                                                    "Header": "",
+                                                    "PaddingLeft" : 0,
+                                                    "MarginRight" : 15,
+                                                    "Template":
+                                                    {
+                                                        "BlockType" : "component",
+                                                        "PaddingLeft" : 0,                               
+                                                        "PaddingRight" : 12,
+                                                        "Component" : "position_jump_cell"    
+                                                    }
+                                                },
+                                                {
+                                                    "Header" : "[PP]",
+                                                    "MarginLeft" : 20,
+                                                    "Template":{
+                                                        "BlockType" : "component",
+                                                        "Component" : "standings_stat_cell",
+                                                        "ComponentOptions":{
+                                                            "Vars" : {
+                                                                "width" : "94",
+                                                                "bgimage" : "bg_start.png",
+                                                                "source" : "{Item.PenaltyPoints}",
+                                                                "cond" : "{Item.PenaltyPoints, Converter=NumberLess, Parameter=1}",
+                                                                "foregr" : "{StandingsPenaltyPointCountForeground}"
+                                                            }
+                                                        }
+                                                    }
+                                                },
+                                                {
+                                                    "Header" : "[Events]",
+                                                    "Template":{
+                                                        "BlockType" : "component",
+                                                        "Component" : "standings_stat_cell",
+                                                        "ComponentOptions":{
+                                                            "Vars" : {
+                                                                "width" : "114",
+                                                                "bgimage" : "bg_end.png",
+                                                                "source" : "{Item.EventsCount, Converter=NumberZeroToEmpty}",
+                                                                "foregr" : "{StandingsPointsForeground}"
+                                                            }
+                                                        }
+                                                    }
+                                                },
+                                                {
+                                                    "MarginLeft" : 20,
+                                                    "MultiColumnHeadersSource": "{Standings.Events}",
+                                                    "MultiColumnItemsSource": "{Item.Events}",
+                                                    "MultiColumnHeaderTemplate": {
+                                                        "BlockType": "stack",
+                                                        "Orientation": "Vertical",
+                                                        "Spacing": 4,
+                                                        "HorizontalAlignment": "Center",
+                                                        "Items": [
+                                                            {
+                                                                "BlockType": "image",
+                                                                "Source": "{Item.Track.Nation.LogoPath}",
+                                                                "HorizontalAlignment": "Center",
+                                                                "Height": 32
+                                                            },
+                                                            {
+                                                                "BlockType": "text",
+                                                                "MarginBottom": 8,
+                                                                "HorizontalAlignment": "Center",
+                                                                "Source": "{Item.Track.Nation.Code}",
+                                                                "Style" : "tableColumnHeader"                                        
+                                                            }
+                                                        ]
+                                                    },
+                                                    "Template" : {
+                                                        "BlockType" : "dock",
+                                                        "Width" : 80,
+                                                        "Height" : 73,
+                                                        "RenderIf" : "{Item.Event.WinnerString, Converter=EmptyObjectToFalse}",
+                                                        "BackgroundImage" : "bg_position.png",
+                                                        "Items" : [
+                                                            {
+                                                                "BlockType": "text",
+                                                                "Source": "{Item.RaceMajorPositionString}",
+                                                                "FontName" : "{FontNameBold}",
+                                                                "FontSize" : 28,
+                                                                "HorizontalAlignment" : "Center",
+                                                                "VerticalAlignment" : "Bottom",
+                                                                "PaddingBottom" : 30,
+                                                                "TextOptions" : {
+                                                                    "HorizontalAlignment":"Center"
+                                                                },
+                                                                "Triggers": [
+                                                                    {
+                                                                        "Condition": "{Item.IsRaceMajorClassified, Converter=BoolReverse}",
+                                                                        "Setters": [
+                                                                            {
+                                                                                "Property": "Foreground",
+                                                                                "Value": "{SeasonProgressPositionNotClassifiedForeground}"
+                                                                            }
+                                                                        ]
+                                                                    },
+                                                                    {
+                                                                        "Condition": "{Item.RaceMajorPosition, Converter=NumberLess, Parameter=11}",
+                                                                        "Setters": [
+                                                                            {
+                                                                                "Property": "Foreground",
+                                                                                "Value": "{StandingsPointsForeground}"
+                                                                            }
+                                                                        ]
+                                                                    },
+                                                                    {
+                                                                        "Condition": "{Item.RaceMajorPosition, Converter=NumberEquals, Parameter=1}",
+                                                                        "Setters": [
+                                                                            {
+                                                                                "Property": "Foreground",
+                                                                                "Value": "{Standings1stCountForeground}"
+                                                                            }
+                                                                        ]
+                                                                    },
+                                                                    {
+                                                                        "Condition": "{Item.RaceMajorPositionString, Converter=StringEquals, Parameter=DNF}",
+                                                                        "Setters": [
+                                                                            {
+                                                                                "Property": "Foreground",
+                                                                                "Value": "{SeasonProgressDNF}"
+                                                                            }
+                                                                        ]
+                                                                    },
+                                                                    {
+                                                                        "Condition": "{Item.IsMajorRaceFastestLap}",
+                                                                        "Setters": [
+                                                                            {
+                                                                                "Property": "Foreground",
+                                                                                "Value": "{SeasonProgressPointsFastestLapForeground}"
+                                                                            }
+                                                                        ]
+                                                                    }
+                                                                ]
+                                                            }
+                                                        ],
+                                                        "Triggers" : [
+                                                            {
+                                                                "Condition": "{Item.IsMajorQualPole}",
+                                                                "Setters": [
+                                                                    {
+                                                                        "Property": "BackgroundImage",
+                                                                        "Value": "bg_position_purple.png"
+                                                                    }
+                                                                ]
+                                                            }
+                                                        ]
+                                                    }
+                                                }
+                                            ]
+                                        }
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}

@@ -1,0 +1,409 @@
+{
+    "BlockRoot": {
+        "Name": "mainStack",
+        "BlockType": "stack",
+        "Margin": "{MarginRoot}",       
+        "Orientation": "Vertical",
+        "Items": [
+            {
+                "BlockType" : "component",
+                "Component" : "header_block_session"
+            },
+            {
+                "BlockType" : "component",
+                "Component" : "separator"
+            },
+            {
+                "BlockType" : "stack",
+                "Orientation" : "Vertical",
+                "HorizontalAlignment" : "Center",
+                "Margin" : "{MarginTable}",
+                "Items" : [
+                    {
+                        "BlockType": "stack",
+                        "Orientation": "Horizontal",
+                        "HorizontalAlignment" : "Center",
+                        "MarginTop" : -5,
+                        "Items" : [
+                            {
+                                "BlockType" : "itemstack",
+                                "HorizontalAlignment" : "Center",
+                                "Orientation" : "Horizontal",
+                                "MarginTop" : 105,
+                                "ItemStackOptions": {
+                                    "ItemSource": "{Session.Drivers}",
+                                    "Limit" : 1,
+                                    "IndexStart" : 1,
+                                    "ItemTemplate": {
+                                        "BlockType" : "component",
+                                        "Component" : "card_universal",
+                                        "ComponentOptions" : {
+                                            "Vars" : {
+                                                "platebg" : "plates/plate_bg_{Item.Position}",
+                                                "plateWidth" : "430",
+                                                "plateHeight" : "560",
+                                                "plateMargin" : "0,0,0,8",
+                                                "cardWidth" : "374",
+                                                "cardHeight" : "469",
+                                                "cardMargin" : "28,8,28,64",
+                                                "RacNoFontS" : "45",
+                                                "RaceNoMargin" : "46,68,0,0",
+                                                "PlatformHeight" : "44",
+                                                "PlatformMargin" : "44,14,0,0",
+                                                "FlagHeight" : "30",
+                                                "FlagMargin" : "41,30,0,0",
+                                                "RoleSize" : "40",
+                                                "Suit" : "suit/{Item.Team.Name}_{Item.SeatPosition}.png",
+                                                "SuitWidth" : "210",
+                                                "SuitMargin" : "0,52,40,0",
+                                                "DriverNameFontSize" : "26",
+                                                "DriverNameMargin" : "0,15,0,0",
+                                                "logosMargin" : "0,30,0,0",
+                                                "LeagueLogoHeight" : "35",
+                                                "LeagueLogoMargin" : "36,0,0,0",
+                                                "LeagueLogoMarginNonF1" : "-44,0,0,0",
+                                                "F1LogoHeight" : "30",
+                                                "F1LogoMargin" : "0,0,104,0"
+                                            }
+                                        }
+                                    }
+                                }
+                            },
+                            {
+                                "BlockType" : "itemstack",
+                                "HorizontalAlignment" : "Center",
+                                "Orientation" : "Horizontal",
+                                "Margin" : "25,5,25,0",
+                                "ItemStackOptions": {
+                                    "ItemSource": "{Session.Drivers}",
+                                    "Limit" : 1,
+                                    "ItemTemplate": {
+                                        "BlockType" : "component",
+                                        "Component" : "card_universal",
+                                        "ComponentOptions" : {
+                                            "Vars" : {
+                                                "platebg" : "plates/plate_bg_{Item.Position}",
+                                                "plateWidth" : "430",
+                                                "plateHeight" : "560",
+                                                "plateMargin" : "0,0,0,8",
+                                                "cardWidth" : "374",
+                                                "cardHeight" : "469",
+                                                "cardMargin" : "28,8,28,64",
+                                                "RacNoFontS" : "45",
+                                                "RaceNoMargin" : "46,68,0,0",
+                                                "PlatformHeight" : "44",
+                                                "PlatformMargin" : "44,14,0,0",
+                                                "FlagHeight" : "30",
+                                                "FlagMargin" : "41,30,0,0",
+                                                "RoleSize" : "40",
+                                                "Suit" : "suit/{Item.Team.Name}_{Item.SeatPosition}.png",
+                                                "SuitWidth" : "210",
+                                                "SuitMargin" : "0,52,40,0",
+                                                "DriverNameFontSize" : "26",
+                                                "DriverNameMargin" : "0,15,0,0",
+                                                "logosMargin" : "0,30,0,0",
+                                                "LeagueLogoHeight" : "35",
+                                                "LeagueLogoMargin" : "36,0,0,0",
+                                                "LeagueLogoMarginNonF1" : "-44,0,0,0",
+                                                "F1LogoHeight" : "30",
+                                                "F1LogoMargin" : "0,0,104,0"
+                                            }
+                                        }
+                                    }
+                                }
+                            },
+                            {
+                                "BlockType" : "itemstack",
+                                "HorizontalAlignment" : "Center",
+                                "Orientation" : "Horizontal",
+                                "MarginTop" : 105,
+                                "ItemStackOptions": {
+                                    "ItemSource": "{Session.Drivers}",
+                                    "Limit" : 1,
+                                    "IndexStart" : 2,
+                                    "ItemTemplate": {
+                                        "BlockType" : "component",
+                                        "Component" : "card_universal",
+                                        "ComponentOptions" : {
+                                            "Vars" : {
+                                                "platebg" : "plates/plate_bg_{Item.Position}",
+                                                "plateWidth" : "430",
+                                                "plateHeight" : "560",
+                                                "plateMargin" : "0,0,0,8",
+                                                "cardWidth" : "374",
+                                                "cardHeight" : "469",
+                                                "cardMargin" : "28,8,28,64",
+                                                "RacNoFontS" : "45",
+                                                "RaceNoMargin" : "46,68,0,0",
+                                                "PlatformHeight" : "44",
+                                                "PlatformMargin" : "44,14,0,0",
+                                                "FlagHeight" : "30",
+                                                "FlagMargin" : "41,30,0,0",
+                                                "RoleSize" : "40",
+                                                "Suit" : "suit/{Item.Team.Name}_{Item.SeatPosition}.png",
+                                                "SuitWidth" : "210",
+                                                "SuitMargin" : "0,52,40,0",
+                                                "DriverNameFontSize" : "26",
+                                                "DriverNameMargin" : "0,15,0,0",
+                                                "logosMargin" : "0,30,0,0",
+                                                "LeagueLogoHeight" : "35",
+                                                "LeagueLogoMargin" : "36,0,0,0",
+                                                "LeagueLogoMarginNonF1" : "-44,0,0,0",
+                                                "F1LogoHeight" : "30",
+                                                "F1LogoMargin" : "0,0,104,0"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "BlockType": "stack",
+                        "Orientation" : "Horizontal",
+                        "HorizontalAlignment" : "Center",
+                        "RenderIf" : "{IncludeTop10AtPodiumRender}",
+                        "MarginTop" : 100,
+                        "Items" : [
+                            {
+                                "BlockType" : "stack",
+                                "Orientation" : "Vertical",
+                                "Items" : [
+                                    {
+                                        "Name": "mainTable",
+                                        "BlockType": "table",
+                                        "TableOptions": {
+                                            "ItemsSource": "{Session.Drivers}",
+                                            "RowSpacing": 20,
+                                            "ColSpacing": 0,
+                                            "IndexStart" : 3,
+                                            "Limit" : 10,
+                                            "HeaderTemplate": {
+                                                "BlockType": "text",
+                                                "MarginBottom": 8,
+                                                "Style" : "tableColumnHeader"
+                                            },
+                                            "Columns": [
+                                                {
+                                                    "Header": "",
+                                                    "WidthStretch" : true,
+                                                    "Template":
+                                                    {
+                                                        "BlockType" : "component",
+                                                        "Component" : "driver_line_cell_session",
+                                                        "ComponentOptions" : {
+                                                            "Vars" : {
+                                                                "renderpos" : "false"
+                                                            }
+                                                        }
+                                                    }
+                                                },
+                                                {
+                                                    "Header": "",
+                                                    "Template":
+                                                    {
+                                                        "BlockType" : "component",
+                                                        "Component" : "team_line_cell_session"                                
+                                                    }
+                                                },
+                                                {
+                                                    "Header": "",
+                                                    "Template": {
+                                                        "BlockType": "dock",
+                                                        "Height" : 73,
+                                                        "PaddingLeft" : 24,
+                                                        "PaddingRight" : 24,
+                                                        "BackgroundImage": "team_bg/gap_bg_{Item.Team.Name}.png",
+                                                        "Items" : [
+                                                            {
+                                                                "BlockType": "text",
+                                                                "Source": "[{Item.PositionString}th]",
+                                                                "HorizontalAlignment": "Left",
+                                                                "VerticalAlignment": "Center",
+                                                                "MarginTop" : 5,
+                                                                "PaddingBottom" : 0,
+                                                                "Style" : "tableCellBold",
+                                                                "TextOptions": {
+                                                                    "HorizontalAlignment": "Center",
+                                                                    "Foreground" : "#ffffff"
+                                                                },
+                                                                "Triggers" : [
+                                                                    {
+                                                                        "Condition" : "{F1Mode, Converter=BoolReverse}",
+                                                                        "Setters" : [
+                                                                            {
+                                                                                "Property" : "Foreground",
+                                                                                "Value" : "#000000"
+                                                                            }
+                                                                        ]
+                                                                        
+                                                                    },
+                                                                    {
+                                                                        "Condition" : "{Item.PositionString, Converter=StringEquals, Parameter=1}",
+                                                                        "Setters" : [
+                                                                            {
+                                                                                "Property" : "Foreground",
+                                                                                "Value" : "#ffffff"
+                                                                            }
+                                                                        ]
+                                                                        
+                                                                    },
+                                                                    {
+                                                                        "Condition" : "{Item.PositionString, Converter=StringEquals, Parameter=2}",
+                                                                        "Setters" : [
+                                                                            {
+                                                                                "Property" : "Foreground",
+                                                                                "Value" : "#ffffff"
+                                                                            }
+                                                                        ]
+                                                                        
+                                                                    },
+                                                                    {
+                                                                        "Condition" : "{Item.PositionString, Converter=StringEquals, Parameter=3}",
+                                                                        "Setters" : [
+                                                                            {
+                                                                                "Property" : "Foreground",
+                                                                                "Value" : "#ffffff"
+                                                                            }
+                                                                        ]
+                                                                        
+                                                                    }
+                                                                ]
+                                                            }
+                                                        ],
+                                                        "Triggers" : [
+                                                            {
+                                                                "Condition" : "{F1Mode, Converter=BoolReverse}",
+                                                                "Setters" : [
+                                                                    {
+                                                                        "Property" : "BackgroundImage",
+                                                                        "Value" : "gap_bg.png"
+                                                                    }
+                                                                ]
+                                                                
+                                                            },
+                                                            {
+                                                                "Condition" : "{Item.PositionString, Converter=StringEquals, Parameter=1}",
+                                                                "Setters" : [
+                                                                    {
+                                                                        "Property" : "BackgroundImage",
+                                                                        "Value" : "podium_bg/gap_bg_gold.png"
+                                                                    }
+                                                                ]
+                                                                
+                                                            },
+                                                            {
+                                                                "Condition" : "{Item.PositionString, Converter=StringEquals, Parameter=2}",
+                                                                "Setters" : [
+                                                                    {
+                                                                        "Property" : "BackgroundImage",
+                                                                        "Value" : "podium_bg/gap_bg_silver.png"
+                                                                    }
+                                                                ]
+                                                                
+                                                            },
+                                                            {
+                                                                "Condition" : "{Item.PositionString, Converter=StringEquals, Parameter=3}",
+                                                                "Setters" : [
+                                                                    {
+                                                                        "Property" : "BackgroundImage",
+                                                                        "Value" : "podium_bg/gap_bg_copper.png"
+                                                                    }
+                                                                ]
+                                                            }
+                                                        ]
+                                                    }
+                                                }
+                                            ]
+                                        }
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "BlockType" : "image",
+                        "Width" : 1500,
+                        "RenderIf" : "{IncludeTop10AtPodiumRender, Converter=BoolReverse}",
+                        "ImageOptions" : {
+                            "Path" : "plates/top_podium"
+                        }
+                    }
+                ]
+            },
+            {
+                "BlockType" : "stack",
+                "Orientation" : "Horizontal",
+                "HorizontalAlignment" : "Center",
+                "MarginTop" : 30,
+                "Items" : [
+                    {
+                        "Name": "footerBlock",
+                        "BlockType": "dock",
+                        "Orientation": "Horizontal",
+                        "HorizontalAlignment" : "Center",
+                        "Items": [
+                            {
+                                "BlockType" : "stack",
+                                "Margin" : "8, 8, 8, 8",
+                                "HorizontalAlignment" : "Center",
+                                "Spacing" : 32,
+                                "Items" :[
+                                    {
+                                        "BlockType" : "component",
+                                        "Component" : "sticker_fl",
+                                        "Name" : "stickerFastestLap",
+                                        "RenderIf" : "{Session.FastestLapDriver, Converter=EmptyObjectToFalse}",
+                                        "ComponentOptions" :
+                                        {
+                                            "Vars" :
+                                            {
+                                                "bg" : "fastlap_bg.png",
+                                                "header" : "[FASTEST LAP]",
+                                                "main" : "{Session.FastestLapDriver.Name}",
+                                                "data" : "{Session.FastestLapTime}",
+                                                "tyre" : "tyres/tyres_{Session.FastestLapTyres}.png"
+                                            }
+                                        }
+                                    },
+                                
+                                    {                       
+                                        "BlockType" : "component",
+                                        "Component" : "sticker",
+                                        "RenderIf" : "{Session.DriverDayDriver, Converter=EmptyObjectToFalse}",
+                                        "ComponentOptions" :
+                                        {
+                                            "Vars" :
+                                            {
+                                                "bg" : "driveroftheday_bg.png",
+                                                "header" : "[DRIVER OF THE DAY]",
+                                                "main" : "",
+                                                "data" : "{Session.DriverDayDriver.Name}"
+                                            }
+                                        }
+                                    },
+                                    {
+                                        "BlockType" : "component",
+                                        "Component" : "sticker_com",
+                                        "Name" : "stickerCommentator",
+                                        "RenderIf" : "{Streamer, Converter=EmptyObjectToFalse}",
+                                        "ComponentOptions" :
+                                        {
+                                            "Vars" :
+                                            {
+                                                "bg" : "commentator_bg.png",
+                                                "header" : "[COMMENTATOR]",
+                                                "streamer" : "{Streamer}",
+                                                "secondcomm" : "{SecondCommentator}"
+                                            }
+                                        }
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}

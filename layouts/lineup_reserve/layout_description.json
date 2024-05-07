@@ -1,6 +1,6 @@
 {
     "LayoutName": "ReserveLineup",
-    "RenderType": "LineupsReserve",
+    "RenderType": "Lineups",
     "RenderCaption": "ReserveLineup",
-    "Index" : 0
+    "RenderVersion": 2
 }

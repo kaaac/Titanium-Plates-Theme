@@ -1,0 +1,150 @@
+{
+    "BlockRoot": {
+        "Name": "mainStack",
+        "BlockType": "stack",
+        "Margin": "60,60,60,60",       
+        "Orientation": "Vertical",
+        "Items": [
+            {               
+                "BlockType": "component",
+                "Component": "header_block_lineup",
+                "ComponentOptions" :
+                {
+                    "Vars":
+                    {
+                        "header": "Line-Up",
+                        "subHeader": ""
+                    }
+                }               
+            },
+            {
+                "BlockType" : "component",
+                "Component" : "separator"
+            },
+            {
+                "BlockType" : "dock",
+                "Orientation" : "Horizontal",
+                "Padding" : "{MarginTable}",
+                "Triggers" : [
+                    {
+                        "Condition" : "{HorizontalLineups}",
+                        "Property" : "Orientation",
+                        "Value" : "Vertical"
+                    }
+                ],
+                "RenderIf" : "{Season.LineupsBasedType, Converter=StringEquals, Parameter=Teams}",
+                "Items" : [
+                    {
+                        "BlockType" : "itemstack",
+                        "Orientation" : "Vertical",
+                        "MarginRight" : 150,
+                        "ItemStackOptions" : {
+                            "ItemSource" : "{Lineups.Teams}",
+                            "CollectionPart" : "1/2",
+                            "ItemTemplate": {
+                                "BlockType" : "component",
+                                "Component" : "lineup_team"
+                            }
+                        },
+                        "Triggers" : [
+                            {
+                                "Condition" : "{HorizontalLineups}",
+                                "Property" : "Orientation",
+                                "Value" : "Horizontal"
+                            }
+                        ]
+                        
+                    },
+                    {
+                        "BlockType" : "itemstack",
+                        "Orientation" : "Vertical",
+                        "ItemStackOptions" : {
+                            "ItemSource" : "{Lineups.Teams}",
+                            "CollectionPart" : "2/2",
+                            "ItemTemplate": {
+                                "BlockType" : "component",
+                                "Component" : "lineup_team"
+                            }
+                        },
+                        "Triggers" : [
+                            {
+                                "Condition" : "{HorizontalLineups}",
+                                "Property" : "Orientation",
+                                "Value" : "Horizontal"
+                            }
+                        ]                        
+                    }
+                ]
+            },
+            {
+                "BlockType" : "dock",
+                "Orientation" : "Horizontal",
+                "Padding" : "{MarginTable}",
+                "RenderIf" : "{Season.LineupsBasedType, Converter=StringEquals, Parameter=Cars}",
+                "Items" : [
+                    {
+                        "BlockType" : "itemstack",
+                        "Orientation" : "Vertical",
+                        "MarginRight" : 150,
+                        "ItemStackOptions" : {
+                            "ItemSource" : "{Lineups.Lineups}",
+                            "CollectionPart" : "1/4",
+                            "ItemTemplate": {
+                                "BlockType" : "component",
+                                "Component" : "lineup_car"
+                            }
+                        }
+                        
+                    },
+                    {
+                        "BlockType" : "itemstack",
+                        "Orientation" : "Vertical",
+                        "MarginRight" : 150,
+                        "ItemStackOptions" : {
+                            "ItemSource" : "{Lineups.Lineups}",
+                            "CollectionPart" : "2/4",
+                            "ItemTemplate": {
+                                "BlockType" : "component",
+                                "Component" : "lineup_car"
+                            }
+                        }
+                        
+                    },
+                    {
+                        "BlockType" : "itemstack",
+                        "Orientation" : "Vertical",
+                        "MarginRight" : 150,
+                        "ItemStackOptions" : {
+                            "ItemSource" : "{Lineups.Lineups}",
+                            "CollectionPart" : "3/4",
+                            "ItemTemplate": {
+                                "BlockType" : "component",
+                                "Component" : "lineup_car"
+                            }
+                        }
+                        
+                    },
+                    {
+                        "BlockType" : "itemstack",
+                        "Orientation" : "Vertical",
+                        "ItemStackOptions" : {
+                            "ItemSource" : "{Lineups.Lineups}",
+                            "CollectionPart" : "4/4",
+                            "ItemTemplate": {
+                                "BlockType" : "component",
+                                "Component" : "lineup_car"
+                            }
+                        }
+                    }
+                ]
+            }
+        ],
+        "Triggers" : [
+            {
+                "Condition" : "{HorizontalLineups}",
+                "Property" : "MarginRight",
+                "Value" : "-200"
+            }
+        ]
+    }
+}

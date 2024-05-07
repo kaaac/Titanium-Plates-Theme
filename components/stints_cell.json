@@ -1,7 +1,8 @@
 {
+    "ComponentName" : "stints_cell",
     "BlockType" : "dock",
     "Orientation" : "Horizontal",
-    "BackgroundImage" : "images/data_bg/stints_bg.png",
+    "BackgroundImage" : "data_bg/stints_bg.png",
     "MarginLeft" : "{MarginLeftTableCell}",
     "PaddingRight": 15,
     "Items" : [
@@ -12,7 +13,7 @@
             "VerticalAlignment" : "Center",
             "ItemStackOptions": {
                 "ItemSource": "{Item.Stints}",
-                "Template": {
+                "ItemTemplate": {
                     "BlockType": "stack",
                     "VerticalAlignment": "Bottom",
                     "MarginRight" : 4,

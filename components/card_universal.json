@@ -1,16 +1,15 @@
 {
+    "ComponentName": "card_universal",
     "BlockType" : "stack",
     "BackgroundImage" : "<platebg>",
     "Width" : "<plateWidth>",
     "Height" : "<plateHeight>",
     "Margin" : "<plateMargin>",
     "Items" : [
-
-
         {
             "BlockType" : "dock",
             "Orientation" : "Vertical",
-            "BackgroundImage" : "images/card_blank.png",
+            "BackgroundImage" : "card_blank.png",
             "HorizontalAlignment" : "Center",
             "Margin" : "<cardMargin>",
             "Width" : "<cardWidth>",
@@ -25,7 +24,7 @@
                             "HorizontalAlignment" : "Right",
                             "Source" : "<Suit>",
                             "ImageOptions" : {
-                                  "DefaultPath" : "images/suit/Neutral.png"
+                                  "DefaultPath" : "suit/Neutral.png"
                                   //"Triggers" : [
                                   //  {
                                   //      "Condition" : "{F1Mode}",
@@ -51,7 +50,7 @@
                                     "Condition" : "{UseDriverAvatars, Converter=BoolReverse}",
                                     "ConditionAnd" : "{F1Mode, Converter=BoolReverse}",
                                     "Property" : "Source",
-                                    "Value" : "images/suit/Neutral.png"
+                                    "Value" : "suit/Neutral.png"
                                 }
                             ],
                             "Width" : "<SuitWidth>",
@@ -82,7 +81,7 @@
                                 },
                                 {
                                     "BlockType" : "image",
-                                    "Source" : "images/platform/platform_{Item.Driver.GamePlatform}.png",
+                                    "Source" : "platform/platform_{Item.Driver.GamePlatform}.png",
                                     "Height" : "<PlatformHeight>",
                                     "Margin" : "<PlatformMargin>"
                                 },
@@ -92,7 +91,7 @@
                                     "Margin" : "<FlagMargin>",
                                     "VerticalAlignment": "Center",
                                     "ImageOptions": {
-                                        "Path": "images/flags/flag_{Item.Driver.Nationality.Code}.png",
+                                        "Path": "flags/flag_{Item.Driver.Nationality.Code}.png",
                                         "VerticalAlignment": "Center"
                                     }
                                 },
@@ -107,13 +106,13 @@
                                     "ItemStackOptions": {
                                         "ItemSource": "{Item.Driver.LeagueRoles}",
                                         "Limit" : 1,
-                                        "Template": {
+                                        "ItemTemplate": {
                                             "BlockType" : "image",
                                             "Height" : "<RoleSize>",
                                             "Width" : "<RoleSize>",
                                             //"MarginRight" : 8,
                                             //"MarginLeft" : 8,
-                                            "Source" : "images/roles/{Item.Name}_role.png"
+                                            "Source" : "roles/{Item.Name}_role.png"
                                         }
                                     }
                                 }
@@ -162,7 +161,7 @@
                         },
                         {
                             "BlockType" : "image",
-                            "Source": "images/f1_logo.png",
+                            "Source": "f1_logo.png",
                             "HorizontalAlignment" : "Right",
                             "RenderIf" : "{F1Mode}",
                             "Margin" : "<F1LogoMargin>",

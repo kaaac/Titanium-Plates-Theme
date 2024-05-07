@@ -1,0 +1,139 @@
+{
+    "BlockRoot": {
+        "Name": "mainStack",
+        "BlockType": "stack",
+        "Margin": "{MarginRoot}",       
+        "Orientation": "Vertical",
+        "Items": [
+            {               
+                "BlockType": "component",
+                "Component": "header_block",
+                "ComponentOptions" :
+                {
+                    "Vars":
+                    {
+                        "header": "Reserves",
+                        "headerFontSize" : 60,
+                        "subHeader": ""
+                    }
+                }               
+            },
+            {
+                "BlockType" : "component",
+                "Component" : "separator"
+            },
+            {
+                "BlockType" : "dock",
+                "Orientation" : "Horizontal",
+                "Padding" : "{MarginTable}",
+                "RenderIf" : "{F1Mode}",
+                "Items" : [
+                    {
+                        "BlockType": "stack",
+                        "Orientation": "Horizontal",
+                        "HorizontalAlignment": "Center",
+                        "Items": [
+                            {
+                                "BlockType" : "itemstack",
+                                "Orientation" : "Vertical",
+                                "MarginRight" : 150,
+                                "ItemStackOptions" : {
+                                    "ItemSource" : "{Lineups.LineupsReserves}",
+                                    "CollectionPart" : "1/3",
+                                    "ItemTemplate": {
+                                        "BlockType" : "component",
+                                        "Component" : "lineup_f1reserve"
+                                    }
+                                }
+                                
+                            },
+                            {
+                                "BlockType" : "itemstack",
+                                "Orientation" : "Vertical",
+                                "MarginRight" : 150,
+                                "ItemStackOptions" : {
+                                    "ItemSource" : "{Lineups.LineupsReserves}",
+                                    "CollectionPart" : "2/3",
+                                    "ItemTemplate": {
+                                        "BlockType" : "component",
+                                        "Component" : "lineup_f1reserve"
+                                    }
+                                }
+                                
+                            },
+                            {
+                                "BlockType" : "itemstack",
+                                "Orientation" : "Vertical",
+                                "ItemStackOptions" : {
+                                    "ItemSource" : "{Lineups.LineupsReserves}",
+                                    "CollectionPart" : "3/3",
+                                    "ItemTemplate": {
+                                        "BlockType" : "component",
+                                        "Component" : "lineup_f1reserve"
+                                    }
+                                }
+                                
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "BlockType" : "dock",
+                "Orientation" : "Horizontal",
+                "Padding" : "{MarginTable}",
+                "RenderIf" : "{F1Mode, Converter=BoolReverse}",
+                "Items" : [
+                    {
+                        "BlockType": "stack",
+                        "Orientation": "Horizontal",
+                        "HorizontalAlignment": "Center",
+                        "Items": [
+                            {
+                                "BlockType" : "itemstack",
+                                "Orientation" : "Vertical",
+                                "MarginRight" : 150,
+                                "ItemStackOptions" : {
+                                    "ItemSource" : "{Lineups.LineupsReserves}",
+                                    "CollectionPart" : "1/3",
+                                    "ItemTemplate": {
+                                        "BlockType" : "component",
+                                        "Component" : "lineup_reserve"
+                                    }
+                                }
+                                
+                            },
+                            {
+                                "BlockType" : "itemstack",
+                                "Orientation" : "Vertical",
+                                "MarginRight" : 150,
+                                "ItemStackOptions" : {
+                                    "ItemSource" : "{Lineups.LineupsReserves}",
+                                    "CollectionPart" : "2/3",
+                                    "ItemTemplate": {
+                                        "BlockType" : "component",
+                                        "Component" : "lineup_reserve"
+                                    }
+                                }
+                                
+                            },
+                            {
+                                "BlockType" : "itemstack",
+                                "Orientation" : "Vertical",
+                                "ItemStackOptions" : {
+                                    "ItemSource" : "{Lineups.LineupsReserves}",
+                                    "CollectionPart" : "3/3",
+                                    "ItemTemplate": {
+                                        "BlockType" : "component",
+                                        "Component" : "lineup_reserve"
+                                    }
+                                }
+                                
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}

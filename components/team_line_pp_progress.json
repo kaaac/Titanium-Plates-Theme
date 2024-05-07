@@ -1,90 +1,87 @@
 {
-    "BlockType": "dock",
-    "RenderIf" : true,
-    "PaddingLeft": 12,
-    "PaddingRight": 4,    
-    "BackgroundImage": "images/team_bg/team_bg_{Item.Team.Name}.png",
-    "Triggers" : [
+  "ComponentName" : "team_line_pp_progress",
+  "BlockType": "dock",
+  "RenderIf" : true,
+  "PaddingLeft": 12,
+  "PaddingRight": 4,
+  "BackgroundImage": "team_bg/team_bg_{Item.Team.Name}.png",
+  "Triggers" : [
+    {
+      "Condition" : "{F1Mode, Converter=BoolReverse}",
+      "Property" : "BackgroundImage",
+      "Value" : "Team.png"
+    },
+    {
+      "Condition" : "{Item.Team.Name, Converter=EmptyObjectToTrue}",
+      "Property" : "BackgroundImage",
+      "Value" : "Team.png"
+    }
+  ],
+  "UseBackgroundCrop" : false,
+  "Height" : 73,
+  "Width" : 512,
+  "Items": [
+    {
+      "BlockType": "stack",
+      "HorizontalAlignment": "Right",
+      "VerticalAlignment": "Bottom",
+      "Items": [
         {
-            "Condition" : "{F1Mode, Converter=BoolReverse}",
-            "Property" : "BackgroundImage",
-            "Value" : "images/Team.png"
-        },
-        {
-            "Condition" : "{Item.Team.Name, Converter=EmptyObjectToTrue}",
-            "Property" : "BackgroundImage",
-            "Value" : "images/Team.png"
+          "BlockType": "text",
+          "MaxWidth": 600,
+          "Source": "{Item.Team.Name}",
+          "VerticalAlignment": "Bottom",
+          "PaddingBottom": 20,
+          "Style" : "tableCellDefault",
+          "Triggers" : [
+            {
+              "Condition" : "{Item.Team.Name, Converter=EmptyObjectToTrue}",
+              "Property" : "Source",
+              "Value" : "Reserve"
+            },
+            {
+              "Condition" : "{Season.LineupsBasedType, Converter=StringEquals, Parameter=Cars}",
+              "Property" : "Source",
+              "Value" : "{Item.Team.Car.CarClass}"
+            }
+          ],
+          "TextOptions": {
+            "HorizontalAlignment": "Right"
+          }
         }
-    ],
-    "UseBackgroundCrop" : false,
-    "Height" : 73,
-    "Width" : 512,
-    "Items": [
+      ]
+    },
+    {
+      "BlockType": "stack", 
+      "MarginRight": 16,
+      "HorizontalAlignment": "Right",
+      "VerticalAlignment": "Bottom",
+      "Items": [
         {
-            "BlockType": "stack",                    
-            "HorizontalAlignment": "Right",
-            "VerticalAlignment": "Bottom",
-            "Items": [
-                {
-                    "BlockType": "text",
-                    "MaxWidth": 600,                    
-                    "Source": "{Item.Team.Name}",
-                    "VerticalAlignment": "Bottom",
-                    "PaddingBottom": 20,
-                    "TextOptionsExtern" : "tableCellDefault",
-                    "Triggers" : [
-                        {
-                            "Condition" : "{Item.Team.Name, Converter=EmptyObjectToTrue}",
-                            "Property" : "Source",
-                            "Value" : "Reserve"
-                        },
-                        {
-                            "Condition" : "{Season.LineupsBasedType, Converter=StringEquals, Parameter=Cars}",
-                            "Property" : "Source",
-                            "Value" : "{Item.Team.Car.CarClass}"
-                        }
-                    ],
-                    "TextOptions": {
-                        "HorizontalAlignment": "Right"
-                    }
-                }
-            ]
-        },
-        {
-            "BlockType": "stack",           
-            "MarginRight": 16,
-            "HorizontalAlignment": "Right",
-            "VerticalAlignment": "Bottom",
-            "Items": [
-                {
-                    "BlockType": "image",
-                    "Source" : "images/cars/{Item.Team.Name}.png",
-                    "MarginLeft" : 12,
-                    "Height": 73,
-                    "PaddingBottom" : -5,
-                    "MarginRight": 20,
-                    "VerticalAlignment": "Bottom",
-                    "ImageOptions": {
-                        "VerticalAlignment": "Center",
-                        
-                    },
-                    "Triggers" : [
-                        {
-                            "Condition" : "{Item.Team.Name, Converter=EmptyObjectToTrue}",
-                            "Property" : "Source",
-                            "Value" : "images/cars/Riserve.png"
-                        },
-                        {
-                            "Condition" : "{F1Mode, Converter=BoolReverse}",
-                            "Property" : "Source",
-                            "Value" : "{Item.Team.LogoPath}"
-                        },
-                        //{
-                        //    "Condition" : 
-                        //}
-                    ]
-                }
-            ]
+          "BlockType": "image",
+          "Source" : "cars/{Item.Team.Name}.png",
+          "MarginLeft" : 12,
+          "Height": 73,
+          "PaddingBottom" : -5,
+          "MarginRight": 20,
+          "VerticalAlignment": "Bottom",
+          "ImageOptions": {
+            "VerticalAlignment": "Center"
+          },
+          "Triggers" : [
+            {
+              "Condition" : "{Item.Team.Name, Converter=EmptyObjectToTrue}",
+              "Property" : "Source",
+              "Value" : "cars/Riserve.png"
+            },
+            {
+              "Condition" : "{F1Mode, Converter=BoolReverse}",
+              "Property" : "Source",
+              "Value" : "{Item.Team.LogoPath}"
+            }
+          ]
         }
-    ]
+      ]
+    }
+  ]
 }

@@ -1,227 +1,113 @@
-
-
-
 {
-    "BlockType": "stack",
-    "VerticalAlignment": "Center",
-    "Orientation" : "Vertical",
-    "Items": [
-        
+  "ComponentName" : "stints_bar",
+  "BlockType": "stack",
+  "VerticalAlignment": "Center",
+  "Orientation" : "Vertical",
+  "Items": [
+    {
+      "BlockType" : "canvas",
+      "Orientation" : "Vertical",
+      "Items" : [
         {
-            "BlockType" : "Canvas",
-            "Orientation" : "Vertical",
-            "Items" : [
-                
+          "BlockType" : "shape",
+          "Height" : "{StintsBarHeight}",
+          "VerticalAlignment" : "Bottom",
+          "PositionY" : "{StintsBarPositionY}",
+          "Width" : "{Item.Percentage, Converter=NumberMultiply, Parameter=19}",
+          "ShapeOptions" : {
+            "ShapeType" : "rectangle",
+            "Fill" : "#ff001e"
+          },
+          "RenderIf" : "{Item.Tyres, Converter=StringEquals, Parameter=soft}"
+        },
+        {
+          "BlockType" : "shape",
+          "Height" : "{StintsBarHeight}",
+          "VerticalAlignment" : "Bottom",
+          "PositionY" : "{StintsBarPositionY}",
+          "Width" : "{Item.Percentage, Converter=NumberMultiply, Parameter=19}",
+          "ShapeOptions" : {
+            "ShapeType" : "rectangle",
+            "Fill" : "#fffb00"
+          },
+          "RenderIf" : "{Item.Tyres, Converter=StringEquals, Parameter=medium}"
+        },
+        {
+          "BlockType" : "shape",
+          "Height" : "{StintsBarHeight}",
+          "VerticalAlignment" : "Bottom",
+          "PositionY" : "{StintsBarPositionY}",
+          "Width" : "{Item.Percentage, Converter=NumberMultiply, Parameter=19}",
+          "ShapeOptions" : {
+            "ShapeType" : "rectangle",
+            "Fill" : "#ffffff"
+          },
+          "RenderIf" : "{Item.Tyres, Converter=StringEquals, Parameter=hard}"
+        },
+        {
+          "BlockType" : "shape",
+          "Height" : "{StintsBarHeight}",
+          "VerticalAlignment" : "Bottom",
+          "PositionY" : "{StintsBarPositionY}",
+          "Width" : "{Item.Percentage, Converter=NumberMultiply, Parameter=19}",
+          "ShapeOptions" : {
+            "ShapeType" : "rectangle",
+            "Fill" : "#19c702"
+          },
+          "RenderIf" : "{Item.Tyres, Converter=StringEquals, Parameter=intermediate}"
+        },
+        {
+          "BlockType" : "shape",
+          "Height" : "{StintsBarHeight}",
+          "VerticalAlignment" : "Bottom",
+          "PositionY" : "{StintsBarPositionY}",
+          "Width" : "{Item.Percentage, Converter=NumberMultiply, Parameter=19}",
+          "ShapeOptions" : {
+            "ShapeType" : "rectangle",
+            "Fill" : "#024dc7"
+          },
+          "RenderIf" : "{Item.Tyres, Converter=StringEquals, Parameter=wet}"
+        },
+        {
+          "BlockType" : "stack",
+          "Height" : 73,
+          "PositionY": -20,
+          "Orientation" : "Horizontal",
+          "RenderIf" : true,
+          "Items" : [
+            {
+              "BlockType" : "text",
+              "Source" : "{Item.StartLapNumber}",
+              "HorizontalAlignment" : "Center",
+              "Foreground" : "#ffffff",
+              "FontName" : "{FontNameBold}",
+              "FontSize" : 25,
+              "PaddingBottom" : "{StintsBarHeight}",
+              "Height" : 25,
+              "Triggers" : [
                 {
-                    "BlockType" : "shape",
-                    "Height" : "{StintsBarHeight}",
-                    "VerticalAlignment" : "Bottom",
-                    "PositionY" : "{StintsBarPositionY}",
-                    "Width" : "{Item.Percentage, Converter=NumberMultiply, Parameter=19}",
-                    "ShapeOptions" : {
-                        "ShapeType" : "rectangle",
-                        "Fill" : "#ff001e"
-                    },
-                    "RenderIf" : "{Item.Tyres, Converter=StringEquals, Parameter=soft}",
-                    //"Triggers" : [
-                    //    {
-                    //        "Condition" : "{Item.StartLapNumber, Converter=NumberEquals, Parameter=1}",
-                    //        "Setters" : [
-                    //            {
-                    //                "Property" : "PositionY",
-                    //                "Value" : "12"
-                    //            }
-                    //        ]
-                    //    }
-                    //]
-                },
-                {
-                    "BlockType" : "shape",
-                    "Height" : "{StintsBarHeight}",
-                    "VerticalAlignment" : "Bottom",
-                    "PositionY" : "{StintsBarPositionY}",
-                    "Width" : "{Item.Percentage, Converter=NumberMultiply, Parameter=19}",
-                    "ShapeOptions" : {
-                        "ShapeType" : "rectangle",
-                        "Fill" : "#fffb00"
-                    },
-                    "RenderIf" : "{Item.Tyres, Converter=StringEquals, Parameter=medium}",
-                    //"Triggers" : [
-                    //    {
-                    //        "Condition" : "{Item.StartLapNumber, Converter=NumberEquals, Parameter=1}",
-                    //        "Setters" : [
-                    //            {
-                    //                "Property" : "PositionY",
-                    //                "Value" : "12"
-                    //            }
-                    //        ]
-                    //    }
-                    //]
-                },
-                {
-                    "BlockType" : "shape",
-                    "Height" : "{StintsBarHeight}",
-                    "VerticalAlignment" : "Bottom",
-                    "PositionY" : "{StintsBarPositionY}",
-                    "Width" : "{Item.Percentage, Converter=NumberMultiply, Parameter=19}",
-                    "ShapeOptions" : {
-                        "ShapeType" : "rectangle",
-                        "Fill" : "#ffffff"
-                    },
-                    "RenderIf" : "{Item.Tyres, Converter=StringEquals, Parameter=hard}",
-                    //"Triggers" : [
-                    //    {
-                    //        "Condition" : "{Item.StartLapNumber, Converter=NumberEquals, Parameter=1}",
-                    //        "Setters" : [
-                    //            {
-                    //                "Property" : "PositionY",
-                    //                "Value" : "12"
-                    //            }
-                    //        ]
-                    //    }
-                    //]
-                },
-                {
-                    "BlockType" : "shape",
-                    "Height" : "{StintsBarHeight}",
-                    "VerticalAlignment" : "Bottom",
-                    "PositionY" : "{StintsBarPositionY}",
-                    "Width" : "{Item.Percentage, Converter=NumberMultiply, Parameter=19}",
-                    "ShapeOptions" : {
-                        "ShapeType" : "rectangle",
-                        "Fill" : "#19c702"
-                    },
-                    "RenderIf" : "{Item.Tyres, Converter=StringEquals, Parameter=intermediate}",
-                    //"Triggers" : [
-                    //    {
-                    //        "Condition" : "{Item.StartLapNumber, Converter=NumberEquals, Parameter=1}",
-                    //        "Setters" : [
-                    //            {
-                    //                "Property" : "PositionY",
-                    //                "Value" : "12"
-                    //            }
-                    //        ]
-                    //    }
-                    //]
-                },
-                {
-                    "BlockType" : "shape",
-                    "Height" : "{StintsBarHeight}",
-                    "VerticalAlignment" : "Bottom",
-                    "PositionY" : "{StintsBarPositionY}",
-                    "Width" : "{Item.Percentage, Converter=NumberMultiply, Parameter=19}",
-                    "ShapeOptions" : {
-                        "ShapeType" : "rectangle",
-                        "Fill" : "#024dc7"
-                    },
-                    "RenderIf" : "{Item.Tyres, Converter=StringEquals, Parameter=wet}",
-                    //"Triggers" : [
-                    //    {
-                    //        "Condition" : "{Item.StartLapNumber, Converter=NumberEquals, Parameter=1}",
-                    //        "Setters" : [
-                    //            {
-                    //                "Property" : "PositionY",
-                    //                "Value" : "28"
-                    //            }
-                    //        ]
-                    //    }
-                    //]
-                },
-                {
-                    "BlockType" : "stack",
-                    "Height" : 73,
-                    "PositionY": -20,
-                    "Orientation" : "Horizontal",
-                    "RenderIf" : true,
-                    "Items" : [
-                        {
-                            "BlockType" : "text",
-                            "Source" : "{Item.StartLapNumber}",
-                            "HorizontalAlignment" : "Center",
-                            "Foreground" : "#ffffff",
-                            "FontName" : "{FontNameBold}",
-                            "FontSize" : 25,
-                            "PaddingBottom" : "{StintsBarHeight}",
-                            "Height" : 25,
-                            "Triggers" : [
-                                {
-                                    "Condition" : "{Item.StartLapNumber, Converter=NumberEquals, Parameter=1}",
-                                    "Setters" : [
-                                        {
-                                            "Property" : "RenderIf",
-                                            "Value" : false
-                                        }
-                                    ]
-                                }
-                            ]
-                            
-                            
-                        },
-                        {
-                            "BlockType" : "image",
-                            "VerticalAlignment" : "Bottom",
-                            "Foreground" : "#000000",
-                            "Source" : "images/tyres/tyres_{Item.Tyres}.png",
-                            "RenderIf" : true,
-                            "Height" : 37,
-                            "PaddingBottom" : "25",
-                            
-                            
-                        }
-                    ],
-                    
-                },
-                //{
-                //    "BlockType" : "text",
-                //    "Source" : "{Item.StartLapNumber}",
-                //    "HorizontalAlignment" : "Center",
-                //    "Foreground" : "#ffffff",
-                //    "FontName" : "{FontNameBold}",
-                //    "FontSize" : 25,
-                //    "PositionX" : 0,
-                //    "Height" : 73,
-                //    "PositionY" : -20,
-                //    "Triggers" : [
-                //        {
-                //            "Condition" : "{Item.StartLapNumber, Converter=NumberEquals, Parameter=1}",
-                //            "Setters" : [
-                //                {
-                //                    "Property" : "Source",
-                //                    "Value" : " "
-                //                }
-                //            ]
-                //        }
-                //    ]
-                //},
-                //{
-                //    "BlockType" : "stack",
-                //    "Orientation" : "Vertical",
-                //    "Items" : [
-                //        
-                //        {
-                //            "BlockType" : "image",
-                //            "VerticalAlignment" : "Top",
-                //            "FontSize" : 25,
-                //            "Foreground" : "#000000",
-                //            "Source" : "images/pit/pit_{Item.Tyres}.png",
-                //            "RenderIf" : true,
-                //            "Height" : 73,
-                //            "Width" : 73,
-                //            "Triggers" : [
-                //                {
-                //                    "Condition" : "{Item.StartLapNumber, Converter=NumberEquals, Parameter=1}",
-                //                    "Setters" : [
-                //                        {
-                //                            "Property" : "RenderIf",
-                //                            "Value" : false
-                //                        }
-                //                    ]
-                //                }
-                //            ]
-                //        }
-                //    ]
-                //}
-            ]
+                  "Condition" : "{Item.StartLapNumber, Converter=NumberEquals, Parameter=1}",
+                  "Setters" : [
+                    {
+                      "Property" : "RenderIf",
+                      "Value" : false
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "BlockType" : "image",
+              "VerticalAlignment" : "Bottom",
+              "Foreground" : "#000000",
+              "Source" : "tyres/tyres_{Item.Tyres}.png",
+              "RenderIf" : true,
+              "Height" : 37,
+              "PaddingBottom" : 25
+            }
+          ]
         }
-    ]
+      ]
+    }
+  ]
 }

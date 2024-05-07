@@ -1,0 +1,174 @@
+{
+    "BlockRoot": {
+        "Name": "mainStack",
+        "BlockType": "stack",
+        "Margin": "{MarginRoot}",       
+        "Orientation": "Vertical",
+        "Items": [
+            {
+                "BlockType" : "component",
+                "Component" : "header_block_session"
+            },
+            {
+                "Name" : "separator",
+                "BlockType": "image",
+                "MarginTop": 0,
+                "MarginLeft": 0,
+                "MarginRight": 0,
+                "MarginBottom": 5,
+                "Width": "*",
+                "Source": "separator.png"
+            },
+            {
+                "BlockType": "stack",
+                "Orientation" : "Horizontal",
+                "Items" : [
+                    {
+                        "BlockType" : "stack",
+                        "Orientation" : "Vertical",
+                        "Items" : [
+                            {
+                                "Name": "mainTable",
+                                "BlockType": "table",
+                                "Margin" : "{MarginTable}",
+                                "MarginRight" : 150,
+                                "Padding" : "45,0,45,20",
+                                "TableOptions": {
+                                    "ItemsSource": "{Session.Drivers}",
+                                    "RowSpacing": 13,
+                                    "ColSpacing": 0,
+                                    "HeaderTemplate": {
+                                        "BlockType": "text",
+                                        "MarginBottom": 8,
+                                        "Style" : "tableColumnHeader"
+                                    },
+                                    "Columns": [
+                                        {
+                                            "Header": "",
+                                            "WidthStretch" : true,
+                                            "Template":
+                                            {
+                                                "BlockType" : "component",
+                                                "Component" : "driver_line_stints"                        
+                                            }
+                                        },
+                                        {
+                                            "Header": "",
+                                            "Template":
+                                            {
+                                                "BlockType" : "stack",
+                                                "Orientation" : "Horizontal",
+                                                "Width" : 2000,
+                                                "Items" : [
+                                                    {
+                                                        "BlockType": "itemstack",
+                                                        "Spacing": 0,
+                                                        "Height" : 73,
+                                                        "MaxWidth" : "{Item.RaceDistancePercentage, Converter=NumberMultiply, Parameter=20}",
+                                                        "ItemStackOptions": {
+                                                            "ItemSource": "{Item.Stints}",
+                                                            "ItemTemplate": {
+                                                                "BlockType" : "component",
+                                                                "Component" : "stints_bar"
+                                                            }
+                                                        }
+                                                    },
+                                                    {
+                                                        "BlockType": "stack",
+                                                        "Spacing": 0,
+                                                        "Height" : 73,
+                                                        "RenderIf" : "{Item.IsFinished, Converter=BoolReverse}",
+                                                        "Items": [
+                                                            {
+                                                                "BlockType" : "text",
+                                                                "Source" : "  {Item.PositionIncludeStatus}",
+                                                                "RenderIf" : false,
+                                                                "FontSize" : 30,
+                                                                "PaddingBottom" : 5,
+                                                                "VerticalAlignment" : "Bottom",
+                                                                "Triggers" : [
+                                                                    {
+                                                                        "Condition" : "{Item.PositionIncludeStatus, Converter=StringEquals, Parameter=DNF}",
+                                                                        "ConditionOr" : "{Item.PositionIncludeStatus, Converter=StringEquals, Parameter=DSQ}",
+                                                                        "Property" : "RenderIf",
+                                                                        "Value" : true
+                                                                    }
+                                                                ]
+                                                            }
+                                                        ]
+                                                    }
+                                                ]
+                                            }
+                                        }
+                                    ]
+                                }
+                            },
+                            {
+                                "Name": "footerBlock",
+                                "BlockType": "dock",
+                                "Orientation": "Horizontal",
+                                "Items": [
+                                    {
+                                        "BlockType" : "stack",
+                                        "Margin" : "8, 36, 8, 8",
+                                        "HorizontalAlignment" : "Center",
+                                        "Spacing" : 32,
+                                        "Items" :[
+                                            {
+                                                "BlockType" : "component",
+                                                "Component" : "sticker_fl",
+                                                "RenderIf" : "{Session.FastestLapDriver, Converter=EmptyObjectToFalse}",
+                                                "ComponentOptions" :
+                                                {
+                                                    "Vars" :
+                                                    {
+                                                        "bg" : "fastlap_bg.png",
+                                                        "header" : "[FASTEST LAP]",
+                                                        "main" : "{Session.FastestLapDriver.Name}",
+                                                        "data" : "{Session.FastestLapTime}",
+                                                        "tyre" : "tyres/tyres_{Session.FastestLapTyres}.png"
+                                                    }
+                                                }
+                                            },
+                                        
+                                            {                       
+                                                "BlockType" : "component",
+                                                "Component" : "sticker",
+                                                "RenderIf" : "{Session.DriverDayDriver, Converter=EmptyObjectToFalse}",
+                                                "ComponentOptions" :
+                                                {
+                                                    "Vars" :
+                                                    {
+                                                        "bg" : "driveroftheday_bg.png",
+                                                        "header" : "[DRIVER OF THE DAY]",
+                                                        "main" : "",
+                                                        "data" : "{Session.DriverDayDriver.Name}"
+                                                    }
+                                                }
+                                            },
+                                            {
+                                                "BlockType" : "component",
+                                                "Component" : "sticker_com",
+                                                "RenderIf" : "{Streamer, Converter=EmptyObjectToFalse}",
+                                                "ComponentOptions" :
+                                                {
+                                                    "Vars" :
+                                                    {
+                                                        "bg" : "commentator_bg.png",
+                                                        "header" : "[COMMENTATOR]",
+                                                        "streamer" : "{Streamer}",
+                                                        "secondcomm" : "{SecondCommentator}"
+                                                    }
+                                                }
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}

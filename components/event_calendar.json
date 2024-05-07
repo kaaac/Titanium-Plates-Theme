@@ -1,4 +1,5 @@
 {
+    "ComponentName": "event_calendar",
     "BlockType" : "stack",
     "Orientation" : "Horizontal",
     "Items":
@@ -11,7 +12,7 @@
             "MarginBottom" : 10,
             "Width" : "166",
             "Height" : "74",
-            "BackgroundImage" : "images/cal/bg_front.png",
+            "BackgroundImage" : "cal/bg_front.png",
             "Items": [
                 {
                     "BlockType" : "stack",
@@ -24,8 +25,10 @@
                             "Source" : "{Item.Date, Converter=DateToDayOfMonth}",
                             "HorizontalAlignment" : "Center",
                             "Foreground" : "#000000",
-                            "FontName" : "{FontNameBold}",
-                            "MarginTop" : 20,
+                            "MarginTop" : 25,
+                            "TextOptions" : {
+                                "FontName" : "{FontNameBold}"
+                            }
                         },
                         {
                             "BlockType" : "text",
@@ -33,18 +36,21 @@
                             "HorizontalAlignment" : "Center",
                             "Foreground" : "#000000",
                             "FontName" : "{FontNameBold}",
-                        },
+                            "TextOptions" : {
+                                "FontName" : "{FontNameBold}"
+                            }
+                        }
                     ]
                 },
                 {
-                    "BlockType" : "Image",
+                    "BlockType" : "image",
                     "Height" : "50",
                     "Width" : "75",
                     "VerticalAlignment" : "Bottom",
                     "HorizontalAlignment" : "Right",
                     "PaddingBottom" : 6,
                     "ImageOptions": {
-                        "Path": "images/flags/flag_{Item.Track.Nation.Code}.png"
+                        "Path": "flags/flag_{Item.Track.Nation.Code}.png"
                     }
                 }
             ]
@@ -57,7 +63,7 @@
             "MarginBottom" : 10,
             "Width" : "350",
             "Height" : "74",
-            "BackgroundImage" : "images/cal/bg_middle.png",
+            "BackgroundImage" : "cal/bg_middle.png",
             "Items": [
                 {
                     "BlockType" : "stack",
@@ -70,16 +76,19 @@
                             "Foreground" : "#000000",
                             "FontName" : "{FontNameBold}",
                             "FontSize" : 20,
-                            "MarginTop" : 20,
+                            "MarginTop" : 26,
+                            "TextOptions" : {
+                                "FontName" : "{FontNameBold}"
+                            }
                         },
                         {
                             "BlockType":"itemstack",
                             "Orientation" : "Horizontal",
                             "ItemStackOptions" : {
                                 "ItemSource" : "{Item.Races}",
-                                "Template" : {
+                                "ItemTemplate" : {
                                     "BlockType" : "image",
-                                    "Source" : "images/sprint.png",
+                                    "Source" : "sprint.png",
                                     "Height" : 20,
                                     "VerticalAlignment" : "Bottom",
                                     "MarginTop" : 21,
@@ -98,6 +107,9 @@
                     "FontSize" : 15,
                     "MarginTop" : 5,
                     "FontName" : "{FontNameBold}",
+                    "TextOptions" : {
+                        "FontName" : "{FontNameBold}"
+                    },
                     "Triggers" : [
                         {
                             "Condition" : "{Item.CompletedStatus, Converter=StringEquals, Parameter=InFuture}",
@@ -124,19 +136,13 @@
             "MarginBottom" : 10,
             "Width" : "110",
             "Height" : "74",
-            "BackgroundImage" : "images/cal/bg_end.png",
+            "BackgroundImage" : "cal/bg_end.png",
             "Items": [
                 {
-                    "BlockType" : "Image",
+                    "BlockType" : "image",
                     "Width" : "110",
                     "Height" : "74",
-                    "Source" : "images/cal/tracks/track_{Item.Track.CircuitName}.png",
-                    //"VerticalAlignment" : "Bottom",
-                    //"HorizontalAlignment" : "Right",
-                    //"PaddingBottom" : 6,
-                    //"ImageOptions": {
-                    //    "Path": "images/cal/tracks_{Item.Track.CircuitName}.png"
-                    //}
+                    "Source" : "cal/tracks/track_{Item.Track.CircuitName}.png"
                 }
             ]
         },
@@ -145,12 +151,11 @@
             "RenderIf" : "<renderline>",
             "MarginRight" : 25,
             "MarginLeft" : 25,
-            //"PaddingTop" : 10,
             "Width" : 2,
             "Height" : 94,
             "ShapeOptions" : {
                 "ShapeType" : "rectangle",
-                "Fill" : "#ff0000", // red,
+                "Fill" : "#ff0000"
             }
         }
     ]

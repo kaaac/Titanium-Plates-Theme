@@ -1,6 +1,5 @@
 {
     "LayoutName": "SeasonProgressPoints",
     "RenderType": "DriverStandings",
-	"RenderCaption": "driver season progress (points)",
-	"Index" : 2	
+	"RenderCaption": "driver season progress (points)"
 }

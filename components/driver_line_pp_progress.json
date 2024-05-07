@@ -1,8 +1,9 @@
 {
+    "ComponentName": "driver_line_pp_progress",
     "BlockType": "dock",
     "PaddingLeft": 12,
     "PaddingRight": 4,
-    "BackgroundImage": "images/Driver.png",
+    "BackgroundImage": "Driver.png",
     "Height" : 73,
     "Width" : 631,
     "ColorizeBackground": {
@@ -17,7 +18,6 @@
             "VerticalAlignment": "Bottom",
             "PaddingBottom" : 10,
             "Items": [
-                //TEMPORARY DISABLED
                 {
                     "BlockType": "text",
                     "MaxWidth": 90,
@@ -26,7 +26,7 @@
                     "Source": "{Item.Index, Converter=NumberAdd, Parameter=1}",
                     "HorizontalAlignment": "Center",
                     "VerticalAlignment": "Center",
-                    "TextOptionsExtern" : "tableCellBold",
+                    "Style" : "tableCellBold",
                     "Triggers" : [
                         {
                             "Condition" : "{Item.PositionString, Converter=EmptyObjectToTrue}",
@@ -40,7 +40,7 @@
                 },
                 {
                     "BlockType" : "text",
-                    "BackgroundImage" : "images/number.png",
+                    "BackgroundImage" : "number.png",
                     "VerticalAlignment": "Center",
                     "Height" : 50,
                     "Width" : 132,
@@ -51,7 +51,7 @@
                     "RenderIf" : "{DisplayDriverNumberAtResults}",
                     "TextOptions" : {
                         "HorizontalAlignment" : "Center",
-                        "Foreground" : "#{Item.Team.Color}"
+                        "Foreground" : "{Item.Team.Color}"
                     },
                     "Triggers" : [
                         {
@@ -99,7 +99,7 @@
                     "VerticalAlignment": "Center",
                     "RenderIf" : "{DisplayFlagsOnLeftSideOfDriverName}",
                     "ImageOptions": {
-                        "Path": "images/flags/flag_{Item.Driver.Nationality.Code}.png",
+                        "Path": "flags/flag_{Item.Driver.Nationality.Code}.png",
                         "VerticalAlignment": "Center"
                     }
                 },
@@ -110,24 +110,7 @@
                     "Source": "{Item.Driver.Name}",
                     "HorizontalAlignment": "Left",
                     "VerticalAlignment": "Center",
-                    "TextOptionsExtern" : "tableCellBold"
-                    //"Triggers" : [
-                    //    {
-                    //        "Condition" : "{Item.PositionString, Converter=StringEquals, Parameter=3}",
-                    //        "Property" : "Foreground",
-                    //        "Value" : "#ffffff"
-                    //    },
-                    //    {
-                    //        "Condition" : "{Item.PositionString, Converter=StringEquals, Parameter=2}",
-                    //        "Property" : "Foreground",
-                    //        "Value" : "#ffffff"
-                    //    },
-                    //    {
-                    //        "Condition" : "{Item.PositionString, Converter=StringEquals, Parameter=1}",
-                    //        "Property" : "Foreground",
-                    //        "Value" : "#ffffff"
-                    //    }
-                    //]
+                    "Style" : "tableCellBold"
                 },
                 {
                     "BlockType": "image",
@@ -137,7 +120,7 @@
                     "VerticalAlignment": "Center",
                     "RenderIf" : "{DisplayFlagsOnLeftSideOfDriverName, Converter=BoolReverse}",
                     "ImageOptions": {
-                        "Path": "images/flags/flag_{Item.Driver.Nationality.Code}.png",
+                        "Path": "flags/flag_{Item.Driver.Nationality.Code}.png",
                         "VerticalAlignment": "Center"
                     }
                 }

@@ -1,6 +1,6 @@
 {
     "LayoutName": "TheGrid",
     "RenderType": "CombinedQualResults",
-	"RenderCaption": "grid order to race start",
-	"Index" : 1	
+	"RenderCaption": "grid order",
+    "RenderVersion": 2
 }

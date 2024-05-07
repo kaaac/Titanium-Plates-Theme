@@ -1,4 +1,5 @@
 {
+    "ComponentName" : "comparison_row",
     "BlockType" : "stack",
     "Orientation" : "Horizontal",
     "Items": [
@@ -15,7 +16,7 @@
                     "Height" : "{ComparisonCellHeight}",
                     "FontSize" : "{ComparisonTitleSize}",
                     "HorizontalAlignment" : "Center",
-                    "BackgroundImage" : "images/team_drv/bgdark_<bg>.png",
+                    "BackgroundImage" : "team_drv/bgdark_<bg>.png",
                     "MarginRight" : "{ComparisonSpacing}",
                     "TextOptions" : {
                         "HorizontalAlignment" : "Center",
@@ -30,7 +31,7 @@
                     "Height" : "{ComparisonCellHeight}",
                     "FontSize" : "{ComparisonNumberSize}",
                     "HorizontalAlignment" : "Center",
-                    "BackgroundImage" : "images/team_drv/bglight_<bg>.png",
+                    "BackgroundImage" : "team_drv/bglight_<bg>.png",
                     "TextOptions" : {
                         "HorizontalAlignment" : "Center",
                         "FontName" : "{FontNameBold}",
@@ -42,7 +43,7 @@
         {
             "BlockType" : "stack",
             "Orientation" : "Horizontal",
-            "HorizontalAlignment" : "right",
+            "HorizontalAlignment" : "Right",
             "Items" : [
                 {
                     "BlockType" : "text",
@@ -51,7 +52,7 @@
                     "Height" : "{ComparisonCellHeight}",
                     "FontSize" : "{ComparisonTitleSize}",
                     "HorizontalAlignment" : "Center",
-                    "BackgroundImage" : "images/team_drv/bgdark_<bg>.png",
+                    "BackgroundImage" : "team_drv/bgdark_<bg>.png",
                     "MarginRight" : "{ComparisonSpacing}",
                     "TextOptions" : {
                         "HorizontalAlignment" : "Center",
@@ -66,8 +67,8 @@
                     "Height" : "{ComparisonCellHeight}",
                     "FontSize" : "{ComparisonNumberSize}",
                     "HorizontalAlignment" : "Center",
-                    "BackgroundImage" : "images/team_drv/bglight_<bg>.png",
-                    "MarginRight" : "0",
+                    "BackgroundImage" : "team_drv/bglight_<bg>.png",
+                    "MarginRight" : 0,
                     "TextOptions" : {
                         "HorizontalAlignment" : "Center",
                         "FontName" : "{FontNameBold}",

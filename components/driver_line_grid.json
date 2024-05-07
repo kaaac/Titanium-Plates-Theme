@@ -1,9 +1,8 @@
 {
+    "ComponentName": "driver_line_grid",
     "BlockType": "dock",
-    //"PaddingLeft": 12,
-    //"PaddingRight": 4,
     "RenderIf" : "<renderif>",
-    "BackgroundImage": "images/grid/grid_{Item.Team.Name}.png",
+    "BackgroundImage": "grid/grid_{Item.Team.Name}.png",
     "Height" : 0,
     "Width" : 0,
     "MarginBottom" : 35,
@@ -24,7 +23,7 @@
         {
             "Condition" : "{F1Mode, Converter=BoolReverse}",
             "Property" : "BackgroundImage",
-            "Value" : "images/grid/grid_neutral.png"
+            "Value" : "grid/grid_neutral.png"
         }
     ],
     "Items": [
@@ -41,7 +40,7 @@
                     "HorizontalAlignment": "Center",
                     "VerticalAlignment": "Center",
                     "Foreground" : "#ffffff",
-                    "TextOptionsExtern" : "tableCellBold",
+                    "Style" : "tableCellBold",
                     "TextOptions" : {
                         "HorizontalAlignment" : "Center"
                     }
@@ -53,7 +52,7 @@
                     "HorizontalAlignment": "Left",
                     "VerticalAlignment": "Bottom",
                     "MarginBottom" : 10,
-                    "TextOptionsExtern" : "tableCellBold",
+                    "Style" : "tableCellBold",
                     "Foreground" : "#ffffff",
                     "Triggers" : [
                         {
@@ -69,7 +68,7 @@
             "BlockType" : "image",
             "HorizontalAlignment" : "Right",
             "VerticalAlignment" : "Bottom",
-            "Source" : "images/cars/{Item.Team.Name}.png",
+            "Source" : "cars/{Item.Team.Name}.png",
             "Height" : 62,
             "MarginRight" : 10,
             "Triggers" : [

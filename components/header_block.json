@@ -1,4 +1,5 @@
 {
+    "ComponentName" : "header_block",
     "Name": "headerBlock",
     "BlockType": "dock",
     "Padding" : "{HeaderPadding}",
@@ -8,7 +9,7 @@
             "Name": "headerLeftPart",
             "BlockType": "stack",
             "Orientation": "Vertical",
-            "MarginTop" : 15,
+            "VerticalAlignment": "Center",
             "MarginLeft" : 15,
             "MarginRight" : 48,
             "Spacing": 6,
@@ -21,9 +22,9 @@
                     "Width" : 750,
                     "FontName" : "{FontNameBold}",
                     "Foreground" : "{HeaderForeground}",
-                    "FontSize": 60,
+                    "FontSize": "<headerFontSize>",
                     "TextOptions" : {
-                        "Wrap" : true,
+                        "Wrap" : true
                     }
                 },
                 {                            
@@ -41,16 +42,15 @@
             "Name": "headerCenterPart",
             "BlockType": "stack",
             "Orientation": "Horizontal",
+            "VerticalAlignment": "Center",
             "HorizontalAlignment" : "Center",
-            "MarginTop" : 15,
             "Spacing": 8,
             "Items": [
                 {
                     "Name": "leagueLogo",
                     "BlockType": "image",
-                    "VerticalAlignment" : "Top",
+                    "VerticalAlignment": "Center",
                     "Height": 145,
-                    "MarginTop": -10,
                     "MarginLeft": 36,
                     "Source": "{Season.LeagueInfo.LeagueLogo}"
                 },
@@ -58,6 +58,7 @@
                     "Name" : "middleheader",
                     "BlockType":"stack",
                     "Orientation" : "Vertical",
+                    "VerticalAlignment": "Center",
                     "HorizontalAlignment" : "Center",
                     "Items" :[
                         {
@@ -86,8 +87,8 @@
             "Name": "headerRightPart",
             "BlockType": "stack",
             "Orientation": "Vertical",
+            "VerticalAlignment": "Center",
             "MarginLeft" : 48,
-            "MarginTop" : 15,
             "MarginRight" : 15,
             "HorizontalAlignment": "Right",
             "Items": [
@@ -107,7 +108,6 @@
                                     "Foreground" : "{HeaderForeground}",
                                     "FontSize": 40
                                 },
-
                                 {
                                     "BlockType": "text",
                                     "HorizontalAlignment": "Right",
