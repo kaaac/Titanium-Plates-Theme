@@ -3,6 +3,8 @@
   "Author": "Caccia & Kaac",
   "Version": "1.2.0",
   "ThemeId": "kaaac.titanium_plates_theme",
+  "DefaultLocalizationId": "en-US",
+  "DisableUnspecifiedLocalization": true,
   "DownloadUrl": "https://github.com/kaaac/Titanium-Plates-Theme/releases/download/13/Titanium-Plates-Theme.zip",
   "Links": [
     {

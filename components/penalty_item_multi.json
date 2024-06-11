@@ -266,12 +266,12 @@
   "MarginBottom": 30,
   "Orientation": "Vertical",
   "Padding": "50,30,40,30",
-  //"Triggers": [
-  //  {
-  //    "Condition": "{F1Mode}",
-  //    "Property": "BackgroundImage",
-  //    "Value": "pen/bg_report_<{Penalty.DriverSession.Team.Name}>.png"
-  //  }
-  //],
+  "Triggers": [
+    {
+      "Condition": "{F1Mode}",
+      "Property": "BackgroundImage",
+      "Value": "pen/bg_report_<{Penalty.DriverSession.Team.Name}>.png"
+    }
+  ],
   "Width": 1122
 }

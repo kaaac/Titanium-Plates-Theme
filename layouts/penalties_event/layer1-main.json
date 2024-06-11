@@ -17,7 +17,7 @@
                         "Value" :  "1920"
                     },
                     {
-                        "Property" : "PaddingLeft",
+                        "Property" : "PaddingTop",
                         "Value" :  "200"
                     }
                 ]
@@ -25,7 +25,6 @@
             }
         ],
         "Items" : [
-            //single - first header
             {
                 "BlockType": "dock",
                 "Orientation": "Horizontal",
@@ -58,7 +57,6 @@
                     }
                 ]
             },
-            //single - second header
             {
                 "BlockType": "dock",
                 "Orientation": "Horizontal",
@@ -109,9 +107,28 @@
                     }
                 ]
             },
-            //multi - header
+            {
+                "BlockType": "itemstack",
+                "Orientation": "Vertical",
+                "RenderIf" : "{Penalties.IsSinglePenalty}",
+                "ItemStackOptions": {
+                    "ItemSource": "{Penalties.Penalties}",
+                    "ItemTemplate": {
+                        "BlockType": "component",
+                        "Component": "penalty_item",
+                        "ComponentOptions": {
+                            "Vars": {
+                                "Penalty": "Item",
+                                "Event" : "Event",
+                                "SuitSource" : "Item"
+                            }
+                        }
+                    }
+                }
+            },
             {
                 "BlockType" : "dock",
+                "Name" : "Multi-header",
                 "Orientation" : "Horizontal",
                 "RenderIf" : "{Penalties.IsSinglePenalty, Converter=BoolReverse}",
                 "Items" : [
@@ -135,7 +152,6 @@
                                 "Items" : [
                                     {
                                         "BlockType" :"text",
-                                        //"HorizontalAlignment" : "Left",
                                         "Source" : "[Penalties]",
                                         "FontSize": 75,
                                         "Foreground" : "{ForegroundBlack}",
@@ -143,7 +159,6 @@
                                     },
                                     {
                                         "BlockType" : "image",
-                                        //"HorizontalAlignment" : "Center",
                                         "Source" : "flags/flag_{Event.Track.Nation.Code}.png",
                                         "Height" : 80,
                                         "MarginLeft": 75,
@@ -152,9 +167,7 @@
                                     {
                                         "BlockType" : "stack",
                                         "Orientation" : "Vertical",
-                                        //"HorizontalAlignment": "Right",
                                         "Spacing" : 10,
-                                        //"MarginLeft" : 30,
                                         "Items" : [
                                           {
                                             "BlockType" : "text",
@@ -167,7 +180,6 @@
                                             "BlockType" : "text",
                                             "Source" : "{Event.TrackCountryName}",
                                             "Foreground" : "{ForegroundBlack}",
-                                            //"Width" : 600,
                                             "FontSize" : 30
                                           }
                                         ]
@@ -202,68 +214,49 @@
                     }
                 ]
             },
-            //penalties - single
             {
-                "BlockType": "itemstack",
-                "Orientation": "Vertical",
-                "RenderIf" : "{Penalties.IsSinglePenalty}",
-                "ItemStackOptions": {
-                    "ItemSource": "{Penalties.Penalties}",
-                    "ItemTemplate": {
-                        "BlockType": "component",
-                        "Component": "penalty_item_single",
-                        "ComponentOptions": {
-                            "Vars": {
-                                "Penalty": "{Item}",
-                                "Event" : "{Event}"
+                "BlockType" : "stack",
+                "Orientation" : "Horizontal",
+                "Items" : [
+                     {
+                        "BlockType": "itemstack",
+                        "Orientation": "Vertical",
+                        "RenderIf" : "{Penalties.IsSinglePenalty, Converter=BoolReverse}",
+                        "MarginRight" : 90,
+                        "ItemStackOptions": {
+                            "ItemSource": "{Penalties.Penalties}",
+                            "CollectionPart" : "2/2",
+                            "ItemTemplate": {
+                                "BlockType": "component",
+                                "Component": "penalty_item_multi",
+                                "ComponentOptions": {
+                                    "Vars": {
+                                        "Penalty": "{Item}"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    {
+                        "BlockType": "itemstack",
+                        "Orientation": "Vertical",
+                        "RenderIf" : "{Penalties.IsSinglePenalty, Converter=BoolReverse}",
+                        "ItemStackOptions": {
+                            "ItemSource": "{Penalties.Penalties}",
+                            "CollectionPart" : "1/2",
+                            "ItemTemplate": {
+                                "BlockType": "component",
+                                "Component": "penalty_item_multi",
+                                "ComponentOptions": {
+                                    "Vars": {
+                                        "Penalty": "{Item}"
+                                    }
+                                }
                             }
                         }
                     }
-                }
-            },
-            //{
-            //    "BlockType" : "stack",
-            //    "Orientation" : "Horizontal",
-            //    "Items" : [
-            //         {
-            //            "BlockType": "itemstack",
-            //            "Orientation": "Vertical",
-            //            "RenderIf" : "{Penalties.IsSinglePenalty, Converter=BoolReverse}",
-            //            "MarginRight" : 90,
-            //            "ItemStackOptions": {
-            //                "ItemSource": "{Penalties.Penalties}",
-            //                "CollectionPart" : "2/2",
-            //                "ItemTemplate": {
-            //                    "BlockType": "component",
-            //                    "Component": "penalty_item_multi",
-            //                    "ComponentOptions": {
-            //                        "Vars": {
-            //                            "Penalty": "{Item}"
-            //                        }
-            //                    }
-            //                }
-            //            }
-            //        },
-            //        {
-            //            "BlockType": "itemstack",
-            //            "Orientation": "Vertical",
-            //            "RenderIf" : "{Penalties.IsSinglePenalty, Converter=BoolReverse}",
-            //            "ItemStackOptions": {
-            //                "ItemSource": "{Penalties.Penalties}",
-            //                "CollectionPart" : "1/2",
-            //                "ItemTemplate": {
-            //                    "BlockType": "component",
-            //                    "Component": "penalty_item_multi",
-            //                    "ComponentOptions": {
-            //                        "Vars": {
-            //                            "Penalty": "{Item}"
-            //                        }
-            //                    }
-            //                }
-            //            }
-            //        }
-            //    ]
-            //}
+                ]
+            }
         ]
     }
 }

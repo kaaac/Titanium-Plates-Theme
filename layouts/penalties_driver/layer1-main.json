@@ -89,60 +89,17 @@
                     }
                 ]
             },
-            //penalties - single
             {
                 "BlockType": "component",
-                        "Component": "penalty_item_single",
-                        "ComponentOptions": {
-                            "Vars": {
-                                "Penalty": "Penalty",
-                                //"Event" : "{Event}"
-                            }
-                        }
-            },
-            //{
-            //    "BlockType" : "stack",
-            //    "Orientation" : "Horizontal",
-            //    "Items" : [
-            //         {
-            //            "BlockType": "itemstack",
-            //            "Orientation": "Vertical",
-            //            "RenderIf" : "{Penalties.IsSinglePenalty, Converter=BoolReverse}",
-            //            "MarginRight" : 90,
-            //            "ItemStackOptions": {
-            //                "ItemSource": "{Penalties.Penalties}",
-            //                "CollectionPart" : "2/2",
-            //                "ItemTemplate": {
-            //                    "BlockType": "component",
-            //                    "Component": "penalty_item_multi",
-            //                    "ComponentOptions": {
-            //                        "Vars": {
-            //                            "Penalty": "{Item}"
-            //                        }
-            //                    }
-            //                }
-            //            }
-            //        },
-            //        {
-            //            "BlockType": "itemstack",
-            //            "Orientation": "Vertical",
-            //            "RenderIf" : "{Penalties.IsSinglePenalty, Converter=BoolReverse}",
-            //            "ItemStackOptions": {
-            //                "ItemSource": "{Penalties.Penalties}",
-            //                "CollectionPart" : "1/2",
-            //                "ItemTemplate": {
-            //                    "BlockType": "component",
-            //                    "Component": "penalty_item_multi",
-            //                    "ComponentOptions": {
-            //                        "Vars": {
-            //                            "Penalty": "{Item}"
-            //                        }
-            //                    }
-            //                }
-            //            }
-            //        }
-            //    ]
-            //}
+                "Component": "penalty_item",
+                "ComponentOptions": {
+                    "Vars": {
+                        "Penalty": "Penalty",
+                        "Event" : "Penalty.Session",
+                        "SuitSource" : "Item"
+                    }
+                }
+            }
         ]
     }
 }

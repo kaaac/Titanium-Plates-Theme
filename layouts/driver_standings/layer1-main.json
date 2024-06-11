@@ -55,31 +55,7 @@
                     "Component" : "card_universal",
                     "ComponentOptions" : {
                       "Vars" : {
-                        "platebg" : "plates/plate_bg_{Item.Position}",
-                        "plateWidth" : "430",
-                        "plateHeight" : "560",
-                        "plateMargin" : "0,0,0,8",
-                        "cardWidth" : "374",
-                        "cardHeight" : "469",
-                        "cardMargin" : "28,8,28,64",
-                        "RacNoFontS" : "45",
-                        "RaceNoMargin" : "46,68,0,0",
-                        "PlatformHeight" : "44",
-                        "PlatformMargin" : "44,14,0,0",
-                        "FlagHeight" : "30",
-                        "FlagMargin" : "41,30,0,0",
-                        "RoleSize" : "40",
-                        "Suit" : "suit/{Item.Team.Name}_{Item.SeatPosition}.png",
-                        "SuitWidth" : "210",
-                        "SuitMargin" : "0,52,40,0",
-                        "DriverNameFontSize" : "26",
-                        "DriverNameMargin" : "0,15,0,0",
-                        "logosMargin" : "0,30,0,0",
-                        "LeagueLogoHeight" : "35",
-                        "LeagueLogoMargin" : "36,0,0,0",
-                        "LeagueLogoMarginNonF1" : "-44,0,0,0",
-                        "F1LogoHeight" : "30",
-                        "F1LogoMargin" : "0,0,104,0"
+                        "DriverVar" : "Item"
                       }
                     }
                   }

@@ -10,11 +10,11 @@
     },
     { 
       "Name": "UseDriverAvatars",
-      "PublicName" : "Use League Driver",
+      "PublicName" : "Use League Driver Avatars",
       "Category": "Theme Mode",
       "Type" : "Bool",
       "DefaultValue" : false,
-      "Description": "To use custom driver pictures, enable this option, put driver images at <RLT-location>/user/images/driver_avatars/\n\nThe file name must match the driver name. Do not omit periods, spaces or other characters.\n\nRequired avatar dimensions: 430x600 px."
+      "Description": "To use custom driver pictures, enable this option, put driver images at <RLT-location>/user/driver_avatars/\n\nThe file name must match the driver name. Do not omit periods, spaces or other characters.\n\nRequired avatar dimensions: 430x600 px."
     },
     { 
       "Name": "DisplayPodiumCards",
