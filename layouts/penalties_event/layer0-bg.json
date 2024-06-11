@@ -1,0 +1,20 @@
+{
+    "BlockRoot": {
+        "Name": "root",
+        "BlockType": "stack",
+        "Items": [
+            {
+                "Name": "bg",
+                "BlockType": "image", 
+                "Source": "pen/bg_single_penalties.png",
+                "Triggers" : [
+                    {
+                        "Condition" : "{Penalties.IsSinglePenalty, Converter=BoolReverse}",
+                        "Property" : "Source",
+                        "Value" : "pen/bg_all_penalties.png"
+                    }
+                ]
+            }
+        ]
+    }
+}

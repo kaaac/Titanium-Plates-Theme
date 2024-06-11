@@ -1,13 +1,14 @@
 {
+    "ComponentName": "driver_line_cell_quali",
     "BlockType": "dock",
     "PaddingLeft": 12,
     "PaddingRight": 4,
-    "BackgroundImage": "images/Driver.png",
+    "BackgroundImage": "Driver.png",
     "Triggers" : [
         {
             "Condition" : "{Item.PositionString, Converter=StringEquals, Parameter=1}",
             "Property" : "BackgroundImage",
-            "Value" : "images/quali_bg/driver_bg_purple.png"
+            "Value" : "quali_bg/driver_bg_purple.png"
         }
     ],
     "Height" : 73,
@@ -32,7 +33,7 @@
                     "Source": "{Item.PositionString}",
                     "HorizontalAlignment": "Center",
                     "VerticalAlignment": "Center",
-                    "TextOptionsExtern" : "tableCellBold",
+                    "Style" : "tableCellBold",
                     "Triggers" : [{
                         "Condition" : "{Item.Position, Converter=NumberLess, Parameter=2}",
                         "Property" : "Foreground",
@@ -50,7 +51,7 @@
                     "VerticalAlignment": "Center",
                     "RenderIf" : "{DisplayFlagsOnLeftSideOfDriverName}",
                     "ImageOptions": {
-                        "Path": "images/flags/flag_{Item.Driver.Nationality.Code}.png",
+                        "Path": "flags/flag_{Item.Driver.Nationality.Code}.png",
                         "VerticalAlignment": "Center"
                     }
                 },
@@ -61,7 +62,7 @@
                     "Source": "{Item.Driver.Name}",
                     "HorizontalAlignment": "Left",
                     "VerticalAlignment": "Center",
-                    "TextOptionsExtern" : "tableCellBold",
+                    "Style" : "tableCellBold",
                     "Triggers" : [{
                         "Condition" : "{Item.Position, Converter=NumberLess, Parameter=2}",
                         "Property" : "Foreground",
@@ -76,7 +77,7 @@
                     "VerticalAlignment": "Center",
                     "RenderIf" : "{DisplayFlagsOnLeftSideOfDriverName, Converter=BoolReverse}",
                     "ImageOptions": {
-                        "Path": "images/flags/flag_{Item.Driver.Nationality.Code}.png",
+                        "Path": "flags/flag_{Item.Driver.Nationality.Code}.png",
                         "VerticalAlignment": "Center"
                     }
                 }

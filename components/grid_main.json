@@ -1,4 +1,5 @@
 {
+    "ComponentName": "grid_main",
     "Name": "mainStack",
     "BlockType": "stack",
     "Margin": "{MarginRoot}",
@@ -6,11 +7,11 @@
     "Items": [
         {
             "BlockType" : "component",
-            "ComponentName" : "header_block_session"
+            "Component" : "header_block_session"
         },
         {
             "BlockType" : "component",
-            "ComponentName" : "separator"
+            "Component" : "separator"
         },
         {
             "BlockType" : "stack",
@@ -25,15 +26,15 @@
                     "Items" : [
                         {
                             "BlockType" : "image",
-                            "Source" : "images/grid/thegrid.png",
+                            "Source" : "grid/thegrid.png",
                             "MarginRight" : 40,
-                            "Height" : "{NumberOfDriversForGrid, Converter=NumberMultiply, Parameter=58}"
+                            "Height" : "{Session.DriversCount, Converter=NumberMultiply, Parameter=58}"
                         },
                         {
                             "BlockType" : "image",
-                            "Source" : "images/grid/track_{Session.Track.CircuitName}.png",
+                            "Source" : "grid/track_{Session.Track.CircuitName}.png",
                             "MarginRight" : 30,
-                            "Height" : "{NumberOfDriversForGrid, Converter=NumberMultiply, Parameter=58}"
+                            "Height" : "{Session.DriversCount, Converter=NumberMultiply, Parameter=58}"
                         },
                         {
                             "BlockType": "stack",
@@ -45,12 +46,12 @@
                                     "Orientation" : "Vertical",
                                     "ItemStackOptions" : {
                                         "ItemSource" : "{Session.Drivers}",
-                                        "Template": {
+                                        "ItemTemplate": {
                                             "BlockType" : "component",
+                                            "Component" : "driver_line_grid",
                                             "ComponentOptions" : {
-                                                "ComponentName" : "driver_line_grid",
                                                 "Vars" : {
-                                                    "renderif" : "{Item.Position, Converter=NumberIsOdd}",
+                                                    "renderif" : "{Item.Position, Converter=NumberIsOdd}"
                                                 }
                                             }
                                         }
@@ -80,12 +81,12 @@
                                     "Orientation" : "Vertical",
                                     "ItemStackOptions" : {
                                         "ItemSource" : "{Session.Drivers}",
-                                        "Template": {
+                                        "ItemTemplate": {
                                             "BlockType" : "component",
+                                            "Component" : "driver_line_grid",
                                             "ComponentOptions" : {
-                                                "ComponentName" : "driver_line_grid",
                                                 "Vars" : {
-                                                    "renderif" : "{Item.Position, Converter=NumberIsEven}",
+                                                    "renderif" : "{Item.Position, Converter=NumberIsEven}"
                                                 }
                                             }
                                         }

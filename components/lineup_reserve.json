@@ -1,16 +1,17 @@
 {
+    "ComponentName": "lineup_reserve",
     "BlockType" : "dock",
     "Orientation" : "Vertical",
     "Width" : 657,
     "Height" : 955,
     "MarginBottom" : 150,
-    "BackgroundImage" : "images/lineup/card_one_driver.png",
+    "BackgroundImage" : "lineup/card_one_driver.png",
     "Items" : [
         {
 
             "BlockType" : "dock",
             "Orientation" : "Vertical",
-            "BackgroundImage" : "images/card_blank.png",
+            "BackgroundImage" : "card_blank.png",
             "Width" : 638,
             "Height" : 830,
             "MarginTop" : 60,
@@ -23,7 +24,7 @@
                         {
                             "BlockType" : "image",
                             "HorizontalAlignment" : "Right",
-                            "Source" : "images/suit/Reserve.png",
+                            "Source" : "suit/Reserve.png",
                             "Width" : 370,
                             "MarginTop" : 60,
                             "MarginRight" : 65,
@@ -33,7 +34,7 @@
                                     "Setters" : [
                                         {
                                             "Property" : "Source",
-                                            "Value" : "images/suit/Reserve Neutral.png"
+                                            "Value" : "suit/Reserve Neutral.png"
                                         }
                                     ]
                                    
@@ -75,7 +76,7 @@
                                 },
                                 {
                                     "BlockType" : "image",
-                                    "Source" : "images/platform/platform_{Item.Driver.GamePlatform}.png",
+                                    "Source" : "platform/platform_{Item.Driver.GamePlatform}.png",
                                     "Height" : 80,
                                     "MarginLeft" : 72,
                                     "MarginTop" : 15
@@ -87,7 +88,7 @@
                                     "MarginLeft" : 70,
                                     "VerticalAlignment": "Center",
                                     "ImageOptions": {
-                                        "Path": "images/flags/flag_{Item.Driver.Nationality.Code}.png",
+                                        "Path": "flags/flag_{Item.Driver.Nationality.Code}.png",
                                         "VerticalAlignment": "Center"
                                     },
                                     "Triggers" : [
@@ -114,7 +115,7 @@
                     "FontSize" : "{DriverNameFontSizeOnLineup}",
                     "MarginLeft" : -20,
                     "MarginTop" : 50,
-                    "HorizontalAlignment" : "Center",
+                    "HorizontalAlignment" : "Center"
                 },
                 {
                     "BlockType" : "dock",
@@ -147,7 +148,7 @@
                         },
                         {
                             "BlockType" : "image",
-                            "Source": "images/f1_logo.png",
+                            "Source": "f1_logo.png",
                             "HorizontalAlignment" : "Right",
                             "RenderIf" : "{F1Mode}",
                             "MarginRight" : 180,
@@ -167,7 +168,7 @@
         },
         {
             "BlockType" : "image",
-            "Source" : "images/cars/{Item.Team.Name}.png",
+            "Source" : "cars/{Item.Team.Name}.png",
             "RenderIf" : "{F1Mode}",
             "Width" : 680,
             "PaddingTop" : -40,

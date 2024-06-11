@@ -1,6 +1,5 @@
 {
     "LayoutName": "DriverInfoTPT",
     "RenderType": "DriverInfo",
-    "RenderCaption": "TPT Driver Info",
-    "Index" : 0	
+    "RenderCaption": "TPT Driver Info"
 }

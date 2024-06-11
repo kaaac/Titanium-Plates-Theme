@@ -1,0 +1,105 @@
+{
+    "BlockRoot":
+    {
+        "Name": "mainStack",
+        "BlockType": "stack",
+        "Orientation" : "Vertical",
+        "MaxWidth" : 1920,
+        "PaddingLeft" : 100,
+        "PaddingRight" : 100,
+        "PaddingTop" : 200,
+        "Items" : [
+            {
+                "BlockType": "dock",
+                "Orientation": "Horizontal",
+                "Items": [
+                    {
+                        "BlockType": "stack",
+                        "Orientation": "Vertical",
+                        "HorizontalAlignment": "Center",
+                        "Items": [
+                            {
+                                "BlockType": "stack",
+                                "VerticalAlignment": "Center",
+                                "Items": [
+                                    {
+                                        "Name":"LeagueLogo",
+                                        "BlockType":"image",
+                                        "Height": 85,
+                                        "Source": "{Season.LeagueInfo.LeagueLogo}",
+                                        "RenderIf":"{Season.LeagueInfo.LeagueLogo, Converter=EmptyObjectToFalse}"
+                                    },
+                                    {
+                                        "BlockType" : "image",
+                                        "Height" : 85,
+                                        "Source" : "pen/f1_logo.png"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "BlockType": "dock",
+                "Orientation": "Horizontal",
+                "MarginTop" : 15,
+                "Items": [
+                    {
+                        "BlockType": "stack",
+                        "Orientation": "Vertical",
+                        "HorizontalAlignment": "Center",
+                        "Items": [
+                            {
+                                "Name": "headerSessionLine",
+                                "BlockType": "stack",
+                                "VerticalAlignment": "Center",
+                                "Orientation": "Vertical",
+                                "Items": [
+                                    {
+                                        "BlockType": "text",
+                                        "HorizontalAlignment": "Center",
+                                        "Source": "{Season.LeagueInfo.LeagueName}",
+                                        "FontSize": 75,
+                                        "Foreground" : "{ForegroundBlack}",
+                                        "FontName" : "{FontNameBold}"
+                                    },
+                                    {
+                                        "BlockType": "text",
+                                        "HorizontalAlignment" :"Center",
+                                        "Source": "{Season.LeagueInfo.LeagueFullName}",
+                                        "FontSize": 50,
+                                        "Foreground" : "{ForegroundBlack}",
+                                        "FontName" : "{FontNameBold}"
+                                    },
+                                    {
+                                        "BlockType" : "component",
+                                        "HorizontalAlignment" :"Center",
+                                        "MarginTop" : 15,
+                                        "Component" : "separator_black",
+                                        "ComponentOptions" : {
+                                            "Vars" : {
+                                                "Width" : "850"
+                                            }
+                                        }
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "BlockType": "component",
+                "Component": "penalty_item",
+                "ComponentOptions": {
+                    "Vars": {
+                        "Penalty": "Penalty",
+                        "Event" : "Penalty.Session",
+                        "SuitSource" : "Item"
+                    }
+                }
+            }
+        ]
+    }
+}

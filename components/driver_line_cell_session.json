@@ -1,179 +1,181 @@
 {
-    "BlockType": "dock",
-    "PaddingLeft": 12,
-    "PaddingRight": 4,
-    "BackgroundImage": "images/Driver.png",
-    "Triggers" : [
-        {
-            "Condition" : "{Item.PositionString, Converter=StringEquals, Parameter=1}",
-            "Property" : "BackgroundImage",
-            "Value" : "images/podium_bg/driver_bg_gold.png"
-        },
-        {
-            "Condition" : "{Item.PositionString, Converter=StringEquals, Parameter=2}",
-            "Property" : "BackgroundImage",
-            "Value" : "images/podium_bg/driver_bg_silver.png"
-        },
-        {
-            "Condition" : "{Item.PositionString, Converter=StringEquals, Parameter=3}",
-            "Property" : "BackgroundImage",
-            "Value" : "images/podium_bg/driver_bg_copper.png"
-        }
-    ],
-    "Height" : 73,
-    "Width" : 631,
-    "ColorizeBackground": {
-        "Enabled": false,
-        "Color": "#FFFF00",
-        "BlendPercentage": 10
+  "ComponentName": "driver_line_cell_session",
+  "BlockType": "dock",
+  "PaddingLeft": 12,
+  "PaddingRight": 4,
+  "BackgroundImage": "Driver.png",
+  "Triggers" : [
+    {
+      "Condition" : "{Item.PositionString, Converter=StringEquals, Parameter=1}",
+      "Property" : "BackgroundImage",
+      "Value" : "podium_bg/driver_bg_gold.png"
     },
-    "Items": [
+    {
+      "Condition" : "{Item.PositionString, Converter=StringEquals, Parameter=2}",
+      "Property" : "BackgroundImage",
+      "Value" : "podium_bg/driver_bg_silver.png"
+    },
+    {
+      "Condition" : "{Item.PositionString, Converter=StringEquals, Parameter=3}",
+      "Property" : "BackgroundImage",
+      "Value" : "podium_bg/driver_bg_copper.png"
+    }
+  ],
+  "Height" : 73,
+  "Width" : 631,
+  "ColorizeBackground": {
+    "Enabled": false,
+    "Color": "#FFFF00",
+    "BlendPercentage": 10
+  },
+  "Items": [
+    {
+      "BlockType": "stack",
+      "HorizontalAlignment": "Left",
+      "VerticalAlignment": "Bottom",
+      "PaddingBottom" : 5,
+      "Items": [
+         {
+          "BlockType": "text",
+          "MaxWidth": 90,
+          "MarginLeft": 0,
+          "Width" : 50,
+          "RenderIf" : "<renderpos>",
+          "Source": "{Item.PositionString}",
+          "HorizontalAlignment": "Center",
+          "VerticalAlignment": "Bottom",
+          "PaddingBottom" : 5,
+          "Style" : "tableCellBold",
+          "Triggers" : [
+            {
+              "Condition" : "{Item.PositionString, Converter=StringEquals, Parameter=3}",
+              "Property" : "Foreground",
+              "Value" : "#ffffff"
+            },
+            {
+              "Condition" : "{Item.PositionString, Converter=StringEquals, Parameter=2}",
+              "Property" : "Foreground",
+              "Value" : "#ffffff"
+            },
+            {
+              "Condition" : "{Item.PositionString, Converter=StringEquals, Parameter=1}",
+              "Property" : "Foreground",
+              "Value" : "#ffffff"
+            },
+            {
+              "Condition" : "{Item.PositionString, Converter=EmptyObjectToTrue}",
+              "Property" : "Source",
+              "Value" : "{Item.Position}"
+            }
+          ],
+          "TextOptions" : {
+            "HorizontalAlignment" : "Center"
+          }
+        },
         {
-            "BlockType": "stack",
-            "HorizontalAlignment": "Left",
-            "VerticalAlignment": "Bottom",
-            "PaddingBottom" : 10,
-            "Items": [
-                 {
-                    "BlockType": "text",
-                    "MaxWidth": 90,
-                    "MarginLeft": 0,
-                    "Width" : 50,
-                    "RenderIf" : "<renderpos>",
-                    "Source": "{Item.PositionString}",
-                    "HorizontalAlignment": "Center",
-                    "VerticalAlignment": "Center",
-                    "TextOptionsExtern" : "tableCellBold",
-                    "Triggers" : [
-                        {
-                            "Condition" : "{Item.PositionString, Converter=StringEquals, Parameter=3}",
-                            "Property" : "Foreground",
-                            "Value" : "#ffffff"
-                        },
-                        {
-                            "Condition" : "{Item.PositionString, Converter=StringEquals, Parameter=2}",
-                            "Property" : "Foreground",
-                            "Value" : "#ffffff"
-                        },
-                        {
-                            "Condition" : "{Item.PositionString, Converter=StringEquals, Parameter=1}",
-                            "Property" : "Foreground",
-                            "Value" : "#ffffff"
-                        },
-                        {
-                            "Condition" : "{Item.PositionString, Converter=EmptyObjectToTrue}",
-                            "Property" : "Source",
-                            "Value" : "{Item.Position}"
-                        }
-                    ],
-                    "TextOptions" : {
-                        "HorizontalAlignment" : "Center"
-                    }
+          "BlockType" : "text",
+          "BackgroundImage" : "number.png",
+          "VerticalAlignment": "Center",
+          "Height" : 50,
+          "Width" : 132,
+          "FontSize" : 40,
+          "PaddingBottom" : 2,
+          "FontName" : "{FontNameBold}",
+          "Source" : "{Item.Driver.RaceNumber}",
+          "RenderIf" : "{DisplayDriverNumberAtResults}",
+          "TextOptions" : {
+            "HorizontalAlignment" : "Center",
+            "Foreground" : "{Item.Team.Color}"
+          },
+          "Triggers" : [
+            {
+              "Condition" : "{F1Mode}",
+              "Setters" : [
+                {
+                  "Property" : "FontName",
+                  "Value" : "TPTF1Numbers{Item.Team.Name}"
                 },
                 {
-                    "BlockType" : "text",
-                    "BackgroundImage" : "images/number.png",
-                    "VerticalAlignment": "Center",
-                    "Height" : 50,
-                    "Width" : 132,
-                    "FontSize" : 40,
-                    "MarginBottom" : -4,
-                    "FontName" : "{FontNameBold}",
-                    "Source" : "{Item.Driver.RaceNumber}",
-                    "RenderIf" : "{DisplayDriverNumberAtResults}",
-                    "TextOptions" : {
-                        "HorizontalAlignment" : "Center",
-                        "Foreground" : "#{Item.Team.Color}"
-                    },
-                    "Triggers" : [
-                        {
-                            "Condition" : "{F1Mode}",
-                            "Setters" : [
-                                {
-                                    "Property" : "FontName",
-                                    "Value" : "TPTF1Numbers{Item.Team.Name}"
-                                },
-                                {
-                                    "Property" : "FontSize",
-                                    "Value" : "70"
-                                },
-                                {
-                                    "Property" : "PaddingRight",
-                                    "Value" : "5"
-                                }
-                            ]
-                        },
-                        {
-                            "Condition" : "{Item.Team.Name, Converter=EmptyObjectToTrue}",
-                            "ConditionAnd" : "{F1Mode}",
-                            "Setters" : [
-                                {
-                                    "Property" : "FontName",
-                                    "Value" : "{FontNameBold}"
-                                },
-                                {
-                                    "Property" : "FontSize",
-                                    "Value" : "28"
-                                },
-                                {
-                                    "Property" : "PaddingRight",
-                                    "Value" : "0"
-                                }
-                            ]
-                        }
-                    ]
+                  "Property" : "FontSize",
+                  "Value" : "70"
                 },
                 {
-                    "BlockType": "image",
-                    "Height": 30,
-                    "MarginRight": 0,
-                    "MarginLeft" : 5,
-                    "VerticalAlignment": "Center",
-                    "RenderIf" : "{DisplayFlagsOnLeftSideOfDriverName}",
-                    "ImageOptions": {
-                        "Path": "images/flags/flag_{Item.Driver.Nationality.Code}.png",
-                        "VerticalAlignment": "Center"
-                    }
-                },
-                {
-                    "BlockType": "text",
-                    "MaxWidth": 600,
-                    "MarginLeft": 8,
-                    "Source": "{Item.Driver.Name}",
-                    "HorizontalAlignment": "Left",
-                    "VerticalAlignment": "Center",
-                    "TextOptionsExtern" : "tableCellBold",
-                    "Triggers" : [
-                        {
-                            "Condition" : "{Item.PositionString, Converter=StringEquals, Parameter=3}",
-                            "Property" : "Foreground",
-                            "Value" : "#ffffff"
-                        },
-                        {
-                            "Condition" : "{Item.PositionString, Converter=StringEquals, Parameter=2}",
-                            "Property" : "Foreground",
-                            "Value" : "#ffffff"
-                        },
-                        {
-                            "Condition" : "{Item.PositionString, Converter=StringEquals, Parameter=1}",
-                            "Property" : "Foreground",
-                            "Value" : "#ffffff"
-                        }
-                    ]
-                },
-                {
-                    "BlockType": "image",
-                    "Height": 30,
-                    "MarginRight": 0,
-                    "MarginLeft" : 5,
-                    "VerticalAlignment": "Center",
-                    "RenderIf" : "{DisplayFlagsOnLeftSideOfDriverName, Converter=BoolReverse}",
-                    "ImageOptions": {
-                        "Path": "images/flags/flag_{Item.Driver.Nationality.Code}.png",
-                        "VerticalAlignment": "Center"
-                    }
+                  "Property" : "PaddingRight",
+                  "Value" : "5"
                 }
-            ]
+              ]
+            },
+            {
+              "Condition" : "{Item.Team.Name, Converter=EmptyObjectToTrue}",
+              "ConditionAnd" : "{F1Mode}",
+              "Setters" : [
+                {
+                  "Property" : "FontName",
+                  "Value" : "{FontNameBold}"
+                },
+                {
+                  "Property" : "FontSize",
+                  "Value" : "28"
+                },
+                {
+                  "Property" : "PaddingRight",
+                  "Value" : "0"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "BlockType": "image",
+          "Height": 30,
+          "MarginRight": 0,
+          "MarginLeft" : 5,
+          "VerticalAlignment": "Center",
+          "RenderIf" : "{DisplayFlagsOnLeftSideOfDriverName}",
+          "ImageOptions": {
+            "Path": "flags/flag_{Item.Driver.Nationality.Code}.png",
+            "VerticalAlignment": "Center"
+          }
+        },
+        {
+          "BlockType": "text",
+          "MaxWidth": 600,
+          "MarginLeft": 8,
+          "Source": "{Item.Driver.Name}",
+          "HorizontalAlignment": "Left",
+          "VerticalAlignment": "Bottom",
+          "PaddingBottom" : 5,
+          "Style" : "tableCellBold",
+          "Triggers" : [
+            {
+              "Condition" : "{Item.PositionString, Converter=StringEquals, Parameter=3}",
+              "Property" : "Foreground",
+              "Value" : "#ffffff"
+            },
+            {
+              "Condition" : "{Item.PositionString, Converter=StringEquals, Parameter=2}",
+              "Property" : "Foreground",
+              "Value" : "#ffffff"
+            },
+            {
+              "Condition" : "{Item.PositionString, Converter=StringEquals, Parameter=1}",
+              "Property" : "Foreground",
+              "Value" : "#ffffff"
+            }
+          ]
+        },
+        {
+          "BlockType": "image",
+          "Height": 30,
+          "MarginRight": 0,
+          "MarginLeft" : 5,
+          "VerticalAlignment": "Center",
+          "RenderIf" : "{DisplayFlagsOnLeftSideOfDriverName, Converter=BoolReverse}",
+          "ImageOptions": {
+            "Path": "flags/flag_{Item.Driver.Nationality.Code}.png"
+          }
         }
-    ]
+      ]
+    }
+  ]
 }

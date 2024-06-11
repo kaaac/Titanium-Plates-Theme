@@ -1,4 +1,5 @@
 {
+    "ComponentName" : "header_block_session",
     "Name": "headerBlock",
     "BlockType": "dock",
     "Orientation": "Horizontal",
@@ -10,6 +11,7 @@
             "BlockType": "stack",
             "Orientation": "Horizontal",
             "HorizontalAlignment" : "Left",
+            "MarginTop" : 1,
             "Spacing": 8,
             "Items": [
                 {
@@ -17,8 +19,8 @@
                     "BlockType": "image",
                     "VerticalAlignment": "Top",
                     "Height": 105,
-                    "MarginTop" : 25,
-                    "Source": "images/flags/flag_{Session.Track.Nation.Code}.png"
+                    "MarginTop" : 1,
+                    "Source": "flags/flag_{Session.Track.Nation.Code}.png"
                 },
                 {
                     "Name": "CountryRightStack",
@@ -26,18 +28,17 @@
                     "Orientation": "Vertical",
                     "HorizontalAlignment" : "Left",
                     "VerticalAlignment": "Top",
-                    "MarginTop" : 8,
+                    "MarginTop" : 1,
                     "Items": [
                         {
                             "Name": "LocationName",
                             "BlockType": "text",
                             "HorizontalAlignment" : "Left",
-                            "MarginTop" : 12,
+                            "MarginTop" : 0,
                             "FontSize" : 50,
-                            "Foreground" : "#ffffffff",//"{HeaderForeground}",
+                            "Foreground" : "#ffffffff",
                             "FontName" : "{FontNameBold}",
-                            "Source": "{Session.Track.CircuitName}",
-                            "TextOptionsExtern": "locationName"
+                            "Source": "{Session.Track.CircuitName}"
                         },
                         {
                             "Name": "CountryName",
@@ -47,8 +48,7 @@
                             "MarginRight" : 15,
                             "Foreground" : "{HeaderForeground}",
                             "FontName" : "{FontNameDefault}",
-                            "Source": "{Session.Track.CountryName}",
-                            "TextOptionsExtern": "countryName"
+                            "Source": "{Session.Track.CountryName}"
                         }
                         
                     ]
@@ -60,7 +60,7 @@
             "BlockType": "stack",
             "Orientation": "Horizontal",
             "HorizontalAlignment" : "Center",
-            "MarginTop" : 15,
+            "MarginTop" : 1,
             "Spacing": 8,
             "Items": [
                 {
@@ -68,7 +68,7 @@
                     "BlockType": "image",
                     "VerticalAlignment" : "Top",
                     "Height": 105,
-                    "MarginTop": 9,
+                    "MarginTop": 0,
                     "MarginRight" : 20,
                     "MarginLeft": 36,
                     "Source": "{Season.LeagueInfo.LeagueLogo}"
@@ -105,7 +105,7 @@
             "Name": "headerRightPart",
             "BlockType": "stack",
             "MarginLeft" : 56,
-            "MarginTop" : 20,
+            "MarginTop" : 1,
             "Orientation": "Vertical",
             "HorizontalAlignment": "Right",
             "Items": [
@@ -135,7 +135,7 @@
                                             "Source": "[{Session.SessionType}]",
                                             "FontName": "{FontNameDefault}",
                                             "FontSize": "{FontSizeRightPart}",
-                                            "Foreground": "{HeaderForeground}",
+                                            "Foreground": "{HeaderForeground}"
                                         },
                                         {
                                             "BlockType": "text",                                            
@@ -187,8 +187,7 @@
                                             "MarginRight" : 15,
                                             "Foreground" : "#00000000",
                                             "FontName" : "{FontNameDefault}",
-                                            "Source": "{Session.Track.CountryName}",
-                                            "TextOptionsExtern": "countryName"
+                                            "Source": "{Session.Track.CountryName}"
                                         },
                                         {
                                             "Name": "DummyTextForFixWidth3",
@@ -198,8 +197,7 @@
                                             "MarginRight" : 15,
                                             "Foreground" : "#00000000",
                                             "FontName" : "{FontNameDefault}",
-                                            "Source": "{Session.Track.CircuitName}",
-                                            "TextOptionsExtern": "countryName"
+                                            "Source": "{Session.Track.CircuitName}"
                                         },
                                         {
                                             "Name": "DummyTextForFixWidth2",
@@ -210,7 +208,6 @@
                                             "Foreground" : "#00000000",
                                             "FontName" : "{FontNameDefault}",
                                             "Source": "{Session.Track.CountryName}",
-                                            "TextOptionsExtern": "countryName",
                                             "Triggers" : [
                                                 {
                                                     "Condition" : "{Session.IsLiveData, Converter=BoolReverse}",
@@ -224,7 +221,7 @@
                                             "Height": 32,
                                             "VerticalAlignment": "Center",
                                             "RenderIf": "{Session.IsLiveData}",
-                                            "Source": "images/weather/weather_{Session.WeatherType}.png"
+                                            "Source": "weather/weather_{Session.WeatherType}.png"
                                         },
                                         {
                                             "BlockType": "text",

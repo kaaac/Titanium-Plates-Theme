@@ -1,4 +1,5 @@
 {
+  "ComponentName" : "penalty_item_single",
   "BlockType": "stack",
   "Orientation": "Vertical",
   "Width" : 1620,
@@ -22,7 +23,7 @@
               "Items" : [
                 {
                   "BlockType" : "image",
-                  "Source" : "images/flags/flag_<{Event.Track.Nation.Code}>.png",
+                  "Source" : "flags/flag_<{Event.Track.Nation.Code}>.png",
                   "Height" : 80
                 },
                 {
@@ -79,7 +80,7 @@
                         },
                         {
                           "BlockType" : "text",
-                          "Source" : "[dateseparator]<{Penalty.Date, Converter=DateToMonth}>",
+                          "Source" : "[dateseparator]",
                           "Foreground" : "{ForegroundBlack}",
                           "FontSize" : 30
                         },
@@ -123,8 +124,8 @@
     },
     {
       "BlockType" : "component",
+      "Component" : "separator_black",
       "ComponentOptions" : {
-          "ComponentName" : "separator_black",
           "Vars" : {
               "Width" : "1620"
           }
@@ -159,7 +160,7 @@
                   "BlockType" : "text",
                   "Foreground" : "{ForegroundBlack}",
                   "FontSize" : 35,
-                  "Source" : "<{Penalty.Submitter.Name}>",
+                  "Source" : "<{Penalty.Submitter.Name}>"
                 }
               ]
             },
@@ -179,28 +180,7 @@
                   "BlockType" : "text",
                   "Foreground" : "{ForegroundBlack}",
                   "FontSize" : 35,
-                  "Source" : "<{Penalty.Driver.Name}>",
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "BlockType" : "image",
-          "HorizontalAlignment" : "Center",
-          "Source" : "images/cars/<{Penalty.DriverSession.Team.Name}>.png",
-          "Height" : 100,
-          "Triggers" : [
-            {
-              "Condition" : "<{Penalty.DriversInvolvedString, Converter=EmptyObjectToTrue}>",
-              "Setters" : [
-                {
-                  "Property" : "HorizontalAlignment",
-                  "Value" : "Right"
-                },
-                {
-                  "Property" : "MarginRight",
-                  "Value" : "200"
+                  "Source" : "<{Penalty.Driver.Name}>"
                 }
               ]
             }
@@ -227,7 +207,7 @@
               "FontSize" : 20,
               "Source" : "<{Penalty.DriversInvolvedString}>",
               "TextOptions" : {
-                "Wrap" : "true"
+                "Wrap" : true
               }
             }
           ]
@@ -236,14 +216,13 @@
     },
     {
       "BlockType" : "component",
+      "Component" : "separator_black",
       "ComponentOptions" : {
-          "ComponentName" : "separator_black",
           "Vars" : {
               "Width" : "1620"
           }
       }
     },
-
     {
       "BlockType" : "stack",
       "Orientation" : "Horizontal",
@@ -253,34 +232,12 @@
         {
           "BlockType" : "component",
           "RenderIf" : "{DisplayPodiumCards}",
+          "Component" : "card_universal",
           "ComponentOptions" : {
-            "ComponentName" : "card_universal",
             "Vars" : {
-              "platebg" : "images/plates/plate_bg_{Item.Position}disssableeee",
-              "plateWidth" : "380",
-              "plateHeight" : "469",
-              "plateMargin" : "0",
-              "cardWidth" : "374",
-              "cardHeight" : "469",
-              //"cardMargin" : "28,8,28,64",
-              "RacNoFontS" : "45",
-              "RaceNoMargin" : "46,60,0,0",
-              "PlatformHeight" : "44",
-              "PlatformMargin" : "44,14,0,0",
-              "FlagHeight" : "30",
-              "FlagMargin" : "41,30,0,0",
-              "RoleSize" : "40",
-              "Suit" : "images/suit/{Item.Team.Name}_{Item.DriverSession.SeatPosition}.png",
-              "SuitWidth" : "190",
-              "SuitMargin" : "0,52,40,0",
-              "DriverNameFontSize" : "26",
-              "DriverNameMargin" : "0,27,0,0",
-              "logosMargin" : "0,30,0,0",
-              "LeagueLogoHeight" : "35",
-              "LeagueLogoMargin" : "36,0,0,0",
-              "LeagueLogoMarginNonF1" : "-44,0,0,0",
-              "F1LogoHeight" : "30",
-              "F1LogoMargin" : "0,0,104,0"
+              "platebg" : "plates/plate_bg_{Item.Position}disssableeee",
+              "Suit" : "suit/{Item.Team.Name}_{Item.DriverSession.SeatPosition}.png",
+              "DriverVar" : "{Penalty.DriverSession}"
           }
           }
         },
@@ -298,7 +255,7 @@
               "Source" : "[Report description]",
               "TextOptions" : {
                 "HorizontalAlignment" : "Center",
-                "FontSize": 50,
+                "FontSize": 50
               }
             },
             {
@@ -375,8 +332,8 @@
     {
       "BlockType" : "component",
       "MarginTop" : 10,
+      "Component" : "separator_black",
       "ComponentOptions" : {
-          "ComponentName" : "separator_black",
           "Vars" : {
               "Width" : "1620"
           }
@@ -441,8 +398,8 @@
           "HorizontalAlignment" :"Center",
           "Spacing" : 5,
           "Items" : [
-            //pp
             {
+              "Name" : "pp",
               "BlockType": "text",
               "Source": "<{Penalty.PenaltyPoints, Converter=NumberToSignedString}> [PP]",
               "RenderIf": "<{Penalty.PenaltyPoints, Converter=NumberIsNotZero}>",
@@ -450,15 +407,15 @@
               "VerticalAlignment": "Center",
               "FontName": "{FontNameBold}",
               "Foreground": "#A70708",
-              "BackgroundImage": "images/pen/bg_penalties.png",
+              "BackgroundImage": "pen/bg_penalties.png",
               "Padding": "35,20,35,35",
               "FontSize": 32
             },
-          //no penalty
             {
-              "BlockType": "text",//"text",
+              "Name" : "no penalty",
+              "BlockType": "text",
               "Source": "[nfa]",
-              "BackgroundImage" : "images/pen/bg_nfa.png",
+              "BackgroundImage" : "pen/bg_nfa.png",
               "Width" : 450,
               "Height" : 93,
               "RenderIf": "<{Penalty.IsNoPunishment}>",
@@ -470,8 +427,8 @@
                 "HorizontalAlignment" : "Center"
               }
             },
-                    //warning
             {
+              "Name" : "warning",
               "BlockType": "text",
               "Source": "[warn]",
               "RenderIf": "<{Penalty.PenaltyWarnings, Converter=NumberIsNotZero}>",
@@ -479,12 +436,12 @@
               "VerticalAlignment": "Center",
               "FontName": "{FontNameBold}",
               "Foreground": "#CE4545",
-              "BackgroundImage": "images/pen/bg_penalties.png",
+              "BackgroundImage": "pen/bg_penalties.png",
               "Padding": "35,20,35,35",
               "FontSize": 32
             },
-            //pen. time
             {
+              "Name" : "pen. time",
               "BlockType": "text",
               "Source": "<{Penalty.PenaltySeconds, Converter=NumberToSignedString}> [sec.]",
               "RenderIf": "<{Penalty.PenaltySeconds, Converter=NumberIsNotZero}>",
@@ -492,12 +449,12 @@
               "VerticalAlignment": "Center",
               "FontName": "{FontNameBold}",
               "Foreground": "#824040",
-              "BackgroundImage": "images/pen/bg_penalties.png",
+              "BackgroundImage": "pen/bg_penalties.png",
               "Padding": "35,20,35,35",
               "FontSize": 32
             },
-            //pen. pos
             {
+              "Name" : "pen. pos",
               "BlockType": "text",
               "Source": "<{Penalty.PenaltyPositions, Converter=NumberToSignedString}> [pos.]",
               "RenderIf": "<{Penalty.PenaltyPositions, Converter=NumberIsNotZero}>",
@@ -505,12 +462,12 @@
               "VerticalAlignment": "Center",
               "FontName": "{FontNameBold}",
               "Foreground": "#C07373",
-              "BackgroundImage": "images/pen/bg_penalties.png",
+              "BackgroundImage": "pen/bg_penalties.png",
               "Padding": "35,20,35,35",
               "FontSize": 32
             },
-            //cancelled
             {
+              "Name" : "cancelled",
               "BlockType": "text",
               "Source": "[pen-cancelled]",
               "MarginRight": 12,
@@ -519,15 +476,15 @@
               "VerticalAlignment": "Center",
               "FontName": "{FontNameBold}",
               "Foreground": "#45CE45",
-              "BackgroundImage": "images/pen/bg_nfa.png",
+              "BackgroundImage": "pen/bg_nfa.png",
               "Padding": "35,20,35,35",
               "FontSize": 32
             },
-            //action
             {
+              "Name" : "action",
               "BlockType": "stack",
               "Orientation": "Horizontal",
-              "BackgroundImage": "images/pen/bg_action.png",
+              "BackgroundImage": "pen/bg_action.png",
               "RenderIf": "<{Penalty.IsAction}>",
               "Items": [
                 {
@@ -539,19 +496,7 @@
                   "FontName": "{FontNameBold}",
                   "Foreground": "#D53131",
                   "FontSize": 28
-                },
-              
-                //{
-                //  "BlockType": "text",
-                //  "MaxWidth": 600,
-                //  "Source": "(<{Penalty.PenaltyActionValue}>)",
-                //  "RenderIf": "<{Penalty.PenaltyActionValue, Converter=NumberIsNotZero}>",
-                //  "HorizontalAlignment": "Left",
-                //  "VerticalAlignment": "Center",
-                //  "FontName": "{FontNameBold}",
-                //  "Foreground": "#D53131",
-                //  "FontSize": 28
-                //}
+                }
               ]
             }
           ]

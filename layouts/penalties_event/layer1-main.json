@@ -1,0 +1,262 @@
+{
+    "BlockRoot":
+    {
+        "Name": "mainStack",
+        "BlockType": "stack",
+        "Orientation" : "Vertical",
+        "MaxWidth" : 2716,
+        "PaddingLeft" : 100,
+        "PaddingRight" : 100,
+        "PaddingTop" : 100,
+        "Triggers" : [
+            {
+                "Condition" : "{Penalties.IsSinglePenalty}",
+                "Setters" : [
+                    {
+                        "Property" : "MaxWidth",
+                        "Value" :  "1920"
+                    },
+                    {
+                        "Property" : "PaddingTop",
+                        "Value" :  "200"
+                    }
+                ]
+                
+            }
+        ],
+        "Items" : [
+            {
+                "BlockType": "dock",
+                "Orientation": "Horizontal",
+                "RenderIf" : "{Penalties.IsSinglePenalty}",
+                "Items": [
+                    {
+                        "BlockType": "stack",
+                        "Orientation": "Vertical",
+                        "HorizontalAlignment": "Center",
+                        "Items": [
+                            {
+                                "BlockType": "stack",
+                                "VerticalAlignment": "Center",
+                                "Items": [
+                                    {
+                                        "Name":"LeagueLogo",
+                                        "BlockType":"image",
+                                        "Height": 85,
+                                        "Source": "{Season.LeagueInfo.LeagueLogo}",
+                                        "RenderIf":"{Season.LeagueInfo.LeagueLogo, Converter=EmptyObjectToFalse}"
+                                    },
+                                    {
+                                        "BlockType" : "image",
+                                        "Height" : 85,
+                                        "Source" : "pen/f1_logo.png"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "BlockType": "dock",
+                "Orientation": "Horizontal",
+                "RenderIf" : "{Penalties.IsSinglePenalty}",
+                "MarginTop" : 15,
+                "Items": [
+                    {
+                        "BlockType": "stack",
+                        "Orientation": "Vertical",
+                        "HorizontalAlignment": "Center",
+                        "Items": [
+                            {
+                                "Name": "headerSessionLine",
+                                "BlockType": "stack",
+                                "VerticalAlignment": "Center",
+                                "Orientation": "Vertical",
+                                "Items": [
+                                    {
+                                        "BlockType": "text",
+                                        "HorizontalAlignment": "Center",
+                                        "Source": "{Season.LeagueInfo.LeagueName}",
+                                        "FontSize": 75,
+                                        "Foreground" : "{ForegroundBlack}",
+                                        "FontName" : "{FontNameBold}"
+                                    },
+                                    {
+                                        "BlockType": "text",
+                                        "HorizontalAlignment" :"Center",
+                                        "Source": "{Season.LeagueInfo.LeagueFullName}",
+                                        "FontSize": 50,
+                                        "Foreground" : "{ForegroundBlack}",
+                                        "FontName" : "{FontNameBold}"
+                                    },
+                                    {
+                                        "BlockType" : "component",
+                                        "HorizontalAlignment" :"Center",
+                                        "MarginTop" : 15,
+                                        "Component" : "separator_black",
+                                        "ComponentOptions" : {
+                                            "Vars" : {
+                                                "Width" : "850"
+                                            }
+                                        }
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "BlockType": "itemstack",
+                "Orientation": "Vertical",
+                "RenderIf" : "{Penalties.IsSinglePenalty}",
+                "ItemStackOptions": {
+                    "ItemSource": "{Penalties.Penalties}",
+                    "ItemTemplate": {
+                        "BlockType": "component",
+                        "Component": "penalty_item",
+                        "ComponentOptions": {
+                            "Vars": {
+                                "Penalty": "Item",
+                                "Event" : "Event",
+                                "SuitSource" : "Item"
+                            }
+                        }
+                    }
+                }
+            },
+            {
+                "BlockType" : "dock",
+                "Name" : "Multi-header",
+                "Orientation" : "Horizontal",
+                "RenderIf" : "{Penalties.IsSinglePenalty, Converter=BoolReverse}",
+                "Items" : [
+                    {
+                        "BlockType" : "image",
+                        "HorizontalAlignment" : "Left",
+                        "Source" : "{Season.LeagueInfo.LeagueLogo}",
+                        "Height": 85,
+                        "MarginLeft" : 40,
+                        "RenderIf":"{Season.LeagueInfo.LeagueLogo, Converter=EmptyObjectToFalse}"
+                    },
+                    {
+                        "BlockType" : "dock",
+                        "HorizontalAlignment" :"Center",
+                        "Orientation" : "Horizontal",
+                        "Items" : [
+                            {
+                                "BlockType" : "stack",
+                                "Orientation" : "Horizontal",
+                                "HorizontalAlignment" : "Center",
+                                "Items" : [
+                                    {
+                                        "BlockType" :"text",
+                                        "Source" : "[Penalties]",
+                                        "FontSize": 75,
+                                        "Foreground" : "{ForegroundBlack}",
+                                        "FontName" : "{FontNameBold}"
+                                    },
+                                    {
+                                        "BlockType" : "image",
+                                        "Source" : "flags/flag_{Event.Track.Nation.Code}.png",
+                                        "Height" : 80,
+                                        "MarginLeft": 75,
+                                        "MarginRight" : 75
+                                    },
+                                    {
+                                        "BlockType" : "stack",
+                                        "Orientation" : "Vertical",
+                                        "Spacing" : 10,
+                                        "Items" : [
+                                          {
+                                            "BlockType" : "text",
+                                            "Source" : "{Event.TrackName}",
+                                            "Foreground" : "{ForegroundBlack}",
+                                            "FontName" : "{FontNameBold}",
+                                            "FontSize" : 30
+                                          },
+                                          {
+                                            "BlockType" : "text",
+                                            "Source" : "{Event.TrackCountryName}",
+                                            "Foreground" : "{ForegroundBlack}",
+                                            "FontSize" : 30
+                                          }
+                                        ]
+                                      }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "BlockType" : "stack",
+                        "HorizontalAlignment": "Right",
+                        "Orientation" : "Vertical",
+                        "MarginRight" : 40,
+                        "Items" : [
+                            {
+                                "BlockType": "text",
+                                "HorizontalAlignment": "Right",
+                                "Source": "{Season.LeagueInfo.LeagueName}",
+                                "FontSize": 30,
+                                "Foreground" : "{ForegroundBlack}",
+                                "FontName" : "{FontNameBold}"
+                            },
+                            {
+                                "BlockType": "text",
+                                "HorizontalAlignment" :"Right",
+                                "Source": "{Season.LeagueInfo.LeagueFullName}",
+                                "FontSize": 30,
+                                "Foreground" : "{ForegroundBlack}",
+                                "FontName" : "{FontNameBold}"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "BlockType" : "stack",
+                "Orientation" : "Horizontal",
+                "Items" : [
+                     {
+                        "BlockType": "itemstack",
+                        "Orientation": "Vertical",
+                        "RenderIf" : "{Penalties.IsSinglePenalty, Converter=BoolReverse}",
+                        "MarginRight" : 90,
+                        "ItemStackOptions": {
+                            "ItemSource": "{Penalties.Penalties}",
+                            "CollectionPart" : "2/2",
+                            "ItemTemplate": {
+                                "BlockType": "component",
+                                "Component": "penalty_item_multi",
+                                "ComponentOptions": {
+                                    "Vars": {
+                                        "Penalty": "{Item}"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    {
+                        "BlockType": "itemstack",
+                        "Orientation": "Vertical",
+                        "RenderIf" : "{Penalties.IsSinglePenalty, Converter=BoolReverse}",
+                        "ItemStackOptions": {
+                            "ItemSource": "{Penalties.Penalties}",
+                            "CollectionPart" : "1/2",
+                            "ItemTemplate": {
+                                "BlockType": "component",
+                                "Component": "penalty_item_multi",
+                                "ComponentOptions": {
+                                    "Vars": {
+                                        "Penalty": "{Item}"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                ]
+            }
+        ]
+    }
+}

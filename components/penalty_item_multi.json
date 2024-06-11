@@ -1,296 +1,277 @@
 {
-    "BlockType": "stack",
-    "Orientation": "Vertical",
-    "Width" : 1122,
-    "MarginBottom" : 30,
-    "Padding" : "50,30,40,30",
-    "BackgroundImage" : "images/pen/bg_report_base.png",
-    "Triggers" : [
-      {
-        "Condition" : "{F1Mode}",
-        "Property" : "BackgroundImage",
-        "Value" : "images/pen/bg_report_<{Penalty.DriverSession.Team.Name}>.png"
-      }  
-    ],
-    "Items": [
-      {
-        "BlockType" : "dock",
-        "Orientation" : "Horizontal",
-        //"MarginTop" : 25,
-        //"MarginBottom" : 20,
-        "Items" : [
+  "BlockType": "stack",
+  "BackgroundImage": "pen/bg_report_base.png",
+  "ComponentName": "penalty_item_multi",
+  "Items": [
+    {
+      "BlockType": "dock",
+      "Items": [
+        {
+          "BlockType": "text",
+          "FontName": "{FontNameDefault}",
+          "FontSize": 48,
+          "Foreground": "{ForegroundWhite}",
+          "HorizontalAlignment": "Left",
+          "MarginTop": 10,
+          "Source": "<{Penalty.Driver.Name}>"
+        },
+        {
+          "BlockType": "stack",
+          "HorizontalAlignment": "Right",
+          "Items": [
             {
-                "BlockType" : "text",
-                "Foreground" : "{ForegroundWhite}",
-                "FontSize" : 48,
-                "MarginTop" : 10,
-                "Source" : "<{Penalty.Driver.Name}>",
-                "HorizontalAlignment" : "Left",
-                "FontName": "{FontNameDefault}",
-                
+              "BackgroundImage": "pen/bg_penalties.png",
+              "BlockType": "text",
+              "FontName": "{FontNameBold}",
+              "FontSize": 32,
+              "Foreground": "#A70708",
+              "HorizontalAlignment": "Center",
+              "Name": "PP",
+              "Padding": "35,20,35,35",
+              "RenderIf": "<{Penalty.PenaltyPoints, Converter=NumberIsNotZero}>",
+              "Source": "<{Penalty.PenaltyPoints, Converter=NumberToSignedString}> [PP]",
+              "VerticalAlignment": "Center"
+            },
+            {
+              "BackgroundImage": "pen/bg_nfa.png",
+              "BlockType": "text",
+              "FontSize": 32,
+              "Foreground": "#45CE45",
+              "Height": 93,
+              "HorizontalAlignment": "Center",
+              "Name": "no_penalty",
+              "RenderIf": "<{Penalty.IsNoPunishment}>",
+              "Source": "[nfa]",
+              "TextOptions": {
+                "HorizontalAlignment": "Center"
               },
-              {
-                "BlockType" : "stack",
-                "Orientation" : "Horizontal",
-                "HorizontalAlignment" :"Right",
-                "Spacing" : 5,
-                "Items" : [
-                  //pp
-                  {
-                    "BlockType": "text",
-                    "Source": "<{Penalty.PenaltyPoints, Converter=NumberToSignedString}> [PP]",
-                    "RenderIf": "<{Penalty.PenaltyPoints, Converter=NumberIsNotZero}>",
-                    "HorizontalAlignment": "Center",
-                    "VerticalAlignment": "Center",
-                    "FontName": "{FontNameBold}",
-                    "Foreground": "#A70708",
-                    "BackgroundImage": "images/pen/bg_penalties.png",
-                    "Padding": "35,20,35,35",
-                    "FontSize": 32
-                  },
-                //no penalty
-                  {
-                    "BlockType": "text",//"text",
-                    "BackgroundImage": "images/pen/bg_nfa.png",//"[nfa]",
-                    "Source" : "[nfa]",
-                    "Width" : 450,
-                    "Height" : 93,
-                    "RenderIf": "<{Penalty.IsNoPunishment}>",
-                    "HorizontalAlignment": "Center",
-                    "VerticalAlignment": "Center",
-                    //"FontName": "{FontNameBold}",
-                    "Foreground": "#45CE45",
-                    //"BackgroundImage": "images/pen/bg_nfa.png",
-                    //"Padding": "35,20,35,35",
-                    "FontSize": 32,
-                    "TextOptions" : {
-                      "HorizontalAlignment" : "Center"
-                    }
-                  },
-                          //warning
-                  {
-                    "BlockType": "text",
-                    "Source": "[warn]",
-                    "RenderIf": "<{Penalty.PenaltyWarnings, Converter=NumberIsNotZero}>",
-                    "HorizontalAlignment": "Left",
-                    "VerticalAlignment": "Center",
-                    "FontName": "{FontNameBold}",
-                    "Foreground": "#CE4545",
-                    "BackgroundImage": "images/pen/bg_penalties.png",
-                    "Padding": "35,20,35,35",
-                    "FontSize": 32
-                  },
-                  //pen. time
-                  {
-                    "BlockType": "text",
-                    "Source": "<{Penalty.PenaltySeconds, Converter=NumberToSignedString}> [sec.]",
-                    "RenderIf": "<{Penalty.PenaltySeconds, Converter=NumberIsNotZero}>",
-                    "HorizontalAlignment": "Left",
-                    "VerticalAlignment": "Center",
-                    "FontName": "{FontNameBold}",
-                    "Foreground": "#824040",
-                    "BackgroundImage": "images/pen/bg_penalties.png",
-                    "Padding": "35,20,35,35",
-                    "FontSize": 32
-                  },
-                  //pen. pos
-                  {
-                    "BlockType": "text",
-                    "Source": "<{Penalty.PenaltyPositions, Converter=NumberToSignedString}> [pos.]",
-                    "RenderIf": "<{Penalty.PenaltyPositions, Converter=NumberIsNotZero}>",
-                    "HorizontalAlignment": "Left",
-                    "VerticalAlignment": "Center",
-                    "FontName": "{FontNameBold}",
-                    "Foreground": "#C07373",
-                    "BackgroundImage": "images/pen/bg_penalties.png",
-                    "Padding": "35,20,35,35",
-                    "FontSize": 32
-                  },
-                  //cancelled
-                  {
-                    "BlockType": "text",
-                    "Source": "[pen-cancelled]",
-                    "MarginRight": 12,
-                    "RenderIf": "<{Penalty.IsCancelled}>",
-                    "HorizontalAlignment": "Left",
-                    "VerticalAlignment": "Center",
-                    "FontName": "{FontNameBold}",
-                    "Foreground": "#45CE45",
-                    "BackgroundImage": "images/pen/bg_nfa.png",
-                    "Padding": "35,20,35,35",
-                    "FontSize": 32
-                  },
-                  //action
-                  {
-                    "BlockType": "stack",
-                    "Orientation": "Horizontal",
-                    "BackgroundImage": "images/pen/bg_action.png",
-                    "RenderIf": "<{Penalty.IsAction}>",
-                    "Items": [
-                      {
-                        "BlockType": "text",
-                        "Source": "<{Penalty.PenaltyActionString}>",
-                        "HorizontalAlignment": "Left",
-                        "VerticalAlignment": "Center",
-                        "Padding": "35,20,35,35",
-                        "FontName": "{FontNameBold}",
-                        "Foreground": "#D53131",
-                        "FontSize": 28
-                      },
-                    
-                      //{
-                      //  "BlockType": "text",
-                      //  "MaxWidth": 600,
-                      //  "Source": "(<{Penalty.PenaltyActionValue}>)",
-                      //  "RenderIf": "<{Penalty.PenaltyActionValue, Converter=NumberIsNotZero}>",
-                      //  "HorizontalAlignment": "Left",
-                      //  "VerticalAlignment": "Center",
-                      //  "FontName": "{FontNameBold}",
-                      //  "Foreground": "#D53131",
-                      //  "FontSize": 28
-                      //}
-                    ]
-                  }
-                ]
-              },
-          
-        ]
-      },
-  
-      {
-        "BlockType" : "stack",
-        "Orientation" : "Horizontal",
-        "RenderIf" : "true",
-        "MarginBottom" : 30,
-        "Triggers" : [
-            {
-                "Condition" : "<{Penalty.Description, Converter=EmptyObjectToTrue}>",
-                "Setters" : [
-                    {
-                        "Property" : "MarginBottom",
-                        "Value" : "0",
-                    },
-                    {
-                        "Property" : "RenderIf",
-                        "Value" : "False"
-                    }
-                ]
-            }
-        ],
-        "Items" : [
-            {
-                "BlockType" : "stack",
-                "Orientation" : "Vertical",
-                "Width" : "{MultiPenaltyLeftColumn}",
-                "Items" : [
-                    {
-                        "BlockType" : "text",
-                        "Source" : "[Details]:",
-                        "FontSize" : "{MultiPenaltyFontSize}",
-                        "Foreground" : "{MultiPenaltyTitle}"
-                    },
-                    {
-                        "BlockType" : "stack",
-                        "Orientation" : "Horizontal",
-                        "Items" :[
-                            {
-                                "BlockType" : "text",
-                                "Source" : "[LapShort]:",
-                                "Width" : "{MultiPenaltyLeftColumnFirstPart}",
-                                "FontSize" : "{MultiPenaltyFontSize}",
-                                "Foreground" : "{MultiPenaltyTitle}"
-                            },
-                            {
-                                "BlockType" : "text",
-                                "Source" : "<{Penalty.Lap}>",
-                                "FontSize" : "{MultiPenaltyFontSize}",
-                                "Foreground" : "{ForegroundWhite}"
-                            }
-                        ]
-                    },
-                    {
-                        "BlockType" : "stack",
-                        "Orientation" : "Horizontal",
-                        "RenderIf" : "<{Penalty.Turn, Converter=EmptyObjectToFalse}>",
-                        "Items" : [
-                            {
-                                "BlockType" : "text",
-                                "Source" : "[TurnShort]:",
-                                "Width" : "{MultiPenaltyLeftColumnFirstPart}",
-                                "FontSize" : "{MultiPenaltyFontSize}",
-                                "Foreground" : "{MultiPenaltyTitle}"
-                            },
-                            {
-                                "BlockType" : "text",
-                                "Source" : "<{Penalty.Turn}>",
-                                "FontSize" : "{MultiPenaltyFontSize}",
-                                "Foreground" : "{ForegroundWhite}"
-                            }
-                        ]
-                    }
-                ]
+              "VerticalAlignment": "Center",
+              "Width": 450
             },
             {
-                "BlockType" : "text",
-                "Source" : "<{Penalty.Description}>",
-                "FontSize" : "{MultiPenaltyFontSize}",
-                "Foreground" : "{ForegroundWhite}",
-                "Width" : "{MultiPenaltyRightColumn}",
-                "TextOptions" : {
-                    "Wrap" : true
-                }
-            }
-        ]
-      },
-      {
-        "BlockType" : "stack",
-        "Orientation" : "Horizontal",
-        "RenderIf" : "<{Penalty.DriversInvolvedString, Converter=EmptyObjectToFalse}>",
-        "MarginBottom" : 30,
-        "Items" : [
-            {
-                "BlockType" : "text",
-                "Source" : "[Involved]:",
-                "Width" : "{MultiPenaltyLeftColumn}",
-                "FontSize" : "{MultiPenaltyFontSize}",
-                "Foreground" : "{MultiPenaltyTitle}"
+              "BackgroundImage": "pen/bg_penalties.png",
+              "BlockType": "text",
+              "FontName": "{FontNameBold}",
+              "FontSize": 32,
+              "Foreground": "#CE4545",
+              "HorizontalAlignment": "Left",
+              "Name": "warning",
+              "Padding": "35,20,35,35",
+              "RenderIf": "<{Penalty.PenaltyWarnings, Converter=NumberIsNotZero}>",
+              "Source": "[warn]",
+              "VerticalAlignment": "Center"
             },
             {
-                "BlockType" : "text",
-                "Source" : "<{Penalty.DriversInvolvedString}>",
-                "FontSize" : "{MultiPenaltyFontSize}",
-                "Foreground" : "{ForegroundGold}",
-                "Width" : "{MultiPenaltyRightColumn}",
-                "TextOptions" : {
-                    "Wrap" : true
-                }
-            }
-        ]
-      },
-      {
-        "BlockType" : "stack",
-        "Orientation" : "Horizontal",
-        "RenderIf" : "<{Penalty.Verdict, Converter=EmptyObjectToFalse}>",
-        "MarginBottom" : 30,
-        "Items" : [
-            {
-                "BlockType" : "text",
-                "Source" : "[Decision]:",
-                "Width" : "{MultiPenaltyLeftColumn}",
-                "FontSize" : "{MultiPenaltyFontSize}",
-                "Foreground" : "{MultiPenaltyTitle}"
+              "BackgroundImage": "pen/bg_penalties.png",
+              "BlockType": "text",
+              "FontName": "{FontNameBold}",
+              "FontSize": 32,
+              "Foreground": "#824040",
+              "HorizontalAlignment": "Left",
+              "Name": "pen. time",
+              "Padding": "35,20,35,35",
+              "RenderIf": "<{Penalty.PenaltySeconds, Converter=NumberIsNotZero}>",
+              "Source": "<{Penalty.PenaltySeconds, Converter=NumberToSignedString}> [sec.]",
+              "VerticalAlignment": "Center"
             },
             {
-                "BlockType" : "text",
-                "Source" : "<{Penalty.Verdict}>",
-                "FontSize" : "{MultiPenaltyFontSize}",
-                "Foreground" : "{ForegroundWhite}",
-                "Width" : "{MultiPenaltyRightColumn}",
-                "TextOptions" : {
-                    "Wrap" : true
+              "BackgroundImage": "pen/bg_penalties.png",
+              "BlockType": "text",
+              "FontName": "{FontNameBold}",
+              "FontSize": 32,
+              "Foreground": "#C07373",
+              "HorizontalAlignment": "Left",
+              "Name": "pen. pos",
+              "Padding": "35,20,35,35",
+              "RenderIf": "<{Penalty.PenaltyPositions, Converter=NumberIsNotZero}>",
+              "Source": "<{Penalty.PenaltyPositions, Converter=NumberToSignedString}> [pos.]",
+              "VerticalAlignment": "Center"
+            },
+            {
+              "BackgroundImage": "pen/bg_nfa.png",
+              "BlockType": "text",
+              "FontName": "{FontNameBold}",
+              "FontSize": 32,
+              "Foreground": "#45CE45",
+              "HorizontalAlignment": "Left",
+              "MarginRight": 12,
+              "Name": "cancelled",
+              "Padding": "35,20,35,35",
+              "RenderIf": "<{Penalty.IsCancelled}>",
+              "Source": "[pen-cancelled]",
+              "VerticalAlignment": "Center"
+            },
+            {
+              "BackgroundImage": "pen/bg_action.png",
+              "BlockType": "stack",
+              "Items": [
+                {
+                  "BlockType": "text",
+                  "FontName": "{FontNameBold}",
+                  "FontSize": 28,
+                  "Foreground": "#D53131",
+                  "HorizontalAlignment": "Left",
+                  "Padding": "35,20,35,35",
+                  "Source": "<{Penalty.PenaltyActionString}>",
+                  "VerticalAlignment": "Center"
                 }
+              ],
+              "Name": "action",
+              "Orientation": "Horizontal",
+              "RenderIf": "<{Penalty.IsAction}>"
             }
-        ]
-      }
-    ]
-  } 
+          ],
+          "Orientation": "Horizontal",
+          "Spacing": 5
+        }
+      ],
+      "Orientation": "Horizontal"
+    },
+    {
+      "BlockType": "stack",
+      "Items": [
+        {
+          "BlockType": "stack",
+          "Items": [
+            {
+              "BlockType": "text",
+              "FontSize": "{MultiPenaltyFontSize}",
+              "Foreground": "{MultiPenaltyTitle}",
+              "Source": "[Details]:"
+            },
+            {
+              "BlockType": "stack",
+              "Items": [
+                {
+                  "BlockType": "text",
+                  "FontSize": "{MultiPenaltyFontSize}",
+                  "Foreground": "{MultiPenaltyTitle}",
+                  "Source": "[LapShort]:",
+                  "Width": "{MultiPenaltyLeftColumnFirstPart}"
+                },
+                {
+                  "BlockType": "text",
+                  "FontSize": "{MultiPenaltyFontSize}",
+                  "Foreground": "{ForegroundWhite}",
+                  "Source": "<{Penalty.Lap}>"
+                }
+              ],
+              "Orientation": "Horizontal"
+            },
+            {
+              "BlockType": "stack",
+              "Items": [
+                {
+                  "BlockType": "text",
+                  "FontSize": "{MultiPenaltyFontSize}",
+                  "Foreground": "{MultiPenaltyTitle}",
+                  "Source": "[TurnShort]:",
+                  "Width": "{MultiPenaltyLeftColumnFirstPart}"
+                },
+                {
+                  "BlockType": "text",
+                  "FontSize": "{MultiPenaltyFontSize}",
+                  "Foreground": "{ForegroundWhite}",
+                  "Source": "<{Penalty.Turn}>"
+                }
+              ],
+              "Orientation": "Horizontal",
+              "RenderIf": "<{Penalty.Turn, Converter=EmptyObjectToFalse}>"
+            }
+          ],
+          "Orientation": "Vertical",
+          "Width": "{MultiPenaltyLeftColumn}"
+        },
+        {
+          "BlockType": "text",
+          "FontSize": "{MultiPenaltyFontSize}",
+          "Foreground": "{ForegroundWhite}",
+          "Source": "<{Penalty.Description}>",
+          "TextOptions": {
+            "Wrap": true
+          },
+          "Width": "{MultiPenaltyRightColumn}"
+        }
+      ],
+      "MarginBottom": 30,
+      "Orientation": "Horizontal",
+      "RenderIf": true,
+      "Triggers": [
+        {
+          "Condition": "<{Penalty.Description, Converter=EmptyObjectToTrue}>",
+          "Setters": [
+            {
+              "Property": "MarginBottom",
+              "Value": "0"
+            },
+            {
+              "Property": "RenderIf",
+              "Value": "False"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "BlockType": "stack",
+      "Items": [
+        {
+          "BlockType": "text",
+          "FontSize": "{MultiPenaltyFontSize}",
+          "Foreground": "{MultiPenaltyTitle}",
+          "Source": "[Involved]:",
+          "Width": "{MultiPenaltyLeftColumn}"
+        },
+        {
+          "BlockType": "text",
+          "FontSize": "{MultiPenaltyFontSize}",
+          "Foreground": "{ForegroundGold}",
+          "Source": "<{Penalty.DriversInvolvedString}>",
+          "TextOptions": {
+            "Wrap": true
+          },
+          "Width": "{MultiPenaltyRightColumn}"
+        }
+      ],
+      "MarginBottom": 30,
+      "Orientation": "Horizontal",
+      "RenderIf": "<{Penalty.DriversInvolvedString, Converter=EmptyObjectToFalse}>"
+    },
+    {
+      "BlockType": "stack",
+      "Items": [
+        {
+          "BlockType": "text",
+          "FontSize": "{MultiPenaltyFontSize}",
+          "Foreground": "{MultiPenaltyTitle}",
+          "Source": "[Decision]:",
+          "Width": "{MultiPenaltyLeftColumn}"
+        },
+        {
+          "BlockType": "text",
+          "FontSize": "{MultiPenaltyFontSize}",
+          "Foreground": "{ForegroundWhite}",
+          "Source": "<{Penalty.Verdict}>",
+          "TextOptions": {
+            "Wrap": true
+          },
+          "Width": "{MultiPenaltyRightColumn}"
+        }
+      ],
+      "MarginBottom": 30,
+      "Orientation": "Horizontal",
+      "RenderIf": "<{Penalty.Verdict, Converter=EmptyObjectToFalse}>"
+    }
+  ],
+  "MarginBottom": 30,
+  "Orientation": "Vertical",
+  "Padding": "50,30,40,30",
+  "Triggers": [
+    {
+      "Condition": "{F1Mode}",
+      "Property": "BackgroundImage",
+      "Value": "pen/bg_report_<{Penalty.DriverSession.Team.Name}>.png"
+    }
+  ],
+  "Width": 1122
+}

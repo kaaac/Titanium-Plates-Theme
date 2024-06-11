@@ -1,0 +1,133 @@
+{
+  "Properties": [
+    { 
+      "Name": "F1Mode",
+      "PublicName" : "F1 Mode",
+      "Category": "Theme Mode",
+      "Type" : "Bool",
+      "DefaultValue" : true,
+      "Description": "Enables icons of F1 Cars, and avatars of real drivers from F1"
+    },
+    { 
+      "Name": "UseDriverAvatars",
+      "PublicName" : "Use League Driver Avatars",
+      "Category": "Theme Mode",
+      "Type" : "Bool",
+      "DefaultValue" : false,
+      "Description": "To use custom driver pictures, enable this option, put driver images at <RLT-location>/user/driver_avatars/\n\nThe file name must match the driver name. Do not omit periods, spaces or other characters.\n\nRequired avatar dimensions: 430x600 px."
+    },
+    { 
+      "Name": "DisplayPodiumCards",
+      "PublicName" : "Display Podium Cards",
+      "Category": "Theme Mode",
+      "Type" : "Bool",
+      "DefaultValue" : "true",
+      "Description": "Enables cards for top 3 drivers.\nCards available at layouts:\nDriver Standings\nTeam Standings\nSeason Progress (Points/Positions/Penalties)\nRace Results\nQualification Results\nDriver Penalty (one card)"
+    },
+    { 
+      "Name": "IncludeTop10AtPodiumRender",
+      "PublicName" : "Extend drivers at podium render",
+      "Category": "Misc",
+      "Type" : "Bool",
+      "DefaultValue" : "true",
+      "Description": "By default, the layout with the top 3 drivers does not include the remaining drivers.\n\nEnable this option to display places 4-10."
+    },
+    { 
+      "Name": "DisplayFlagsOnLeftSideOfDriverName",
+      "PublicName" : "Driver flag position",
+      "Category": "Misc",
+      "Type" : "Bool",
+      "DefaultValue" : "true",
+      "Description": "By default, the Driver Flag is displayed on the right.\n\nEnable this option to place the Flag on the left side"
+    },
+    { 
+      "Name": "DisplayDriverNumberAtResults",
+      "PublicName" : "Show Driver Numbers",
+      "Category": "Misc",
+      "Type" : "Bool",
+      "DefaultValue" : "true",
+      "Description" : "By default, the driver number is not displayed in results, statistics, etc.\n\nEnable this option to display driver numbers"
+    },
+    { 
+      "Name": "SplitPenaltiesAtSessionResults",
+      "PublicName" : "Split time penalties",
+      "Category": "Misc",
+      "Type" : "Bool",
+      "DefaultValue" : false,
+      "Description": "By default, the time penalties displayed are the sum of the penalties assigned during and after the race.\n\nEnable this option to divide them into columns"
+    },
+    { 
+      "Name": "RenderSectorsOnQualiLayout",
+      "PublicName" : "Show Sectors at Qualifying results",
+      "Category": "Misc",
+      "Type" : "Bool",
+      "DefaultValue" : "true",
+      "Description": "Enable this option to display sector times on qualifying results.\n\nRecommended to disable when results are entered manually."
+    },
+    { 
+      "Name": "ShowPenaltyPointsInStandings",
+      "PublicName" : "Show penalty points at standings render",
+      "Category": "Misc",
+      "Type" : "Bool",
+      "DefaultValue" : "true"
+    },
+    { 
+      "Name": "HorizontalLineups",
+      "PublicName" : "Lineups Orientation",
+      "Category": "Misc",
+      "Type" : "Bool",
+      "DefaultValue" : "true",
+      "Description": "Enable to change the Lineups layout from vertical to horizontal.\n\nDoes not apply to the rendering of reserve drivers"
+    },
+    { 
+      "Name": "TeamNumberToCompare",
+      "PublicName" : "Change Team to compare",
+      "Category": "Team Comparison",
+      "Type" : "Integer",
+      "DefaultValue" : 2,
+      "MinimumValue" : 1,
+      "Description": "Change this option to switch team for Team Comparison render.\n\nOrder by constructor classification."
+    },
+    { 
+      "Name": "DriverNameFontSizeOnLineup",
+      "PublicName" : "Change font size on Lineup render",
+      "Category": "Misc",
+      "Type" : "Integer",
+      "DefaultValue" : 45,
+      "Description": "Useful when there are drivers with longer names"
+    },
+    { 
+      "Name": "Streamer",
+      "PublicName" : "Streamer",
+      "Category": "Placeholders",
+      "Type" : "String"
+    },
+    { 
+      "Name": "SecondCommentator",
+      "PublicName" : "Second Commentator",
+      "Category": "Placeholders",
+      "Type" : "String"
+    }
+  ],
+  "Categories": [
+    {
+      "Name" : "Theme Mode"
+    },
+    {
+      "Name" : "Misc"
+    },
+    {
+      "Name": "Grid order (Quali results)"
+    },
+    {
+      "Name" : "Team Comparison"
+    },
+    {
+      "Name" : "Placeholders"
+    },
+    {
+      "Name" : "No Category"
+    }
+
+  ]
+}

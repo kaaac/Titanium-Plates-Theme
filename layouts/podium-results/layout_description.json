@@ -1,6 +1,6 @@
 {
     "LayoutName": "raceResultsPodium",
     "RenderType": "RaceResults",
-    "Index" : 2,
-    "RenderCaption" : "podium results (use theme options to change version)"
+    "RenderCaption" : "podium results (use theme options to change version)",
+    "RenderVersion": 2
 }

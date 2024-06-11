@@ -1,0 +1,31 @@
+{
+  "Name": "Titanium Plates Theme",
+  "Author": "Caccia & Kaac",
+  "Version": "1.2.0",
+  "ThemeId": "kaaac.titanium_plates_theme",
+  "DefaultLocalizationId": "en-US",
+  "DisableUnspecifiedLocalization": true,
+  "DownloadUrl": "https://github.com/kaaac/Titanium-Plates-Theme/releases/download/13/Titanium-Plates-Theme.zip",
+  "Links": [
+    {
+      "Url": "https://github.com/kaaac/Titanium-Plates-Theme",
+      "Type" : "ThemeRepository",
+      "Caption": "Repository"
+    },
+    {
+      "Type" : "ThemeIssueReport",
+      "Url" : "https://github.com/kaaac/Titanium-Plates-Theme/issues/new",
+      "Caption": "Report Issue"
+    },
+    {
+      "Type" :"ThemeDiscussion",
+      "Url": "https://discord.com/channels/904276286359347220/1145969296879669289/1145969296879669289",
+      "Caption": "Discord"
+    },
+    {
+      "Type": "SupportAuthor",
+      "Url" : "https://buymeacoffee.com/kaaac",
+      "Caption": "Support us"
+    }
+  ]
+}

@@ -1,15 +1,16 @@
 {
+    "ComponentName" : "driver_line_stints",
     "BlockType": "dock",
     "PaddingLeft": 12,
     "PaddingRight": 4,    
     "UseBackgroundCrop" : false,
-    "BackgroundImage": "images/Driver_Tyre_v2.png",
+    "BackgroundImage": "Driver_Tyre_v2.png",
     "Height" : 73,
     "Triggers" : [
         {
             "Condition" : "{F1Mode}",
             "Property" : "BackgroundImage",
-            "Value" : "images/Driver_Tyre_v2_f1.png"
+            "Value" : "Driver_Tyre_v2_f1.png"
         }
     ],
     "Items": [
@@ -75,7 +76,7 @@
             "Items": [
                 {
                     "BlockType": "image",
-                    "Source" : "images/cars/{Item.Team.Name}.png",
+                    "Source" : "cars/{Item.Team.Name}.png",
                     "MarginLeft" : 12,
                     "Height": 55,
                     "MarginRight": 20,

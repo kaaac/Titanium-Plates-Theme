@@ -1,0 +1,6 @@
+{
+  "StyleName" : "tableCellBold",
+  "FontName" : "{FontNameBold}",
+  "FontSize" : 37,
+  "Foreground" : "#000000"
+}
