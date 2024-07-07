@@ -1,5 +1,6 @@
 {
     "LayoutName": "TeamMateComparison",
     "RenderType": "TeamStandings",
-	"RenderCaption": "Teammates Comparison"
+	"RenderCaption": "Teammates Comparison",
+    "RenderVersion": 2
 }

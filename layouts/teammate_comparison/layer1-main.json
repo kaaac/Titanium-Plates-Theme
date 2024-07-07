@@ -178,7 +178,7 @@
                                     },
                                     {
                                         "BlockType": "image",
-                                        "Source" : "cars/{Item.Team.Name}.png",
+                                        "Source" : "{Item.Team.LiveryPath}",
                                         "Height" : "120",
                                         "HorizontalAlignment" : "Center"
                                     }

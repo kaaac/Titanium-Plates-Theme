@@ -169,7 +169,7 @@
         },
         {
             "BlockType" : "image",
-            "Source" : "cars/{Item.Team.Name}.png",
+            "Source" : "cars/Riserve.png",
             "RenderIf" : "{F1Mode}",
             "Width" : 680,
             "PaddingTop" : -40,

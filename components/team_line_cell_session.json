@@ -89,7 +89,7 @@
       "Items": [
         {
           "BlockType": "image",
-          "Source" : "cars/{Item.Team.Name}.png",
+          "Source" : "{Item.Team.LiveryPath}",
           "MarginLeft" : 12,
           "Height": 73,
           "PaddingBottom" : -5,

@@ -25,13 +25,6 @@
                             "Source" : "suit/<{DriverVar.Team.Name}>_<{DriverVar.SeatPosition}>",
                             "ImageOptions" : {
                                   "DefaultPath" : "suit/Neutral.png"
-                                  //"Triggers" : [
-                                  //  {
-                                  //      "Condition" : "{F1Mode}",
-                                  //      "Property" : "DefaultPath",
-                                  //      "Value" : "",
-                                  //  }
-                                  //]
                             },
                             "Triggers" : [
                                 {

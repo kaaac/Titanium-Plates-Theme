@@ -68,7 +68,7 @@
             "BlockType" : "image",
             "HorizontalAlignment" : "Right",
             "VerticalAlignment" : "Bottom",
-            "Source" : "cars/{Item.Team.Name}.png",
+            "Source" : "{Item.Team.LiveryPath}",
             "Height" : 62,
             "MarginRight" : 10,
             "Triggers" : [
