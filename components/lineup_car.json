@@ -1,5 +1,5 @@
 {
-    "ComponentName": "lineup_car",
+    "ComponentName" : "lineup_car",
     "BlockType" : "dock",
     "Orientation" : "Vertical",
     "Width" : 1314,
@@ -108,7 +108,7 @@
                                             "Setters" : [
                                                 {
                                                     "Property" : "Source",
-                                                    "Value" : "{Item.Driver.LogoPath}"
+                                                    "Value" : "{Item.Driver.LogotypePath}"
                                                 }
                                             ]
                                         

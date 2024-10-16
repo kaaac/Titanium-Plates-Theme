@@ -7,7 +7,7 @@
     "Items": [
       {         
         "BlockType": "component",
-        "Component": "header_block",
+        "Component" : "header_block",
         "ComponentOptions" :
         {
           "Vars":
@@ -54,7 +54,7 @@
                           "WidthStretch": true,
                           "Template": {
                             "BlockType": "component",
-                            "Component": "driver_line_cell_session"
+                            "Component" : "driver_line_cell_session"
                           }
                         },
                         {
@@ -81,7 +81,7 @@
                           "Template": {
                             "BlockType": "component",
                             "Name": "statist",
-                            "Component": "statistics_cell",
+                            "Component" : "statistics_cell",
                             "ComponentOptions": {
                               "Vars": {
                                 "data": "Item.Value0"
@@ -97,7 +97,7 @@
                           "Template": {
                             "BlockType": "component",
                             "Name": "statist",
-                            "Component": "statistics_cell",
+                            "Component" : "statistics_cell",
                             "ComponentOptions": {
                               "Vars": {
                                 "data": "Item.Value1"
@@ -113,7 +113,7 @@
                           "Template": {
                             "BlockType": "component",
                             "Name": "statist",
-                            "Component": "statistics_cell",
+                            "Component" : "statistics_cell",
                             "ComponentOptions": {
                               "Vars": {
                                 "data": "Item.Value2"
@@ -129,7 +129,7 @@
                           "Template": {
                             "BlockType": "component",
                             "Name": "statist",
-                            "Component": "statistics_cell",
+                            "Component" : "statistics_cell",
                             "ComponentOptions": {
                               "Vars": {
                                 "data": "Item.Value3"
@@ -145,7 +145,7 @@
                           "Template": {
                             "BlockType": "component",
                             "Name": "statist",
-                            "Component": "statistics_cell",
+                            "Component" : "statistics_cell",
                             "ComponentOptions": {
                               "Vars": {
                                 "data": "Item.Value4"
@@ -161,7 +161,7 @@
                           "Template": {
                             "BlockType": "component",
                             "Name": "statist",
-                            "Component": "statistics_cell",
+                            "Component" : "statistics_cell",
                             "ComponentOptions": {
                               "Vars": {
                                 "data": "Item.Value5"
@@ -177,7 +177,7 @@
                           "Template": {
                             "BlockType": "component",
                             "Name": "statist",
-                            "Component": "statistics_cell",
+                            "Component" : "statistics_cell",
                             "ComponentOptions": {
                               "Vars": {
                                 "data": "Item.Value6"
@@ -193,7 +193,7 @@
                           "Template": {
                             "BlockType": "component",
                             "Name": "statist",
-                            "Component": "statistics_cell",
+                            "Component" : "statistics_cell",
                             "ComponentOptions": {
                               "Vars": {
                                 "data": "Item.Value7"
@@ -209,7 +209,7 @@
                           "Template": {
                             "BlockType": "component",
                             "Name": "statist",
-                            "Component": "statistics_cell",
+                            "Component" : "statistics_cell",
                             "ComponentOptions": {
                               "Vars": {
                                 "data": "Item.Value8"

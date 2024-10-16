@@ -28,121 +28,163 @@
                     "Items": [
                         {
                             "BlockType" : "stack",
+                            "Orientation" : "Horizontal",
+                            "HorizontalAlignment" : "Right",
+                            "Items" : [
+                                {
+                                    "BlockType" : "image",
+                                    "HorizontalAlignment" : "Right",
+                                    "Source" : "suit/<{Item.Team.Name}>_<{Item.Driver0.SeatPosition}>",
+                                    "ImageOptions" : {
+                                          "DefaultPath" : "suit/Neutral.png"
+                                    },
+                                    "Triggers" : [
+                                        {
+                                            "Condition" : "{UseDriverAvatars}",
+                                            "ConditionAnd" : "{F1Mode}",
+                                            "Property" : "Source",
+                                            "Value" : "<{Item.Driver0.Driver.LogotypePath}>"
+                                        },
+                                        {
+                                            "Condition" : "{UseDriverAvatars}",
+                                            "ConditionAnd" : "{F1Mode, Converter=BoolReverse}",
+                                            "Property" : "Source",
+                                            "Value" : "<{Item.Driver0.Driver.LogotypePath}>"
+                                        },
+                                        {
+                                            "Condition" : "{UseDriverAvatars, Converter=BoolReverse}",
+                                            "ConditionAnd" : "{F1Mode, Converter=BoolReverse}",
+                                            "Property" : "Source",
+                                            "Value" : "suit/Neutral.png"
+                                        }
+                                    ],
+                                    "Width" : 132,
+                                    "MarginTop" : 50
+                                },
+                                {
+                                    "BlockType" : "dock",
+                                    "Orientation": "Vertical",
+                                    "HorizontalAlignment" : "Right",
+                                    "MarginRight" : 30,
+                                    "Height" : 365,
+                                    "Width" : 30,
+                                    "Items" : [
+                                        {
+                                            "BlockType" : "stack",
+                                            "Orientation": "Vertical",
+                                            "VerticalAlignment": "Top",
+                                            "Items" : [
+                                                {
+                                                    "BlockType" : "image",
+                                                    "Source" : "<{Item.Team.LogotypePath}>",
+                                                    "HorizontalAlignment": "Center",
+                                                    "MarginLeft" : 1,
+                                                    "MarginTop" : 30,
+                                                    "Width" : 22
+                                                },
+                                                {
+                                                    "BlockType" : "image",
+                                                    "Source" : "hori_logo/{Item.Team.Name}_written_logo.png",
+                                                    "HorizontalAlignment": "Center",
+                                                    "MarginLeft" : 1,
+                                                    "MarginTop" : 15,
+                                                    "Width" : 25
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "BlockType" : "itemstack",
+                                            "Orientation" : "Vertical",
+                                            "RenderIf" : "<{Item.Driver0.Driver.LeagueRoles, Converter=EmptyObjectToFalse}>",
+                                            "HorizontalAlignment" : "Center",
+                                            "VerticalAlignment": "Bottom",
+                                            "Width": 30,
+                                            "Spacing": 8,
+                                            "ItemStackOptions": {
+                                                "ItemSource": "<{Item.Driver0.Driver.LeagueRoles}>",
+                                                "Limit" : 5,
+                                                "ItemTemplate": {
+                                                    "BlockType" : "image",
+                                                    "Width" : 20,
+                                                    "HorizontalAlignment" : "Center",
+                                                    "Source" : "roles/{Item.Name}_role.png"
+                                                }
+                                            }
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "BlockType" : "stack",
                             "Orientation" : "Vertical",
                             "HorizontalAlignment" : "Left",
+                            "Width" : 60,
+                            "MarginTop" : 55,
+                            "MarginLeft" : 23,
                             "Items" : [
                                 {
                                     "BlockType" : "text",
-                                    "Source" : "{Item.Driver0.Driver.RaceNumber}",
-                                    "Foreground" : "#ffffff",
+                                    "Source" : "<{Item.Driver0.Driver.RaceNumber}>",
+                                    "Foreground" : "{ForegroundBlack}",
                                     "FontName" : "{FontNameBold}",
-                                    "FontSize" : 31,
-                                    "MarginLeft" : 32,
-                                    "MarginTop" : 47,
+                                    "FontSize" : 40,
+                                    "HorizontalAlignment" : "Center",
                                     "TextOptions" : {
                                         "HorizontalAlignment" : "Center"
                                     },
                                     "Triggers" : [
                                         {
-                                            "Condition" : "{Item.Driver0.Driver.RaceNumber, Converter=NumberLess, Parameter=10}",
+                                            "Condition" : "<{Item.Driver0.Driver.RaceNumber, Converter=NumberLess, Parameter=10}>",
                                             "Property" : "Source",
-                                            "Value" : "0{Item.Driver0.Driver.RaceNumber}"
+                                            "Value" : "0<{Item.Driver0.Driver.RaceNumber}>"
                                         }
                                     ]
                                 },
                                 {
                                     "BlockType" : "image",
-                                    "Source" : "platform/platform_{Item.Driver0.Driver.GamePlatform}.png",
+                                    "Source" : "platform/platform_<{Item.Driver0.Driver.GamePlatform}>__dark.png",
                                     "Height" : 30,
-                                    "MarginLeft" : 30,
-                                    "MarginTop" : 9
+                                    "HorizontalAlignment" : "Center",
+                                    "MarginTop" : 5
                                 },
                                 {
                                     "BlockType": "image",
-                                    "Height": 21,
-                                    "MarginTop" : 17,
-                                    "MarginLeft" : 28,
+                                    "Height": 20,
+                                    "MarginTop" : 10,
+                                    "BackgroundImage": "bg_flags.png",
+                                    "Padding" : "2,2,2,2",
                                     "VerticalAlignment": "Center",
+                                    "HorizontalAlignment" : "Center",
                                     "ImageOptions": {
-                                        "Path": "flags/flag_{Item.Driver0.Driver.Nationality.Code}.png",
+                                        "Path": "flags/flag_<{Item.Driver0.Driver.Nationality.Code}>.png",
                                         "VerticalAlignment": "Center"
-                                    }
-                                },{
-                                    "BlockType" : "itemstack",
-                                    "Orientation" : "Horizontal",
-                                    "HorizontalAlignment" : "Left",
-                                    "Height" : 25,
-                                    "RenderIf" : "{Item.Driver0.Driver.LeagueRoles, Converter=EmptyObjectToFalse}",
-                                    "MarginTop" : 15,
-                                    "MarginLeft" : 32,
-                                    "ItemStackOptions": {
-                                        "ItemSource": "{Item.Driver0.Driver.LeagueRoles}",
-                                        "Limit" : 1,
-                                        "ItemTemplate": {
-                                            "BlockType" : "image",
-                                            "Height" : "25",
-                                            "Width" : "25",
-                                            "Source" : "roles/{Item.Name}_role.png"
-                                        }
                                     }
                                 }
                             ]
-                        },
-                        {
-                            "BlockType" : "image",
-                            "HorizontalAlignment" : "Right",
-                            "Source" : "suit/{Item.Team.Name}_{Item.Driver0.SeatPosition}.png",
-                            "Width" : 140,
-                            "MarginTop" : 36,
-                            "MarginRight" : 35,
-                            "Triggers" : [
-                                {
-                                    "Condition" : "{F1Mode, Converter=BoolReverse}",
-                                    "Setters" : [
-                                        {
-                                            "Property" : "Source",
-                                            "Value" : "suit/Neutral.png"
-                                        }
-                                    ]
-                                },
-                                {
-                                    "Condition" : "{UseDriverAvatars}",
-                                    "Setters" : [
-                                        {
-                                            "Property" : "Source",
-                                            "Value" : "{Item.Driver0.Driver.LogoPath}"
-                                        }
-                                    ]
-                                
-                                }
-                            ],
-                            "ImageOptions" : {
-                                "DefaultPath" : "suit/Neutral.png"
-                            }
                         }
                     ]
                 },
                 {
                     "BlockType" : "text",
                     "Source" : "{Item.Driver0.Driver.Name}",
-                    "Foreground" : "#ffffff",
+                    "Foreground" : "{ForegroundBlack}",
                     "FontName" : "{FontNameBold}",
-                    "FontSize" : 18,
-                    "MarginLeft" : 0,
-                    "MarginTop" : 12,
+                    "FontSize" : 21,
+                    "MarginTop" : 0,
                     "HorizontalAlignment" : "Center"
                 },
                 {
                     "BlockType" : "dock",
                     "Orientation" : "Horizontal",
-                    "MarginTop" : 19,
+                    "Margin" : "0,2,0,5",
                     "Items" : [
                         {
                             "BlockType" : "image",
                             "Source" : "{Season.LeagueInfo.LeagueLogo}",
                             "HorizontalAlignment" : "Left",
-                            "MarginLeft" : 30,
-                            "Height" : 24,
+                            "Margin" : "36,0,0,15",
+                            "Height" : 35,
                             "RenderIf" : true,
                             "Triggers" : [
                                 {
@@ -153,8 +195,8 @@
                                             "Value" : "Center"
                                         },
                                         {
-                                            "Property" : "MarginLeft",
-                                            "Value" : "-30"
+                                            "Property" : "Margin",
+                                            "Value" : "-44,0,0,0"
                                         }
                                     ]
                                 }
@@ -162,11 +204,10 @@
                         },
                         {
                             "BlockType" : "image",
-                            "Source": "f1_logo.png",
+                            "Source": "{Season.Championship.LogotypePath}",
                             "HorizontalAlignment" : "Right",
-                            "RenderIf" : "{F1Mode}",
-                            "MarginRight" : 79,
-                            "Height" : 21
+                            "Margin" : "0,8,58,0",
+                            "Height" : 40
                         }
                     ]
                 }
@@ -192,6 +233,7 @@
             "Orientation" : "Vertical",
             "BackgroundImage" : "card_blank.png",
             "HorizontalAlignment" : "Center",
+            "MarginTop" : 35,
             "Width" : 261,
             "Height" : 328 ,
             "Items" : [
@@ -201,121 +243,163 @@
                     "Items": [
                         {
                             "BlockType" : "stack",
+                            "Orientation" : "Horizontal",
+                            "HorizontalAlignment" : "Right",
+                            "Items" : [
+                                {
+                                    "BlockType" : "image",
+                                    "HorizontalAlignment" : "Right",
+                                    "Source" : "suit/<{Item.Team.Name}>_<{Item.Driver1.SeatPosition}>",
+                                    "ImageOptions" : {
+                                          "DefaultPath" : "suit/Neutral.png"
+                                    },
+                                    "Triggers" : [
+                                        {
+                                            "Condition" : "{UseDriverAvatars}",
+                                            "ConditionAnd" : "{F1Mode}",
+                                            "Property" : "Source",
+                                            "Value" : "<{Item.Driver1.Driver.LogotypePath}>"
+                                        },
+                                        {
+                                            "Condition" : "{UseDriverAvatars}",
+                                            "ConditionAnd" : "{F1Mode, Converter=BoolReverse}",
+                                            "Property" : "Source",
+                                            "Value" : "<{Item.Driver1.Driver.LogotypePath}>"
+                                        },
+                                        {
+                                            "Condition" : "{UseDriverAvatars, Converter=BoolReverse}",
+                                            "ConditionAnd" : "{F1Mode, Converter=BoolReverse}",
+                                            "Property" : "Source",
+                                            "Value" : "suit/Neutral.png"
+                                        }
+                                    ],
+                                    "Width" : 132,
+                                    "MarginTop" : 50
+                                },
+                                {
+                                    "BlockType" : "dock",
+                                    "Orientation": "Vertical",
+                                    "HorizontalAlignment" : "Right",
+                                    "MarginRight" : 30,
+                                    "Height" : 365,
+                                    "Width" : 30,
+                                    "Items" : [
+                                        {
+                                            "BlockType" : "stack",
+                                            "Orientation": "Vertical",
+                                            "VerticalAlignment": "Top",
+                                            "Items" : [
+                                                {
+                                                    "BlockType" : "image",
+                                                    "Source" : "<{Item.Team.LogotypePath}>",
+                                                    "HorizontalAlignment": "Center",
+                                                    "MarginLeft" : 1,
+                                                    "MarginTop" : 30,
+                                                    "Width" : 22
+                                                },
+                                                {
+                                                    "BlockType" : "image",
+                                                    "Source" : "hori_logo/{Item.Team.Name}_written_logo.png",
+                                                    "HorizontalAlignment": "Center",
+                                                    "MarginLeft" : 1,
+                                                    "MarginTop" : 15,
+                                                    "Width" : 25
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "BlockType" : "itemstack",
+                                            "Orientation" : "Vertical",
+                                            "RenderIf" : "<{Item.Driver1.Driver.LeagueRoles, Converter=EmptyObjectToFalse}>",
+                                            "HorizontalAlignment" : "Center",
+                                            "VerticalAlignment": "Bottom",
+                                            "Width": 30,
+                                            "Spacing": 8,
+                                            "ItemStackOptions": {
+                                                "ItemSource": "<{Item.Driver1.Driver.LeagueRoles}>",
+                                                "Limit" : 5,
+                                                "ItemTemplate": {
+                                                    "BlockType" : "image",
+                                                    "Width" : 20,
+                                                    "HorizontalAlignment" : "Center",
+                                                    "Source" : "roles/{Item.Name}_role.png"
+                                                }
+                                            }
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "BlockType" : "stack",
                             "Orientation" : "Vertical",
                             "HorizontalAlignment" : "Left",
+                            "Width" : 60,
+                            "MarginTop" : 55,
+                            "MarginLeft" : 23,
                             "Items" : [
                                 {
                                     "BlockType" : "text",
-                                    "Source" : "{Item.Driver1.Driver.RaceNumber}",
-                                    "Foreground" : "#ffffff",
+                                    "Source" : "<{Item.Driver1.Driver.RaceNumber}>",
+                                    "Foreground" : "{ForegroundBlack}",
                                     "FontName" : "{FontNameBold}",
-                                    "FontSize" : 31,
-                                    "MarginLeft" : 32,
-                                    "MarginTop" : 47,
+                                    "FontSize" : 40,
+                                    "HorizontalAlignment" : "Center",
                                     "TextOptions" : {
                                         "HorizontalAlignment" : "Center"
                                     },
                                     "Triggers" : [
                                         {
-                                            "Condition" : "{Item.Driver1.Driver.RaceNumber, Converter=NumberLess, Parameter=10}",
+                                            "Condition" : "<{Item.Driver1.Driver.RaceNumber, Converter=NumberLess, Parameter=10}>",
                                             "Property" : "Source",
-                                            "Value" : "0{Item.Driver1.Driver.RaceNumber}"
+                                            "Value" : "0<{Item.Driver1.Driver.RaceNumber}>"
                                         }
                                     ]
                                 },
                                 {
                                     "BlockType" : "image",
-                                    "Source" : "platform/platform_{Item.Driver1.Driver.GamePlatform}.png",
-                                    "Height" : 30, 
-                                    "MarginLeft" : 30,
-                                    "MarginTop" : 9
+                                    "Source" : "platform/platform_<{Item.Driver1.Driver.GamePlatform}>__dark.png",
+                                    "Height" : 30,
+                                    "HorizontalAlignment" : "Center",
+                                    "MarginTop" : 5
                                 },
                                 {
                                     "BlockType": "image",
-                                    "Height": 21,
-                                    "MarginTop" : 17,
-                                    "MarginLeft" : 28,
+                                    "Height": 20,
+                                    "MarginTop" : 10,
+                                    "BackgroundImage": "bg_flags.png",
+                                    "Padding" : "2,2,2,2",
                                     "VerticalAlignment": "Center",
+                                    "HorizontalAlignment" : "Center",
                                     "ImageOptions": {
-                                        "Path": "flags/flag_{Item.Driver1.Driver.Nationality.Code}.png",
+                                        "Path": "flags/flag_<{Item.Driver1.Driver.Nationality.Code}>.png",
                                         "VerticalAlignment": "Center"
-                                    }
-                                },{
-                                    "BlockType" : "itemstack",
-                                    "Orientation" : "Horizontal",
-                                    "HorizontalAlignment" : "Left",
-                                    "Height" : 25,
-                                    "RenderIf" : "{Item.Driver0.Driver.LeagueRoles, Converter=EmptyObjectToFalse}",
-                                    "MarginTop" : 15,
-                                    "MarginLeft" : 32,
-                                    "ItemStackOptions": {
-                                        "ItemSource": "{Item.Driver0.Driver.LeagueRoles}",
-                                        "Limit" : 1,
-                                        "ItemTemplate": {
-                                            "BlockType" : "image",
-                                            "Height" : "25",
-                                            "Width" : "25",
-                                            "Source" : "roles/{Item.Name}_role.png"
-                                        }
                                     }
                                 }
                             ]
-                        },
-                        {
-                            "BlockType" : "image",
-                            "HorizontalAlignment" : "Right",
-                            "Source" : "suit/{Item.Team.Name}_{Item.Driver1.SeatPosition}.png",
-                            "Width" : 140,
-                            "MarginTop" : 36,
-                            "MarginRight" : 35,
-                            "Triggers" : [
-                                {
-                                    "Condition" : "{F1Mode, Converter=BoolReverse}",
-                                    "Setters" : [
-                                        {
-                                            "Property" : "Source",
-                                            "Value" : "suit/Neutral.png"
-                                        }
-                                    ]
-                                },
-                                {
-                                    "Condition" : "{UseDriverAvatars}",
-                                    "Setters" : [
-                                        {
-                                            "Property" : "Source",
-                                            "Value" : "{Item.Driver1.Driver.LogoPath}"
-                                        }
-                                    ]
-                                
-                                }
-                            ],
-                            "ImageOptions" : {
-                                "DefaultPath" : "suit/Neutral.png"
-                            }
                         }
                     ]
                 },
                 {
                     "BlockType" : "text",
                     "Source" : "{Item.Driver1.Driver.Name}",
-                    "Foreground" : "#ffffff",
+                    "Foreground" : "{ForegroundBlack}",
                     "FontName" : "{FontNameBold}",
-                    "FontSize" : 18,
-                    "MarginLeft" : 0,
-                    "MarginTop" : 12,
+                    "FontSize" : 21,
+                    "MarginTop" : 0,
                     "HorizontalAlignment" : "Center"
                 },
                 {
                     "BlockType" : "dock",
                     "Orientation" : "Horizontal",
-                    "MarginTop" : 19,
+                    "Margin" : "0,2,0,5",
                     "Items" : [
                         {
                             "BlockType" : "image",
                             "Source" : "{Season.LeagueInfo.LeagueLogo}",
                             "HorizontalAlignment" : "Left",
-                            "MarginLeft" : 30,
-                            "Height" : 24,
+                            "Margin" : "36,0,0,15",
+                            "Height" : 35,
                             "RenderIf" : true,
                             "Triggers" : [
                                 {
@@ -326,8 +410,8 @@
                                             "Value" : "Center"
                                         },
                                         {
-                                            "Property" : "MarginLeft",
-                                            "Value" : "-30"
+                                            "Property" : "Margin",
+                                            "Value" : "-44,0,0,0"
                                         }
                                     ]
                                 }
@@ -335,11 +419,10 @@
                         },
                         {
                             "BlockType" : "image",
-                            "Source": "f1_logo.png",
+                            "Source": "{Season.Championship.LogotypePath}",
                             "HorizontalAlignment" : "Right",
-                            "RenderIf" : "{F1Mode}",
-                            "MarginRight" : 79,
-                            "Height" : 21
+                            "Margin" : "0,8,58,0",
+                            "Height" : 40
                         }
                     ]
                 }

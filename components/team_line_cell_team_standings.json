@@ -1,5 +1,5 @@
 {
-  "ComponentName": "team_line_cell_team_standings",
+  "ComponentName" : "team_line_cell_team_standings",
   "BlockType": "dock",
   "PaddingLeft": 12,
   "PaddingRight": 4,
@@ -99,7 +99,7 @@
             {
               "Condition" : "{F1Mode, Converter=BoolReverse}",
               "Property" : "Source",
-              "Value" : "{Item.Team.LogoPath}"
+              "Value" : "{Item.Team.LogotypePath}"
             }
           ]
         }

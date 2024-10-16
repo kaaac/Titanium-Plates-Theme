@@ -91,7 +91,7 @@
             },
             {
                 "BlockType": "component",
-                "Component": "penalty_item",
+                "Component" : "penalty_item",
                 "ComponentOptions": {
                     "Vars": {
                         "Penalty": "Penalty",

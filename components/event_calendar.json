@@ -1,5 +1,5 @@
 {
-    "ComponentName": "event_calendar",
+    "ComponentName" : "event_calendar",
     "BlockType" : "stack",
     "Orientation" : "Horizontal",
     "Items":

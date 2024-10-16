@@ -1,5 +1,5 @@
 {
-    "ComponentName": "driver_line_cell_quali",
+    "ComponentName" : "driver_line_cell_quali",
     "BlockType": "dock",
     "PaddingLeft": 12,
     "PaddingRight": 4,

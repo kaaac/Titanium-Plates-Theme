@@ -1,5 +1,5 @@
 {
-    "ComponentName": "driver_line_grid",
+    "ComponentName" : "driver_line_grid",
     "BlockType": "dock",
     "RenderIf" : "<renderif>",
     "BackgroundImage": "grid/grid_{Item.Team.Name}.png",
@@ -75,7 +75,7 @@
                 {
                     "Condition" : "{F1Mode, Converter=BoolReverse}",
                     "Property" : "Source",
-                    "Value" : "{Item.Team.LogoPath}"
+                    "Value" : "{Item.Team.LogotypePath}"
                 }
             ]
         }

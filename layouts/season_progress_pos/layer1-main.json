@@ -7,7 +7,7 @@
         "Items": [
             {               
                 "BlockType": "component",
-                "Component": "header_block",
+                "Component" : "header_block",
                 "ComponentOptions" :
                 {
                     "Vars":
@@ -60,7 +60,6 @@
                                         }
                                     }
                                 }
-                            
                             }
                         ]
                     },
@@ -266,7 +265,7 @@
                                                         "Items": [
                                                             {
                                                                 "BlockType": "image",
-                                                                "Source": "{Item.Track.Nation.LogoPath}",
+                                                                "Source": "{Item.Track.Nation.LogotypePath}",
                                                                 "HorizontalAlignment": "Center",
                                                                 "Height": 32
                                                             },

@@ -7,7 +7,7 @@
         "Items": [
             {               
                 "BlockType": "component",
-                "Component": "header_block",
+                "Component" : "header_block",
                 "ComponentOptions" :
                 {
                     "Vars":

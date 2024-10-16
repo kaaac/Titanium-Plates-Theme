@@ -56,7 +56,7 @@
                         "Setters" : [
                           {
                             "Property" : "Source",
-                            "Value" : "{DriverInfo.Driver.LogoPath}"
+                            "Value" : "{DriverInfo.Driver.LogotypePath}"
                           }
                         ]
                       

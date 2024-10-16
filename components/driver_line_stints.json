@@ -90,7 +90,7 @@
                             "Setters" : [
                                 {
                                     "Property" : "Source",
-                                    "Value" : "{Item.Team.LogoPath}"
+                                    "Value" : "{Item.Team.LogotypePath}"
                                 },
                                 {
                                     "Property" : "Height",

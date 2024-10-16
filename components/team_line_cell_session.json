@@ -108,7 +108,7 @@
             {
               "Condition" : "{F1Mode, Converter=BoolReverse}",
               "Property" : "Source",
-              "Value" : "{Item.Team.LogoPath}"
+              "Value" : "{Item.Team.LogotypePath}"
             }
           ]
         }

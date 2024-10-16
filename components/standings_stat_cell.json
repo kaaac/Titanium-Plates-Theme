@@ -1,5 +1,5 @@
 {
-  "ComponentName": "standings_stat_cell",
+  "ComponentName" : "standings_stat_cell",
   "BlockType" : "dock",
   "Height" : 73,
   "Width" : "<width>",

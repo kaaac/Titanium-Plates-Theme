@@ -1,7 +1,7 @@
 {
   "BlockType": "stack",
   "BackgroundImage": "pen/bg_report_base.png",
-  "ComponentName": "penalty_item_multi",
+  "ComponentName" : "penalty_item_multi",
   "Items": [
     {
       "BlockType": "dock",

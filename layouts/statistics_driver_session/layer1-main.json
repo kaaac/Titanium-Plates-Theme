@@ -7,7 +7,7 @@
     "Items": [
       {         
         "BlockType": "component",
-        "Component": "header_block",
+        "Component" : "header_block",
         "ComponentOptions" :
         {
           "Vars":
@@ -92,7 +92,7 @@
                           "Template": {
                             "BlockType": "component",
                             "Name": "statist",
-                            "Component": "statistics_cell",
+                            "Component" : "statistics_cell",
                             "ComponentOptions": {
                               "Vars": {
                                 "data": "Item.Value0",
@@ -111,7 +111,7 @@
                           "Template": {
                             "BlockType": "component",
                             "Name": "statist",
-                            "Component": "statistics_cell",
+                            "Component" : "statistics_cell",
                             "ComponentOptions": {
                               "Vars": {
                                 "data": "Item.Value1",
@@ -130,7 +130,7 @@
                           "Template": {
                             "BlockType": "component",
                             "Name": "statist",
-                            "Component": "statistics_cell",
+                            "Component" : "statistics_cell",
                             "ComponentOptions": {
                               "Vars": {
                                 "data": "Item.Value2",
@@ -148,7 +148,7 @@
                           "Template": {
                             "BlockType": "component",
                             "Name": "statist",
-                            "Component": "statistics_cell",
+                            "Component" : "statistics_cell",
                             "ComponentOptions": {
                               "Vars": {
                                 "data": "Item.Value3",
@@ -165,7 +165,7 @@
                           "WidthStretch": true,
                           "Template": {
                             "BlockType": "component",
-                            "Component": "statistics_cell",
+                            "Component" : "statistics_cell",
                             "ComponentOptions": {
                               "Vars": {
                                 "data": "Item.Value4",
@@ -184,7 +184,7 @@
                           "WidthStretch": true,
                           "Template": {
                             "BlockType": "component",
-                            "Component": "statistics_cell",
+                            "Component" : "statistics_cell",
                             "ComponentOptions": {
                               "Vars": {
                                 "data": "Item.Value5",
@@ -201,7 +201,7 @@
                           "WidthStretch": true,
                           "Template": {
                             "BlockType": "component",
-                            "Component": "statistics_cell",
+                            "Component" : "statistics_cell",
                             "ComponentOptions": {
                               "Vars": {
                                 "data": "Item.Value6"
@@ -216,7 +216,7 @@
                           "WidthStretch": true,
                           "Template": {
                             "BlockType": "component",
-                            "Component": "statistics_cell",
+                            "Component" : "statistics_cell",
                             "ComponentOptions": {
                               "Vars": {
                                 "data": "Item.Value7"
@@ -231,7 +231,7 @@
                           "WidthStretch": true,
                           "Template": {
                             "BlockType": "component",
-                            "Component": "statistics_cell",
+                            "Component" : "statistics_cell",
                             "ComponentOptions": {
                               "Vars": {
                                 "data": "Item.Value8"
@@ -246,7 +246,7 @@
                           "WidthStretch": true,
                           "Template": {
                             "BlockType": "component",
-                            "Component": "statistics_cell",
+                            "Component" : "statistics_cell",
                             "ComponentOptions": {
                               "Vars": {
                                 "data": "Item.Value9"
@@ -261,7 +261,7 @@
                           "WidthStretch": true,
                           "Template": {
                             "BlockType": "component",
-                            "Component": "statistics_cell",
+                            "Component" : "statistics_cell",
                             "ComponentOptions": {
                               "Vars": {
                                 "data": "Item.Value10"
@@ -276,7 +276,7 @@
                           "WidthStretch": true,
                           "Template": {
                             "BlockType": "component",
-                            "Component": "statistics_cell",
+                            "Component" : "statistics_cell",
                             "ComponentOptions": {
                               "Vars": {
                                 "data": "Item.Value11"

@@ -1,5 +1,5 @@
 {
-    "ComponentName": "grid_main",
+    "ComponentName" : "grid_main",
     "Name": "mainStack",
     "BlockType": "stack",
     "Margin": "{MarginRoot}",

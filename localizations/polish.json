@@ -47,7 +47,7 @@
         "sec." : "sek.",
         "pos." : "poz.",
         "pen-cancelled" : "ANULOWANO",
-        "The Steward" : "Sędzia orzekający - ",
+        "The Steward" : "Sędzia orzekający",
         "Qualification ban" : "Ban na kwalifikacje",
         "LapShort" : "Okr.",
         "TurnShort" : "Zakręt",
@@ -68,6 +68,8 @@
         "c09":"WRZ",
         "c10":"PAŹ",
         "c11":"LIS",
-        "c12":"GRU"
+        "c12":"GRU",
+        "Penalty Actions" : "Dodatkowe kary",
+        "Time penalty for the next race (sec.)" : "Kara sekundowa doliczona do następnego wyścigu"
     }
 }

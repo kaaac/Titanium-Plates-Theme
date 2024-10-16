@@ -1,5 +1,5 @@
 {
-    "ComponentName": "lineup_reserve",
+    "ComponentName" : "lineup_reserve",
     "BlockType" : "dock",
     "Orientation" : "Vertical",
     "Width" : 657,
@@ -43,7 +43,7 @@
                                     "Setters" : [
                                         {
                                             "Property" : "Source",
-                                            "Value" : "{Item.Driver.LogoPath}"
+                                            "Value" : "{Item.Driver.LogotypePath}"
                                         }
                                     ]
                                 

@@ -1,4 +1,5 @@
 {
     "LayoutName": "qualResults",
-    "RenderType": "QualResults"	
+    "RenderType": "QualResults"	,
+    "RenderCaption": "Qualification Results"
 }

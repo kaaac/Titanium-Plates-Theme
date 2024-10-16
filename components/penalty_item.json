@@ -348,6 +348,7 @@
       "BlockType" : "stack",
       "Orientation" :"Horizontal",
       "MarginTop" : 35,
+      "RenderIf" : "<{Penalty.Offence, Converter=EmptyObjectToFalse}>",
       "Items" : [
         {
           "BlockType" : "text",
@@ -509,12 +510,53 @@
       ]
     },
     {
+      "BlockType" : "stack",
+      "Orientation" :"Horizontal",
+      "MarginTop" : 35,
+      "MarginBottom" : 35,
+      "RenderIf" : "<{Penalty.PenaltyActions, Converter=EmptyObjectToFalse}>",
+      "Items" : [
+        {
+          "BlockType" : "text",
+          "Source" : "[Penalty Actions]",
+          "Foreground" : "{ForegroundBlack}",
+          "MarginRight" : 25,
+          "FontSize" : "{ReportRegularFontSize}",
+          "FontName" : "{FontNameBold}"
+        },
+        {
+          "Name" : "Actions",
+          "BlockType" : "itemstack",
+          "Orientation" : "Vertical",
+          "ItemStackOptions" : {
+            "ItemSource" : "<{Penalty.PenaltyActions}>",
+            "ItemTemplate" : {
+              "BlockType": "stack",
+              "Margin": "0,0,0,0",
+              "Orientation": "Vertical",
+              "VerticalAlignment": "Center",
+              "Items": [
+                  {
+                      "BlockType": "text",
+                      //"HorizontalAlignment": "Center",
+                      //"VerticalAlignment": "Center",
+                      "Foreground" : "{ForegroundBlack}",
+                      "FontSize" : "{ReportRegularFontSize}",
+                      "Source": "• [{Item.TypeString}]: {Item.Value}"
+                  }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
       "BlockType" : "text",
       "Foreground" : "{ForegroundBlack}",
       "FontSize" : "{ReportRegularFontSize}",
       "FontName" : "{FontNameBold}",
       "RenderIf" : "<{Penalty.Issuer.Name, Converter=EmptyObjectToFalse}>",
-      "Source" : "[The Steward] <{Penalty.Issuer.Name}>"
+      "Source" : "[The Steward] - <{Penalty.Issuer.Name}>"
     }
   ]
 } 

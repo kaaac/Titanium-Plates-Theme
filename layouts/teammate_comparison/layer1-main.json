@@ -71,7 +71,7 @@
                                                                 "Setters" : [
                                                                     {
                                                                         "Property" : "Source",
-                                                                        "Value" : "{Item.Driver0.Driver.LogoPath}"
+                                                                        "Value" : "{Item.Driver0.Driver.LogotypePath}"
                                                                     }
                                                                 ]
                                                             
@@ -131,7 +131,7 @@
                                                                 "Setters" : [
                                                                     {
                                                                         "Property" : "Source",
-                                                                        "Value" : "{Item.Driver1.Driver.LogoPath}"
+                                                                        "Value" : "{Item.Driver1.Driver.LogotypePath}"
                                                                     }
                                                                 ]
                                                             

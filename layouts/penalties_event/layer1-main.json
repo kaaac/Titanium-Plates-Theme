@@ -115,7 +115,7 @@
                     "ItemSource": "{Penalties.Penalties}",
                     "ItemTemplate": {
                         "BlockType": "component",
-                        "Component": "penalty_item",
+                        "Component" : "penalty_item",
                         "ComponentOptions": {
                             "Vars": {
                                 "Penalty": "Item",
@@ -228,7 +228,7 @@
                             "CollectionPart" : "2/2",
                             "ItemTemplate": {
                                 "BlockType": "component",
-                                "Component": "penalty_item_multi",
+                                "Component" : "penalty_item_multi",
                                 "ComponentOptions": {
                                     "Vars": {
                                         "Penalty": "{Item}"
@@ -246,7 +246,7 @@
                             "CollectionPart" : "1/2",
                             "ItemTemplate": {
                                 "BlockType": "component",
-                                "Component": "penalty_item_multi",
+                                "Component" : "penalty_item_multi",
                                 "ComponentOptions": {
                                     "Vars": {
                                         "Penalty": "{Item}"
